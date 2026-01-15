@@ -4,9 +4,17 @@ import { useTranslation } from 'react-i18next';
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
 
+  const languages = ['en', 'ko', 'es'];
+  const labels: Record<string, string> = {
+    en: 'KO',
+    ko: 'ES',
+    es: 'EN'
+  };
+
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'ko' : 'en';
-    i18n.changeLanguage(newLang);
+    const currentIndex = languages.indexOf(i18n.language);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    i18n.changeLanguage(languages[nextIndex]);
   };
 
   return (
@@ -17,7 +25,7 @@ const LanguageToggle: React.FC = () => {
     >
       <span className="material-symbols-outlined text-[18px]">language</span>
       <span className="text-sm font-bold tracking-tight">
-        {i18n.language === 'en' ? 'KO' : 'EN'}
+        {i18n.language.toUpperCase()}
       </span>
     </button>
   );

@@ -145,6 +145,73 @@ i18n
             termsOfService: "이용 약관"
           }
         }
+      },
+      es: {
+        translation: {
+          nav: {
+            home: "Inicio",
+            about: "Sobre Nosotros",
+            aboutDrPark: "Sobre la Dra. Park",
+            messageFromDrPark: "Mensaje de la Dra. Park",
+            techniques: "Técnicas",
+            reviews: "Reseñas",
+            contact: "Contacto",
+            bookAppointment: "Reservar Cita",
+            aboutChiropractic: "Sobre la Quiropráctica",
+            subluxation: "Subluxación",
+            innateIntelligence: "Inteligencia Innata",
+            upperCervical: "Cervical Superior",
+            carAccident: "Accidentes de Auto y Lesiones",
+            tmj: "ATM"
+          },
+          home: {
+            hero: {
+              title: "Cuidado de la Salud Cervical Superior",
+              description: "La primera clínica quiropráctica coreano-americana en los Estados Unidos especializada en la Técnica Específica de Cervical Superior Palmer (H.I.O).",
+              descriptionDesktop: "Yonsei Chiropractic Clinic es la primera clínica quiropráctica coreano-americana en los EE. UU. especializada en el método 'hole-in-one' (H.I.O).",
+              callNow: "Llamar Ahora",
+              requestAppointment: "Solicitar Cita",
+              bookAppointment: "Reservar Cita",
+              learnMore: "Saber Más",
+              trustedBy: "Con la confianza de miles de pacientes desde 2015"
+            },
+            trustStrip: {
+              palmerTitle: "Cervical Superior Palmer",
+              palmerDesc: "Método H.I.O especializado para un cuidado preciso.",
+              awardTitle: "Premiado",
+              awardDesc: "Premio Patients' Choice 2015 en Quiropráctica.",
+              healingTitle: "Sanación Natural",
+              healingDesc: "Enfoque sin medicamentos para restaurar la comunicación."
+            },
+            meetDoctor: {
+              badge: "Conozca a la Doctora",
+              name: "Dra. Hyeon Joo Park",
+              quote: "\"Estamos felices de que haya elegido ser parte de aquellos que no tienen miedo de probar un nuevo método para recuperar la salud perdida. Mi misión es utilizar mi experiencia y conocimientos profesionales para ayudar a los pacientes a recibir una atención excepcional a través del método cervical superior Palmer.\"",
+              readBio: "Leer Biografía Completa"
+            },
+            services: {
+              title: "Nuestras Especialidades",
+              description: "Atención quiropráctica especializada que va desde técnicas específicas de Cervical Superior hasta la recuperación de lesiones personales.",
+              upperCervicalTitle: "Cervical Superior (H.I.O)",
+              upperCervicalDesc: "Una especialidad probada científicamente diseñada para restaurar la alineación de la cabeza y el cuello y reactivar la comunicación del cerebro al cuerpo.",
+              tmjTitle: "ATM/DTM y Pediatría",
+              tmjDesc: "Ajustes expertos para trastornos de la articulación temporomandibular y atención especializada para pacientes pre/postnatales y pediátricos.",
+              injuryTitle: "Accidentes de Auto y Lesiones",
+              injuryDesc: "Atención integral para lesiones personales y accidentes automovilísticos para ayudarle a recuperar su movilidad y salud.",
+              learnMore: "Saber Más"
+            }
+          },
+          footer: {
+            description: "Especializados en la Técnica Específica de Cervical Superior Palmer para restaurar el poder de sanación natural de su cuerpo.",
+            quickLinks: "Enlaces Rápidos",
+            techniques: "Técnicas",
+            contactInfo: "Información de Contacto",
+            address: "3200 Wilshire Blvd, Suite 302, Los Ángeles, CA 90010",
+            rights: "Todos los derechos reservados.",
+            privacyPolicy: "Política de Privacidad",
+            termsOfService: "Términos de Servicio"
+          }
+        }
       }
     }
   });
