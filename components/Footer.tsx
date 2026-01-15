@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-slate-50 dark:bg-[#101922] border-t border-slate-200 dark:border-slate-800 pt-16 pb-8 w-full">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,36 +17,35 @@ const Footer: React.FC = () => {
               </h2>
             </div>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-              Specializing in Palmer Upper Cervical Specific Technique to restore your body's natural healing power.
+              {t('footer.description')}
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-4">Quick Links</h4>
+            <h4 className="font-bold text-slate-900 dark:text-white mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-primary transition-colors">About Dr. Park</Link></li>
-              <li><Link to="/message" className="hover:text-primary transition-colors">Message From Dr. Park</Link></li>
-              <li><Link to="/reviews" className="hover:text-primary transition-colors">Patient Reviews</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">{t('nav.home')}</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">{t('nav.aboutDrPark')}</Link></li>
+              <li><Link to="/message" className="hover:text-primary transition-colors">{t('nav.messageFromDrPark')}</Link></li>
+              <li><Link to="/reviews" className="hover:text-primary transition-colors">{t('nav.reviews')}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-4">Techniques</h4>
+            <h4 className="font-bold text-slate-900 dark:text-white mb-4">{t('footer.techniques')}</h4>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-              <li><Link to="/techniques/about-chiropractic" className="hover:text-primary transition-colors">About Chiropractic</Link></li>
-              <li><Link to="/techniques/innate-intelligence" className="hover:text-primary transition-colors">Innate Intelligence</Link></li>
-              <li><Link to="/techniques/upper-cervical" className="hover:text-primary transition-colors">Upper Cervical</Link></li>
-              <li><Link to="/techniques/car-accident" className="hover:text-primary transition-colors">Car Accident & Injury</Link></li>
-              <li><Link to="/techniques/tmj" className="hover:text-primary transition-colors">TMJ Treatment</Link></li>
+              <li><Link to="/techniques/about-chiropractic" className="hover:text-primary transition-colors">{t('nav.aboutChiropractic')}</Link></li>
+              <li><Link to="/techniques/innate-intelligence" className="hover:text-primary transition-colors">{t('nav.innateIntelligence')}</Link></li>
+              <li><Link to="/techniques/upper-cervical" className="hover:text-primary transition-colors">{t('nav.upperCervical')}</Link></li>
+              <li><Link to="/techniques/car-accident" className="hover:text-primary transition-colors">{t('nav.carAccident')}</Link></li>
+              <li><Link to="/techniques/tmj" className="hover:text-primary transition-colors">{t('nav.tmj')}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white mb-4">Contact Info</h4>
+            <h4 className="font-bold text-slate-900 dark:text-white mb-4">{t('footer.contactInfo')}</h4>
             <div className="space-y-4">
               <div className="flex gap-3">
                 <span className="material-symbols-outlined text-primary text-[20px] shrink-0">location_on</span>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  3200 Wilshire Blvd, Suite 302<br />
-                  Los Angeles, CA 90010
+                  {t('footer.address')}
                 </p>
               </div>
               <div className="flex gap-3">
@@ -56,19 +58,19 @@ const Footer: React.FC = () => {
               </div>
               <Link 
                 to="/contact" 
-                className="inline-flex items-center justify-center w-full h-10 px-5 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-sm mt-2"
+                className="inline-flex items-center justify-center w-full h-10 px-5 rounded-lg bg-primary hover:bg-orange-600 text-white text-sm font-bold transition-all shadow-sm mt-2"
               >
                 <span className="mr-2 material-symbols-outlined text-[18px]">calendar_month</span>
-                Book Appointment
+                {t('nav.bookAppointment')}
               </Link>
             </div>
           </div>
         </div>
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-500">
-          <p>© 2026 Yonsei Chiropractic Clinic. All rights reserved.</p>
+          <p>© 2026 Yonsei Chiropractic Clinic. {t('footer.rights')}</p>
           <div className="flex gap-4">
-            <a className="hover:text-slate-900 dark:hover:text-slate-300" href="#">Privacy Policy</a>
-            <a className="hover:text-slate-900 dark:hover:text-slate-300" href="#">Terms of Service</a>
+            <a className="hover:text-slate-900 dark:hover:text-slate-300" href="#">{t('footer.privacyPolicy')}</a>
+            <a className="hover:text-slate-900 dark:hover:text-slate-300" href="#">{t('footer.termsOfService')}</a>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const About: React.FC = () => {
               Dr. Hyeon Joo Park is one of only a handful of doctors in the United States, and the first and only Korean American, capable of practicing the Palmer Upper Cervical Specific Chiropractic technique.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link to="/contact" className="bg-primary hover:bg-blue-600 text-white text-base font-bold h-12 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center min-w-[160px]">
+              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-12 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center min-w-[160px]">
                 Book Appointment
               </Link>
               <Link to="/techniques/upper-cervical" className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 text-base font-medium h-12 px-6 rounded-lg transition-colors flex items-center justify-center">
@@ -129,10 +129,10 @@ const About: React.FC = () => {
       <section className="w-full bg-primary text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
           <h2 className="text-3xl md:text-4xl font-bold">Trusted Expert Care</h2>
-          <p className="text-blue-100 text-lg max-w-2xl">
+          <p className="text-orange-100 text-lg max-w-2xl">
             Experience the difference of care from a distinguished leader in Palmer Specific Chiropractic.
           </p>
-          <Link to="/contact" className="bg-white text-primary hover:bg-blue-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center">
+          <Link to="/contact" className="bg-white text-primary hover:bg-orange-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center">
             Schedule a Consultation
           </Link>
         </div>

@@ -6,7 +6,7 @@ const CarAccident: React.FC = () => {
     <>
       <section className="py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-widest mb-4 border border-red-100 dark:border-red-900/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-bold uppercase tracking-widest mb-4 border border-orange-100 dark:border-orange-900/30">
             Immediate Attention Required
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8">Car Accidents & Whiplash</h1>
@@ -28,7 +28,7 @@ const CarAccident: React.FC = () => {
                   'Muscular Rigidity', 'Tinnitus (Ear Ringing)', 'Chronic Pain'
                 ].map((symptom) => (
                   <div key={symptom} className="flex items-center gap-2 text-sm font-medium">
-                    <span className="material-symbols-outlined text-red-500 text-sm">warning</span>
+                    <span className="material-symbols-outlined text-orange-500 text-sm">warning</span>
                     {symptom}
                   </div>
                 ))}
@@ -69,7 +69,7 @@ const CarAccident: React.FC = () => {
           </div>
           
           <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-lg">
+            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
               Book Your Post-Accident Exam
             </Link>
           </div>

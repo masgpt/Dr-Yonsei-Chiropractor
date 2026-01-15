@@ -39,7 +39,7 @@ const AboutChiropractic: React.FC = () => {
           </div>
           
           <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-lg">
+            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
               Visit Our Clinic
             </Link>
           </div>

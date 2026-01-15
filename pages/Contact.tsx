@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
                         rows={4}
                       ></textarea>
                     </div>
-                    <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md" type="submit">
+                    <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-orange-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md" type="submit">
                       Submit Request
                     </button>
                   </form>

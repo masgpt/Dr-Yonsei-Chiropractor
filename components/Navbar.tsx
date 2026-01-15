@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from './LanguageToggle';
 
 const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTechniquesOpen, setIsTechniquesOpen] = useState(false);
@@ -35,17 +38,17 @@ const Navbar: React.FC = () => {
   }, []);
 
   const techniques = [
-    { name: 'About Chiropractic', path: '/techniques/about-chiropractic' },
-    { name: 'Subluxation', path: '/techniques/subluxation' },
-    { name: 'Innate Intelligence', path: '/techniques/innate-intelligence' },
-    { name: 'Upper Cervical', path: '/techniques/upper-cervical' },
-    { name: 'Car Accident & Personal Injury', path: '/techniques/car-accident' },
-    { name: 'TMJ', path: '/techniques/tmj' },
+    { name: t('nav.aboutChiropractic'), path: '/techniques/about-chiropractic' },
+    { name: t('nav.subluxation'), path: '/techniques/subluxation' },
+    { name: t('nav.innateIntelligence'), path: '/techniques/innate-intelligence' },
+    { name: t('nav.upperCervical'), path: '/techniques/upper-cervical' },
+    { name: t('nav.carAccident'), path: '/techniques/car-accident' },
+    { name: t('nav.tmj'), path: '/techniques/tmj' },
   ];
 
   const aboutLinks = [
-    { name: 'About Dr. Park', path: '/about' },
-    { name: 'Message From Dr. Park', path: '/message' },
+    { name: t('nav.aboutDrPark'), path: '/about' },
+    { name: t('nav.messageFromDrPark'), path: '/message' },
   ];
 
   return (
@@ -66,7 +69,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className={navLinkClass('/')}>Home</Link>
+            <Link to="/" className={navLinkClass('/')}>{t('nav.home')}</Link>
             
             {/* About Dropdown */}
             <div className="relative" ref={aboutRef}>
@@ -81,7 +84,7 @@ const Navbar: React.FC = () => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
                 }`}
               >
-                About
+                {t('nav.about')}
                 <span className={`material-symbols-outlined text-[18px] transition-transform ${isAboutOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
@@ -116,7 +119,7 @@ const Navbar: React.FC = () => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'
                 }`}
               >
-                Techniques
+                {t('nav.techniques')}
                 <span className={`material-symbols-outlined text-[18px] transition-transform ${isTechniquesOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
@@ -138,15 +141,16 @@ const Navbar: React.FC = () => {
               )}
             </div>
 
-            <Link to="/reviews" className={navLinkClass('/reviews')}>Reviews</Link>
-            <Link to="/contact" className={navLinkClass('/contact')}>Contact</Link>
+            <Link to="/reviews" className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
+            <Link to="/contact" className={navLinkClass('/contact')}>{t('nav.contact')}</Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/contact" className="flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-all focus:ring-2 focus:ring-primary/20">
+            <LanguageToggle />
+            <Link to="/contact" className="flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-sm transition-all focus:ring-2 focus:ring-primary/20">
               <span className="mr-2 material-symbols-outlined text-[18px]">calendar_month</span>
-              <span>Book Appointment</span>
+              <span>{t('nav.bookAppointment')}</span>
             </Link>
           </div>
 
@@ -164,10 +168,10 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#101922] p-4 overflow-y-auto max-h-[calc(100vh-64px)]">
           <nav className="flex flex-col space-y-4">
-            <Link to="/" onClick={toggleMenu} className={navLinkClass('/')}>Home</Link>
+            <Link to="/" onClick={toggleMenu} className={navLinkClass('/')}>{t('nav.home')}</Link>
             
             <div className="flex flex-col space-y-2">
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">About</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">{t('nav.about')}</p>
               {aboutLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -181,7 +185,7 @@ const Navbar: React.FC = () => {
             </div>
             
             <div className="flex flex-col space-y-2">
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">Techniques</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">{t('nav.techniques')}</p>
               {techniques.map((tech) => (
                 <Link
                   key={tech.path}
@@ -194,10 +198,14 @@ const Navbar: React.FC = () => {
               ))}
             </div>
 
-            <Link to="/reviews" onClick={toggleMenu} className={navLinkClass('/reviews')}>Reviews</Link>
-            <Link to="/contact" onClick={toggleMenu} className={navLinkClass('/contact')}>Contact</Link>
+            <Link to="/reviews" onClick={toggleMenu} className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
+            <Link to="/contact" onClick={toggleMenu} className={navLinkClass('/contact')}>{t('nav.contact')}</Link>
+            <div className="pt-2 flex items-center justify-between">
+              <span className="text-sm font-medium text-slate-500">Language / 언어</span>
+              <LanguageToggle />
+            </div>
             <Link to="/contact" onClick={toggleMenu} className="flex items-center justify-center h-10 px-5 rounded-lg bg-primary text-white text-sm font-bold">
-              Book Appointment
+              {t('nav.bookAppointment')}
             </Link>
           </nav>
         </div>

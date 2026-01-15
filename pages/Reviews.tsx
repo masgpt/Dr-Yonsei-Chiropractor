@@ -215,9 +215,9 @@ const Reviews: React.FC = () => {
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-16 px-6 border-b border-slate-100 dark:border-slate-800">
         <div className="max-w-[800px] mx-auto text-center flex flex-col gap-4">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 w-fit mx-auto">
-            <span className="material-symbols-outlined text-primary text-sm">favorite</span>
-            <span className="text-primary text-xs font-bold uppercase tracking-wider">Community Trust</span>
+          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 w-fit mx-auto">
+            <span className="material-symbols-outlined text-yellow-600 dark:text-yellow-500 text-sm">favorite</span>
+            <span className="text-yellow-700 dark:text-yellow-400 text-xs font-bold uppercase tracking-wider">Community Trust</span>
           </div>
           <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
             Patient Stories
@@ -294,7 +294,7 @@ const Reviews: React.FC = () => {
               Join the thousands of patients who have found relief through the Palmer Upper Cervical method.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full max-w-md justify-center">
-              <Link to="/contact" className="flex items-center justify-center rounded-lg bg-primary hover:bg-blue-600 transition-all h-12 px-8 text-white text-base font-bold shadow-lg">
+              <Link to="/contact" className="flex items-center justify-center rounded-lg bg-primary hover:bg-orange-600 transition-all h-12 px-8 text-white text-base font-bold shadow-lg">
                 Book Your Appointment
               </Link>
               <a href="tel:2133815500" className="flex items-center justify-center rounded-lg bg-white/10 border border-white/20 hover:bg-white/20 transition-colors h-12 px-8 text-white text-base font-bold backdrop-blur-sm">

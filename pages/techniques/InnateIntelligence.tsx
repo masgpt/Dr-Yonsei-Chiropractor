@@ -30,8 +30,8 @@ const InnateIntelligence: React.FC = () => {
                   This vital system was the first to develop and began within 18 days of conception.
                 </p>
               </div>
-              <div className="size-32 md:size-48 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-primary text-7xl">auto_awesome</span>
+              <div className="size-32 md:size-48 bg-green-50 dark:bg-green-900/20 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-7xl">auto_awesome</span>
               </div>
             </div>
 
@@ -72,7 +72,7 @@ const InnateIntelligence: React.FC = () => {
           </div>
           
           <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-lg">
+            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
               Unlock Your Highest Potential
             </Link>
           </div>

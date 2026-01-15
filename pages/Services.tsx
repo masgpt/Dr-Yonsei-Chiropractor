@@ -21,7 +21,7 @@ const Services: React.FC = () => {
                     Specializing in the Palmer Upper Cervical Specific Technique (H.I.O) and comprehensive chiropractic services in Los Angeles.
                   </h2>
                 </div>
-                <a href="#treatments" className="z-10 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-lg">
+                <a href="#treatments" className="z-10 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-lg">
                   <span className="truncate">View Specialties</span>
                 </a>
               </div>
@@ -34,7 +34,7 @@ const Services: React.FC = () => {
       <div className="w-full flex justify-center py-10">
         <div className="w-full max-w-[960px] px-4 lg:px-10 flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-semibold">
               <span className="material-symbols-outlined text-[18px]">verified</span>
               Upper Cervical Care
             </div>
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
             </p>
           </div>
           <div className="flex-1 h-64 w-full md:h-auto rounded-xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-8">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-8">
               <div className="flex flex-col items-center">
                 <span className="material-symbols-outlined text-primary text-7xl mb-4">neurology</span>
                 <p className="text-primary font-bold text-xl uppercase tracking-widest">H.I.O Method</p>
@@ -67,7 +67,7 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Service 1 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">settings_accessibility</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
             </div>
             {/* Service 2 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">dentistry</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
             </div>
             {/* Service 3 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">child_care</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -97,7 +97,7 @@ const Services: React.FC = () => {
             </div>
             {/* Service 4 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">car_crash</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -107,7 +107,7 @@ const Services: React.FC = () => {
             </div>
             {/* Service 5 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">medical_services</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -117,7 +117,7 @@ const Services: React.FC = () => {
             </div>
             {/* Service 6 */}
             <div className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow">
-              <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500">
                 <span className="material-symbols-outlined text-2xl">accessibility</span>
               </div>
               <div className="flex flex-col gap-2">
@@ -171,7 +171,7 @@ const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-primary">call</span>
                 (213) 381-5500
               </div>
-              <Link to="/contact" className="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-md">
+              <Link to="/contact" className="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-md">
                 Book Appointment
               </Link>
             </div>
