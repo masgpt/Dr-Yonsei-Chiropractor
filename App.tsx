@@ -8,6 +8,15 @@ import Services from './pages/Services';
 import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import MessageFromDrPark from './pages/MessageFromDrPark';
+
+// Techniques Pages
+import AboutChiropractic from './pages/techniques/AboutChiropractic';
+import InnateIntelligence from './pages/techniques/InnateIntelligence';
+import UpperCervical from './pages/techniques/UpperCervical';
+import CarAccident from './pages/techniques/CarAccident';
+import TMJ from './pages/techniques/TMJ';
+import Subluxation from './pages/techniques/Subluxation';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,9 +48,19 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/message" element={<MessageFromDrPark />} />
           <Route path="/services" element={<Services />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Techniques Routes */}
+          <Route path="/techniques/about-chiropractic" element={<AboutChiropractic />} />
+          <Route path="/techniques/innate-intelligence" element={<InnateIntelligence />} />
+          <Route path="/techniques/upper-cervical" element={<UpperCervical />} />
+          <Route path="/techniques/car-accident" element={<CarAccident />} />
+          <Route path="/techniques/tmj" element={<TMJ />} />
+          <Route path="/techniques/subluxation" element={<Subluxation />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

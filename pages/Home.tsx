@@ -16,17 +16,17 @@ const Home: React.FC = () => {
           </div>
           <div className="relative z-10 px-6 w-full">
             <h1 className="text-4xl font-black tracking-tight text-white leading-tight mb-4">
-              Relief &amp; Recovery Starts Here
+              Upper Cervical Health Care
             </h1>
             <p className="text-lg text-slate-200 mb-8 max-w-md">
-              Expert chiropractic care in Los Angeles tailored to your body's needs. Experience a holistic approach to living pain-free.
+              The first Korean American chiropractic clinic in the United States to specialize in the Palmer Upper Cervical Specific Technique (H.I.O).
             </p>
             <div className="flex flex-col gap-3">
               <Link to="/contact" className="h-12 px-6 rounded-lg bg-primary text-white font-bold flex items-center justify-center">
                 Book Appointment
               </Link>
-              <Link to="/services" className="h-12 px-6 rounded-lg bg-white/10 text-white font-bold border border-white/20 backdrop-blur-sm flex items-center justify-center">
-                Our Services
+              <Link to="/techniques/upper-cervical" className="h-12 px-6 rounded-lg bg-white/10 text-white font-bold border border-white/20 backdrop-blur-sm flex items-center justify-center">
+                Learn More
               </Link>
             </div>
           </div>
@@ -37,15 +37,15 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-6">
               <h1 className="text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                Relief &amp; Recovery Starts Here
+                Upper Cervical Health Care
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-                Expert chiropractic care in Los Angeles tailored to your body's needs. Experience a holistic approach to living pain-free with Dr. Nader Farsar.
+                Yonsei Chiropractic Clinic is the first Korean American chiropractic clinic in the US specializing in the "hole-in-one" method (H.I.O).
               </p>
               <div className="flex flex-wrap gap-3 mt-2">
-                <Link to="/contact" className="h-12 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center min-w-[140px]">
+                <a href="tel:2133815500" className="h-12 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center min-w-[140px]">
                   Call Now
-                </Link>
+                </a>
                 <Link to="/contact" className="h-12 px-6 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700 min-w-[180px]">
                   Request Appointment
                 </Link>
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
                   <div className="w-8 h-8 rounded-full border-2 border-white dark:border-background-dark bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTiBxzYw56CdOrXypz_qix82KnvcJCL9VvI-v8wLOPhKd4f08zzfDtBtgnT6zaDamQeeOHmYN_V6fUtZmB1owh-saFa06itbczl0-ZhkQ_ctYDPsOZU8HSC0Ogn2ceGvN3iCUqZI--jhsnbDeo5g7LTpRv0ILwHmy8iK8ePqNkE-LP61J8SYZk0tTUlvxQC2o8jwgYgQ52bcsFIs-_ZgRtmkw1_y2c4K_5JSsRNFh0tLv9uONeVSTcdTmr9TLU5Pj9MWkvcFIITfeJ')" }}></div>
                   <div className="w-8 h-8 rounded-full border-2 border-white dark:border-background-dark bg-slate-200 flex items-center justify-center text-[10px] font-bold bg-slate-100">+50</div>
                 </div>
-                <p>Trusted by 500+ patients in LA</p>
+                <p>Trusted by thousands of patients since 2015</p>
               </div>
             </div>
             <div className="relative">
@@ -76,8 +76,8 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[28px]">verified_user</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">20+ Years Experience</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Deep expertise in spinal health &amp; rehabilitation.</p>
+                <h3 className="font-bold text-lg text-slate-900 dark:text-white">Palmer Upper Cervical</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Specialized H.I.O method for precise care.</p>
               </div>
             </div>
             <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-3">
@@ -85,8 +85,8 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[28px]">workspace_premium</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">Licensed &amp; Insured</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Fully certified chiropractic care you can trust.</p>
+                <h3 className="font-bold text-lg text-slate-900 dark:text-white">Award Winning</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">2015 Patients' Choice Award in Chiropractic.</p>
               </div>
             </div>
             <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-3">
@@ -94,26 +94,26 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[28px]">self_improvement</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">Holistic Approach</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Treating the root cause, not just the symptoms.</p>
+                <h3 className="font-bold text-lg text-slate-900 dark:text-white">Natural Healing</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Drug-free approach to restore communication.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro / Meet Dr. Farsar */}
+      {/* Intro / Meet Dr. Park */}
       <section className="py-16 md:py-24 bg-background-light dark:bg-background-dark">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-xl overflow-hidden bg-cover bg-center border-4 border-white dark:border-slate-800 shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQSr_O2NPyXmGNmak0sQWePeKcPm5Fp8KcaGsGtjiKiX1P10m3qsdwqG5ME8rFoqeaOZirVMP-q1kAeqVCNTBAaGkKFw-96ns5-iAXMMWzMYwG7f1iAXvjS4RDRKfqbdfqFyBrg0FgNxFtJYNYAT8A3HqxdObK7IBZiJqCnz9eL1gUCr_eAodACUBtu1quFpXlj_dt-34gj6P5JKQWDBD9kUyqVFBTze1Y-qCjdREc1hcjCaPT-exB0hOgwuZ0Wbu1VKuM0zaUrWWK')" }}></div>
+            <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-xl overflow-hidden bg-cover bg-center border-4 border-white dark:border-slate-800 shadow-lg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1000&auto=format&fit=crop')" }}></div>
             <div className="flex flex-col text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
                 <span className="px-2 py-1 rounded bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold uppercase tracking-wider">Meet The Doctor</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3">Dr. Nader Farsar, DC</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3">Dr. Hyeon Joo Park</h2>
               <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                "I am dedicated to providing personalized chiropractic care and holistic health solutions to help you live pain-free. My goal is to restore your body's natural balance so you can return to the activities you love."
+                "We’re happy that you have chosen to be part of those who are not afraid to try a new method in regaining lost health. My mission is to use my professional expertise and knowledge to help patients receive exceptional care through the Palmer upper cervical method."
               </p>
               <div>
                 <Link to="/about" className="text-primary font-bold hover:underline inline-flex items-center gap-1 group">
@@ -130,17 +130,17 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-24 bg-white dark:bg-background-dark">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Our Services</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">Comprehensive care plans designed to treat pain, improve mobility, and enhance overall wellness.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Our Specialties</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">Specialized chiropractic care ranging from Upper Cervical specific techniques to personal injury recovery.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
               <div className="h-48 bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYJkFVchDwUDpuvYTHDMX7wcB2o4-KRkHS66YUphI15fxlOZQECfwLgzMKfdElT-W9iSdIY3q48gUCSOiMfqtTSrcbwHREpbS2CjWPSpDQ0vHMrEdZQmj8DTgKSRtABHXPPFkWjYx2zZrCr5ujoLJd9UDsc62-QAZD7Zq_2n4r4ZAT1zCdVSF01umEzn9IkV3T80CS52luafxQx4B4vabbBLJ4iPFY16_Im0Bfme2tWGEM0EzBZehYYx5sN7L6YAb0lkfWxzgDtmFH')" }}></div>
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Spinal Adjustments</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">Gentle manipulation to correct alignment, relieve pain, and improve physical function.</p>
-                <Link to="/services" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Upper Cervical (H.I.O)</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">A scientifically proven specialty designed to restore head/neck alignment and re-activate brain-to-body communication.</p>
+                <Link to="/techniques/upper-cervical" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
@@ -149,9 +149,9 @@ const Home: React.FC = () => {
             <div className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
               <div className="h-48 bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTjhtTODS6SjxrML8dTUejNLNDLgJcV45vBggsscxieRdPgVE7xd4VMDtQ8HofIE3FDsW_YqZkCKWd4OfnCrlXSEUNe1rAGy22F4z_g_fjodEc7s6jXpd2sM40wFgfFpN87wrqIKXypZd5E0twvw-qm15nJDgJb5_jKEHg--faP0Ih9bb0LS1NoZuRSll2ZUv0yWJa4-75qxwOvzmgOn8dMupQ7ID08Gc8jd5DSQdQMKaYSnYIKVxs-8SWA4kKuFgUIfD-CHhBblYH')" }}></div>
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Massage Therapy</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">Therapeutic massage to reduce muscle tension, improve circulation, and aid recovery.</p>
-                <Link to="/services" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">TMJ/TMD &amp; Pediatric</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">Expert adjustments for Temporomandibular Joint Disorders and specialized care for pre/post-natal and pediatric patients.</p>
+                <Link to="/techniques/tmj" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
@@ -160,18 +160,13 @@ const Home: React.FC = () => {
             <div className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
               <div className="h-48 bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0bD2IlNX-ZvcW5TsKJzlHegY-bx7Qgy5OSerdPMAzcrUi3cg2Xy2riDRNdUsVFm4qBcBXbCGNArl4l9obiP6j06Z1AMS7g9gEzytEgk9j_NnC7odi60wbNbmYNDL9-Wj85EPg1atCf7BsPHO277o3KHXr2KoWhlSYeZjksd1Xd0t-tTaAfoy7bgBuyHFdjN2wnhn2n96ryug0j9jxwVNvt6I_NZ1jfri1RwBgo4rJby495mj4ygJXb947gmBmXPwKP8Rc4HZPL3hh')" }}></div>
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Injury Rehabilitation</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">Specialized programs for sports injuries, auto accidents, and chronic pain management.</p>
-                <Link to="/services" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Car Accidents &amp; Injury</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">Comprehensive care for personal injuries and automobile accidents to help you regain your mobility and health.</p>
+                <Link to="/techniques/car-accident" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="mt-12 text-center">
-            <Link to="/services" className="inline-flex items-center justify-center h-12 px-8 rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-transparent hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-slate-900 dark:text-white font-bold transition-all">
-              View All Services
-            </Link>
           </div>
         </div>
       </section>
@@ -196,12 +191,12 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"I walked in with severe lower back pain and left feeling relief for the first time in months. Dr. Farsar is incredibly knowledgeable and kind."</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"Before I received any treatments, I suffered a lot with frequent headaches. After receiving treatment my headaches disappeared for good and it was hard for me to believe that it was the power of the adjustment."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-slate-200 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTHufw5JF5D5b-zt3l8z8Q9s7xMKJ45MhXutwgli7n_AnIEjFI5XevRg5v2YcaozO5QnEs-aHPnjIHH2z6tVoGUhEhbEU-2_a0DavA-pv25RrBQCVF3GoGr4bs5pU6QCb_reHHN80EXnOecZ0iMoKHFpOKm_FvujVoncsFylDT-Y21PNS-JzEAY55YrcjFs0cA231VJA8yKlIuTE8jMkiW6-gqjNBN7FLmSovUreHrRZJzGOcw8XQbn7_VPwZWEjkVZwJAsGQrVwsB')" }}></div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">DH</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">Sarah Jenkins</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">Patient since 2021</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm">Danbi H.</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-500">Los Angeles, CA</p>
                 </div>
               </div>
             </div>
@@ -214,12 +209,12 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"The best chiropractor in LA! The staff is friendly, the office is clean, and my migraines have significantly decreased since starting treatment."</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"Within two months, my headaches were completely gone. After having experienced such agony and pain every single day for two years straight, this was truly a miracle for me!!!!!!"</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-slate-200 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT44HBVIIA8-1w9-O-Qu2OWN0R0pFI48Ulw3fhCFmHPtyXBLq3CUBK3gWk65C6Hp4r6s9var9spruWkqkp861oJK7-yBTEqvFMTMXTFmqKmRiYSK7gdvRTnd5PbVifg1nZgeAZvo_AXl_Su_e861wBK6RsCTxiGxPEy1BmHd4WUZUmguQ2yQUlNX-bYZSmTs75_uVhiLQZR7hEE1SaH2t4dyKQt9HSFsCZ1V2PkgZhxP6LDPRUSttlYhx1iMRR6REOJq7R94TTBt2g')" }}></div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">CJ</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">Michael Thompson</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">Patient since 2022</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm">Christina J.</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-500">Los Angeles, CA</p>
                 </div>
               </div>
             </div>
@@ -232,12 +227,12 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current">star</span>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"Professional and thorough. Dr. Farsar takes the time to explain everything. I highly recommend him to anyone with sports injuries."</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">"My period came back to normal within these two weeks and my TMJ is basically gone. I can open my mouth without my jaw getting stuck and my migraines have disappeared as well. Dr. Park really knows what she’s doing!"</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-slate-200 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEzZFRm1E-6gBYlZ72Lj2-D0fwIVIPhg8tyDpmJQYyvE2raIzbqelaFRNwmOQkrovtwOtt8N7EtioP6dx13wj5YWsTQf63gCOVgNRbAHdmmqzVLwOiatvl6l5pazFLEZ2SRIx9az_PLlmfsDICv4yE7kaRby3ro2j6B60JzrUYXxz0UNI06CsTOddcXiLt3bRbGEfxw5sh_3_RCkaimBfR2swPcXAZnzGcDo8sppxuSopsWbVajLhrjRSRLWOJthcb-Ek8ub8kqKtm')" }}></div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">JP</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">David Rivera</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">Patient since 2023</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm">Jenny P.</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-500">Northridge, CA</p>
                 </div>
               </div>
             </div>
@@ -251,7 +246,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="flex flex-col justify-center">
               <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-6">Visit Our Office</h2>
-              <p className="text-slate-600 dark:text-slate-400 mb-8">Conveniently located in Los Angeles, we offer flexible hours to accommodate your schedule. Free parking is available for all patients.</p>
+              <p className="text-slate-600 dark:text-slate-400 mb-8">Conveniently located in the heart of Los Angeles, we offer expert care with a focus on Palmer Upper Cervical techniques. Free parking validation available.</p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary">
@@ -259,7 +254,7 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white mb-1">Address</h4>
-                    <p className="text-slate-600 dark:text-slate-400">15720 Ventura Blvd, Suite 504<br/>Encino, CA 91436</p>
+                    <p className="text-slate-600 dark:text-slate-400">3200 Wilshire Blvd, Suite 302<br/>Los Angeles, CA 90010</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -269,10 +264,10 @@ const Home: React.FC = () => {
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white mb-1">Hours</h4>
                     <p className="text-slate-600 dark:text-slate-400 text-sm">
-                      <span className="block"><span className="font-medium w-24 inline-block">Monday:</span> Closed</span>
-                      <span className="block"><span className="font-medium w-24 inline-block">Tue - Fri:</span> 10:00 AM - 6:00 PM</span>
-                      <span className="block"><span className="font-medium w-24 inline-block">Saturday:</span> 10:00 AM - 2:00 PM</span>
-                      <span className="block"><span className="font-medium w-24 inline-block">Sunday:</span> Closed</span>
+                      <span className="block"><span className="font-medium w-32 inline-block">Mon, Tue, Wed, Fri:</span> 9:00 AM - 6:00 PM</span>
+                      <span className="block"><span className="font-medium w-32 inline-block">Thursday:</span> 2:00 PM - 6:00 PM</span>
+                      <span className="block"><span className="font-medium w-32 inline-block">Saturday:</span> 9:00 AM - 1:00 PM</span>
+                      <span className="block"><span className="font-medium w-32 inline-block">Sunday:</span> Closed</span>
                     </p>
                   </div>
                 </div>
@@ -286,9 +281,9 @@ const Home: React.FC = () => {
             </div>
             <div className="h-[400px] w-full bg-slate-200 rounded-2xl overflow-hidden shadow-inner relative">
               <iframe 
-                title="Map showing the location of the chiropractic clinic in Encino"
+                title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
                 className="w-full h-full border-0"
-                src="https://maps.google.com/maps?q=15720%20Ventura%20Blvd%20%23504%2C%20Encino%2C%20CA%2091436&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

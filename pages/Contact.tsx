@@ -7,7 +7,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     // Simulate form submission
     setIsSubmitted(true);
-    // Reset after a few seconds if desired, or keep the success message
   };
 
   return (
@@ -15,9 +14,9 @@ const Contact: React.FC = () => {
       <main className="flex-grow w-full max-w-[1280px] mx-auto px-4 md:px-10 lg:px-40 py-8">
         {/* Page Heading */}
         <div className="flex flex-col gap-3 mb-10">
-          <h1 className="text-text-main dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Visit Our Clinic</h1>
+          <h1 className="text-text-main dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Get in Touch</h1>
           <p className="text-text-secondary dark:text-slate-400 text-lg font-normal leading-normal max-w-2xl">
-            Expert Chiropractic Care in Los Angeles. We are dedicated to your healing journey with a calm, professional environment tailored to your needs.
+            Yonsei Chiropractic Clinic is dedicated to helping you reach your optimal health. Contact us today to schedule your consultation with Dr. Hyeon Joo Park.
           </p>
         </div>
 
@@ -36,25 +35,29 @@ const Contact: React.FC = () => {
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div className="flex flex-1 flex-col justify-center">
-                  <p className="text-text-main dark:text-white text-base font-bold leading-normal">15720 Ventura Blvd, Suite 504</p>
-                  <p className="text-text-secondary dark:text-slate-400 text-sm font-normal leading-normal">Encino, CA 91436</p>
+                  <p className="text-text-main dark:text-white text-base font-bold leading-normal">3200 Wilshire Blvd, Suite 302</p>
+                  <p className="text-text-secondary dark:text-slate-400 text-sm font-normal leading-normal">Los Angeles, CA 90010</p>
                 </div>
               </div>
               {/* Phone Item */}
-              <div className="flex gap-4 px-6 py-5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+              <div className="flex gap-4 px-6 py-5 border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                 <div className="text-text-main dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 shrink-0 size-12">
                   <span className="material-symbols-outlined">call</span>
                 </div>
                 <div className="flex flex-1 flex-col justify-center">
-                  <p className="text-text-main dark:text-white text-base font-bold leading-normal">(818) 886-1406</p>
-                  <p className="text-text-secondary dark:text-slate-400 text-sm font-normal leading-normal">Call us for immediate assistance</p>
+                  <p className="text-text-main dark:text-white text-base font-bold leading-normal">(213) 381-5500</p>
+                  <p className="text-text-secondary dark:text-slate-400 text-sm font-normal leading-normal">Call or Text for appointments</p>
                 </div>
               </div>
-              <div className="p-6 pt-2">
-                <button className="w-full flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-4 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md">
-                  <span className="material-symbols-outlined text-[20px]">phone_in_talk</span>
-                  <span className="truncate">Call Now</span>
-                </button>
+              {/* Email Item */}
+              <div className="flex gap-4 px-6 py-5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                <div className="text-text-main dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 shrink-0 size-12">
+                  <span className="material-symbols-outlined">mail</span>
+                </div>
+                <div className="flex flex-1 flex-col justify-center">
+                  <p className="text-text-main dark:text-white text-base font-bold leading-normal">yonseichiropractic@gmail.com</p>
+                  <p className="text-text-secondary dark:text-slate-400 text-sm font-normal leading-normal">Email us anytime</p>
+                </div>
               </div>
             </div>
 
@@ -64,18 +67,18 @@ const Contact: React.FC = () => {
                 <h2 className="text-text-main dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Hours of Operation</h2>
               </div>
               <div className="p-6 pt-2">
-                <div className="grid grid-cols-[30%_1fr] gap-x-6">
+                <div className="grid grid-cols-[40%_1fr] gap-x-6">
                   <div className="col-span-2 grid grid-cols-subgrid border-b border-slate-100 dark:border-slate-800 py-4 last:border-0">
-                    <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Monday</p>
-                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right text-red-500">Closed</p>
+                    <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Mon, Tue, Wed, Fri</p>
+                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right">9:00 AM - 6:00 PM</p>
                   </div>
                   <div className="col-span-2 grid grid-cols-subgrid border-b border-slate-100 dark:border-slate-800 py-4 last:border-0">
-                    <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Tue - Fri</p>
-                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right">10:00 AM - 6:00 PM</p>
+                    <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Thursday</p>
+                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right">2:00 PM - 6:00 PM</p>
                   </div>
                   <div className="col-span-2 grid grid-cols-subgrid border-b border-slate-100 dark:border-slate-800 py-4 last:border-0">
                     <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Saturday</p>
-                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right">10:00 AM - 2:00 PM</p>
+                    <p className="text-text-main dark:text-white text-sm font-bold leading-normal text-right">9:00 AM - 1:00 PM</p>
                   </div>
                   <div className="col-span-2 grid grid-cols-subgrid py-4">
                     <p className="text-text-secondary dark:text-slate-400 text-sm font-medium leading-normal">Sunday</p>
@@ -91,9 +94,9 @@ const Contact: React.FC = () => {
             {/* Map Embed */}
             <div className="w-full h-[300px] lg:h-[400px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative">
               <iframe 
-                title="Map showing the location of the chiropractic clinic in Encino"
+                title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
                 className="w-full h-full border-0"
-                src="https://maps.google.com/maps?q=15720%20Ventura%20Blvd%20%23504%2C%20Encino%2C%20CA%2091436&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -103,8 +106,8 @@ const Contact: React.FC = () => {
             {/* Contact Form */}
             <div className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex-1">
               <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800">
-                <h2 className="text-text-main dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Send Us a Message</h2>
-                <p className="text-text-secondary dark:text-slate-400 text-sm mt-1">Have a question? Fill out the form below and we'll get back to you shortly.</p>
+                <h2 className="text-text-main dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Request Appointment</h2>
+                <p className="text-text-secondary dark:text-slate-400 text-sm mt-1">Leave your details and we'll contact you to confirm a time.</p>
               </div>
               <div className="p-6 md:p-8">
                 {isSubmitted ? (
@@ -112,15 +115,15 @@ const Contact: React.FC = () => {
                     <div className="size-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mb-2">
                       <span className="material-symbols-outlined text-4xl">check</span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Message Sent!</h3>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Request Sent!</h3>
                     <p className="text-slate-600 dark:text-slate-400 max-w-sm">
-                      Thank you for contacting us. Our team will review your message and get back to you within 24 hours.
+                      Thank you for contacting us. We will get back to you shortly to schedule your appointment.
                     </p>
                     <button 
                       onClick={() => setIsSubmitted(false)}
                       className="mt-4 text-primary font-bold hover:underline"
                     >
-                      Send another message
+                      Send another request
                     </button>
                   </div>
                 ) : (
@@ -128,50 +131,38 @@ const Contact: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-text-main dark:text-slate-200 text-sm font-bold" htmlFor="name">Full Name</label>
-                        <div className="relative">
-                          <input 
-                            className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
-                            id="name" 
-                            required
-                            placeholder="John Doe" 
-                            type="text" 
-                          />
-                          <span className="material-symbols-outlined absolute right-4 top-3 text-slate-400">person</span>
-                        </div>
+                        <input 
+                          className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
+                          id="name" 
+                          required
+                          placeholder="John Doe" 
+                          type="text" 
+                        />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-text-main dark:text-slate-200 text-sm font-bold" htmlFor="phone">Phone Number</label>
-                        <div className="relative">
-                          <input 
-                            className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
-                            id="phone" 
-                            required
-                            placeholder="(555) 000-0000" 
-                            type="tel" 
-                          />
-                          <span className="material-symbols-outlined absolute right-4 top-3 text-slate-400">phone</span>
-                        </div>
+                        <input 
+                          className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
+                          id="phone" 
+                          required
+                          placeholder="(555) 000-0000" 
+                          type="tel" 
+                        />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-text-main dark:text-slate-200 text-sm font-bold" htmlFor="message">Message</label>
+                      <label className="text-text-main dark:text-slate-200 text-sm font-bold" htmlFor="message">How can we help?</label>
                       <textarea 
                         className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-slate-400" 
                         id="message" 
                         required
-                        placeholder="How can we help you today?" 
+                        placeholder="Tell us about your symptoms or preferred appointment time..." 
                         rows={4}
                       ></textarea>
                     </div>
-                    <div className="flex items-center justify-between pt-2">
-                      <p className="text-xs text-text-secondary dark:text-slate-500 hidden md:block">
-                        <span className="material-symbols-outlined text-[14px] align-text-bottom mr-1">lock</span>
-                        Your information is secure and encrypted.
-                      </p>
-                      <button className="w-full md:w-auto min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md" type="submit">
-                        Send Message
-                      </button>
-                    </div>
+                    <button className="w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md" type="submit">
+                      Submit Request
+                    </button>
                   </form>
                 )}
               </div>
