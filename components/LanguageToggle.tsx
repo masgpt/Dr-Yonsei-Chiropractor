@@ -4,30 +4,31 @@ import { useTranslation } from 'react-i18next';
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const languages = ['en', 'ko', 'es'];
-  const labels: Record<string, string> = {
-    en: 'KO',
-    ko: 'ES',
-    es: 'EN'
-  };
+  const languages = [
+    { code: 'en', label: 'EN' },
+    { code: 'ko', label: 'KO' },
+    { code: 'es', label: 'ES' },
+  ];
 
-  const toggleLanguage = () => {
-    const currentIndex = languages.indexOf(i18n.language);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    i18n.changeLanguage(languages[nextIndex]);
-  };
+  const currentLanguage = i18n.language.split('-')[0];
 
   return (
-    <button
-      onClick={toggleLanguage}
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm"
-      aria-label="Toggle language"
-    >
-      <span className="material-symbols-outlined text-[18px]">language</span>
-      <span className="text-sm font-bold tracking-tight">
-        {i18n.language.toUpperCase()}
-      </span>
-    </button>
+    <div className="flex items-center p-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-inner w-fit">
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => i18n.changeLanguage(lang.code)}
+          className={`
+            px-3 py-1 rounded-full text-[11px] font-bold tracking-tight transition-all duration-200 min-w-[40px]
+            ${currentLanguage === lang.code 
+              ? 'bg-white dark:bg-slate-600 text-primary shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-500/50' 
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'}
+          `}
+        >
+          {lang.label}
+        </button>
+      ))}
+    </div>
   );
 };
 

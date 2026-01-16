@@ -1,48 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Subluxation: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <section className="py-16 md:py-24 px-6 bg-white dark:bg-slate-900">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 uppercase">Subluxation</h1>
-          <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300 max-w-none">
-            <p className="text-xl font-medium text-slate-800 dark:text-slate-200 mb-8">
-              Subluxation is when the spinal bones become slightly dislocated, developing on the nerves, resulting in a disruption of the natural flow of signals between the body and the brain.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 sm:mb-8 uppercase leading-tight">{t('techniques.subluxation.title')}</h1>
+          <div className="prose prose-sm sm:prose-base md:prose-lg dark:prose-invert text-slate-600 dark:text-slate-300 max-w-none">
+            <p className="text-lg sm:text-xl font-medium text-slate-800 dark:text-slate-200 mb-6 sm:mb-8 leading-relaxed">
+              {t('techniques.subluxation.p1')}
             </p>
             
             <p className="mb-6">
-              One of the World Health Organization’s (WHO) main principle is that “(h)ealth is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.” This is very true in most cases. Just because a person does not feel pain or have any diagnoses of disease, it does not mean they are 100% in good condition.
+              {t('techniques.subluxation.p2')}
             </p>
 
-            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 mb-12">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">The Silent Progress of Illness</h3>
+            <div className="bg-slate-50 dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-100 dark:border-slate-700 mb-10 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">{t('techniques.subluxation.silent.title')}</h3>
               <p className="mb-4">
-                Our body is made up of neurons, in which 67% of them are efferent nerves. These nerves do not send immediate pain signals until significant amount of damage is present.
+                {t('techniques.subluxation.silent.p1')}
               </p>
               <p className="font-bold text-primary">
-                Therefore, even without pain there can be an organ disorder in progress.
+                {t('techniques.subluxation.silent.p2')}
               </p>
             </div>
 
             <p className="mb-6">
-              Without knowing it, your body may have high blood pressure, arthritis may be in progress, or cancer cells may be multiplying. If the flow of signals is blocked and nerves have pressure put on them, the result is failure in function, leading to illnesses. It is a misconception that illnesses happen immediately. However, it takes a while before most serious illnesses steadily display themselves.
+              {t('techniques.subluxation.p3')}
             </p>
 
-            <p className="mb-12">
-              The body’s nerves are put under pressure over a long period of time and in the end start to show symptoms of pain. We are always worried and focused on the individual organs in our body and trying to take away the pain immediately if there is a disturbance.
+            <p className="mb-10 sm:mb-12">
+              {t('techniques.subluxation.p4')}
             </p>
 
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Targeting the Cause</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">{t('techniques.subluxation.cause.title')}</h3>
             <p className="mb-6">
-              However, it is necessary to first target the cause. The real source lies within the alignment of the spine and the nerve signals that are being sent out.
+              {t('techniques.subluxation.cause.p1')}
             </p>
           </div>
           
-          <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
-              Get an Evaluation
+          <div className="mt-12 sm:mt-16 text-center">
+            <Link to="/contact" className="inline-flex items-center justify-center w-full sm:w-auto h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
+              {t('techniques.subluxation.cta')}
             </Link>
           </div>
         </div>

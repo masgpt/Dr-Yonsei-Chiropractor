@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -9,6 +10,8 @@ import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import MessageFromDrPark from './pages/MessageFromDrPark';
+import Accessibility from './pages/Accessibility';
+import SkipToContent from './components/SkipToContent';
 
 // Techniques Pages
 import AboutChiropractic from './pages/techniques/AboutChiropractic';
@@ -18,21 +21,50 @@ import CarAccident from './pages/techniques/CarAccident';
 import TMJ from './pages/techniques/TMJ';
 import Subluxation from './pages/techniques/Subluxation';
 
-const ScrollToTop = () => {
+const Layout = ({ children }: { children?: React.ReactNode }) => {
+  const mainRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+
+  const { t } = useTranslation();
+  const [announcement, setAnnouncement] = React.useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+    // Move focus to main content on route change for accessibility
+    if (mainRef.current) {
+      // Use a small timeout to ensure content is rendered
+      const timeoutId = setTimeout(() => {
+        mainRef.current?.focus();
+        
+        // Announce route change
+        const pageTitle = document.title;
+        setAnnouncement(t('accessibility.navigatedTo', { title: pageTitle }));
+      }, 100);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [pathname, t]);
 
-  return null;
-};
-
-const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+      <SkipToContent />
       <Navbar />
-      <main className="flex-grow w-full flex flex-col">
+      
+      {/* Route Announcement Region */}
+      <div 
+        className="sr-only" 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+      >
+        {announcement}
+      </div>
+
+      <main 
+        id="main-content" 
+        ref={mainRef} 
+        tabIndex={-1} 
+        className="flex-grow w-full flex flex-col outline-none pt-[136px] sm:pt-[104px]"
+      >
         {children}
       </main>
       <Footer />
@@ -43,7 +75,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -52,6 +83,7 @@ const App: React.FC = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           
           {/* Techniques Routes */}
           <Route path="/techniques/about-chiropractic" element={<AboutChiropractic />} />

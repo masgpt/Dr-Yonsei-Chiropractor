@@ -1,0 +1,519 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "aboutDrPark": "About Dr. Park",
+    "messageFromDrPark": "Message From Dr. Park",
+    "techniques": "Techniques",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "bookAppointment": "Book Appointment",
+    "language": "Language",
+    "aboutChiropractic": "About Chiropractic",
+    "subluxation": "Subluxation",
+    "innateIntelligence": "Innate Intelligence",
+    "upperCervical": "Upper Cervical",
+    "carAccident": "Car Accident & Personal Injury",
+    "tmj": "TMJ"
+  },
+  "home": {
+    "hero": {
+      "title": "Upper Cervical Health Care",
+      "description": "The first Korean American chiropractic clinic in the United States to specialize in the Palmer Upper Cervical Specific Technique (H.I.O).",
+      "descriptionDesktop": "Yonsei Chiropractic Clinic is the first Korean American chiropractic clinic in the US specializing in the \"hole-in-one\" method (H.I.O).",
+      "callNow": "Call Now",
+      "requestAppointment": "Request Appointment",
+      "bookAppointment": "Book Appointment",
+      "learnMore": "Learn More",
+      "trustedBy": "Trusted by thousands of patients since 2015"
+    },
+    "trustStrip": {
+      "palmerTitle": "Palmer Upper Cervical",
+      "palmerDesc": "Specialized H.I.O method for precise care.",
+      "awardTitle": "Award Winning",
+      "awardDesc": "2015 Patients' Choice Award in Chiropractic.",
+      "healingTitle": "Natural Healing",
+      "healingDesc": "Drug-free approach to restore communication."
+    },
+    "meetDoctor": {
+      "badge": "Meet The Doctor",
+      "name": "Dr. Hyeon Joo Park",
+      "quote": "\"We’re happy that you have chosen to be part of those who are not afraid to try a new method in regaining lost health. My mission is to use my professional expertise and knowledge to help patients receive exceptional care through the Palmer upper cervical method.\"",
+      "readBio": "Read Full Bio"
+    },
+    "services": {
+      "title": "Our Specialties",
+      "description": "Specialized chiropractic care ranging from Upper Cervical specific techniques to personal injury recovery.",
+      "upperCervicalTitle": "Upper Cervical (H.I.O)",
+      "upperCervicalDesc": "A scientifically proven specialty designed to restore head/neck alignment and re-activate brain-to-body communication.",
+      "tmjTitle": "TMJ/TMD & Pediatric",
+      "tmjDesc": "Expert adjustments for Temporomandibular Joint Disorders and specialized care for pre/post-natal and pediatric patients.",
+      "injuryTitle": "Car Accidents & Injury",
+      "injuryDesc": "Comprehensive care for personal injuries and automobile accidents to help you regain your mobility and health.",
+      "learnMore": "Learn More"
+    },
+    "reviews": {
+      "title": "Patient Stories",
+      "description": "See what our patients in Los Angeles have to say about their recovery.",
+      "readAll": "Read All Reviews",
+      "items": {
+        "review1": "\"Before I received any treatments, I suffered a lot with frequent headaches. After receiving treatment my headaches disappeared for good and it was hard for me to believe that it was the power of the adjustment.\"",
+        "review2": "\"Within two months, my headaches were completely gone. After having experienced such agony and pain every single day for two years straight, this was truly a miracle for me!!!!!!\"",
+        "review3": "\"My period came back to normal within these two weeks and my TMJ is basically gone. I can open my mouth without my jaw getting stuck and my migraines have disappeared as well. Dr. Park really knows what she’s doing!\""
+      }
+    }
+  },
+  "footer": {
+    "description": "Specializing in Palmer Upper Cervical Specific Technique to restore your body's natural healing power.",
+    "quickLinks": "Quick Links",
+    "techniques": "Techniques",
+    "contactInfo": "Contact Info",
+    "email": "Email",
+    "address": "3200 Wilshire Blvd, Suite 302, Los Angeles, CA 90010",
+    "rights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "accessibility": "Accessibility",
+    "emailLabel": "Email"
+  },
+  "common": {
+    "location": "Los Angeles, CA",
+    "doctorTitle": "Palmer Upper Cervical Specific Chiropractor"
+  },
+  "reviews": {
+    "hero": {
+      "badge": "Community Trust",
+      "title": "Patient Stories",
+      "description": "Real stories from our patients about their journey to recovery and wellness."
+    },
+    "cta": {
+      "title": "Start Your Own Recovery Story",
+      "description": "Join the thousands of patients who have found relief through the Palmer Upper Cervical method.",
+      "book": "Book Your Appointment",
+      "call": "Call Us Today"
+    },
+    "items": {
+      "review1": {
+        "text": "Before I received any treatments, I suffered a lot with frequent headaches. The massive headache would move on to my eyes and then later I would even feel nauseous. I would always have Advil or Tylenol with me because I had such frequent headaches. After receiving treatment my headaches disappeared for good and it was hard for me to believe that it was the power of the adjustment. Even pain killers wouldn’t get rid of my headaches but through Dr. Parks’s adjustment my headache is gone for good. Thank you so much Dr. Park~~~^^"
+      },
+      "review2": {
+        "text": "Firstly, Dr. Park’s treatment has truly turned my life around. I am a young woman, 23 years of age, and I had been suffering from severe, chronic headaches, neck aches and back aches every single day for two full years. Each day was literally a battle for me and I was in so much constant pain that it started to affect my work, relationships, social life and just my spirit in general. Absolutely debilitating. I had seen several different \"medical\" doctors and even met with a headache specialist. I was told that there were no significant remarks or findings in regards to my MRIs and CT scans of my brain and back. They couldn’t find anything and could not help me locate the source of my severe pain. I was put on muscle relaxers, steroids, strong pain killers…nothing worked. I still suffered every single day of my life.\n\nMy father advised me to go see Dr. Park and get a consultation with her. That same week I went in to see her. I actually had a spinal tap scheduled. The doctors, at this point, wanted to draw fluid from my brain since they could not figure out what was wrong with me. As you know, there are many risks involved with this procedure and I was honestly scared out of my mind but was also willing to go through with it at that point…hoping they would find something.\n\nAnyhow, it was when I met with Dr. Park and she reviewed my xrays that I found out that the trauma from a car accident I was involved in a few years back was what was causing all of my pain and anguish. She carefully explained to me how my body (namely my pelvis, back and neck) were misaligned and that this was causing my head to hurt. Although I have to admit that I was skeptical at that point, since I had already been to so many different doctors, I knew I needed to give this a shot since I had not sought chiropractic treatment for my issues prior to seeing Dr. Park. So I went ahead and started treatment with her, twice a week. Within a couple of weeks, I already felt my head get lighter and the headaches dissipate. After about 3 months, my back and neck pain were almost gone as well. It has been a year since I started treatment and I am very happy to say that I am PAIN FREE! Dr. Park and the Palmer Upper Cervical method truly gave me my life back."
+      },
+      "review3": {
+        "text": "No period came back to normal by upper cervical adjustment! I am a 22-year old, young female. Since I started my period when I was 5th grade, I had never had a period on regular cycle. I had my period in two months or in six months. As I grew up, my irregular period increasingly raised the concern to me and my family. Finally, my mom took me to see a gynecologist for checkup. The doctor told me that my hormones are imbalanced and prescribed me birth control pills. I took it every day and my period came back. It seemed to work then I stopped taking pills. Once I stopped my period pills, my period went back to no cycle again. I also suffered from side effects of birth control pills such as massive acnes on my face. I had more acne even after I stopped taking pills. Thereafter, I had not had my period for a year. While I was seeking safe and effective methods, I heard of very good reputation about Dr. Park’s upper cervical technique and I decided to give it a try in July, 2011. Dr. Park explained how important upper cervical (C1, C2) is, where all the nervous system pass through. She said the nervous system is connected to all of my body and it controls everything in my body. She even told me my imbalanced hormonal system is affected by malfunctioned nervous system which has pressure on by misaligned upper cervical vertebrae. I heard Dr. Park is the only upper cervical doctor who can use HIO technique made by Dr. B. J. Palmer. She adjusted on my upper cervical by hand only. She did not use any other modalities or any other drug. It seemed interesting to me, but at first I doubted the how effective it would be. I went to see Dr. Park twice a week and for a while, I did not feel any changes in my body. However, I was so surprised when I had my period came BACK after about 2months. It was so amazing to me and my family that I started my period again without pills but only by upper cervical adjustment! Since then, I have period on a regular cycle and am very healthy with no acnes on my face! Upper cervical chiropractic really works!"
+      },
+      "review4": {"text": "I have TMJ and ever since I came here things have gotten a lot better with my jaw. Let’s hope it stays that way!"},
+      "review5": {"text": "Dr. Park HEALED me! She’s a miracle worker. I had multiple discs dislocated in my neck because somebody decided they knew how to fix the crick in my neck by grabbing my neck and TURNING it. Thinking it was muscular, I put salon pas on it and was bed-ridden praying for something miraculous to happen…." },
+      "review6": {"text": "Snowboarding had taken a toll on my body aspirin couldnt relieve. When I went to some other chiropractor he only seemed to make it worse. When I came here she diagnosed what was wrong with me and got me back in shape ahead of schedule…This place is NECESSARY" },
+      "review7": {"text": "It is the best!! I have thyroid, cholesterol, neck disk 1&2 out of place, and irregular menstrual days. Been going for 3 months and now my thyroid, cholesterol and menstrual days are all normal. I also sleep really well now. Before I got all these problems fixed I was just not in a good mood…" },
+      "review8": {"text": "Came in after a bad accident where I experienced severe pain from my left shoulder blade to my chest. It was painful to do pretty much everything. Now I’m completing my sessions and am as good as new. I definately recommend this place very flexible appointments." },
+      "review9": {"text": "Supposedly this is the only chiropractic clinic in the area that does things old school. The doctor manually adjusts your bones with her hands, instead of using massaging tools to \"align\" your bones. The first time you arrive, you receive a treatment right away. You have fill out a long form that asks you about…" },
+      "review10": {"text": "My motherlate 70s, has spinal stenosis and she was on bed rest suffering from sciatica. With Dr Park treatments, she was able to sit up after a couple of weeks. After 24 treatments, my mother can walk around with her walker." },
+      "review11": {"text": "Made a believer out of me. I am somewhat of a skeptic when it comes to back cracks, and when I injured my neck and back I went to see my usual Chiropractor. After several treatments and several hundred dollars It was not improving. I decided to check out Yelp for some direction. The reviews…" },
+      "review12": {"text": "Let me tell you this. Dr. Park is amazing!! I meant to leave a review awhile ago but I went to go see her about month and a half ago because of my jaw. I had discomfort on my jaw for over a year without knowing what was going on. Dr. Park took xrays of…" },
+      "review13": {"text": "Dr Park is really good. The first thing she’ll do is take an X-ray of your injured body to make sure she can see exactly what’s going on. I had a really bad lower back injury and after one year of therapy, I almost feel like me again. She doesn’t put you through any machines…" },
+      "review14": {"text": "Just try it once and you’ll be hooked 🙂 I’ve struggled with neck, shoulder, and back pains for a long period of time; due to this, I started getting migraines. I was getting weekly massages thinking they were just huge knots but I wasn’t really feeling any better. Anyways long story short, I’ve been getting…" },
+      "review15": {"text": "She was my fourth chiropractor and she was the only one who told me I have a problem with my neck and that is why my back is hurting. She was right, after the adjustment I felt so much better after just one visit. Dont waste your time and money with others." },
+      "review16": {"text": "This w to when my herniated disc started to hurt like never before. I couldn’t walk, I couldn’t stand, I couldn’t sit, I couldn’t even lay down. No matter what position I was in, I was just in so much pain. And in hindsight, I am so regretful that I…" },
+      "review17": {"text": "Dr. Park is amazing and excellent service!! Highly recommended!! If you suffer from neck/ back pain!!!" },
+      "review18": {"text": "I’ll keep it simple for you. Stop wasting your time, money, and hope elsewhere. THIS is the place to go for your neck and spine injuries! I had two major accidents within the past three years: one was a head-on collision car accident, the other was a snowboarding trick gone wrong… And the after-shocks didn’t…" },
+      "review19": {"text": "Dr. Park has magic hands. She fixed my TMJ, neck, lower back, shoulders and feet. I came to LA from SF for her. She is the best! The staff are very friendly and nice, too. I feel very comfortable in this place. You can’t find a better chiropractor." },
+      "review20": {"text": "Quite simply the best chiropractor clinic I’ve been to. Service is quick and efficient and Dr. Park is without a doubt very skilled and professional. Headaches that I’ve had for years had in two weeks time just seemed to disappear. I’ve had other chiropractors in the past, but none were as reliable and experienced. The staff is also very friendly and professional, which is a huge plus as well. I recommend giving it a try if you suffer from any back or neck pain." },
+      "review21": {"text": "I got into two huge car accidents (both cars totalled) a few years back and my neck and chest have been in pain since about a year after the accidents. I have been to many many many different chiropractor and acupuncture places but my pains were always relieved only temporarily. Dr. Park at Yonsei is the best chiropractor I have ever been to. She targets all of your symptoms. If you have pain, tell her, and she will make sure you aren’t in pain anymore. She is extremely professional and is very thorough with all of her treatments. Every treatment is done by her hands and they’re amazing. She does everything by hand. She is not only knowledgeable and smart but also very good with her hands. I will and have already recommended her to my peers. I was in so much pain when I first came to the office. My neck and back were in a lot of pain and I had terrible migraines. After 12 weeks of treatment, I can honestly say that my body now hasAbsolutely no pain. I can say with confidence that there is no better chiropractor than her in all of Southern California." },
+      "review22": {"text": "I believe Dr. Park is the best upper cervical chiropractor in los angeles! I had suffered from neck&shoudler pain for last three years, and now i feel so much better… the pain& migraine has been gone! This is truly amazing! I highly recommend Dr.Park if anybody who feels uncomfortable neck, back pain and headache. She has the such a magic healing hands!!" },
+      "review23": {"text": "I found this place because my mom was looking for somewhere to go for her foot problems and she saw the yelp reviews regarding period problems and TMJ, both of which I have. I go to school in New York so I had to get treatment every day for two weeks. I’m so glad I met Dr. Park and the two weeks of treatment was definitely worth it! I never knew most of my health problems were due to my misaligned spine. My period came back to normal within these two weeks and my TMJ is basically gone. I can open my mouth without my jaw getting stuck and because my TMJ was fixed, my migraines have disappeared as well. Dr. Park really knows what she’s doing – don’t go anywhere else! Her staff is extremely friendly and professional as well. You won’t regret coming here!! If someone like me can be fixed this quickly, you will too." },
+      "review24": {"text": "These is the best thing I did in my life. If you have any of back, neck, shoulder problem please come and see Dr. park, she is the best ever. I believe she is the best in USA. I was in pain for more then 10 years and the last two years it was almost impossible to walk, I couldn’t do simple things anymore, like brush my hair, take pick up things from the floor, even to open my mouth and eat I had pain. I have tried so many different treatment, so many doctors and I was getting worst and worst. In my first appointment with Dr Park I cried so much pain I was, but when I left I was feeling out of my body, for first time in 10 years I did NOT feel any pain, I came from pain 7-9 to zero instantly. I was driving back home and I could see all the lines and the cars beside me, I could see my shoulder for first time, I can look up and down and no pain. I need to thank my mother in law for introducing me to Dr Park. Please listen to me, don’t w your time, if you have pain go and see Dr Park and I’m sure you will love her. I’m getting better and better, hope soon my problem will be gone. Thank you so much Dr Park!" },
+      "review25": {"text": "I first heard Dr. Park on Radio Korea one night describing the very symptoms I was experiencing. She mentioned that it was torticollis, a condition in which the head becomes persistently turned to one side, often associated with painful muscle spasms. I was experiencing extreme pain around my neck and my head was turning toward right. So I decided to visit Dr. Park and after x-rays and exams, she diagnosed me with torticollis. I’ve been seeing Dr. Park for 3 months now and my neck pain has significantly disappeared and my head position has gotten much better. I am very hopefully that Dr. Park will fix me to close to normal as possible. Thank you, Dr. Park, for your expertise and great technique." },
+      "readMore": "Read More",
+      "showLess": "Show Less"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "A Legacy of Specific Healing",
+      "description": "Dr. Hyeon Joo Park is one of only a handful of doctors in the United States, and the first and only Korean American, capable of practicing the Palmer Upper Cervical Specific Chiropractic technique.",
+      "book": "Book Appointment",
+      "hio": "The H.I.O. Technique"
+    },
+    "bio": {
+      "badge": "The Successor of a Master",
+      "title": "Meet Dr. Hyeon Joo Park",
+      "p1": "Dr. Hyeon Joo Park is Board Certified and an expert in the field of Palmer Upper Cervical Specific Chiropractic. A graduate of Yonsei University—one of Korea's most prestigious research institutions—she went on to receive her doctorate from Life University in Atlanta, where she graduated summa cum laude and received the prestigious Clinical Excellence Award.",
+      "p2": "Dr. Park considers it the most fortunate opportunity in her life to have met her mentor, the late Dr. Clarence Jenson. As a former leader and teacher of Palmer Upper Cervical Specific Chiropractic, Dr. Jenson was trained directly under Dr. B.J. Palmer, the developer of chiropractic. Dr. Park is proud to be a successor of this distinguished lineage.",
+      "p3": "Beyond her clinical practice, Dr. Park is a passionate community leader. She has been hosting a 40-minute weekly radio show on Radio Korea for 12 years, helping the community gain a better understanding of chiropractic benefits and techniques.",
+      "specializations": {
+        "title": "Clinical Specializations",
+        "hio": "B.J. Palmer Upper Cervical Specific (H.I.O.)",
+        "tmj": "Cranial Adjustment/T.M.J. (S.O.T.)",
+        "extremity": "Extremity Manipulation (C.C.E.P.)",
+        "pediatric": "Pediatric Chiropractic Care (I.C.P.A.)"
+      },
+      "education": {
+        "title": "Education & Credentials",
+        "yonsei": "Yonsei University: B.S. in Biotechnology",
+        "lifeDc": "Life University: Doctor of Chiropractic (D.C.), Summa Cum Laude",
+        "lifeMs": "Life University: M.S. in Sport Injury Management",
+        "ccep": "Certified Chiropractic Extremity Practitioner (C.C.E.P.)"
+      }
+    },
+    "awards": {
+      "title": "Distinguished Awards",
+      "presidential": {
+        "title": "The President’s Volunteer Service Award",
+        "subtitle": "President Barack Obama, The White House (2012)"
+      },
+      "clinical": {
+        "title": "Clinical Excellence Award",
+        "subtitle": "Life University (2001)"
+      },
+      "county": "County of Los Angeles Commendation (2004)",
+      "city": "City of Los Angeles Certificates of Recognition (2005, 2009)",
+      "cityAppreciation": "City of Los Angeles Certificate of Appreciation (2006)",
+      "radio": "Appreciation Award, Radio Korea (2010)"
+    },
+    "cta": {
+      "title": "Trusted Expert Care",
+      "description": "Experience the difference of care from a distinguished leader in Palmer Specific Chiropractic.",
+      "button": "Schedule a Consultation"
+    }
+  },
+  "message": {
+    "badge": "A Personal Note",
+    "title": "Message From Dr. Park",
+    "intro": "Everyone has been in pain once. But of those people, there are patients and families who have to carry the enormous pain of living with illnesses.",
+    "q1": "Why am I in so much pain? Why am I getting sick?",
+    "a1": "Regarding \"Why?\", modern medicine is unable to provide a precise answer and simply puts the focus on treating the symptoms. However, there is surely bound to be a cause of pain and sickness. That exact cause is the \"block of nerve flow\" in the upper cervical vertebrae.",
+    "innate": "The human body has infinite vitality; basically everyone is born with \"Innate Intelligence\". The human body is a super computer which modern medicine is no match in imitating. Our body was not made to survive by us consciously manipulating it. Without us paying attention to it, our body \"automatically\" controls our heartbeat, adrenaline levels, blood pressure, digestion of our food and more. This is vitality and all people are born with it.",
+    "quote": "However, this ability is inhibited when pressure is put on the nerves that pass through the upper cervical vertebrae and the flow of signals isn’t smooth, therefore leading to many illnesses.",
+    "philosophy": {
+      "title": "The Philosophy of Chiropractic",
+      "p1": "Chiropractic is a healing method with a profound philosophy of restoring the body’s \"Innate Intelligence\" using only the hands for the procedure (Chiro= hand, practic= practice). Basically, it is the coming together of philosophy, science, and art.",
+      "p2": "Unlike modern medicine that solely pursues the treatment of symptoms, chiropractic is a practice that focuses on treating the main cause of many diseases, SUBLUXATION, and letting the body work on recovering and restoring its natural ability to recuperate."
+    },
+    "technique": {
+      "title": "A Rare and Specific Technique",
+      "p1": "Chiropractic is not a massage, but a correcting procedure performed using the doctor’s hands to adjust the patient’s spine and remove subluxation so the body can recover on its own.",
+      "p2": "This doctor has studied under the last remaining pupil of the legendary Dr. B.J. Palmer (1881-1961), the late Dr. Clarence Jensen. Dr. Park treats the nerve adjustment as her mission, spreading her knowledge and making it her goal to guard the health of the community."
+    },
+    "paradigm": {
+      "title": "A Paradigm Shift",
+      "content": "Chiropractic is not about diagnosing and treating the symptoms. By eliminating subluxation, the body will show its amazing ability to recover by itself. When the Creator made humans, He made them to live happily and healthy, not to live sick and in pain."
+    },
+    "key": {
+      "title": "The Key to Healthiness",
+      "p1": "The difference between healthy and unhealthy people is found in the upper cervical vertebrae. With a slight dislocation, people may not recognize the pressure being put on the nerve until they get sick, which may even lead to disastrous results.",
+      "p2": "The most important factor is prevention. Instead of trying to treat pain and sickness when it has progressed, it would be best to look out for your health while you’re still healthy. This is why everyone from children to the elderly should get their upper cervical vertebrae checked regularly."
+    },
+    "cta": "Schedule Your Health Check"
+  },
+  "contact": {
+    "title": "Visit Our Office",
+    "description": "Conveniently located in the heart of Los Angeles, we offer expert care with a focus on Palmer Upper Cervical techniques. Free parking validation available.",
+    "labels": {
+      "address": "Address",
+      "call": "Call Us",
+      "email": "Email Us",
+      "hours": "Hours",
+      "directions": "Get Directions"
+    },
+    "hours": {
+      "weekdays": "Mon, Tue, Wed, Fri:",
+      "thursday": "Thursday:",
+      "saturday": "Saturday:",
+      "sunday": "Sunday:",
+      "closed": "Closed"
+    }
+  },
+  "techniques": {
+    "about": {
+      "title": "About Chiropractic",
+      "p1": "At Yonsei Chiropractic Clinic, we believe the human body has an amazing, innate ability to recover itself from illness or injury.",
+      "p2": "The chiropractic method is the best approach to health because it allows the body to work without the use of any drugs, whether prescribed or non-prescribed. Our practice is built on the philosophy that true healing comes from removing interference in the nervous system.",
+      "manual": {
+        "title": "A Pure Manual Technique",
+        "p1": "We strictly follow the principle that the application of medicine, surgery, physical therapy, acupressure massage, or acupuncture is never utilized for spinal correction.",
+        "p2": "Only the use of the doctor’s hands is employed to adjust the spine in order to target the stem of all illnesses caused by subluxation."
+      },
+      "p3": "When there is pressure on the nerves from dislocated vertebrae, the flows of nerve signals are not smooth, and the body's innate ability to heal is inhibited. This phenomenon is what we address through specific adjustments.",
+      "p4": "By treating subluxation, the body will recover on its own and restore its optimal health once again. Our staff can promise you a comfortable environment and experience conducive to your healing journey.",
+      "comprehensive": {
+        "title": "Comprehensive Care",
+        "p1": "On each visit, Dr. Park seeks to regain and maintain the proper alignment of the spine, aiding each patient through the process of recovery and healing. Once the body and its organs are able to regain their mental impulse supply, then they are able to rebuild and perform their proper functions."
+      },
+      "cta": "Visit Our Clinic"
+    },
+    "upperCervical": {
+      "title": "About Upper Cervical Care",
+      "subtitle": "Palmer Upper Cervical Specific Chiropractic (H.I.O.)",
+      "p1": "Yonsei Chiropractic Clinic is the first Korean American chiropractic clinic in the United States to specialize in the Palmer Upper Cervical Specific Technique, also known as the \"hole-in-one\" method (H.I.O).",
+      "p2": "The practice of the H.I.O. is a high degree chiropractic technique that uses only the hands to adjust the upper cervical bones. This specific region, known as the cervical vertebrae numbers 1 and 2, is adjusted to absolve the root of all illnesses by relieving the pressure on the nerves.",
+      "p3": "The application of medicine, surgery, physical therapy, acupressure massage, or acupuncture is never utilized. Only the use of the doctor’s hands is employed to adjust the upper cervical in order to target the stem of all illnesses caused by subluxation. By treating subluxation, the body will recover on its own and restore its optimal health once again.",
+      "legacy": {
+        "title": "The Legacy of Dr. B.J. Palmer",
+        "p1": "Dr. B.J. Palmer (1881-1961) invented this procedure in 1930 after discovering that many patients with incurable diseases recovered after receiving the miraculous procedure. This has been proven to be effective in his many writings and research findings.",
+        "p2": "Because of its technical difficulty and scarcity, very few doctors in the United States are able to perform the H.I.O technique today. As the first Korean chiropractor to utilize the technique, Dr. Hyeon Joo Park practices H.I.O. on patients who suffer from severe pain and chronic diseases."
+      },
+      "diagnostics": {
+        "title": "Advanced Diagnostics",
+        "p1": "The treatment is not based solely on observing the symptoms of the illness. It begins with a deep clinical examination:",
+        "xrays": "Precision X-Rays: Detailed views of the cervical bone structure and the specific nature of the dislocation.",
+        "instruments": "Nervo-scope & Analagraph: Specialized instruments used to understand the exact state of the nerves and locate interference."
+      },
+      "quote": "\"The human body has the amazing ability to recover itself from illness or injury. However, if the flows of nerve signals are not smooth then that innate ability is inhibited. This phenomenon happens when there is pressure on the nerves from dislocated cervical bones. Therefore, with the adjustment of the cervical bones the body will find its ability to recover itself.\"",
+      "p4": "Patients have seen a remarkable difference in their health, with many visiting from the East Coast or Korea just to receive this treatment. Dr. Park personally diagnoses and treats each and every patient, taking pride in finding, targeting, and connecting the root of illness.",
+      "cta": "Book Your Appointment"
+    },
+    "subluxation": {
+      "title": "Subluxation",
+      "p1": "Subluxation is when the spinal bones become slightly dislocated, developing on the nerves, resulting in a disruption of the natural flow of signals between the body and the brain.",
+      "p2": "One of the World Health Organization’s (WHO) main principle is that \"(h)ealth is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.\" This is very true in most cases. Just because a person does not feel pain or have any diagnoses of disease, it does not mean they are 100% in good condition.",
+      "silent": {
+        "title": "The Silent Progress of Illness",
+        "p1": "Our body is made up of neurons, in which 67% of them are efferent nerves. These nerves do not send immediate pain signals until significant amount of damage is present.",
+        "p2": "Therefore, even without pain there can be an organ disorder in progress."
+      },
+      "p3": "Without knowing it, your body may have high blood pressure, arthritis may be in progress, or cancer cells may be multiplying. If the flow of signals is blocked and nerves have pressure put on them, the result is failure in function, leading to illnesses. It is a misconception that illnesses happen immediately. However, it takes a while before most serious illnesses steadily display themselves.",
+      "p4": "The body’s nerves are put under pressure over a long period of time and in the end start to show symptoms of pain. We are always worried and focused on the individual organs in our body and trying to take away the pain immediately if there is a disturbance.",
+      "cause": {
+        "title": "Targeting the Cause",
+        "p1": "However, it is necessary to first target the cause. The real source lies within the alignment of the spine and the nerve signals that are being sent out."
+      },
+      "cta": "Get an Evaluation"
+    },
+    "innateIntelligence": {
+      "badge": "The Miracle of Life",
+      "title": "Innate Intelligence",
+      "p1": "Since the moment of your conception, a miracle began for you. This miracle called life has an \"innate (inborn) intelligence\" that caused two cells to multiply and differentiate into the trillions of cells that became you.",
+      "p2": "The innate intelligence knew exactly what you needed, and exactly when you needed it. All of this development happens naturally as long there is no interference. Otherwise, that flow of the intelligence cannot go through properly.",
+      "vital": {
+        "title": "A Vital System",
+        "p1": "As the number of cells grew, your innate intelligence needed a system to send and receive messages in order to control and coordinate all functions and parts of the body.",
+        "p2": "This vital system was the first to develop and began within 18 days of conception."
+      },
+      "p3": "It is so valuable and delicate that its primary parts are the only organs encased in bone. This system is your nervous system and the primary parts are the brain protected by the skull and the spinal cord protected by the spine.",
+      "consequence": {
+        "title": "The Consequence of Interference",
+        "p1": "What would happen if this intelligence, which flows through the nerves and is filled with vital life messages, could not reach the proper destination at the right time?",
+        "organs": {
+          "heart": "Heart",
+          "lungs": "Lungs",
+          "liver": "Liver",
+          "kidneys": "Kidneys",
+          "stomach": "Stomach"
+        },
+        "p2": "What if this interference blocked messages being sent to your vital organs? Do you think this would cause these organs and yourself not to live at your highest potential? Of course, it would."
+      },
+      "quote": "\"All diseases result from a disruption of the flow of intelligence.\"",
+      "cause": "Chiropractically speaking, \"The one cause of all disease is our inability to adapt.\"",
+      "p4": "Our goal at Yonsei Chiropractic is to remove the interference in your nervous system, allowing your innate intelligence to flow perfectly once again and restoring your body's natural ability to adapt and heal.",
+      "cta": "Unlock Your Highest Potential"
+    },
+    "tmj": {
+      "title": "TMJ / TMD Treatment",
+      "p1": "Specialized chiropractic care for Temporomandibular Joint Disorders and related jaw tension.",
+      "connection": {
+        "title": "The Upper Cervical Connection",
+        "p1": "Because the upper cervical spine (the top two vertebrae in the neck) sits so closely to the jaw joints, misalignment in the neck can often manifest as TMJ/TMD symptoms.",
+        "p2": "Head and neck misalignment can cause interference in the nervous system, leading to muscle tension in the jaw, clicking, popping, and pain."
+      },
+      "symptoms": {
+        "title": "Symptoms We Treat",
+        "pain": "Jaw pain and tenderness",
+        "chewing": "Difficulty chewing or opening wide",
+        "clicking": "Clicking or popping sounds in the jaw",
+        "ear": "Facial aching or ear pain"
+      },
+      "expertise": {
+        "title": "Dr. Park's Expertise",
+        "p1": "Dr. Hyeon Joo Park is dedicated to using her professional expertise to help patients with TMJ/TMD. By restoring head/neck alignment and utilizing specialty extremity adjustments, we address the root cause of the jaw dysfunction.",
+        "p2": "Our approach is drug-free and seeks to re-activate the body's natural self-healing process."
+      },
+      "cta": "Relieve Your Jaw Pain Today"
+    },
+    "carAccident": {
+      "badge": "Immediate Attention Required",
+      "title": "Car Accidents & Whiplash",
+      "pain": {
+        "title": "Pain? No Pain?",
+        "p1": "The aftereffect symptoms of a car accident normally show 1~2 days, or even a few months after the accident. In fact, the absence of pain doesn’t necessarily mean there is no damage. Many of the symptoms caused by a car accident or trauma lay dormant until later.",
+        "p2": "If nerves are put under pressure after the accident, it will not only result in pain, but it will lead to more severe illness. Car accidents can cause damage in many parts of the body such as 7 possible locations in the upper cervical vertebrae and 32 joints and muscles throughout the body."
+      },
+      "symptoms": {
+        "title": "Common Symptoms After an Accident:",
+        "items": {
+          "dizziness": "Dizziness",
+          "nausea": "Nausea",
+          "vomiting": "Vomiting",
+          "rigidity": "Muscular Rigidity",
+          "tinnitus": "Tinnitus (Ear Ringing)",
+          "pain": "Chronic Pain"
+        }
+      },
+      "whiplash": {
+        "title": "The Nature of Whiplash",
+        "p1": "During a car accident, one’s head experiences an abrupt backward or forward jerking motion. This damages the upper cervical vertebrae. Such injury is hard to detect even with a CT scan or MRI.",
+        "p2": "Because of this characteristic, an aftereffect of a car accident can become chronic. If the upper cervical suffers due to excessive pressure, it will prevent normal movement of the body and will lead to further health problems."
+      },
+      "damage": {
+        "title": "Nerve Damage vs. Contusion",
+        "p1": "Sometimes people confuse nerve damage with simple contusion and try treating symptoms with physical therapy, acupuncture, and massages.",
+        "p2": "Those treatments cannot recover nerves under pressure and instead only temporarily eliminate pain. Not treating the nerves properly will worsen the condition and result in chronic pain."
+      },
+      "quote": "The aftereffects of a car accident require immediate attention and continuous care.",
+      "cta": "Book Your Post-Accident Exam"
+    }
+  },
+  "servicesPage": {
+      "hero": {
+        "title": "Our Specialized Care",
+        "subtitle": "Specializing in the Palmer Upper Cervical Specific Technique (H.I.O) and comprehensive chiropractic services in Los Angeles.",
+        "cta": "View Specialties"
+      },
+      "philosophy": {
+        "badge": "Upper Cervical Care",
+        "title": "Re-activating Brain-to-Body Communication",
+        "p1": "Misalignment at the point where the head and neck join can cause interference, or \"subluxation,\" preventing the brain from sending healing messages. Upper Cervical Corrective Health Care is designed to restore this alignment and allow the body's natural self-healing process to begin.",
+        "method": "H.I.O Method",
+        "technique": "Hole-In-One Technique"
+      },
+      "specialties": {
+        "title": "Our Specialties",
+        "description": "Comprehensive care ranging from specialized neck adjustments to personal injury.",
+        "items": {
+          "upperCervical": {
+            "title": "Upper Cervical Specific",
+            "desc": "The \"Hole-In-One\" (H.I.O) method focusing on the atlas and axis to restore full body health."
+          },
+          "tmj": {
+            "title": "TMJ/TMD Disorders",
+            "desc": "Specialized adjustments for Temporomandibular Joint Disorders to relieve jaw pain and tension."
+          },
+          "pediatric": {
+            "title": "Pediatric & Pre-natal",
+            "desc": "Gentle and safe chiropractic care for infants, children, and expecting mothers."
+          },
+          "carAccidents": {
+            "title": "Car Accidents",
+            "desc": "Expert treatment for whiplash and other injuries sustained in automobile accidents."
+          },
+          "personalInjury": {
+            "title": "Personal Injury",
+            "desc": "Comprehensive recovery plans for slips, falls, and other personal injury cases."
+          },
+          "extremity": {
+            "title": "Extremity Adjustments",
+            "desc": "Realigning joints in the shoulders, elbows, wrists, hips, knees, and ankles."
+          }
+        }
+      },
+      "process": {
+        "title": "The Path to Healing",
+        "step1": {
+          "title": "Examination",
+          "desc": "Dr. Park takes X-rays of the upper cervical region and full spine to examine the degree of misalignment."
+        },
+        "step2": {
+          "title": "Adjustment",
+          "desc": "The procedure is performed by the doctor's hands to restore head, neck, and spinal alignment."
+        },
+        "step3": {
+          "title": "Self-Healing",
+          "desc": "As the vertebrae align, the brain sends healing messages to the body to begin natural self-healing."
+        }
+      },
+      "cta": {
+        "title": "Ready for a new method?",
+        "description": "Experience the difference of Upper Cervical chiropractic care today.",
+        "button": "Book Appointment"
+      }
+    },
+    "contactPage": {
+      "hero": {
+        "title": "Get in Touch",
+        "description": "Yonsei Chiropractic Clinic is dedicated to helping you reach your optimal health. Contact us today to schedule your consultation with Dr. Hyeon Joo Park."
+      },
+      "details": {
+        "title": "Location & Contact",
+        "phone": {
+          "label": "Call or Text for appointments"
+        },
+        "email": {
+          "label": "Email us anytime"
+        }
+      },
+      "hours": {
+        "title": "Hours of Operation"
+      },
+      "form": {
+        "title": "Request Appointment",
+        "description": "Leave your details and we'll contact you to confirm a time.",
+        "labels": {
+          "name": "Full Name",
+          "phone": "Phone Number",
+          "message": "How can we help?"
+        },
+        "placeholders": {
+          "name": "John Doe",
+          "phone": "(555) 000-0000",
+          "message": "Tell us about your symptoms or preferred appointment time..."
+        },
+        "submit": "Submit Request",
+        "success": {
+          "title": "Request Sent!",
+          "message": "Thank you for contacting us. We will get back to you shortly to schedule your appointment.",
+          "button": "Send another request"
+              }
+            }
+          },
+          "notFound": {
+            "title": "Page Not Found",
+            "description": "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.",
+            "cta": "Return Home"
+          },
+          "accessibility": {
+            "navigatedTo": "Navigated to {{title}}",
+            "required": "(required)",
+            "opensInNewWindow": "(opens in a new window)",
+            "closeModal": "Close modal",
+            "dismissNotification": "Dismiss notification",
+            "skipToContent": "Skip to content"
+          },
+          "accessibilityPage": {
+            "title": "Accessibility Statement",
+            "intro": "Yonsei Chiropractic Clinic is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.",
+            "conformance": {
+              "title": "Conformance Status",
+              "body": "The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. Yonsei Chiropractic Clinic is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard."
+            },
+            "feedback": {
+              "title": "Feedback",
+              "body": "We welcome your feedback on the accessibility of Yonsei Chiropractic Clinic. Please let us know if you encounter accessibility barriers on our website:",
+              "phone": "Phone: (213) 381-5500",
+              "email": "Email: yonseichiropractic@gmail.com",
+              "address": "Visitor Address: 3200 Wilshire Blvd Suite 302, Los Angeles, CA 90010"
+            },
+            "technical": {
+              "title": "Technical Specifications",
+              "body": "Accessibility of Yonsei Chiropractic Clinic relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:",
+              "items": {
+                "html": "HTML",
+                "aria": "WAI-ARIA",
+                "css": "CSS",
+                "js": "JavaScript"
+              }
+            },
+            "assessment": {
+              "title": "Assessment Approach",
+              "body": "Yonsei Chiropractic Clinic assessed the accessibility of our website by the following approaches:",
+              "items": {
+                "self": "Self-evaluation",
+                "automated": "Automated testing using industry-standard tools"
+              }
+            },
+            "approval": {
+              "title": "Formal Approval of this Accessibility Statement",
+              "body": "This Accessibility Statement is approved by: Yonsei Chiropractic Clinic",
+              "date": "Date: January 16, 2026"
+            }
+          }
+        }

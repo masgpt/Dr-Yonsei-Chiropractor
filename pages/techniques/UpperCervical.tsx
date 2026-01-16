@@ -1,63 +1,66 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const UpperCervical: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-6 bg-white dark:bg-slate-900">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">About Upper Cervical Care</h1>
-          <h2 className="text-xl md:text-2xl font-bold text-primary mb-8">Palmer Upper Cervical Specific Chiropractic (H.I.O.)</h2>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-tight">{t('techniques.upperCervical.title')}</h1>
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-6 sm:mb-8">{t('techniques.upperCervical.subtitle')}</h2>
           
-          <div className="prose prose-lg dark:prose-invert text-slate-600 dark:text-slate-300 max-w-none">
-            <p className="mb-6">
-              Yonsei Chiropractic Clinic is the first Korean American chiropractic clinic in the United States to specialize in the Palmer Upper Cervical Specific Technique, also known as the <strong>“hole-in-one” method (H.I.O)</strong>.
+          <div className="prose prose-sm sm:prose-base md:prose-lg dark:prose-invert text-slate-600 dark:text-slate-300 max-w-none">
+            <p className="mb-6 leading-relaxed">
+              {t('techniques.upperCervical.p1')}
             </p>
-            <p className="mb-6">
-              The practice of the H.I.O. is a high degree chiropractic technique that uses only the hands to adjust the upper cervical bones. This specific region, known as the <strong>cervical vertebrae numbers 1 and 2</strong>, is adjusted to absolve the root of all illnesses by relieving the pressure on the nerves.
+            <p className="mb-6 leading-relaxed">
+              {t('techniques.upperCervical.p2')}
             </p>
-            <p className="mb-12">
-              The application of medicine, surgery, physical therapy, acupressure massage, or acupuncture is never utilized. Only the use of the doctor’s hands is employed to adjust the upper cervical in order to target the stem of all illnesses caused by subluxation. By treating subluxation, the body will recover on its own and restore its optimal health once again.
+            <p className="mb-10 sm:mb-12 leading-relaxed">
+              {t('techniques.upperCervical.p3')}
             </p>
 
-            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 mb-12">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">The Legacy of Dr. B.J. Palmer</h3>
+            <div className="bg-slate-50 dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-100 dark:border-slate-700 mb-10 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">{t('techniques.upperCervical.legacy.title')}</h3>
               <p className="mb-4">
-                <strong>Dr. B.J. Palmer (1881-1961)</strong> invented this procedure in 1930 after discovering that many patients with incurable diseases recovered after receiving the miraculous procedure. This has been proven to be effective in his many writings and research findings.
+                {t('techniques.upperCervical.legacy.p1')}
               </p>
-              <p className="text-sm italic">
-                Because of its technical difficulty and scarcity, very few doctors in the United States are able to perform the H.I.O technique today. As the first Korean chiropractor to utilize the technique, Dr. Hyeon Joo Park practices H.I.O. on patients who suffer from severe pain and chronic diseases.
+              <p className="text-xs sm:text-sm italic opacity-80">
+                {t('techniques.upperCervical.legacy.p2')}
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Advanced Diagnostics</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">{t('techniques.upperCervical.diagnostics.title')}</h3>
             <p className="mb-6">
-              The treatment is not based solely on observing the symptoms of the illness. It begins with a deep clinical examination:
+              {t('techniques.upperCervical.diagnostics.p1')}
             </p>
-            <ul className="list-disc pl-6 mb-8 space-y-2">
-              <li><strong>Precision X-Rays:</strong> Detailed views of the cervical bone structure and the specific nature of the dislocation.</li>
-              <li><strong>Nervo-scope & Analagraph:</strong> Specialized instruments used to understand the exact state of the nerves and locate interference.</li>
+            <ul className="list-disc pl-5 sm:pl-6 mb-8 space-y-3">
+              <li>{t('techniques.upperCervical.diagnostics.xrays')}</li>
+              <li>{t('techniques.upperCervical.diagnostics.instruments')}</li>
             </ul>
 
-            <div className="mt-12 p-8 bg-primary text-white rounded-2xl relative">
-              <span className="material-symbols-outlined absolute top-4 left-4 text-white/20 text-6xl">format_quote</span>
+            <div className="mt-10 sm:mt-12 p-6 sm:p-8 bg-primary text-white rounded-2xl relative overflow-hidden">
+              <span className="material-symbols-outlined absolute top-2 left-2 text-white/10 text-6xl sm:text-8xl select-none">format_quote</span>
               <blockquote className="relative z-10">
-                <p className="text-xl font-medium italic mb-4">
-                  “The human body has the amazing ability to recover itself from illness or injury. However, if the flows of nerve signals are not smooth then that innate ability is inhibited. This phenomenon happens when there is pressure on the nerves from dislocated cervical bones. Therefore, with the adjustment of the cervical bones the body will find its ability to recover itself.”
+                <p className="text-lg sm:text-xl font-medium italic mb-6 leading-relaxed">
+                  {t('techniques.upperCervical.quote')}
                 </p>
-                <footer className="font-bold">— Dr. Hyeon Joo Park</footer>
+                <footer className="font-bold text-base sm:text-lg">— {t('home.meetDoctor.name')}</footer>
               </blockquote>
             </div>
 
-            <p className="mt-12 mb-6">
-              Patients have seen a remarkable difference in their health, with many visiting from the East Coast or Korea just to receive this treatment. Dr. Park personally diagnoses and treats each and every patient, taking pride in finding, targeting, and connecting the root of illness.
+            <p className="mt-10 sm:mt-12 mb-6">
+              {t('techniques.upperCervical.p4')}
             </p>
           </div>
           
-          <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
-              Book Your Appointment
+          <div className="mt-12 sm:mt-16 text-center">
+            <Link to="/contact" className="inline-flex items-center justify-center w-full sm:w-auto h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
+              {t('techniques.upperCervical.cta')}
             </Link>
           </div>
         </div>

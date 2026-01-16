@@ -1,0 +1,187 @@
+    "carAccident": {
+      "badge": "Immediate Attention Required",
+      "title": "Car Accidents & Whiplash",
+      "pain": {
+        "title": "Pain? No Pain?",
+        "p1": "The aftereffect symptoms of a car accident normally show 1~2 days, or even a few months after the accident. In fact, the absence of pain doesn’t necessarily mean there is no damage. Many of the symptoms caused by a car accident or trauma lay dormant until later.",
+        "p2": "If nerves are put under pressure after the accident, it will not only result in pain, but it will lead to more severe illness. Car accidents can cause damage in many parts of the body such as 7 possible locations in the upper cervical vertebrae and 32 joints and muscles throughout the body."
+      },
+      "symptoms": {
+        "title": "Common Symptoms After an Accident:",
+        "items": {
+          "dizziness": "Dizziness",
+          "nausea": "Nausea",
+          "vomiting": "Vomiting",
+          "rigidity": "Muscular Rigidity",
+          "tinnitus": "Tinnitus (Ear Ringing)",
+          "pain": "Chronic Pain"
+        }
+      },
+      "whiplash": {
+        "title": "The Nature of Whiplash",
+        "p1": "During a car accident, one’s head experiences an abrupt backward or forward jerking motion. This damages the upper cervical vertebrae. Such injury is hard to detect even with a CT scan or MRI.",
+        "p2": "Because of this characteristic, an aftereffect of a car accident can become chronic. If the upper cervical suffers due to excessive pressure, it will prevent normal movement of the body and will lead to further health problems."
+      },
+      "damage": {
+        "title": "Nerve Damage vs. Contusion",
+        "p1": "Sometimes people confuse nerve damage with simple contusion and try treating symptoms with physical therapy, acupuncture, and massages.",
+        "p2": "Those treatments cannot recover nerves under pressure and instead only temporarily eliminate pain. Not treating the nerves properly will worsen the condition and result in chronic pain."
+      },
+      "quote": "The aftereffects of a car accident require immediate attention and continuous care.",
+      "cta": "Book Your Post-Accident Exam"
+    }
+  },
+  "servicesPage": {
+      "hero": {
+        "title": "Our Specialized Care",
+        "subtitle": "Specializing in the Palmer Upper Cervical Specific Technique (H.I.O) and comprehensive chiropractic services in Los Angeles.",
+        "cta": "View Specialties"
+      },
+      "philosophy": {
+        "badge": "Upper Cervical Care",
+        "title": "Re-activating Brain-to-Body Communication",
+        "p1": "Misalignment at the point where the head and neck join can cause interference, or \"subluxation,\" preventing the brain from sending healing messages. Upper Cervical Corrective Health Care is designed to restore this alignment and allow the body's natural self-healing process to begin.",
+        "method": "H.I.O Method",
+        "technique": "Hole-In-One Technique"
+      },
+      "specialties": {
+        "title": "Our Specialties",
+        "description": "Comprehensive care ranging from specialized neck adjustments to personal injury.",
+        "items": {
+          "upperCervical": {
+            "title": "Upper Cervical Specific",
+            "desc": "The \"Hole-In-One\" (H.I.O) method focusing on the atlas and axis to restore full body health."
+          },
+          "tmj": {
+            "title": "TMJ/TMD Disorders",
+            "desc": "Specialized adjustments for Temporomandibular Joint Disorders to relieve jaw pain and tension."
+          },
+          "pediatric": {
+            "title": "Pediatric & Pre-natal",
+            "desc": "Gentle and safe chiropractic care for infants, children, and expecting mothers."
+          },
+          "carAccidents": {
+            "title": "Car Accidents",
+            "desc": "Expert treatment for whiplash and other injuries sustained in automobile accidents."
+          },
+          "personalInjury": {
+            "title": "Personal Injury",
+            "desc": "Comprehensive recovery plans for slips, falls, and other personal injury cases."
+          },
+          "extremity": {
+            "title": "Extremity Adjustments",
+            "desc": "Realigning joints in the shoulders, elbows, wrists, hips, knees, and ankles."
+          }
+        }
+      },
+      "process": {
+        "title": "The Path to Healing",
+        "step1": {
+          "title": "Examination",
+          "desc": "Dr. Park takes X-rays of the upper cervical region and full spine to examine the degree of misalignment."
+        },
+        "step2": {
+          "title": "Adjustment",
+          "desc": "The procedure is performed by the doctor's hands to restore head, neck, and spinal alignment."
+        },
+        "step3": {
+          "title": "Self-Healing",
+          "desc": "As the vertebrae align, the brain sends healing messages to the body to begin natural self-healing."
+        }
+      },
+      "cta": {
+        "title": "Ready for a new method?",
+        "description": "Experience the difference of Upper Cervical chiropractic care today.",
+        "button": "Book Appointment"
+      }
+    },
+    "contactPage": {
+      "hero": {
+        "title": "Get in Touch",
+        "description": "Yonsei Chiropractic Clinic is dedicated to helping you reach your optimal health. Contact us today to schedule your consultation with Dr. Hyeon Joo Park."
+      },
+      "details": {
+        "title": "Location & Contact",
+        "phone": {
+          "label": "Call or Text for appointments"
+        },
+        "email": {
+          "label": "Email us anytime"
+        }
+      },
+      "hours": {
+        "title": "Hours of Operation"
+      },
+      "form": {
+        "title": "Request Appointment",
+        "description": "Leave your details and we'll contact you to confirm a time.",
+        "labels": {
+          "name": "Full Name",
+          "phone": "Phone Number",
+          "message": "How can we help?"
+        },
+        "placeholders": {
+          "name": "John Doe",
+          "phone": "(555) 000-0000",
+          "message": "Tell us about your symptoms or preferred appointment time..."
+        },
+        "submit": "Submit Request",
+        "success": {
+          "title": "Request Sent!",
+          "message": "Thank you for contacting us. We will get back to you shortly to schedule your appointment.",
+          "button": "Send another request"
+              }
+            }
+          },
+          "notFound": {
+            "title": "Page Not Found",
+            "description": "Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.",
+            "cta": "Return Home"
+          },
+          "accessibility": {
+            "navigatedTo": "Navigated to {{title}}",
+            "required": "(required)",
+            "opensInNewWindow": "(opens in a new window)",
+            "closeModal": "Close modal",
+            "dismissNotification": "Dismiss notification",
+            "skipToContent": "Skip to content"
+          },
+          "accessibilityPage": {
+            "title": "Accessibility Statement",
+            "intro": "Yonsei Chiropractic Clinic is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.",
+            "conformance": {
+              "title": "Conformance Status",
+              "body": "The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. Yonsei Chiropractic Clinic is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard."
+            },
+            "feedback": {
+              "title": "Feedback",
+              "body": "We welcome your feedback on the accessibility of Yonsei Chiropractic Clinic. Please let us know if you encounter accessibility barriers on our website:",
+              "phone": "Phone: (213) 381-5500",
+              "email": "Email: yonseichiropractic@gmail.com",
+              "address": "Visitor Address: 3200 Wilshire Blvd Suite 302, Los Angeles, CA 90010"
+            },
+            "technical": {
+              "title": "Technical Specifications",
+              "body": "Accessibility of Yonsei Chiropractic Clinic relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:",
+              "items": {
+                "html": "HTML",
+                "aria": "WAI-ARIA",
+                "css": "CSS",
+                "js": "JavaScript"
+              }
+            },
+            "assessment": {
+              "title": "Assessment Approach",
+              "body": "Yonsei Chiropractic Clinic assessed the accessibility of our website by the following approaches:",
+              "items": {
+                "self": "Self-evaluation",
+                "automated": "Automated testing using industry-standard tools"
+              }
+            },
+            "approval": {
+              "title": "Formal Approval of this Accessibility Statement",
+              "body": "This Accessibility Statement is approved by: Yonsei Chiropractic Clinic",
+              "date": "Date: January 16, 2026"
+            }
+          }
+        }
