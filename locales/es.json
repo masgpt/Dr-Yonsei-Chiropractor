@@ -329,7 +329,7 @@
       "title": "Accidentes de Auto y Latigazo Cervical",
       "pain": {
         "title": "¿Dolor? ¿Sin Dolor?",
-        "p1": "Los síntomas de secuelas de un accidente de auto normalmente se muestran 1 a 2 días, o incluso algunos meses después del accidente. De hecho, la ausencia de dolor no significa necesariamente que no haya daños. Muchos de los síntomas causados por un accidente de auto o trauma permanecen latentes hasta más tarde.",
+        "p1": "Los síntomas de secuelas de un accidente de auto normally se muestran 1 a 2 días, o incluso algunos meses después del accidente. De hecho, la ausencia de dolor no significa necesariamente que no haya daños. Muchos de los síntomas causados por un accidente de auto o trauma permanecen latentes hasta más tarde.",
         "p2": "Si los nervios se someten a presión después del accidente, no solo resultará en dolor, sino que conducirá a enfermedades más graves. Los accidentes de auto pueden causar daños en muchas partes del cuerpo, como 7 ubicaciones posibles en las vértebras cervicales superiores y 32 articulaciones y músculos en todo el cuerpo."
       },
       "symptoms": {
@@ -358,156 +358,156 @@
     }
   },
   "servicesPage": {
-      "hero": {
-        "title": "Nuestra Atención Especializada",
-        "subtitle": "Especializados en la Técnica Específica de Cervical Superior Palmer (H.I.O) y servicios quiroprácticos integrales en Los Ángeles.",
-        "cta": "Ver Especialidades"
-      },
-      "philosophy": {
-        "badge": "Cuidado Cervical Superior",
-        "title": "Reactivando la Comunicación Cerebro-Cuerpo",
-        "p1": "La desalineación en el punto donde se unen la cabeza y el cuello puede causar interferencia, o \"subluxación\", impidiendo que el cerebro envíe mensajes de sanación. El Cuidado de la Salud Correctivo Cervical Superior está diseñado para restaurar esta alineación y permitir que comience el proceso de autosanación natural del cuerpo.",
-        "method": "Método H.I.O",
-        "technique": "Técnica Hole-In-One"
-      },
-      "specialties": {
-        "title": "Nuestras Especialidades",
-        "description": "Atención integral que va desde ajustes especializados de cuello hasta lesiones personales.",
-        "items": {
-          "upperCervical": {
-            "title": "Cervical Superior Específica",
-            "desc": "El método \"Hole-In-One\" (H.I.O) enfocado en el atlas y el axis para restaurar la salud de todo el cuerpo."
-          },
-          "tmj": {
-            "title": "Trastornos de ATM/DTM",
-            "desc": "Ajustes especializados para trastornos de la articulación temporomandibular para aliviar el dolor y la tensión de la mandíbula."
-          },
-          "pediatric": {
-            "title": "Pediátrico y Prenatal",
-            "desc": "Atención quiropráctica suave y segura para bebés, niños y madres embarazadas."
-          },
-          "carAccidents": {
-            "title": "Accidentes de Auto",
-            "desc": "Tratamiento experto para el latigazo cervical y otras lesiones sufridas en accidentes automovilísticos."
-          },
-          "personalInjury": {
-            "title": "Lesiones Personales",
-            "desc": "Planes de recuperación integrales para resbalones, caídas y otros casos de lesiones personales."
-          },
-          "extremity": {
-            "title": "Ajustes de Extremidades",
-            "desc": "Realineación de articulaciones en hombros, codos, muñecas, caderas, rodillas y tobillos."
-          }
-        }
-      },
-      "process": {
-        "title": "El Camino a la Sanación",
-        "step1": {
-          "title": "Examen",
-          "desc": "La Dra. Park toma radiografías de la región cervical superior y de toda la columna para examinar el grado de desalineación."
+    "hero": {
+      "title": "Nuestra Atención Especializada",
+      "subtitle": "Especializados en la Técnica Específica de Cervical Superior Palmer (H.I.O) y servicios quiroprácticos integrales en Los Ángeles.",
+      "cta": "Ver Especialidades"
+    },
+    "philosophy": {
+      "badge": "Cuidado Cervical Superior",
+      "title": "Reactivando la Comunicación Cerebro-Cuerpo",
+      "p1": "La desalineación en el punto donde se unen la cabeza y el cuello puede causar interferencia, o \"subluxación\", impidiendo que el cerebro envíe mensajes de sanación. El Cuidado de la Salud Correctivo Cervical Superior está diseñado para restaurar esta alineación y permitir que comience el proceso de autosanación natural del cuerpo.",
+      "method": "Método H.I.O",
+      "technique": "Técnica Hole-In-One"
+    },
+    "specialties": {
+      "title": "Nuestras Especialidades",
+      "description": "Atención integral que va desde ajustes especializados de cuello hasta lesiones personales.",
+      "items": {
+        "upperCervical": {
+          "title": "Cervical Superior Específica",
+          "desc": "El método \"Hole-In-One\" (H.I.O) enfocado en el atlas y el axis para restaurar la salud de todo el cuerpo."
         },
-        "step2": {
-          "title": "Ajuste",
-          "desc": "El procedimiento es realizado por las manos de la doctora para restaurar la alineación de la cabeza, el cuello y la columna."
+        "tmj": {
+          "title": "Trastornos de ATM/DTM",
+          "desc": "Ajustes especializados para trastornos de la articulación temporomandibular para aliviar el dolor y la tensión de la mandíbula."
         },
-        "step3": {
-          "title": "Autosanación",
-          "desc": "A medida que las vértebras se alinean, el cerebro envía mensajes de sanación al cuerpo para comenzar la autosanación natural."
+        "pediatric": {
+          "title": "Pediátrico y Prenatal",
+          "desc": "Atención quiropráctica suave y segura para bebés, niños y madres embarazadas."
+        },
+        "carAccidents": {
+          "title": "Accidentes de Auto",
+          "desc": "Tratamiento experto para el latigazo cervical y otras lesiones sufridas en accidentes automovilísticos."
+        },
+        "personalInjury": {
+          "title": "Lesiones Personales",
+          "desc": "Planes de recuperación integrales para resbalones, caídas y otros casos de lesiones personales."
+        },
+        "extremity": {
+          "title": "Ajustes de Extremidades",
+          "desc": "Realineación de articulaciones en hombros, codos, muñecas, caderas, rodillas y tobillos."
         }
-      },
-      "cta": {
-        "title": "¿Listo para un nuevo método?",
-        "description": "Experimente hoy la diferencia del cuidado quiropráctico Cervical Superior.",
-        "button": "Reservar Cita"
       }
     },
-    "contactPage": {
-      "hero": {
-        "title": "Póngase en Contacto",
-        "description": "Yonsei Chiropractic Clinic se dedica a ayudarle a alcanzar su salud óptima. Contáctenos hoy para programar su consulta con la Dra. Hyeon Joo Park."
+    "process": {
+      "title": "El Camino a la Sanación",
+      "step1": {
+        "title": "Examen",
+        "desc": "La Dra. Park toma radiografías de la región cervical superior y de toda la columna para examinar el grado de desalineación."
       },
-      "details": {
-        "title": "Ubicación y Contacto",
-        "phone": {
-          "label": "Llame o envíe un mensaje de texto para citas"
-        },
-        "email": {
-          "label": "Envíenos un correo electrónico en cualquier momento"
-        }
+      "step2": {
+        "title": "Ajuste",
+        "desc": "El procedimiento es realizado por las manos de la doctora para restaurar la alineación de la cabeza, el cuello y la columna."
       },
-      "hours": {
-        "title": "Horas de Operación"
+      "step3": {
+        "title": "Autosanación",
+        "desc": "A medida que las vértebras se alinean, el cerebro envía mensajes de sanación al cuerpo para comenzar la autosanación natural."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para un nuevo método?",
+      "description": "Experimente hoy la diferencia del cuidado quiropráctico Cervical Superior.",
+      "button": "Reservar Cita"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Póngase en Contacto",
+      "description": "Yonsei Chiropractic Clinic se dedica a ayudarle a alcanzar su salud óptima. Contáctenos hoy para programar su consulta con la Dra. Hyeon Joo Park."
+    },
+    "details": {
+      "title": "Ubicación y Contacto",
+      "phone": {
+        "label": "Llame o envíe un mensaje de texto para citas"
       },
-      "form": {
-        "title": "Solicitar Cita",
-        "description": "Deje sus datos y nos pondremos en contacto con usted para confirmar una hora.",
-        "labels": {
-          "name": "Nombre Completo",
-          "phone": "Número de Teléfono",
-          "message": "¿Cómo podemos ayudar?"
-        },
-        "placeholders": {
-          "name": "Juan Pérez",
-          "phone": "(555) 000-0000",
-          "message": "Cuéntenos sobre sus síntomas o su hora preferida para la cita..."
-        },
-        "submit": "Enviar Solicitud",
-        "success": {
-          "title": "¡Solicitud Enviada!",
-          "message": "Gracias por contactarnos. Nos pondremos en contacto con usted en breve para programar su cita.",
-          "button": "Enviar otra solicitud"
-              }
-            }
-          },
-          "notFound": {
-            "title": "Página No Encontrada",
-            "description": "Lo sentimos, no pudimos encontrar la página que busca. Es posible que haya sido movida o eliminada.",
-            "cta": "Volver al Inicio"
-          },
-          "accessibility": {
-            "navigatedTo": "Navegado a {{title}}",
-            "required": "(requerido)",
-            "opensInNewWindow": "(se abre en una nueva ventana)",
-            "closeModal": "Cerrar modal",
-            "dismissNotification": "Descartar notificación",
-            "skipToContent": "Saltar al contenido"
-          },
-          "accessibilityPage": {
-            "title": "Declaración de Accesibilidad",
-            "intro": "Yonsei Chiropractic Clinic se compromete a garantizar la accesibilidad digital para personas con discapacidades. Mejoramos continuamente la experiencia del usuario para todos y aplicamos los estándares de accesibilidad pertinentes.",
-            "conformance": {
-              "title": "Estado de Conformidad",
-              "body": "Las Pautas de Accesibilidad para el Contenido Web (WCAG) definen requisitos para diseñadores y desarrolladores para mejorar la accesibilidad de las personas con discapacidades. Define tres niveles de conformidad: Nivel A, Nivel AA y Nivel AAA. Yonsei Chiropractic Clinic es parcialmente conforme con WCAG 2.1 nivel AA. Parcialmente conforme significa que algunas partes del contenido no cumplen totalmente con el estándar de accesibilidad."
-            },
-            "feedback": {
-              "title": "Comentarios",
-              "body": "Agradecemos sus comentarios sobre la accesibilidad de Yonsei Chiropractic Clinic. Háganos saber si encuentra barreras de accesibilidad en nuestro sitio web:",
-              "phone": "Teléfono: (213) 381-5500",
-              "email": "Correo electrónico: yonseichiropractic@gmail.com",
-              "address": "Dirección de visita: 3200 Wilshire Blvd Suite 302, Los Ángeles, CA 90010"
-            },
-            "technical": {
-              "title": "Especificaciones Técnicas",
-              "body": "La accesibilidad de Yonsei Chiropractic Clinic depende de las siguientes tecnologías para funcionar con la combinación particular de navegador web y cualquier tecnología asistiva o complemento instalado en su computadora:",
-              "items": {
-                "html": "HTML",
-                "aria": "WAI-ARIA",
-                "css": "CSS",
-                "js": "JavaScript"
-              }
-            },
-            "assessment": {
-              "title": "Enfoque de Evaluación",
-              "body": "Yonsei Chiropractic Clinic evaluó la accesibilidad de nuestro sitio web mediante los siguientes enfoques:",
-              "items": {
-                "self": "Autoevaluación",
-                "automated": "Pruebas automatizadas utilizando herramientas estándar de la industria"
-              }
-            },
-            "approval": {
-              "title": "Aprobación Formal de esta Declaración de Accesibilidad",
-              "body": "Esta Declaración de Accesibilidad está aprobada por: Yonsei Chiropractic Clinic",
-              "date": "Fecha: 16 de enero de 2026"
-            }
-          }
-        }
+      "email": {
+        "label": "Envíenos un correo electrónico en cualquier momento"
+      }
+    },
+    "hours": {
+      "title": "Horas de Operación"
+    },
+    "form": {
+      "title": "Solicitar Cita",
+      "description": "Deje sus datos y nos pondremos en contacto con usted para confirmar una hora.",
+      "labels": {
+        "name": "Nombre Completo",
+        "phone": "Número de Teléfono",
+        "message": "¿Cómo podemos ayudar?"
+      },
+      "placeholders": {
+        "name": "Juan Pérez",
+        "phone": "(555) 000-0000",
+        "message": "Cuéntenos sobre sus síntomas o su hora preferida para la cita..."
+      },
+      "submit": "Enviar Solicitud",
+      "success": {
+        "title": "¡Solicitud Enviada!",
+        "message": "Gracias por contactarnos. Nos pondremos en contacto con usted en breve para programar su cita.",
+        "button": "Enviar otra solicitud"
+      }
+    }
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "Lo sentimos, no pudimos encontrar la página que busca. Es posible que haya sido movida o eliminada.",
+    "cta": "Volver al Inicio"
+  },
+  "accessibility": {
+    "navigatedTo": "Navegado a {{title}}",
+    "required": "(requerido)",
+    "opensInNewWindow": "(se abre en una nueva ventana)",
+    "closeModal": "Cerrar modal",
+    "dismissNotification": "Descartar notificación",
+    "skipToContent": "Saltar al contenido"
+  },
+  "accessibilityPage": {
+    "title": "Declaración de Accesibilidad",
+    "intro": "Yonsei Chiropractic Clinic se compromete a garantizar la accesibilidad digital para personas con discapacidades. Mejoramos continuamente la experiencia del usuario para todos y aplicamos los estándares de accesibilidad pertinentes.",
+    "conformance": {
+      "title": "Estado de Conformidad",
+      "body": "Las Pautas de Accesibilidad para el Contenido Web (WCAG) definen requisitos para diseñadores y desarrolladores para mejorar la accesibilidad de las personas con discapacidades. Define tres niveles de conformidad: Nivel A, Nivel AA, y Nivel AAA. Yonsei Chiropractic Clinic es parcialmente conforme con WCAG 2.1 nivel AA. Parcialmente conforme significa que algunas partes del contenido no cumplen totalmente con el estándar de accesibilidad."
+    },
+    "feedback": {
+      "title": "Comentarios",
+      "body": "Agradecemos sus comentarios sobre la accesibilidad de Yonsei Chiropractic Clinic. Háganos saber si encuentra barreras de accesibilidad en nuestro sitio web:",
+      "phone": "Teléfono: (213) 381-5500",
+      "email": "Correo electrónico: yonseichiropractic@gmail.com",
+      "address": "Dirección de visita: 3200 Wilshire Blvd Suite 302, Los Ángeles, CA 90010"
+    },
+    "technical": {
+      "title": "Especificaciones Técnicas",
+      "body": "La accesibilidad de Yonsei Chiropractic Clinic depende de las siguientes tecnologías para funcionar con la combinación particular de navegador web y cualquier tecnología asistiva o complemento instalado en su computadora:",
+      "items": {
+        "html": "HTML",
+        "aria": "WAI-ARIA",
+        "css": "CSS",
+        "js": "JavaScript"
+      }
+    },
+    "assessment": {
+      "title": "Enfoque de Evaluación",
+      "body": "Yonsei Chiropractic Clinic evaluó la accesibilidad de nuestro sitio web mediante los siguientes enfoques:",
+      "items": {
+        "self": "Autoevaluación",
+        "automated": "Pruebas automatizadas utilizando herramientas estándar de la industria"
+      }
+    },
+    "approval": {
+      "title": "Aprobación Formal de esta Declaración de Accesibilidad",
+      "body": "Esta Declaración de Accesibilidad está aprobada por: Yonsei Chiropractic Clinic",
+      "date": "Fecha: 16 de enero de 2026"
+    }
+  }
+}
