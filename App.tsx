@@ -29,7 +29,12 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
   const [announcement, setAnnouncement] = React.useState('');
 
   useEffect(() => {
+    // Instant scroll to top
     window.scrollTo(0, 0);
+    if (document.documentElement) {
+      document.documentElement.scrollTop = 0;
+    }
+    
     // Move focus to main content on route change for accessibility
     if (mainRef.current) {
       // Use a small timeout to ensure content is rendered

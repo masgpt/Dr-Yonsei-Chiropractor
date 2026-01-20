@@ -150,53 +150,59 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <article className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
-              <div 
-                className="h-48 bg-slate-200 bg-cover bg-center" 
-                style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYJkFVchDwUDpuvYTHDMX7wcB2o4-KRkHS66YUphI15fxlOZQECfwLgzMKfdElT-W9iSdIY3q48gUCSOiMfqtTSrcbwHREpbS2CjWPSpDQ0vHMrEdZQmj8DTgKSRtABHXPPFkWjYx2zZrCr5ujoLJd9UDsc62-QAZD7Zq_2n4r4ZAT1zCdVSF01umEzn9IkV3T80CS52luafxQx4B4vabbBLJ4iPFY16_Im0Bfme2tWGEM0EzBZehYYx5sN7L6YAb0lkfWxzgDtmFH')" }}
-                role="img"
-                aria-label="Upper Cervical Chiropractic Care"
-              ></div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t('home.services.upperCervicalTitle')}</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.upperCervicalDesc')}</p>
-                <Link to="/techniques/upper-cervical" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
-                </Link>
-              </div>
-            </article>
+            <Link to="/techniques/upper-cervical" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <article className="flex flex-col h-full">
+                <div 
+                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYJkFVchDwUDpuvYTHDMX7wcB2o4-KRkHS66YUphI15fxlOZQECfwLgzMKfdElT-W9iSdIY3q48gUCSOiMfqtTSrcbwHREpbS2CjWPSpDQ0vHMrEdZQmj8DTgKSRtABHXPPFkWjYx2zZrCr5ujoLJd9UDsc62-QAZD7Zq_2n4r4ZAT1zCdVSF01umEzn9IkV3T80CS52luafxQx4B4vabbBLJ4iPFY16_Im0Bfme2tWGEM0EzBZehYYx5sN7L6YAb0lkfWxzgDtmFH')" }}
+                  role="img"
+                  aria-label="Upper Cervical Chiropractic Care"
+                ></div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.upperCervicalTitle')}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.upperCervicalDesc')}</p>
+                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
             {/* Service 2 */}
-            <article className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
-              <div 
-                className="h-48 bg-slate-200 bg-cover bg-center" 
-                style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTjhtTODS6SjxrML8dTUejNLNDLgJcV45vBggsscxieRdPgVE7xd4VMDtQ8HofIE3FDsW_YqZkCKWd4OfnCrlXSEUNe1rAGy22F4z_g_fjodEc7s6jXpd2sM40wFgfFpN87wrqIKXypZd5E0twvw-qm15nJDgJb5_jKEHg--faP0Ih9bb0LS1NoZuRSll2ZUv0yWJa4-75qxwOvzmgOn8dMupQ7ID08Gc8jd5DSQdQMKaYSnYIKVxs-8SWA4kKuFgUIfD-CHhBblYH')" }}
-                role="img"
-                aria-label="TMJ and Jaw Pain Relief"
-              ></div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t('home.services.tmjTitle')}</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.tmjDesc')}</p>
-                <Link to="/techniques/tmj" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
-                </Link>
-              </div>
-            </article>
+            <Link to="/techniques/tmj" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <article className="flex flex-col h-full">
+                <div 
+                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTjhtTODS6SjxrML8dTUejNLNDLgJcV45vBggsscxieRdPgVE7xd4VMDtQ8HofIE3FDsW_YqZkCKWd4OfnCrlXSEUNe1rAGy22F4z_g_fjodEc7s6jXpd2sM40wFgfFpN87wrqIKXypZd5E0twvw-qm15nJDgJb5_jKEHg--faP0Ih9bb0LS1NoZuRSll2ZUv0yWJa4-75qxwOvzmgOn8dMupQ7ID08Gc8jd5DSQdQMKaYSnYIKVxs-8SWA4kKuFgUIfD-CHhBblYH')" }}
+                  role="img"
+                  aria-label="TMJ and Jaw Pain Relief"
+                ></div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.tmjTitle')}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.tmjDesc')}</p>
+                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
             {/* Service 3 */}
-            <article className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
-              <div 
-                className="h-48 bg-slate-200 bg-cover bg-center" 
-                style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0bD2IlNX-ZvcW5TsKJzlHegY-bx7Qgy5OSerdPMAzcrUi3cg2Xy2riDRNdUsVFm4qBcBXbCGNArl4l9obiP6j06Z1AMS7g9gEzytEgk9j_NnC7odi60wbNbmYNDL9-Wj85EPg1atCf7BsPHO277o3KHXr2KoWhlSYeZjksd1Xd0t-tTaAfoy7bgBuyHFdjN2wnhn2n96ryug0j9jxwVNvt6I_NZ1jfri1RwBgo4rJby495mj4ygJXb947gmBmXPwKP8Rc4HZPL3hh')" }}
-                role="img"
-                aria-label="Car Accident and Personal Injury Care"
-              ></div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t('home.services.injuryTitle')}</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.injuryDesc')}</p>
-                <Link to="/techniques/car-accident" className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
-                </Link>
-              </div>
-            </article>
+            <Link to="/techniques/car-accident" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <article className="flex flex-col h-full">
+                <div 
+                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0bD2IlNX-ZvcW5TsKJzlHegY-bx7Qgy5OSerdPMAzcrUi3cg2Xy2riDRNdUsVFm4qBcBXbCGNArl4l9obiP6j06Z1AMS7g9gEzytEgk9j_NnC7odi60wbNbmYNDL9-Wj85EPg1atCf7BsPHO277o3KHXr2KoWhlSYeZjksd1Xd0t-tTaAfoy7bgBuyHFdjN2wnhn2n96ryug0j9jxwVNvt6I_NZ1jfri1RwBgo4rJby495mj4ygJXb947gmBmXPwKP8Rc4HZPL3hh')" }}
+                  role="img"
+                  aria-label="Car Accident and Personal Injury Care"
+                ></div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.injuryTitle')}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.injuryDesc')}</p>
+                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
           </div>
         </div>
       </section>
@@ -212,8 +218,8 @@ const Home: React.FC = () => {
             <Link to="/reviews" className="text-primary font-bold hover:underline whitespace-nowrap">{t('home.reviews.readAll')}</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none" aria-hidden="true">format_quote</span>
+            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
               <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
@@ -225,13 +231,13 @@ const Home: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">DH</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">Danbi H.</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Danbi H.</p>
                   <p className="text-xs text-slate-500 dark:text-slate-500">{t('common.location')}</p>
                 </div>
               </div>
-            </div>
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none" aria-hidden="true">format_quote</span>
+            </Link>
+            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
               <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
@@ -243,13 +249,13 @@ const Home: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">CJ</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">Christina J.</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Christina J.</p>
                   <p className="text-xs text-slate-500 dark:text-slate-500">{t('common.location')}</p>
                 </div>
               </div>
-            </div>
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hidden lg:block">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none" aria-hidden="true">format_quote</span>
+            </Link>
+            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group hidden lg:block !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
               <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
                 <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
@@ -261,11 +267,11 @@ const Home: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">JP</div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">Jenny P.</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Jenny P.</p>
                   <p className="text-xs text-slate-500 dark:text-slate-500">Northridge, CA</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
