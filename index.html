@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="light scroll-pt-[104px]">
+<html lang="en" class="scroll-pt-[104px]">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yonsei Chiropractic Clinic - Upper Cervical Health Care</title>
+    <title>Yonsei Chiropractic Clinic - Lower Cervical Health Care</title>
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme') || 'system';
+        const root = document.documentElement;
+        if (saved === 'dark' || (saved === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          root.classList.add('dark');
+        } else {
+          root.classList.add('light');
+        }
+      })();
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
