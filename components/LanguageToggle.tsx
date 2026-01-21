@@ -7,7 +7,6 @@ const LanguageToggle: React.FC = () => {
   const languages = [
     { code: 'en', label: 'EN' },
     { code: 'ko', label: 'KO' },
-    { code: 'es', label: 'ES' },
   ];
 
   const currentLanguage = i18n.language.split('-')[0];

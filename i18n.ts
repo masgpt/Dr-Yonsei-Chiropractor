@@ -4,7 +4,6 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import enTranslation from './locales/en.json';
 import koTranslation from './locales/ko.json';
-import esTranslation from './locales/es.json';
 
 i18n
   .use(LanguageDetector)
@@ -21,9 +20,6 @@ i18n
       },
       ko: {
         translation: koTranslation
-      },
-      es: {
-        translation: esTranslation
       }
     }
   });
