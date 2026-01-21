@@ -15,7 +15,7 @@ const About: React.FC = () => {
               className="w-20 h-20 flex-shrink-0 bg-slate-200 rounded-full border-2 border-slate-100 dark:border-slate-800 shadow-sm bg-center bg-cover" 
               style={{ backgroundImage: "url('/dr-park.png')" }}
               role="img"
-              aria-label="Dr. Hyeon Joo Park"
+              aria-label="Dr. Hyeon Joo Park, D.C., M.S."
             ></div>
             <div className="flex flex-col">
               <h1 id="about-hero-title" className="text-slate-900 dark:text-white text-2xl font-black leading-tight">
@@ -46,7 +46,7 @@ const About: React.FC = () => {
                 className="w-full h-full bg-center bg-cover bg-no-repeat bg-slate-200 dark:bg-slate-800" 
                 style={{ backgroundImage: "url('/dr-park.png')" }}
                 role="img"
-                aria-label="Dr. Hyeon Joo Park"
+                aria-label="Dr. Hyeon Joo Park, D.C., M.S."
               ></div>
               <div className="absolute bottom-6 left-6 z-20 text-white">
                 <p className="font-bold text-lg leading-tight">{t('home.meetDoctor.name')}</p>

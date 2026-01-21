@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
               className="h-8 w-auto object-contain rounded"
             />
             <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider mt-0.5 leading-none">
-              Dr. Hyeon Joo Park
+              Dr. Hyeon Joo Park, D.C., M.S.
             </span>
           </Link>
 

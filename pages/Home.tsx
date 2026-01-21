@@ -121,7 +121,7 @@ const Home: React.FC = () => {
                 className="w-20 h-20 sm:w-24 sm:h-24 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-2xl overflow-hidden bg-cover bg-center border-2 border-slate-100 dark:border-slate-700 shadow-sm" 
                 style={{ backgroundImage: "url('/dr-park.png')" }}
                 role="img"
-                aria-label="Dr. Hyeon Joo Park"
+                aria-label="Dr. Hyeon Joo Park, D.C., M.S."
               ></div>
               <div className="flex flex-col justify-center">
                 <div className="mb-1">
