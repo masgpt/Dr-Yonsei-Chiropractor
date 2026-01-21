@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         <div className="lg:hidden relative h-[500px] w-full flex items-center">
           <div 
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXfEVQRMkGxJtCUGpeigvuagQPKeRAWnl1RkrvAuGLs9n-4aa9PaPu4lnuc1Pc7QUhXtU5YBos4G8IYwJGlJsBOUJCm0jFIEp2fDrPwvhjM12pcWW4vVk86hpk0yQvCgwi9RvK2BlO3d17PUuHQQAcHvGVW7WavqOO5c6D-IqUs_Y8CSZr6rkKpOb8Z7BS78r3HfuKU2YNlTisYYgbPHV8KNK60kqRy2VD7iXmlNEoAQep3hAO8OQjY45KSjeaC6_NglreLWjDEhkf')" }}
+            style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
             aria-label="Yonsei Chiropractic Clinic interior"
           >
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
               <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 scale-[0.98] -z-10"></div>
               <div 
                 className="bg-slate-100 rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-cover bg-center" 
-                style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXfEVQRMkGxJtCUGpeigvuagQPKeRAWnl1RkrvAuGLs9n-4aa9PaPu4lnuc1Pc7QUhXtU5YBos4G8IYwJGlJsBOUJCm0jFIEp2fDrPwvhjM12pcWW4vVk86hpk0yQvCgwi9RvK2BlO3d17PUuHQQAcHvGVW7WavqOO5c6D-IqUs_Y8CSZr6rkKpOb8Z7BS78r3HfuKU2YNlTisYYgbPHV8KNK60kqRy2VD7iXmlNEoAQep3hAO8OQjY45KSjeaC6_NglreLWjDEhkf')" }}
+                style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
                 role="img"
                 aria-label="Yonsei Chiropractic Clinic interior"
               ></div>
