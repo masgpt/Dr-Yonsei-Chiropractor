@@ -14,7 +14,7 @@ const Services: React.FC = () => {
             <div className="@[480px]:p-4">
               <div 
                 className="flex min-h-[350px] sm:min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6 sm:p-8 shadow-sm relative overflow-hidden" 
-                style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4CI_stkT1Sbg72Xey5aaSQvOfqMJ2HvhQY0GzI8vO1lTTRnNtOiNN5R7XT3br557OJbR4wd-rqiGlXZVmvsJgYweV49c70JHnGLwjzaCZAmw3OTd5iUFwlQpqqo_sIfp82SCtCbQnd-mCLjLveS91K5GU0rNklqe5u5DDUVgYKnvRMvJH4hdq2zgJsPTrXqfbgWZFC7MTQrYJt-bW0_vsss2b-YP4wzdI1tHaGLHj99iKpWo5X0zdBQ1jZP9U-a_CItGdMC95I03s')" }}
+                style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
               >
                 <div className="flex flex-col gap-2 text-center max-w-[600px] z-10">
                   <h1 className="text-white text-3xl sm:text-4xl font-black leading-tight tracking-tight @[480px]:text-5xl drop-shadow-md">

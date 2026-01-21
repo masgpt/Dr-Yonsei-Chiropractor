@@ -8,11 +8,25 @@ const UpperCervical: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
+      <section className="relative w-full h-[120px] sm:h-[160px] md:h-[200px] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/o-14.jpg')" }}
+          role="img"
+          aria-label="Upper Cervical Care"
+        ></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg mb-2">
+            {t('techniques.upperCervical.title')}
+          </h1>
+          <h2 className="text-sm sm:text-base md:text-lg font-bold text-orange-300 drop-shadow-md">
+            {t('techniques.upperCervical.subtitle')}
+          </h2>
+        </div>
+      </section>
+
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-tight">{t('techniques.upperCervical.title')}</h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-6 sm:mb-8">{t('techniques.upperCervical.subtitle')}</h2>
-          
           <div className="prose prose-sm sm:prose-base md:prose-lg dark:prose-invert text-slate-600 dark:text-slate-300 max-w-none">
             <p className="mb-6 leading-relaxed">
               {t('techniques.upperCervical.p1')}
