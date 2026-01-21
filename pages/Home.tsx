@@ -154,7 +154,7 @@ const Home: React.FC = () => {
               <article className="flex flex-col h-full">
                 <div 
                   className="h-48 bg-slate-200 bg-cover bg-center" 
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYJkFVchDwUDpuvYTHDMX7wcB2o4-KRkHS66YUphI15fxlOZQECfwLgzMKfdElT-W9iSdIY3q48gUCSOiMfqtTSrcbwHREpbS2CjWPSpDQ0vHMrEdZQmj8DTgKSRtABHXPPFkWjYx2zZrCr5ujoLJd9UDsc62-QAZD7Zq_2n4r4ZAT1zCdVSF01umEzn9IkV3T80CS52luafxQx4B4vabbBLJ4iPFY16_Im0Bfme2tWGEM0EzBZehYYx5sN7L6YAb0lkfWxzgDtmFH')" }}
+                  style={{ backgroundImage: "url('/o-14.jpg')" }}
                   role="img"
                   aria-label="Upper Cervical Chiropractic Care"
                 ></div>
@@ -172,7 +172,7 @@ const Home: React.FC = () => {
               <article className="flex flex-col h-full">
                 <div 
                   className="h-48 bg-slate-200 bg-cover bg-center" 
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTjhtTODS6SjxrML8dTUejNLNDLgJcV45vBggsscxieRdPgVE7xd4VMDtQ8HofIE3FDsW_YqZkCKWd4OfnCrlXSEUNe1rAGy22F4z_g_fjodEc7s6jXpd2sM40wFgfFpN87wrqIKXypZd5E0twvw-qm15nJDgJb5_jKEHg--faP0Ih9bb0LS1NoZuRSll2ZUv0yWJa4-75qxwOvzmgOn8dMupQ7ID08Gc8jd5DSQdQMKaYSnYIKVxs-8SWA4kKuFgUIfD-CHhBblYH')" }}
+                  style={{ backgroundImage: "url('/o-5.jpg')" }}
                   role="img"
                   aria-label="TMJ and Jaw Pain Relief"
                 ></div>
@@ -190,7 +190,7 @@ const Home: React.FC = () => {
               <article className="flex flex-col h-full">
                 <div 
                   className="h-48 bg-slate-200 bg-cover bg-center" 
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0bD2IlNX-ZvcW5TsKJzlHegY-bx7Qgy5OSerdPMAzcrUi3cg2Xy2riDRNdUsVFm4qBcBXbCGNArl4l9obiP6j06Z1AMS7g9gEzytEgk9j_NnC7odi60wbNbmYNDL9-Wj85EPg1atCf7BsPHO277o3KHXr2KoWhlSYeZjksd1Xd0t-tTaAfoy7bgBuyHFdjN2wnhn2n96ryug0j9jxwVNvt6I_NZ1jfri1RwBgo4rJby495mj4ygJXb947gmBmXPwKP8Rc4HZPL3hh')" }}
+                  style={{ backgroundImage: "url('/o-10.jpg')" }}
                   role="img"
                   aria-label="Car Accident and Personal Injury Care"
                 ></div>
