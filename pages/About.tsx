@@ -8,26 +8,39 @@ const About: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-10 md:py-20 max-w-[1280px] mx-auto" aria-labelledby="about-hero-title">
-        <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-20 max-w-[1280px] mx-auto" aria-labelledby="about-hero-title">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex items-center gap-4 lg:hidden">
+            <div 
+              className="w-20 h-20 flex-shrink-0 bg-slate-200 rounded-full border-2 border-slate-100 dark:border-slate-800 shadow-sm bg-center bg-cover" 
+              style={{ backgroundImage: "url('/dr-park.png')" }}
+              role="img"
+              aria-label="Dr. Hyeon Joo Park"
+            ></div>
+            <div className="flex flex-col">
+              <h1 id="about-hero-title" className="text-slate-900 dark:text-white text-2xl font-black leading-tight">
+                {t('about.hero.title')}
+              </h1>
+              <p className="text-primary font-bold text-xs uppercase tracking-wider">{t('home.meetDoctor.name')}</p>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-6 lg:w-1/2 lg:pr-12">
-            <h1 id="about-hero-title" className="text-slate-900 dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+            <h1 id="about-hero-title-desktop" className="hidden lg:block text-slate-900 dark:text-white lg:text-5xl xl:text-6xl font-black leading-tight tracking-tight">
               {t('about.hero.title')}
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
               {t('about.hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-12 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center min-w-[160px] focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
+              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-11 px-6 rounded-lg transition-all shadow-md flex items-center justify-center min-w-[160px] focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
                 {t('about.hero.book')}
-              </Link>
-              <Link to="/techniques/upper-cervical" className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 text-base font-medium h-12 px-6 rounded-lg transition-colors flex items-center justify-center focus:ring-2 focus:ring-slate-500/20">
-                {t('about.hero.hio')}
               </Link>
             </div>
           </div>
-          <div className="lg:w-1/2 flex justify-center lg:justify-end mb-6 lg:mb-0">
-            <div className="relative w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl lg:rotate-1 hover:rotate-0 transition-transform duration-500">
+
+          <div className="hidden lg:block lg:w-1/2 lg:flex justify-end mb-6 lg:mb-0">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl lg:rotate-1 hover:rotate-0 transition-transform duration-500">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
               <div 
                 className="w-full h-full bg-center bg-cover bg-no-repeat bg-slate-200 dark:bg-slate-800" 

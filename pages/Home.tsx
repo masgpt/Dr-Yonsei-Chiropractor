@@ -114,26 +114,30 @@ const Home: React.FC = () => {
 
       {/* Intro / Meet Dr. Park */}
       <section className="py-16 md:py-24 bg-background-light dark:bg-background-dark" aria-labelledby="meet-doctor-heading">
-        <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-center">
-            <div 
-              className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-xl overflow-hidden bg-cover bg-center border-4 border-white dark:border-slate-800 shadow-lg" 
-              style={{ backgroundImage: "url('/dr-park.png')" }}
-              role="img"
-              aria-label="Dr. Hyeon Joo Park"
-            ></div>
-            <div className="flex flex-col text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                <span className="px-2 py-1 rounded bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold uppercase tracking-wider">{t('home.meetDoctor.badge')}</span>
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-4 md:gap-8 mb-6">
+              <div 
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-2xl overflow-hidden bg-cover bg-center border-2 border-slate-100 dark:border-slate-700 shadow-sm" 
+                style={{ backgroundImage: "url('/dr-park.png')" }}
+                role="img"
+                aria-label="Dr. Hyeon Joo Park"
+              ></div>
+              <div className="flex flex-col justify-center">
+                <div className="mb-1">
+                  <span className="px-2 py-0.5 rounded bg-orange-50 dark:bg-orange-900/20 text-primary dark:text-orange-400 text-[10px] font-bold uppercase tracking-wider">{t('home.meetDoctor.badge')}</span>
+                </div>
+                <h2 id="meet-doctor-heading" className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white leading-tight">{t('home.meetDoctor.name')}</h2>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Yonsei Chiropractic Clinic</p>
               </div>
-              <h2 id="meet-doctor-heading" className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3">{t('home.meetDoctor.name')}</h2>
-              <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+            </div>
+            <div className="flex flex-col">
+              <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base border-l-4 border-primary/20 pl-4 py-1">
                 {t('home.meetDoctor.quote')}
               </p>
-              <div>
-                <Link to="/about" className="text-primary font-bold hover:underline inline-flex items-center gap-1 group">
+              <div className="flex justify-start">
+                <Link to="/about" className="h-10 px-5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center text-sm focus:ring-2 focus:ring-slate-500/20">
                   {t('home.meetDoctor.readBio')}
-                  <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
                 </Link>
               </div>
             </div>
