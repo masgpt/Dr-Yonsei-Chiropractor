@@ -15,6 +15,8 @@ const Services: React.FC = () => {
               <div 
                 className="flex min-h-[350px] sm:min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6 sm:p-8 shadow-sm relative overflow-hidden" 
                 style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
+                role="img"
+                aria-label="Chiropractor's hands supporting a patient's spine during healing care"
               >
                 <div className="flex flex-col gap-2 text-center max-w-[600px] z-10">
                   <h1 className="text-white text-3xl sm:text-4xl font-black leading-tight tracking-tight @[480px]:text-5xl drop-shadow-md">

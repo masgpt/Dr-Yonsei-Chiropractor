@@ -162,7 +162,6 @@ const Navbar: React.FC = () => {
             </div>
 
             <Link to="/reviews" className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
-            <Link to="/contact" className={navLinkClass('/contact')}>{t('nav.contact')}</Link>
           </nav>
 
           {/* CTA Button */}
@@ -228,7 +227,6 @@ const Navbar: React.FC = () => {
             </div>
 
             <Link to="/reviews" onClick={toggleMenu} className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
-            <Link to="/contact" onClick={toggleMenu} className={navLinkClass('/contact')}>{t('nav.contact')}</Link>
             <div className="pt-2 flex items-center justify-between">
               <span className="text-sm font-medium text-slate-500">{t('nav.language')}</span>
               <LanguageToggle />

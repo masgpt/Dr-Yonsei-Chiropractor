@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from './ui/Link';
+import ThemeToggle from './ui/ThemeToggle';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -81,13 +82,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-500">
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500 dark:text-slate-500">
           <p>© 2026 Yonsei Chiropractic Clinic. {t('footer.rights')}</p>
-          <nav className="flex gap-4" aria-label="Legal">
-            <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.accessibility')}</Link>
-            <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.privacyPolicy')}</Link>
-            <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.termsOfService')}</Link>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="flex gap-4" aria-label="Legal">
+              <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.accessibility')}</Link>
+              <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.privacyPolicy')}</Link>
+              <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-300 focus:ring-1 focus:ring-primary/20 rounded px-1">{t('footer.termsOfService')}</Link>
+            </nav>
+            <ThemeToggle className="shrink-0" />
+          </div>
         </div>
       </div>
     </footer>

@@ -12,7 +12,6 @@ import NotFound from './pages/NotFound';
 import MessageFromDrPark from './pages/MessageFromDrPark';
 import Accessibility from './pages/Accessibility';
 import SkipToContent from './components/SkipToContent';
-import ThemeToggle from './components/ui/ThemeToggle';
 
 // Techniques Pages
 import AboutChiropractic from './pages/techniques/AboutChiropractic';
@@ -74,7 +73,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         {children}
       </main>
       <Footer />
-      <ThemeToggle />
     </div>
   );
 };

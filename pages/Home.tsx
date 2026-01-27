@@ -66,12 +66,12 @@ const Home: React.FC = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 scale-[0.98] -z-10"></div>
-              <div 
-                className="bg-slate-100 rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-cover bg-center" 
-                style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
-                role="img"
-                aria-label="Yonsei Chiropractic Clinic interior"
-              ></div>
+            <div 
+              className="bg-slate-100 rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-cover bg-center" 
+              style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
+              role="img"
+              aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
+            ></div>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@ const Home: React.FC = () => {
                   className="h-48 bg-slate-200 bg-cover bg-center" 
                   style={{ backgroundImage: "url('/o-14.jpg')" }}
                   role="img"
-                  aria-label="Upper Cervical Chiropractic Care"
+                  aria-label="Side-view cervical spine X-ray highlighting the upper cervical alignment"
                 ></div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.upperCervicalTitle')}</h3>
@@ -178,7 +178,7 @@ const Home: React.FC = () => {
                   className="h-48 bg-slate-200 bg-cover bg-center" 
                   style={{ backgroundImage: "url('/o-5.jpg')" }}
                   role="img"
-                  aria-label="TMJ and Jaw Pain Relief"
+                  aria-label="Before and after photos of heel lifts showing improved postural symmetry"
                 ></div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.tmjTitle')}</h3>
@@ -196,7 +196,7 @@ const Home: React.FC = () => {
                   className="h-48 bg-slate-200 bg-cover bg-center" 
                   style={{ backgroundImage: "url('/o-10.jpg')" }}
                   role="img"
-                  aria-label="Car Accident and Personal Injury Care"
+                  aria-label="Front and back spine X-rays with alignment markers used for car accident recovery"
                 ></div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.injuryTitle')}</h3>
