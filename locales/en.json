@@ -2,8 +2,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "aboutDrPark": "About Dr. Hyeon Joo Park, D.C., M.S.",
-    "messageFromDrPark": "Message From Dr. Hyeon Joo Park, D.C., M.S.",
+    "aboutDrPark": "About Dr. Park, D.C., M.S.",
+    "philosophy": "Our Philosophy",
     "techniques": "Techniques",
     "reviews": "Reviews",
     "contact": "Contact",
@@ -19,8 +19,8 @@
   "home": {
     "hero": {
       "title": "Upper Cervical Health Care",
-      "description": "The first Korean American chiropractic clinic in the United States to specialize in the Palmer Upper Cervical Specific Technique (H.I.O).",
-      "descriptionDesktop": "Yonsei Chiropractic Clinic is the first Korean American chiropractic clinic in the US specializing in the \"hole-in-one\" method (H.I.O).",
+      "description": "Restoring your body's natural healing power with brave compassion and specialized expertise. We target the root cause of your pain to help you reclaim the life you love.",
+      "descriptionDesktop": "Dedicated to restoring your health through the precise Palmer Upper Cervical method. Our mission is to provide bravely compassionate care that goes beyond treating symptoms to target the true source of your pain.",
       "callNow": "Call Now",
       "requestAppointment": "Request Appointment",
       "bookAppointment": "Book Appointment",
@@ -66,6 +66,8 @@
   "footer": {
     "description": "Specializing in Palmer Upper Cervical Specific Technique to restore your body's natural healing power.",
     "quickLinks": "Quick Links",
+    "about": "About",
+    "message": "Our Philosophy",
     "techniques": "Techniques",
     "contactInfo": "Contact Info",
     "email": "Email",

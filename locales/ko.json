@@ -2,8 +2,8 @@
   "nav": {
     "home": "홈",
     "about": "소개",
-    "aboutDrPark": "박현주 원장, D.C., M.S. 소개",
-    "messageFromDrPark": "박현주 원장, D.C., M.S. 메시지",
+    "aboutDrPark": "박 원장 소개",
+    "philosophy": "치료 철학",
     "techniques": "교정 기법",
     "reviews": "후기",
     "contact": "문의",
@@ -19,8 +19,8 @@
   "home": {
     "hero": {
       "title": "상부 경추 건강 관리",
-      "description": "미국 최초로 팔머 상부 경추 전문 기법(H.I.O)을 전문으로 하는 한인 카이로프랙틱 클리닉입니다.",
-      "descriptionDesktop": "연세 카이로프랙틱 클리닉은 미국 내 한인 클리닉 중 최초로 '홀인원(H.I.O)' 기법을 전문으로 하는 카이로프랙틱 병원입니다.",
+      "description": "용기 있는 정성과 전문적인 기술로 신체의 자연 치유력을 회복시킵니다. 통증의 근본 원인을 찾아 당신이 사랑하는 삶을 되찾을 수 있도록 돕겠습니다.",
+      "descriptionDesktop": "정밀한 팔머 상부 경추 기법을 통해 당신의 건강을 회복시키는 데 전념합니다. 단순히 증상을 치료하는 것을 넘어 통증의 진정한 원인을 타겟팅하는 용기 있는 정성을 다하겠습니다.",
       "callNow": "지금 전화하기",
       "requestAppointment": "예약 요청",
       "bookAppointment": "예약하기",
@@ -66,6 +66,8 @@
   "footer": {
     "description": "신체의 자연 치유력을 회복하기 위해 팔머 상부 경추 전문 기법을 전문으로 합니다.",
     "quickLinks": "빠른 링크",
+    "about": "병원 소개",
+    "message": "치료 철학",
     "techniques": "교정 기법",
     "contactInfo": "연락처 정보",
     "email": "이메일",

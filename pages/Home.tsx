@@ -8,29 +8,33 @@ const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-white dark:bg-background-dark lg:pt-20 lg:pb-24" aria-label="Introduction">
+      <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
+        {/* Background Decorative Element */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
+
         {/* Mobile Hero (Overlay) */}
-        <div className="lg:hidden relative h-[500px] w-full flex items-center">
+        <div className="lg:hidden relative h-[450px] w-full flex items-center">
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
             aria-label="Yonsei Chiropractic Clinic interior"
           >
-            <div className="absolute inset-0 bg-slate-900/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
           </div>
-          <div className="relative z-10 px-6 w-full">
-            <h1 className="text-4xl font-black tracking-tight text-white leading-tight mb-4">
+          <div className="relative z-10 px-8 w-full">
+            <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-[1.1] mb-6">
               {t('home.hero.title')}
             </h1>
-            <p className="text-lg text-slate-200 mb-8 max-w-md">
+            <p className="text-lg text-slate-300 mb-10 max-w-md leading-relaxed font-medium">
               {t('home.hero.description')}
             </p>
-            <div className="flex flex-col gap-3">
-              <Link to="/contact" className="h-12 px-6 rounded-lg bg-primary text-white font-bold flex items-center justify-center focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary">
+            <div className="flex flex-col gap-4">
+              <Link to="/contact" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-transform">
                 {t('home.hero.bookAppointment')}
               </Link>
-              <Link to="/techniques/upper-cervical" className="h-12 px-6 rounded-lg bg-white/10 text-white font-bold border border-white/20 backdrop-blur-sm flex items-center justify-center focus:ring-2 focus:ring-white/50">
+              <Link to="/techniques/upper-cervical" className="h-14 px-8 rounded-2xl bg-white/10 text-white font-bold border border-white/20 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-transform">
                 {t('home.hero.learnMore')}
               </Link>
             </div>
@@ -38,74 +42,81 @@ const Home: React.FC = () => {
         </div>
 
         {/* Desktop Hero (Side-by-Side) */}
-        <div className="hidden lg:block max-w-[1280px] mx-auto px-8">
-          <div className="grid grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6">
-              <h1 className="text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                {t('home.hero.title')}
-              </h1>
-              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-                {t('home.hero.descriptionDesktop')}
-              </p>
-              <div className="flex flex-wrap gap-3 mt-2">
-                <Link href="tel:2133815500" className="h-12 px-6 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center min-w-[140px] focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
+        <div className="hidden lg:block max-w-[1280px] mx-auto px-10 pt-16 pb-12">
+          <div className="grid grid-cols-2 gap-16 items-center">
+            <div className="flex flex-col gap-6 relative z-10">
+              <div>
+                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.2em] mb-4 border border-primary/20">
+                  Palmer Upper Cervical Specialist
+                </span>
+                <h1 className="text-7xl font-black tracking-tighter text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase">
+                  Yonsei<br /><span className="text-primary">Chiropractic</span><br /><span className="text-4xl sm:text-5xl lowercase italic font-light tracking-tight opacity-50 block mt-2">Clinic</span>
+                </h1>
+                <p className="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed font-medium">
+                  {t('home.hero.descriptionDesktop')}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-2">
+                <Link to="/contact" className="h-14 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-wider text-sm">
+                  {t('home.hero.bookAppointment')}
+                </Link>
+                <Link href="tel:2133815500" className="h-14 px-10 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:-translate-y-1 active:translate-y-0">
                   {t('home.hero.callNow')}
                 </Link>
-                <Link to="/contact" className="h-12 px-6 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700 min-w-[180px] focus:ring-2 focus:ring-slate-500/20">
-                  {t('home.hero.requestAppointment')}
-                </Link>
               </div>
-              <div className="flex items-center gap-3 mt-4 text-sm text-slate-500 dark:text-slate-400">
-                <div className="flex -space-x-2" aria-hidden="true">
-                  <div className="w-8 h-8 rounded-full border-2 border-white dark:border-background-dark bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2w7qoKRIiZhLjhCgAHeX3vg67xyRGXuLFl1OoNLnR0Yec1rY2AeAdvsrPOhvjSOROpCN8hMFqSjvXWQ-_hik9od6ezTmbeJ1vd8ULFEAoQEioNMfKJTS5jB3APbbMDQpSMeQp1v_mfxHtHYoVDnhKY9AE6c1dUWIcUMuP_TU21IaznqkUNEy4KW4H2i2jN5xNsvYntDA94zBjSdbAcZFK8JlUdw12I-i3oNeejOJrXzuXdxGJ7iuEWYQM-68csN1YHkbLEKb66NA7')" }}></div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white dark:border-background-dark bg-slate-200 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTiBxzYw56CdOrXypz_qix82KnvcJCL9VvI-v8wLOPhKd4f08zzfDtBtgnT6zaDamQeeOHmYN_V6fUtZmB1owh-saFa06itbczl0-ZhkQ_ctYDPsOZU8HSC0Ogn2ceGvN3iCUqZI--jhsnbDeo5g7LTpRv0ILwHmy8iK8ePqNkE-LP61J8SYZk0tTUlvxQC2o8jwgYgQ52bcsFIs-_ZgRtmkw1_y2c4K_5JSsRNFh0tLv9uONeVSTcdTmr9TLU5Pj9MWkvcFIITfeJ')" }}></div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white dark:border-background-dark bg-slate-200 flex items-center justify-center text-[10px] font-bold bg-slate-100">+50</div>
+              <div className="flex items-center gap-4 mt-6 text-sm text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest">
+                <div className="flex -space-x-3" aria-hidden="true">
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-200 bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2w7qoKRIiZhLjhCgAHeX3vg67xyRGXuLFl1OoNLnR0Yec1rY2AeAdvsrPOhvjSOROpCN8hMFqSjvXWQ-_hik9od6ezTmbeJ1vd8ULFEAoQEioNMfKJTS5jB3APbbMDQpSMeQp1v_mfxHtHYoVDnhKY9AE6c1dUWIcUMuP_TU21IaznqkUNEy4KW4H2i2jN5xNsvYntDA94zBjSdbAcZFK8JlUdw12I-i3oNeejOJrXzuXdxGJ7iuEWYQM-68csN1YHkbLEKb66NA7')" }}></div>
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-200 bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTiBxzYw56CdOrXypz_qix82KnvcJCL9VvI-v8wLOPhKd4f08zzfDtBtgnT6zaDamQeeOHmYN_V6fUtZmB1owh-saFa06itbczl0-ZhkQ_ctYDPsOZU8HSC0Ogn2ceGvN3iCUqZI--jhsnbDeo5g7LTpRv0ILwHmy8iK8ePqNkE-LP61J8SYZk0tTUlvxQC2o8jwgYgQ52bcsFIs-_ZgRtmkw1_y2c4K_5JSsRNFh0tLv9uONeVSTcdTmr9TLU5Pj9MWkvcFIITfeJ')" }}></div>
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-primary flex items-center justify-center text-[10px] font-black text-white shadow-lg">+50</div>
                 </div>
-                <p>{t('home.hero.trustedBy')}</p>
+                <p className="text-[11px]">{t('home.hero.trustedBy')}</p>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 scale-[0.98] -z-10"></div>
-            <div 
-              className="bg-slate-100 rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-cover bg-center" 
-              style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
-              role="img"
-              aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
-            ></div>
+              <div className="absolute inset-0 bg-primary/20 rounded-[40px] transform rotate-6 scale-95 blur-2xl -z-10 animate-pulse"></div>
+              <div 
+                className="bg-slate-100 rounded-[40px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] aspect-[4/5] bg-cover bg-center border-8 border-white dark:border-slate-800 relative group" 
+                style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
+                role="img"
+                aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Trust Strip */}
-      <section className="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark" aria-label="Our credentials">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-3">
-              <div className="p-3 rounded-full bg-primary/10 text-primary mb-1">
-                <span className="material-symbols-outlined text-[28px]" aria-hidden="true">verified_user</span>
+      <section className="bg-slate-50 dark:bg-slate-950/50 border-y border-slate-100 dark:border-slate-900" aria-label="Our credentials">
+        <div className="max-w-[1280px] mx-auto px-10 py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-16">
+            <div className="flex flex-col items-center text-center gap-6 group">
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">verified_user</span>
               </div>
-              <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">{t('home.trustStrip.palmerTitle')}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{t('home.trustStrip.palmerDesc')}</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-3">
-              <div className="p-3 rounded-full bg-primary/10 text-primary mb-1">
-                <span className="material-symbols-outlined text-[28px]" aria-hidden="true">workspace_premium</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">{t('home.trustStrip.awardTitle')}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{t('home.trustStrip.awardDesc')}</p>
+              <div className="space-y-2">
+                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.palmerTitle')}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.palmerDesc')}</p>
               </div>
             </div>
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-3">
-              <div className="p-3 rounded-full bg-primary/10 text-primary mb-1">
-                <span className="material-symbols-outlined text-[28px]" aria-hidden="true">self_improvement</span>
+            <div className="flex flex-col items-center text-center gap-6 group">
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">workspace_premium</span>
               </div>
-              <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">{t('home.trustStrip.healingTitle')}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{t('home.trustStrip.healingDesc')}</p>
+              <div className="space-y-2">
+                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.awardTitle')}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.awardDesc')}</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center text-center gap-6 group">
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">self_improvement</span>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.healingTitle')}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.healingDesc')}</p>
               </div>
             </div>
           </div>
@@ -113,32 +124,39 @@ const Home: React.FC = () => {
       </section>
 
       {/* Intro / Meet Dr. Park */}
-      <section className="py-16 md:py-24 bg-background-light dark:bg-background-dark" aria-labelledby="meet-doctor-heading">
-        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100 dark:border-slate-800">
-            <div className="flex items-center gap-4 md:gap-8 mb-6">
-              <div 
-                className="w-20 h-20 sm:w-24 sm:h-24 md:w-48 md:h-48 flex-shrink-0 bg-slate-200 rounded-full md:rounded-2xl overflow-hidden bg-cover bg-center border-2 border-slate-100 dark:border-slate-700 shadow-sm" 
-                style={{ backgroundImage: "url('/dr-park.png')" }}
-                role="img"
-                aria-label="Dr. Hyeon Joo Park, D.C., M.S."
-              ></div>
-              <div className="flex flex-col justify-center">
-                <div className="mb-1">
-                  <span className="px-2 py-0.5 rounded bg-orange-50 dark:bg-orange-900/20 text-primary dark:text-orange-400 text-[10px] font-bold uppercase tracking-wider">{t('home.meetDoctor.badge')}</span>
-                </div>
-                <h2 id="meet-doctor-heading" className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white leading-tight">{t('home.meetDoctor.name')}</h2>
-                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Yonsei Chiropractic Clinic</p>
+      <section className="py-16 md:py-20 bg-white dark:bg-[#0a0f14] relative overflow-hidden" aria-labelledby="meet-doctor-heading">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div className="max-w-[1280px] mx-auto px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-primary rounded-[40px] rotate-3 scale-95 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
+                <div 
+                  className="relative rounded-[40px] overflow-hidden aspect-square shadow-2xl bg-cover bg-center border-4 border-white dark:border-slate-800" 
+                  style={{ backgroundImage: "url('/dr-park.png')" }}
+                  role="img"
+                  aria-label="Dr. Hyeon Joo Park, D.C., M.S."
+                ></div>
               </div>
             </div>
-            <div className="flex flex-col">
-              <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed italic text-sm sm:text-base border-l-4 border-primary/20 pl-4 py-1">
-                {t('home.meetDoctor.quote')}
-              </p>
-              <div className="flex justify-start">
-                <Link to="/about" className="h-10 px-5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center text-sm focus:ring-2 focus:ring-slate-500/20">
-                  {t('home.meetDoctor.readBio')}
-                </Link>
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-3">The Expert Behind Your Care</span>
+                <h2 id="meet-doctor-heading" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight uppercase">
+                  {t('home.meetDoctor.name')}
+                </h2>
+                <div className="h-1.5 w-20 bg-primary mt-4 rounded-full"></div>
+              </div>
+              <div className="space-y-5">
+                <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed italic font-medium">
+                  "{t('home.meetDoctor.quote')}"
+                </p>
+                <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+                  <Link to="/about" className="h-12 px-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs uppercase tracking-widest hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center">
+                    {t('home.meetDoctor.readBio')}
+                  </Link>
+                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Yonsei Chiropractic Clinic</p>
+                </div>
               </div>
             </div>
           </div>
@@ -146,63 +164,85 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-background-dark" aria-labelledby="services-heading">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 id="services-heading" className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">{t('home.services.title')}</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">{t('home.services.description')}</p>
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950/50" aria-labelledby="services-heading">
+        <div className="max-w-[1280px] mx-auto px-10">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <div className="max-w-2xl">
+              <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Our Expertise</span>
+              <h2 id="services-heading" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-none uppercase">
+                {t('home.services.title')}
+              </h2>
+            </div>
+            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-sm font-medium leading-relaxed">
+              {t('home.services.description')}
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Service 1 */}
-            <Link to="/techniques/upper-cervical" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+            <Link to="/techniques/upper-cervical" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
               <article className="flex flex-col h-full">
                 <div 
-                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
                   style={{ backgroundImage: "url('/o-14.jpg')" }}
                   role="img"
                   aria-label="Side-view cervical spine X-ray highlighting the upper cervical alignment"
-                ></div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.upperCervicalTitle')}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.upperCervicalDesc')}</p>
-                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                >
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-8 flex flex-col flex-1 relative">
+                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                    <span className="material-symbols-outlined text-[28px]">biotech</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.upperCervicalTitle')}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.upperCervicalDesc')}</p>
+                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
             </Link>
             {/* Service 2 */}
-            <Link to="/techniques/tmj" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+            <Link to="/techniques/tmj" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
               <article className="flex flex-col h-full">
                 <div 
-                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
                   style={{ backgroundImage: "url('/o-5.jpg')" }}
                   role="img"
                   aria-label="Before and after photos of heel lifts showing improved postural symmetry"
-                ></div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.tmjTitle')}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.tmjDesc')}</p>
-                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                >
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-8 flex flex-col flex-1 relative">
+                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                    <span className="material-symbols-outlined text-[28px]">child_care</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.tmjTitle')}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.tmjDesc')}</p>
+                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
             </Link>
             {/* Service 3 */}
-            <Link to="/techniques/car-accident" className="group flex flex-col bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
+            <Link to="/techniques/car-accident" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
               <article className="flex flex-col h-full">
                 <div 
-                  className="h-48 bg-slate-200 bg-cover bg-center" 
+                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
                   style={{ backgroundImage: "url('/o-10.jpg')" }}
                   role="img"
                   aria-label="Front and back spine X-rays with alignment markers used for car accident recovery"
-                ></div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{t('home.services.injuryTitle')}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 flex-1">{t('home.services.injuryDesc')}</p>
-                  <div className="text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                >
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div className="p-8 flex flex-col flex-1 relative">
+                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                    <span className="material-symbols-outlined text-[28px]">car_crash</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.injuryTitle')}</h3>
+                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.injuryDesc')}</p>
+                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
@@ -212,157 +252,143 @@ const Home: React.FC = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50" aria-labelledby="reviews-heading">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+      <section className="py-16 md:py-20 bg-white dark:bg-[#0a0f14] relative overflow-hidden" aria-labelledby="reviews-heading">
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div className="max-w-[1280px] mx-auto px-10">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
             <div className="max-w-2xl">
-              <h2 id="reviews-heading" className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-2">{t('home.reviews.title')}</h2>
-              <p className="text-slate-600 dark:text-slate-400">{t('home.reviews.description')}</p>
+              <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Patient Experiences</span>
+              <h2 id="reviews-heading" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-none uppercase">
+                {t('home.reviews.title')}
+              </h2>
             </div>
-            <Link to="/reviews" className="text-primary font-bold hover:underline whitespace-nowrap">{t('home.reviews.readAll')}</Link>
+            <Link to="/reviews" className="h-12 px-8 rounded-xl border-2 border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white font-black text-xs uppercase tracking-widest hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
+              {t('home.reviews.readAll')}
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
-              <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-              </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">{t('home.reviews.items.review1')}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">DH</div>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Danbi H.</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">{t('common.location')}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <Link key={i} to="/reviews" className={`bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all group !text-inherit ${i === 3 ? 'hidden lg:block' : ''}`}>
+                <div className="flex gap-1 text-primary mb-4" aria-label="5 star rating">
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
+                  ))}
                 </div>
-              </div>
-            </Link>
-            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
-              <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-              </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">{t('home.reviews.items.review2')}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">CJ</div>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Christina J.</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">{t('common.location')}</p>
+                <p className="text-lg text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic font-medium leading-relaxed tracking-tight">
+                  {t(`home.reviews.items.review${i}`)}
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center font-black text-sm">
+                    {i === 1 ? 'DH' : i === 2 ? 'CJ' : 'JP'}
+                  </div>
+                  <div>
+                    <p className="font-black text-slate-900 dark:text-white text-xs uppercase tracking-widest group-hover:text-primary transition-colors">
+                      {i === 1 ? 'Danbi H.' : i === 2 ? 'Christina J.' : 'Jenny P.'}
+                    </p>
+                    <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{t('common.location')}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-            <Link to="/reviews" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative hover:shadow-md transition-all group hidden lg:block !text-inherit hover:!text-inherit no-underline focus:ring-2 focus:ring-primary/50">
-              <span className="material-symbols-outlined absolute top-6 right-6 text-slate-200 dark:text-slate-700 text-5xl select-none group-hover:text-primary/20 transition-colors" aria-hidden="true">format_quote</span>
-              <div className="flex gap-1 text-yellow-400 mb-4" aria-label="5 star rating">
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                <span className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-              </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic">{t('home.reviews.items.review3')}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">JP</div>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-primary transition-colors">Jenny P.</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500">Northridge, CA</p>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Location & Contact Preview */}
-      <section className="py-16 md:py-24 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800" aria-labelledby="location-heading">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="flex flex-col justify-center">
-              <h2 id="location-heading" className="text-3xl font-black text-slate-900 dark:text-white mb-6">{t('contact.title')}</h2>
-              <p className="text-slate-600 dark:text-slate-400 mb-8">{t('contact.description')}</p>
-              <div className="space-y-6">
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950/50 border-t border-slate-100 dark:border-slate-900" aria-labelledby="location-heading">
+        <div className="max-w-[1280px] mx-auto px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+            <div className="lg:col-span-5 space-y-8">
+              <div>
+                <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Visit Us</span>
+                <h2 id="location-heading" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight uppercase">
+                  {t('contact.title')}
+                </h2>
+                <div className="h-1.5 w-20 bg-primary mt-6 rounded-full"></div>
+              </div>
+              
+              <div className="space-y-8">
                 <Link 
                   href="https://www.google.com/maps/search/?api=1&query=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
                   external
-                  className="flex items-start gap-4 group hover:bg-slate-50 dark:hover:bg-slate-800/50 p-3 -m-3 rounded-xl transition-all"
+                  className="flex items-start gap-6 group"
                   aria-label={t('footer.address')}
                 >
-                  <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span className="material-symbols-outlined" aria-hidden="true">location_on</span>
+                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-[28px]" aria-hidden="true">location_on</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">{t('contact.labels.address')}</h4>
-                    <p className="text-slate-600 dark:text-slate-400">{t('footer.address')}</p>
+                    <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-2">{t('contact.labels.address')}</h4>
+                    <p className="text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-primary transition-colors">{t('footer.address')}</p>
                   </div>
                 </Link>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <Link 
                     href="tel:2133815500"
-                    className="flex-1 flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary hover:shadow-md transition-all group"
+                    className="flex items-center gap-6 group"
                     aria-label="Call us at (213) 381-5500"
                   >
-                    <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                      <span className="material-symbols-outlined" aria-hidden="true">call</span>
+                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">call</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm">{t('contact.labels.call')}</h4>
-                      <p className="text-primary font-bold">(213) 381-5500</p>
+                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.call')}</h4>
+                      <p className="text-lg font-black text-slate-900 dark:text-white group-hover:text-primary transition-colors tracking-tight">(213) 381-5500</p>
                     </div>
                   </Link>
                   <Link 
                     href="mailto:yonseichiropractic@gmail.com"
-                    className="flex-1 flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary hover:shadow-md transition-all group"
+                    className="flex items-center gap-6 group"
                     aria-label="Email us at yonseichiropractic@gmail.com"
                   >
-                    <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                      <span className="material-symbols-outlined" aria-hidden="true">mail</span>
+                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">mail</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm">{t('contact.labels.email')}</h4>
-                      <p className="text-slate-600 dark:text-slate-400 text-xs truncate">yonseichiropractic@gmail.com</p>
+                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.email')}</h4>
+                      <p className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">yonseichiropractic@gmail.com</p>
                     </div>
                   </Link>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary">
-                    <span className="material-symbols-outlined" aria-hidden="true">schedule</span>
+                <div className="flex items-start gap-6">
+                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-[28px]" aria-hidden="true">schedule</span>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-1">{t('contact.labels.hours')}</h4>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm">
-                      <p><span className="font-medium w-40 inline-block">{t('contact.hours.weekdays')}</span> 9:00 AM - 6:00 PM</p>
-                      <p><span className="font-medium w-40 inline-block">{t('contact.hours.thursday')}</span> 2:00 PM - 6:00 PM</p>
-                      <p><span className="font-medium w-40 inline-block">{t('contact.hours.saturday')}</span> 9:00 AM - 1:00 PM</p>
-                      <p><span className="font-medium w-40 inline-block">{t('contact.hours.sunday')}</span> {t('contact.hours.closed')}</p>
+                  <div className="flex-1">
+                    <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-3">{t('contact.labels.hours')}</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {[
+                        { label: t('contact.hours.weekdays'), time: '9:00 AM - 6:00 PM' },
+                        { label: t('contact.hours.thursday'), time: '2:00 PM - 6:00 PM' },
+                        { label: t('contact.hours.saturday'), time: '9:00 AM - 1:00 PM' },
+                        { label: t('contact.hours.sunday'), time: t('contact.hours.closed'), highlight: true },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex justify-between items-center py-2 border-b border-slate-200 dark:border-slate-800 last:border-0">
+                          <span className="text-xs font-black uppercase tracking-widest text-slate-500">{item.label}</span>
+                          <span className={`text-sm font-bold ${item.highlight ? 'text-red-500' : 'text-slate-900 dark:text-white'}`}>{item.time}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="pt-6">
                 <Link 
                   href="https://www.google.com/maps/dir/?api=1&destination=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
                   external
-                  className="h-12 w-fit px-6 rounded-lg bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 font-bold transition-all shadow flex items-center gap-2"
-                  aria-label={t('contact.labels.directions')}
+                  className="h-14 w-full sm:w-fit px-10 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs uppercase tracking-[0.2em] transition-all shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3"
                 >
                   <span className="material-symbols-outlined text-[20px]" aria-hidden="true">directions</span>
                   {t('contact.labels.directions')}
                 </Link>
               </div>
             </div>
-            <div className="h-[400px] w-full bg-slate-200 rounded-2xl overflow-hidden shadow-inner relative">
+            <div className="lg:col-span-7 h-[500px] lg:h-auto w-full bg-slate-200 dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-white dark:border-slate-800">
               <iframe 
                 title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
-                className="w-full h-full border-0"
+                className="w-full h-full border-0 grayscale dark:invert dark:hue-rotate-180"
                 src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen
                 loading="lazy"
