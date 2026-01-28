@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const MessageFromDrPark: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO 
+        title={t('nav.philosophy')}
+        description={t('message.intro')}
+        image="/dr-park.png"
+      />
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-4">

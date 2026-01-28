@@ -1,12 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from '../components/ui/Link';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO 
+        title={t('nav.about')}
+        description={t('about.hero.description')}
+        image="/dr-park.png"
+      />
       {/* Hero Section */}
       <section className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-20 max-w-[1280px] mx-auto" aria-labelledby="about-hero-title">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from './ui/Link';
+import LanguageToggle from './LanguageToggle';
 
 const ContactBanner: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ const ContactBanner: React.FC = () => {
             <span className="truncate max-w-[200px] sm:max-w-none">{t('footer.address')}</span>
           </Link>
         </div>
-        <div className="flex items-center gap-6 shrink-0">
+        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
           <Link 
             href="mailto:yonseichiropractic@gmail.com"
             className="flex items-center gap-2 hover:text-primary transition-colors focus:ring-1 focus:ring-primary/20 rounded group"
@@ -34,6 +35,8 @@ const ContactBanner: React.FC = () => {
             <span className="material-symbols-outlined text-[15px] text-primary group-hover:scale-110 transition-transform" aria-hidden="true">mail</span>
             <span>yonseichiropractic@gmail.com</span>
           </Link>
+          <div className="h-3 w-px bg-white/10" aria-hidden="true" />
+          <LanguageToggle />
         </div>
       </div>
     </div>

@@ -5,23 +5,23 @@ const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
 
   const languages = [
-    { code: 'en', label: 'EN' },
-    { code: 'ko', label: 'KO' },
+    { code: 'en', label: 'ENGLISH' },
+    { code: 'ko', label: '한국어' },
   ];
 
   const currentLanguage = i18n.language.split('-')[0];
 
   return (
-    <div className="flex items-center p-1 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-inner w-fit">
+    <div className="flex items-center p-0.5 rounded-full bg-black/20 dark:bg-white/10 border border-white/10 backdrop-blur-sm w-fit">
       {languages.map((lang) => (
         <button
           key={lang.code}
           onClick={() => i18n.changeLanguage(lang.code)}
           className={`
-            px-3 py-1 rounded-full text-[11px] font-bold tracking-tight transition-all duration-200 min-w-[40px]
+            px-3 py-1 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 min-w-[60px]
             ${currentLanguage === lang.code 
-              ? 'bg-white dark:bg-slate-600 text-primary shadow-sm ring-1 ring-slate-200/50 dark:ring-slate-500/50' 
-              : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'}
+              ? 'bg-primary text-white shadow-lg shadow-primary/20' 
+              : 'text-white/60 hover:text-white hover:bg-white/5'}
           `}
         >
           {lang.label}

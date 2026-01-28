@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 interface Review {
   id: number;
@@ -81,6 +82,10 @@ const Reviews: React.FC = () => {
 
   return (
     <>
+      <SEO 
+        title={t('nav.reviews')}
+        description={t('reviews.hero.description')}
+      />
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100 dark:border-slate-800">
         <div className="max-w-[1280px] mx-auto text-center flex flex-col gap-4">

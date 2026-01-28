@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LanguageToggle from './LanguageToggle';
 import Link from './ui/Link';
 import ContactBanner from './ContactBanner';
 
@@ -177,7 +176,6 @@ const Navbar: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <LanguageToggle />
             <Link 
               to="/contact" 
               className="flex items-center justify-center h-11 px-6 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0 focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
@@ -244,10 +242,6 @@ const Navbar: React.FC = () => {
             <Link to="/reviews" onClick={toggleMenu} className="text-lg font-black tracking-tight text-slate-900 dark:text-white">{t('nav.reviews')}</Link>
             
             <div className="pt-4 flex flex-col gap-4">
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50">
-                <span className="text-sm font-bold text-slate-500">{t('nav.language')}</span>
-                <LanguageToggle />
-              </div>
               <Link 
                 to="/contact" 
                 onClick={toggleMenu} 

@@ -1,12 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from '../components/ui/Link';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO 
+        title={t('home.hero.title')}
+        description={t('home.hero.descriptionDesktop')}
+      />
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
         {/* Background Decorative Element */}

@@ -1,11 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const Accessibility: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className="bg-white dark:bg-[#0f172a] py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+      <SEO 
+        title={t('footer.accessibility')}
+        description={t('accessibilityPage.intro')}
+      />
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
           {t('accessibilityPage.title')}

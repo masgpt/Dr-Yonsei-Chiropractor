@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO 
+        title={t('nav.techniques')}
+        description={t('servicesPage.hero.subtitle')}
+      />
       {/* Hero Section */}
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center">
         <div className="w-full max-w-[1280px] px-0 sm:px-6 lg:px-8 py-0 sm:py-5">

@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../../components/SEO';
 
 const TMJ: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO 
+        title={t('techniques.tmj.title')}
+        description={t('techniques.tmj.p1')}
+        image="/o-5.jpg"
+      />
       {/* Hero Section */}
       <section className="relative w-full h-[120px] sm:h-[160px] md:h-[200px] flex items-center justify-center overflow-hidden">
         <div 
