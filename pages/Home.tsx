@@ -95,33 +95,33 @@ const Home: React.FC = () => {
 
       {/* Trust Strip */}
       <section className="bg-slate-50 dark:bg-slate-950/50 border-y border-slate-100 dark:border-slate-900" aria-label="Our credentials">
-        <div className="max-w-[1280px] mx-auto px-10 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16">
-            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">verified_user</span>
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-8 md:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-16">
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-4 sm:gap-6 group">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[24px] sm:text-[32px] font-light" aria-hidden="true">verified_user</span>
               </div>
-              <div className="space-y-1 sm:space-y-2">
-                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.palmerTitle')}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.palmerDesc')}</p>
-              </div>
-            </div>
-            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">workspace_premium</span>
-              </div>
-              <div className="space-y-1 sm:space-y-2">
-                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.awardTitle')}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.awardDesc')}</p>
+              <div className="space-y-0.5 sm:space-y-2">
+                <h3 className="font-black text-[11px] sm:text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.palmerTitle')}</h3>
+                <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.palmerDesc')}</p>
               </div>
             </div>
-            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">self_improvement</span>
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-4 sm:gap-6 group">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[24px] sm:text-[32px] font-light" aria-hidden="true">workspace_premium</span>
               </div>
-              <div className="space-y-1 sm:space-y-2">
-                <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.healingTitle')}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.healingDesc')}</p>
+              <div className="space-y-0.5 sm:space-y-2">
+                <h3 className="font-black text-[11px] sm:text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.awardTitle')}</h3>
+                <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.awardDesc')}</p>
+              </div>
+            </div>
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-4 sm:gap-6 group">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[24px] sm:text-[32px] font-light" aria-hidden="true">self_improvement</span>
+              </div>
+              <div className="space-y-0.5 sm:space-y-2">
+                <h3 className="font-black text-[11px] sm:text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.healingTitle')}</h3>
+                <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.healingDesc')}</p>
               </div>
             </div>
           </div>
@@ -129,11 +129,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Intro / Meet Dr. Park */}
-      <section className="py-16 md:py-20 bg-white dark:bg-[#0a0f14] relative overflow-hidden" aria-labelledby="meet-doctor-heading">
+      <section className="py-10 md:py-20 bg-white dark:bg-[#0a0f14] relative overflow-hidden" aria-labelledby="meet-doctor-heading">
         <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
         <div className="max-w-[1280px] mx-auto px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="hidden lg:block lg:col-span-5">
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary rounded-[40px] rotate-3 scale-95 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
                 <div 
@@ -277,26 +277,33 @@ const Home: React.FC = () => {
               {t('home.reviews.readAll')}
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[1, 2, 3].map((i) => (
-              <Link key={i} to="/reviews" className={`bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all group !text-inherit ${i === 3 ? 'hidden lg:block' : ''}`}>
-                <div className="flex gap-1 text-primary mb-4" aria-label="5 star rating">
-                  {[...Array(5)].map((_, j) => (
-                    <span key={j} className="material-symbols-outlined text-[20px] fill-current" aria-hidden="true">star</span>
-                  ))}
-                </div>
-                <p className="text-lg text-slate-700 dark:text-slate-300 mb-6 relative z-10 italic font-medium leading-relaxed tracking-tight">
-                  {t(`home.reviews.items.review${i}`)}
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center font-black text-sm">
+              <Link key={i} to="/reviews" className={`bg-slate-50 dark:bg-slate-900/50 p-5 md:p-8 rounded-[20px] md:rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all group !text-inherit ${i === 3 ? 'hidden lg:block' : ''}`}>
+                <div className="flex flex-row md:flex-col gap-4 md:gap-0">
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-primary/10 text-primary flex items-center justify-center font-black text-xs md:text-sm shrink-0 md:hidden">
                     {i === 1 ? 'DH' : i === 2 ? 'CJ' : 'JP'}
                   </div>
-                  <div>
-                    <p className="font-black text-slate-900 dark:text-white text-xs uppercase tracking-widest group-hover:text-primary transition-colors">
-                      {i === 1 ? 'Danbi H.' : i === 2 ? 'Christina J.' : 'Jenny P.'}
+                  <div className="flex-1">
+                    <div className="flex gap-1 text-primary mb-2 md:mb-4" aria-label="5 star rating">
+                      {[...Array(5)].map((_, j) => (
+                        <span key={j} className="material-symbols-outlined text-[16px] md:text-[20px] fill-current" aria-hidden="true">star</span>
+                      ))}
+                    </div>
+                    <p className="text-sm md:text-lg text-slate-700 dark:text-slate-300 mb-4 md:mb-6 relative z-10 italic font-medium leading-relaxed tracking-tight">
+                      {t(`home.reviews.items.review${i}`)}
                     </p>
-                    <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{t('common.location')}</p>
+                    <div className="flex items-center gap-4">
+                      <div className="hidden md:flex w-12 h-12 rounded-2xl bg-primary/10 text-primary items-center justify-center font-black text-sm">
+                        {i === 1 ? 'DH' : i === 2 ? 'CJ' : 'JP'}
+                      </div>
+                      <div>
+                        <p className="font-black text-slate-900 dark:text-white text-[10px] md:text-xs uppercase tracking-widest group-hover:text-primary transition-colors">
+                          {i === 1 ? 'Danbi H.' : i === 2 ? 'Christina J.' : 'Jenny P.'}
+                        </p>
+                        <p className="text-[9px] md:text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{t('common.location')}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -306,9 +313,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Location & Contact Preview */}
-      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950/50 border-t border-slate-100 dark:border-slate-900" aria-labelledby="location-heading">
+      <section className="py-10 md:py-20 bg-slate-50 dark:bg-slate-950/50 border-t border-slate-100 dark:border-slate-900" aria-labelledby="location-heading">
         <div className="max-w-[1280px] mx-auto px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
             <div className="lg:col-span-5 space-y-8">
               <div>
                 <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Visit Us</span>
@@ -396,7 +403,7 @@ const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-7 h-[500px] lg:h-auto w-full bg-slate-200 dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-white dark:border-slate-800">
+            <div className="lg:col-span-7 h-[300px] md:h-[400px] lg:h-auto w-full bg-slate-200 dark:bg-slate-800 rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl relative border-4 md:border-8 border-white dark:border-slate-800">
               <iframe 
                 title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
                 className="w-full h-full border-0 grayscale dark:invert dark:hue-rotate-180"
