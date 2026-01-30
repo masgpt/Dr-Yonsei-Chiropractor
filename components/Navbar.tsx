@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-[#0a0f14]/95 backdrop-blur-md transition-colors duration-300">
       <ContactBanner />
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="flex flex-col items-start focus:ring-offset-4 group">
             <div className="flex items-center gap-3">

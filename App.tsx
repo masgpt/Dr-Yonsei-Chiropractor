@@ -68,7 +68,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         id="main-content" 
         ref={mainRef} 
         tabIndex={-1} 
-        className="flex-grow w-full flex flex-col outline-none pt-[136px] sm:pt-[104px]"
+        className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
       >
         {children}
       </main>

@@ -96,30 +96,30 @@ const Home: React.FC = () => {
       {/* Trust Strip */}
       <section className="bg-slate-50 dark:bg-slate-950/50 border-y border-slate-100 dark:border-slate-900" aria-label="Our credentials">
         <div className="max-w-[1280px] mx-auto px-10 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-16">
-            <div className="flex flex-col items-center text-center gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">verified_user</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16">
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">verified_user</span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.palmerTitle')}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.palmerDesc')}</p>
               </div>
             </div>
-            <div className="flex flex-col items-center text-center gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">workspace_premium</span>
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">workspace_premium</span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.awardTitle')}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.awardDesc')}</p>
               </div>
             </div>
-            <div className="flex flex-col items-center text-center gap-6 group">
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-[32px] font-light" aria-hidden="true">self_improvement</span>
+            <div className="flex flex-row sm:flex-col items-center sm:text-center gap-6 group">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-[28px] sm:text-[32px] font-light" aria-hidden="true">self_improvement</span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-white">{t('home.trustStrip.healingTitle')}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{t('home.trustStrip.healingDesc')}</p>
               </div>
@@ -182,72 +182,78 @@ const Home: React.FC = () => {
               {t('home.services.description')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10">
             {/* Service 1 */}
-            <Link to="/techniques/upper-cervical" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
-              <article className="flex flex-col h-full">
+            <Link to="/techniques/upper-cervical" className="group relative flex flex-col md:flex-col bg-slate-900 md:bg-white dark:bg-slate-900 rounded-[20px] md:rounded-[32px] overflow-hidden border border-slate-100/10 md:border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 md:hover:-translate-y-2 !text-inherit">
+              <article className="flex flex-col h-full w-full">
+                {/* Mobile Background Image / Desktop Normal Image */}
                 <div 
-                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  className="absolute inset-0 md:relative md:h-56 w-full bg-slate-200 bg-cover bg-center grayscale md:grayscale group-hover:grayscale-0 transition-all duration-700 shrink-0" 
                   style={{ backgroundImage: "url('/o-14.jpg')" }}
                   role="img"
                   aria-label="Side-view cervical spine X-ray highlighting the upper cervical alignment"
                 >
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  {/* Dark overlay for mobile list style */}
+                  <div className="absolute inset-0 bg-slate-950/70 md:bg-primary/10 md:opacity-0 md:group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <div className="p-8 flex flex-col flex-1 relative">
-                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                
+                <div className="relative p-6 md:p-8 flex flex-col flex-1">
+                  {/* Icon only on desktop */}
+                  <div className="hidden md:flex md:absolute md:top-0 md:right-10 md:-translate-y-1/2 w-14 md:h-14 rounded-2xl bg-primary text-white items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform shrink-0">
                     <span className="material-symbols-outlined text-[28px]">biotech</span>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.upperCervicalTitle')}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.upperCervicalDesc')}</p>
-                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
+                  <h3 className="text-lg md:text-2xl font-black text-white md:text-slate-900 dark:text-white mb-1 md:mb-4 uppercase tracking-tight">{t('home.services.upperCervicalTitle')}</h3>
+                  <p className="text-xs md:text-base text-slate-300 md:text-slate-500 dark:text-slate-400 mb-4 md:mb-8 flex-1 font-medium leading-relaxed">{t('home.services.upperCervicalDesc')}</p>
+                  <div className="text-primary font-black text-[10px] md:text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[14px] md:text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
             </Link>
+
             {/* Service 2 */}
-            <Link to="/techniques/tmj" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
-              <article className="flex flex-col h-full">
+            <Link to="/techniques/tmj" className="group relative flex flex-col md:flex-col bg-slate-900 md:bg-white dark:bg-slate-900 rounded-[20px] md:rounded-[32px] overflow-hidden border border-slate-100/10 md:border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 md:hover:-translate-y-2 !text-inherit">
+              <article className="flex flex-col h-full w-full">
                 <div 
-                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  className="absolute inset-0 md:relative md:h-56 w-full bg-slate-200 bg-cover bg-center grayscale md:grayscale group-hover:grayscale-0 transition-all duration-700 shrink-0" 
                   style={{ backgroundImage: "url('/o-5.jpg')" }}
                   role="img"
                   aria-label="Before and after photos of heel lifts showing improved postural symmetry"
                 >
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-slate-950/70 md:bg-primary/10 md:opacity-0 md:group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <div className="p-8 flex flex-col flex-1 relative">
-                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                <div className="relative p-6 md:p-8 flex flex-col flex-1">
+                  <div className="hidden md:flex md:absolute md:top-0 md:right-10 md:-translate-y-1/2 w-14 md:h-14 rounded-2xl bg-primary text-white items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform shrink-0">
                     <span className="material-symbols-outlined text-[28px]">child_care</span>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.tmjTitle')}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.tmjDesc')}</p>
-                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
+                  <h3 className="text-lg md:text-2xl font-black text-white md:text-slate-900 dark:text-white mb-1 md:mb-4 uppercase tracking-tight">{t('home.services.tmjTitle')}</h3>
+                  <p className="text-xs md:text-base text-slate-300 md:text-slate-500 dark:text-slate-400 mb-4 md:mb-8 flex-1 font-medium leading-relaxed">{t('home.services.tmjDesc')}</p>
+                  <div className="text-primary font-black text-[10px] md:text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[14px] md:text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
             </Link>
+
             {/* Service 3 */}
-            <Link to="/techniques/car-accident" className="group flex flex-col bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 !text-inherit">
-              <article className="flex flex-col h-full">
+            <Link to="/techniques/car-accident" className="group relative flex flex-col md:flex-col bg-slate-900 md:bg-white dark:bg-slate-900 rounded-[20px] md:rounded-[32px] overflow-hidden border border-slate-100/10 md:border-slate-100 dark:border-slate-800 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 md:hover:-translate-y-2 !text-inherit">
+              <article className="flex flex-col h-full w-full">
                 <div 
-                  className="h-56 bg-slate-200 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  className="absolute inset-0 md:relative md:h-56 w-full bg-slate-200 bg-cover bg-center grayscale md:grayscale group-hover:grayscale-0 transition-all duration-700 shrink-0" 
                   style={{ backgroundImage: "url('/o-10.jpg')" }}
                   role="img"
                   aria-label="Front and back spine X-rays with alignment markers used for car accident recovery"
                 >
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-slate-950/70 md:bg-primary/10 md:opacity-0 md:group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <div className="p-8 flex flex-col flex-1 relative">
-                  <div className="absolute top-0 right-10 -translate-y-1/2 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+                <div className="relative p-6 md:p-8 flex flex-col flex-1">
+                  <div className="hidden md:flex md:absolute md:top-0 md:right-10 md:-translate-y-1/2 w-14 md:h-14 rounded-2xl bg-primary text-white items-center justify-center shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform shrink-0">
                     <span className="material-symbols-outlined text-[28px]">car_crash</span>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight">{t('home.services.injuryTitle')}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 mb-8 flex-1 font-medium leading-relaxed">{t('home.services.injuryDesc')}</p>
-                  <div className="text-primary font-black text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
-                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
+                  <h3 className="text-lg md:text-2xl font-black text-white md:text-slate-900 dark:text-white mb-1 md:mb-4 uppercase tracking-tight">{t('home.services.injuryTitle')}</h3>
+                  <p className="text-xs md:text-base text-slate-300 md:text-slate-500 dark:text-slate-400 mb-4 md:mb-8 flex-1 font-medium leading-relaxed">{t('home.services.injuryDesc')}</p>
+                  <div className="text-primary font-black text-[10px] md:text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2">
+                    {t('home.services.learnMore')} <span className="material-symbols-outlined text-[14px] md:text-[16px] group-hover:translate-x-1 transition-transform" aria-hidden="true">east</span>
                   </div>
                 </div>
               </article>
