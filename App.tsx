@@ -1,25 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Reviews from './pages/Reviews';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
-import MessageFromDrPark from './pages/MessageFromDrPark';
-import Accessibility from './pages/Accessibility';
 import SkipToContent from './components/SkipToContent';
 
+// Lazy load pages
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Reviews = lazy(() => import('./pages/Reviews'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const MessageFromDrPark = lazy(() => import('./pages/MessageFromDrPark'));
+const Accessibility = lazy(() => import('./pages/Accessibility'));
+
 // Techniques Pages
-import AboutChiropractic from './pages/techniques/AboutChiropractic';
-import InnateIntelligence from './pages/techniques/InnateIntelligence';
-import UpperCervical from './pages/techniques/UpperCervical';
-import CarAccident from './pages/techniques/CarAccident';
-import TMJ from './pages/techniques/TMJ';
-import Subluxation from './pages/techniques/Subluxation';
+const AboutChiropractic = lazy(() => import('./pages/techniques/AboutChiropractic'));
+const InnateIntelligence = lazy(() => import('./pages/techniques/InnateIntelligence'));
+const UpperCervical = lazy(() => import('./pages/techniques/UpperCervical'));
+const CarAccident = lazy(() => import('./pages/techniques/CarAccident'));
+const TMJ = lazy(() => import('./pages/techniques/TMJ'));
+const Subluxation = lazy(() => import('./pages/techniques/Subluxation'));
+
+const Loading = () => (
+  <div className="flex-grow flex items-center justify-center min-h-[50vh]">
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
   const mainRef = useRef<HTMLElement>(null);
@@ -37,15 +45,11 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
     
     // Move focus to main content on route change for accessibility
     if (mainRef.current) {
-      // Use a small timeout to ensure content is rendered
-      const timeoutId = setTimeout(() => {
-        mainRef.current?.focus();
-        
-        // Announce route change
-        const pageTitle = document.title;
-        setAnnouncement(t('accessibility.navigatedTo', { title: pageTitle }));
-      }, 100);
-      return () => clearTimeout(timeoutId);
+      mainRef.current.focus();
+      
+      // Announce route change
+      const pageTitle = document.title;
+      setAnnouncement(t('accessibility.navigatedTo', { title: pageTitle }));
     }
   }, [pathname, t]);
 
@@ -70,7 +74,9 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         tabIndex={-1} 
         className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
       >
-        {children}
+        <Suspense fallback={<Loading />}>
+          {children}
+        </Suspense>
       </main>
       <Footer />
     </div>
