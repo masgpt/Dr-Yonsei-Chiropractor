@@ -8,7 +8,7 @@ import { useNavbarLogic } from '../Shared/navbar.hooks';
 const NavbarMobile: React.FC = () => {
   const { t } = useTranslation();
   const { techniques, aboutLinks } = useNavbarConstants();
-  const { isActive, location } = useNavbarLogic();
+  const { isActive, pathname } = useNavbarLogic();
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

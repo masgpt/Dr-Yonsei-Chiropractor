@@ -1,0 +1,86 @@
+import type { Metadata } from "next";
+import "./index.css";
+import React, { Suspense } from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import SkipToContent from './components/SkipToContent';
+import ClientLayout from './client-layout';
+
+export const metadata: Metadata = {
+  title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+  description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
+  openGraph: {
+    type: "website",
+    url: "https://yonseichiro.com/",
+    title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+    description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
+    images: ["https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+    description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
+    images: ["https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
+  },
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>',
+  },
+};
+
+const Loading = () => (
+  <div className="flex-grow flex items-center justify-center min-h-[50vh]">
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="scroll-pt-[104px]" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@400;500;700&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        />
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            const saved = localStorage.getItem('theme') || 'system';
+            const root = document.documentElement;
+            if (saved === 'dark' || (saved === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              root.classList.add('dark');
+            } else {
+              root.classList.add('light');
+            }
+          })();
+        ` }} />
+      </head>
+      <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
+        <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+          <ClientLayout>
+            <SkipToContent />
+            <Navbar />
+            <main 
+              id="main-content" 
+              tabIndex={-1} 
+              className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
+            >
+              <Suspense fallback={<Loading />}>
+                {children}
+              </Suspense>
+            </main>
+            <Footer />
+          </ClientLayout>
+        </div>
+      </body>
+    </html>
+  );
+}

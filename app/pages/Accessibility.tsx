@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useViewport } from '../hooks/useViewport';
 import AccessibilityDesktop from './Accessibility/Desktop/Accessibility.desktop';

@@ -8,7 +8,7 @@ import { useNavbarLogic } from '../Shared/navbar.hooks';
 const NavbarDesktop: React.FC = () => {
   const { t } = useTranslation();
   const { techniques, aboutLinks } = useNavbarConstants();
-  const { isActive, navLinkClass, location } = useNavbarLogic();
+  const { isActive, navLinkClass, pathname } = useNavbarLogic();
   
   const [isTechniquesOpen, setIsTechniquesOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -120,7 +120,7 @@ const NavbarDesktop: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={isTechniquesOpen}
                 className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
-                  location.pathname.startsWith('/techniques') 
+                  pathname.startsWith('/techniques') 
                     ? 'text-primary bg-primary/5' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}

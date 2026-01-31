@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useViewport } from '../../hooks/useViewport';
 import CarAccidentDesktop from './CarAccident/Desktop/CarAccident.desktop';

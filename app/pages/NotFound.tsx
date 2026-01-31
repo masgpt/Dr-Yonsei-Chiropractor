@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useViewport } from '../hooks/useViewport';
 import NotFoundDesktop from './NotFound/Desktop/NotFound.desktop';

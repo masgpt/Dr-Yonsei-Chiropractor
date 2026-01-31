@@ -5,13 +5,14 @@ interface ThemeToggleProps {
 }
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = "" }) => {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(() => {
-    if (typeof localStorage !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      return (saved as 'light' | 'dark' | 'system') || 'system';
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') as 'light' | 'dark' | 'system' | null;
+    if (saved) {
+      setTheme(saved);
     }
-    return 'system';
-  });
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

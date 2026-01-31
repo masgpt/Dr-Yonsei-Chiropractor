@@ -42,7 +42,7 @@ const FormField: React.FC<FormFieldProps> = ({
         </p>
       )}
 
-      {React.cloneElement(children, {
+      {React.cloneElement(children as any, {
         id: name,
         name: name,
         'aria-describedby': [

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router';
+import { usePathname } from 'next/navigation';
 
 interface SEOProps {
   title?: string;
@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   
   const defaultTitle = 'Yonsei Chiropractic Clinic - Upper Cervical Health Care';
   const defaultDescription = "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.";

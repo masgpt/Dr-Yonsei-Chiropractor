@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useViewport } from '../hooks/useViewport';
 import ReviewsDesktop from './Reviews/Desktop/Reviews.desktop';

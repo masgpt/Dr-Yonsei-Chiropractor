@@ -1,3 +1,5 @@
+'use client';
+
 import React, { lazy, Suspense } from 'react';
 import { useViewport } from '../hooks/useViewport';
 

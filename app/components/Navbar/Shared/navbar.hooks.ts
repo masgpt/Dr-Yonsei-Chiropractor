@@ -1,9 +1,9 @@
-import { useLocation } from 'react-router';
+import { usePathname } from 'next/navigation';
 
 export const useNavbarLogic = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   const navLinkClass = (path: string) => 
     `text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
@@ -12,5 +12,5 @@ export const useNavbarLogic = () => {
         : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
     }`;
 
-  return { isActive, navLinkClass, location };
+  return { isActive, navLinkClass, pathname };
 };

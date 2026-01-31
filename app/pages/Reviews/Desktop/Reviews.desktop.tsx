@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from '@/components/ui/Link';
 import SEO from '../../../components/SEO';
 import { useReviewsLogic } from '../Shared/reviews.hooks';
 

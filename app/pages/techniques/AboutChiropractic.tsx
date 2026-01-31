@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useViewport } from '../../hooks/useViewport';
 import AboutChiropracticDesktop from './AboutChiropractic/Desktop/AboutChiropractic.desktop';
