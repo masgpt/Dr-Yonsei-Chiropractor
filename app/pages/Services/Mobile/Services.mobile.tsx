@@ -12,6 +12,16 @@ const fadeInUp = {
   transition: { duration: 0.5 }
 };
 
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  },
+  viewport: { once: true }
+};
+
 const ServicesMobile: React.FC = () => {
   const { t, i18n } = useTranslation();
   const lng = i18n.language || 'en';
@@ -22,29 +32,38 @@ const ServicesMobile: React.FC = () => {
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center overflow-hidden">
         <div className="w-full px-0 py-0">
           <div 
-            className="flex min-h-[350px] flex-col gap-6 items-center justify-center p-6 shadow-sm relative overflow-hidden bg-cover bg-center bg-no-repeat" 
+            className="flex min-h-[400px] flex-col gap-6 items-center justify-center p-6 shadow-sm relative overflow-hidden bg-cover bg-center bg-no-repeat" 
             style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
             role="img"
             aria-label="Chiropractor's hands supporting a patient's spine during healing care"
           >
             <div className="flex flex-col gap-2 text-center z-10">
-              <h1 
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
                 className="text-white text-3xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
               >
                 {t('servicesPage.hero.title')}
-              </h1>
-              <h2 
-                className="text-slate-100 text-sm font-medium leading-relaxed mt-2 drop-shadow-sm"
+              </motion.h1>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-slate-100 text-sm font-medium leading-relaxed mt-2 drop-shadow-sm uppercase tracking-wide"
               >
                 {t('servicesPage.hero.subtitle')}
-              </h2>
+              </motion.h2>
             </div>
-            <a 
+            <motion.a 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
               href="#treatments" 
               className="z-10 flex w-full min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary transition-colors text-slate-50 text-base font-bold shadow-lg uppercase tracking-widest"
             >
               <span className="truncate">{t('servicesPage.hero.cta')}</span>
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
@@ -108,15 +127,19 @@ const ServicesMobile: React.FC = () => {
             <h2 className="text-[#0d141b] dark:text-white text-3xl font-black leading-tight tracking-tight uppercase">{t('servicesPage.specialties.title')}</h2>
             <p className="text-slate-500 dark:text-slate-400 mt-3 text-base font-medium">{t('servicesPage.specialties.description')}</p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-6">
-            {specialtyKeys.map((item, idx) => (
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-6"
+          >
+            {specialtyKeys.map((item) => (
               <motion.div 
                 key={item.key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05, duration: 0.5 }}
-                className="flex flex-col gap-4 rounded-[28px] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-6 active:shadow-md transition-all group"
+                variants={fadeInUp}
+                whileTap={{ scale: 0.98 }}
+                className="flex flex-col gap-4 rounded-[28px] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-6 transition-all group"
               >
                 <div className="size-12 rounded-xl bg-white dark:bg-slate-800 shadow-lg shadow-primary/5 flex items-center justify-center text-primary">
                   <span className="material-symbols-outlined text-2xl font-light">{item.icon}</span>
@@ -138,7 +161,7 @@ const ServicesMobile: React.FC = () => {
                 )}
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 

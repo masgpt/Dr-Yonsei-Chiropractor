@@ -13,6 +13,16 @@ const fadeInUp = {
   transition: { duration: 0.5 }
 };
 
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  },
+  viewport: { once: true }
+};
+
 const HomeMobile: React.FC = () => {
   const { t } = useTranslation(['translation', 'reviews']);
   const [selectedReview, setSelectedReview] = useState<any | null>(null);
@@ -31,41 +41,58 @@ const HomeMobile: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
         <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-slate-950/85 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
-        <div className="relative h-[450px] w-full flex items-center">
-          <div 
+        <div className="relative h-[500px] w-full flex items-center">
+          <motion.div 
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
             aria-label="Yonsei Chiropractic Clinic interior"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-          </div>
+          </motion.div>
           <div className="relative z-10 px-8 w-full">
-            <div className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-white mb-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-white mb-4"
+            >
               <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 font-black tracking-[0.4em]">Palmer Upper Cervical</span>
               <span className="h-1 w-1 rounded-full bg-white/60" />
               <span className="text-white/70 font-semibold text-[10px]">Los Angeles, CA</span>
-            </div>
-            <h1 
-              className="text-4xl font-black tracking-tight text-white leading-[1.1] mb-6"
+            </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-4xl font-black tracking-tight text-white leading-[1.1] mb-6 uppercase"
             >
               {t('home.hero.title')}
-            </h1>
-            <p 
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
               className="text-lg text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
             >
               {t('home.hero.description')}
-            </p>
-            <div 
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
               className="flex flex-col gap-4"
             >
-              <Link to="/contact" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-transform">
+              <Link to="/contact" className="h-14 px-8 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
                 {t('home.hero.bookAppointment')}
               </Link>
-              <Link to="/techniques/upper-cervical" className="h-14 px-8 rounded-2xl bg-white/10 text-white font-bold border border-white/20 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-transform">
+              <Link to="/techniques/upper-cervical" className="h-14 px-8 rounded-2xl bg-white/10 text-white font-bold border border-white/20 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-all">
                 {t('home.hero.learnMore')}
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -73,7 +100,13 @@ const HomeMobile: React.FC = () => {
       {/* Trust Strip */}
       <section className="bg-slate-50 dark:bg-slate-950/50 border-y border-slate-100 dark:border-slate-900" aria-label="Our credentials">
         <div className="max-w-[1280px] mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 gap-8">
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-8"
+          >
             {[
               { icon: 'verified_user', title: t('home.trustStrip.palmerTitle'), desc: t('home.trustStrip.palmerDesc') },
               { icon: 'workspace_premium', title: t('home.trustStrip.awardTitle'), desc: t('home.trustStrip.awardDesc') },
@@ -82,12 +115,9 @@ const HomeMobile: React.FC = () => {
               <motion.div 
                 key={idx}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
                 className="flex flex-row items-center gap-4 group"
               >
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 flex items-center justify-center text-primary active:scale-110 transition-transform duration-300">
                   <span className="material-symbols-outlined text-[24px] font-light" aria-hidden="true">{item.icon}</span>
                 </div>
                 <div className="space-y-0.5">
@@ -96,7 +126,7 @@ const HomeMobile: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -160,7 +190,13 @@ const HomeMobile: React.FC = () => {
               {t('home.services.description')}
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-4">
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-4"
+          >
             {[
               { to: "/techniques/upper-cervical", img: "/o-14.jpg", title: t('home.services.upperCervicalTitle'), desc: t('home.services.upperCervicalDesc'), label: "Cervical spine X-ray" },
               { to: "/techniques/tmj", img: "/o-5.jpg", title: t('home.services.tmjTitle'), desc: t('home.services.tmjDesc'), label: "Postural symmetry" },
@@ -169,11 +205,9 @@ const HomeMobile: React.FC = () => {
               <motion.div 
                 key={idx}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
+                whileTap={{ scale: 0.98 }}
               >
-                <Link to={service.to} className="group relative flex flex-col bg-slate-900 rounded-[20px] overflow-hidden border border-slate-100/10 active:scale-[0.98] transition-all duration-500 !text-inherit h-32">
+                <Link to={service.to} className="group relative flex flex-col bg-slate-900 rounded-[20px] overflow-hidden border border-slate-100/10 transition-all duration-500 !text-inherit h-32">
                   <article className="flex flex-col h-full w-full">
                     <div 
                       className="absolute inset-0 w-full bg-slate-200 bg-cover bg-center grayscale" 
@@ -195,7 +229,7 @@ const HomeMobile: React.FC = () => {
                 </Link>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -219,7 +253,13 @@ const HomeMobile: React.FC = () => {
               {t('readAll', { ns: 'reviews' })}
             </Link>
           </motion.div>
-          <div className="grid grid-cols-1 gap-4">
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-4"
+          >
             {reviews.slice(0, 2).map((rev) => {
               const fullText = t(`review${rev.id}.text`, { ns: 'reviews' });
               const isTruncated = fullText.length > 120;
@@ -228,13 +268,11 @@ const HomeMobile: React.FC = () => {
                 <motion.div 
                   key={rev.id}
                   variants={fadeInUp}
-                  initial="initial"
-                  whileInView="whileInView"
-                  viewport={{ once: true }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <button 
                     onClick={() => setSelectedReview({ ...rev, text: fullText })}
-                    className="bg-slate-50 dark:bg-slate-900/50 p-5 rounded-[20px] border border-slate-100 dark:border-slate-800 relative active:shadow-xl transition-all group text-left block w-full"
+                    className="bg-slate-50 dark:bg-slate-900/50 p-5 rounded-[20px] border border-slate-100 dark:border-slate-800 relative transition-all group text-left block w-full"
                   >
                     <div className="flex gap-1 text-primary mb-2" aria-label="5 star rating">
                       {[...Array(5)].map((_, j) => (
@@ -264,7 +302,7 @@ const HomeMobile: React.FC = () => {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 

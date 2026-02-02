@@ -11,6 +11,16 @@ const fadeInUp = {
   transition: { duration: 0.5 }
 };
 
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  },
+  viewport: { once: true }
+};
+
 const AboutMobile: React.FC = () => {
   const { t } = useTranslation();
 
@@ -25,36 +35,36 @@ const AboutMobile: React.FC = () => {
       <section className="w-full px-6 py-8 max-w-[1280px] mx-auto overflow-hidden" aria-labelledby="about-hero-title">
         <div className="flex flex-col gap-6">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.9, x: -20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex items-center gap-4"
           >
             <div 
-              className="w-20 h-20 flex-shrink-0 bg-slate-200 rounded-full border-2 border-slate-100 dark:border-slate-800 shadow-sm bg-center bg-cover" 
+              className="w-20 h-20 flex-shrink-0 bg-slate-200 rounded-full border-2 border-slate-100 dark:border-slate-800 shadow-xl bg-center bg-cover" 
               style={{ backgroundImage: "url('/dr-park.png')" }}
               role="img"
               aria-label="Dr. Hyeon Joo Park, D.C., M.S."
             ></div>
             <div className="flex flex-col">
-              <h1 id="about-hero-title" className="text-2xl font-black leading-tight text-slate-900 dark:text-white">
+              <h1 id="about-hero-title" className="text-2xl font-black leading-tight text-slate-900 dark:text-white uppercase tracking-tight">
                 {t('about.hero.title')}
               </h1>
-              <p className="text-primary font-bold text-xs uppercase tracking-wider">{t('home.meetDoctor.name')}</p>
+              <p className="text-primary font-black text-[10px] uppercase tracking-[0.2em] mt-1">{t('home.meetDoctor.name')}</p>
             </div>
           </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
             className="flex flex-col gap-6"
           >
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed font-medium">
               {t('about.hero.description')}
             </p>
             <div className="flex flex-col gap-3 pt-2">
-              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-11 px-6 rounded-lg transition-all shadow-md flex items-center justify-center w-full focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
+              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-black h-14 px-6 rounded-2xl transition-all shadow-xl shadow-primary/20 flex items-center justify-center w-full uppercase tracking-widest active:scale-[0.98]">
                 {t('about.hero.book')}
               </Link>
             </div>
@@ -63,7 +73,7 @@ const AboutMobile: React.FC = () => {
       </section>
 
       {/* Meet the Doctor / Bio Section */}
-      <section className="w-full bg-white dark:bg-slate-900 py-12 border-y border-slate-100 dark:border-slate-800" aria-labelledby="bio-heading">
+      <section className="w-full bg-white dark:bg-[#0a0f14] py-12 border-y border-slate-100 dark:border-slate-800" aria-labelledby="bio-heading">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div 
             variants={fadeInUp}
@@ -72,32 +82,54 @@ const AboutMobile: React.FC = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-2 mb-8"
           >
-            <span className="text-primary font-bold text-xs uppercase tracking-wider">{t('about.bio.badge')}</span>
-            <h2 id="bio-heading" className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{t('about.bio.title')}</h2>
+            <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em]">{t('about.bio.badge')}</span>
+            <h2 id="bio-heading" className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">{t('about.bio.title')}</h2>
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: 40 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="h-1 bg-primary mt-2 rounded-full"
+            ></motion.div>
           </motion.div>
           
-          <div className="prose prose-sm dark:prose-invert text-slate-600 dark:text-slate-300 leading-relaxed max-w-none">
-            <motion.p variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="mb-6">{t('about.bio.p1')}</motion.p>
-            <motion.p variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="mb-6">{t('about.bio.p2')}</motion.p>
-            <motion.p variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="mb-6">{t('about.bio.p3')}</motion.p>
+          <div className="prose prose-sm dark:prose-invert text-slate-600 dark:text-slate-300 leading-relaxed max-w-none font-medium">
+            <motion.div 
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <motion.p variants={fadeInUp} className="mb-6">{t('about.bio.p1')}</motion.p>
+              <motion.p variants={fadeInUp} className="mb-6">{t('about.bio.p2')}</motion.p>
+              <motion.p variants={fadeInUp} className="mb-6">{t('about.bio.p3')}</motion.p>
+            </motion.div>
 
             <motion.section 
               variants={fadeInUp}
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl my-10 border border-slate-100 dark:border-slate-700" 
+              className="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-[28px] my-10 border border-slate-100 dark:border-slate-800 shadow-sm" 
               aria-labelledby="specializations-heading"
             >
-              <h3 id="specializations-heading" className="text-xl font-bold text-slate-900 dark:text-white mb-6">{t('about.bio.specializations.title')}</h3>
-              <ul className="grid grid-cols-1 gap-4 list-none pl-0">
+              <h3 id="specializations-heading" className="text-xl font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tight">{t('about.bio.specializations.title')}</h3>
+              <motion.ul 
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 gap-4 list-none pl-0"
+              >
                 {[ 'hio', 'tmj', 'extremity', 'pediatric' ].map(key => (
-                  <li key={key} className="flex gap-3 items-start">
-                    <span className="material-symbols-outlined text-primary shrink-0" aria-hidden="true">check_circle</span>
-                    <span>{t(`about.bio.specializations.${key}`)}</span>
-                  </li>
+                  <motion.li key={key} variants={fadeInUp} className="flex gap-3 items-center">
+                    <div className="size-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="material-symbols-outlined text-primary text-base font-bold" aria-hidden="true">check</span>
+                    </div>
+                    <span className="text-sm font-bold uppercase tracking-wide text-slate-700 dark:text-slate-300">{t(`about.bio.specializations.${key}`)}</span>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </motion.section>
 
             <motion.section variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }} aria-labelledby="education-heading">
