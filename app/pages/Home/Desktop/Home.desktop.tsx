@@ -35,7 +35,7 @@ const HomeDesktop: React.FC = () => {
     <>
       {/* Hero Section */}
       <section 
-        className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden -mt-[68px] pt-[68px] sm:-mt-[96px] sm:pt-[96px]" 
+        className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden -mt-[68px] pt-[112px] sm:-mt-[96px] sm:pt-[140px]" 
         aria-label="Introduction"
       >
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/95 via-slate-950/40 to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />

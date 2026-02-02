@@ -40,7 +40,7 @@ const HomeMobile: React.FC = () => {
       />
       {/* Hero Section */}
       <section 
-        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[68px] pt-[68px] sm:-mt-[96px] sm:pt-[96px]" 
+        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[68px] pt-[96px] sm:-mt-[96px] sm:pt-[128px]" 
         aria-label="Introduction"
       >
         <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-slate-950/85 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
