@@ -22,12 +22,18 @@ if (!isServer) {
 
 i18nInstance.init({
     fallbackLng: 'en',
+    supportedLngs: ['en', 'ko'],
     debug: false,
     interpolation: {
       escapeValue: false,
     },
     ns: ['translation', 'reviews'],
     defaultNS: 'translation',
+    detection: {
+      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'navigator'],
+      lookupFromPathIndex: 0,
+      caches: ['cookie'],
+    },
     resources: isServer ? {
       en: {
         translation: enTranslation,

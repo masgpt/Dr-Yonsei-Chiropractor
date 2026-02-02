@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const NavbarMobile: React.FC = () => {
   const { t } = useTranslation();
-  const { techniques, aboutLinks } = useNavbarConstants();
+  const { techniques, aboutLinks, lng } = useNavbarConstants();
   const { isActive, pathname } = useNavbarLogic();
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ const NavbarMobile: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo Section */}
-          <Link to="/" className="flex flex-col items-start focus:ring-offset-4 group shrink-0">
+          <Link to={`/${lng}/`} className="flex flex-col items-start focus:ring-offset-4 group shrink-0">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 overflow-hidden rounded-lg border border-slate-100 dark:border-slate-800 group-hover:scale-105 transition-transform">
                 <img 
@@ -80,7 +80,7 @@ const NavbarMobile: React.FC = () => {
           >
             <div className="p-6 overflow-y-auto max-h-[calc(100vh-64px)]">
               <nav className="flex flex-col space-y-6" aria-label="Mobile navigation">
-                <Link to="/" onClick={toggleMenu} className={`text-lg font-black tracking-tight ${isActive('/') ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>{t('nav.home')}</Link>
+                <Link to={`/${lng}/`} onClick={toggleMenu} className={`text-lg font-black tracking-tight ${isActive(`/${lng}/`) ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>{t('nav.home')}</Link>
                 
                 <div className="flex flex-col space-y-3">
                   <p className="text-xs font-black text-primary uppercase tracking-[0.2em]">{t('nav.about')}</p>
@@ -114,7 +114,7 @@ const NavbarMobile: React.FC = () => {
                   </div>
                 </div>
 
-                <Link to="/reviews" onClick={toggleMenu} className={`text-lg font-black tracking-tight ${isActive('/reviews') ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>{t('nav.reviews')}</Link>
+                <Link to={`/${lng}/reviews`} onClick={toggleMenu} className={`text-lg font-black tracking-tight ${isActive(`/${lng}/reviews`) ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>{t('nav.reviews')}</Link>
                 
                 <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
                   <div className="flex flex-col gap-3">
@@ -136,7 +136,7 @@ const NavbarMobile: React.FC = () => {
                   </div>
 
                   <Link 
-                    to="/contact" 
+                    to={`/${lng}/contact`} 
                     onClick={toggleMenu} 
                     className="flex items-center justify-center h-14 rounded-2xl bg-primary text-white text-base font-bold shadow-xl shadow-primary/20 active:scale-[0.98] transition-transform"
                   >

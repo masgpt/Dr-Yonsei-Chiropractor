@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from '@/components/ui/Link';
-import SEO from '../../../components/SEO';
+import Modal from '@/components/ui/Modal';
 import { useReviewsLogic } from '../Shared/reviews.hooks';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -26,10 +26,6 @@ const ReviewsMobile: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title={t('nav.reviews')}
-        description={t('hero.description', { ns: 'reviews' })}
-      />
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-8 px-4 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
         <motion.div 
@@ -60,118 +56,105 @@ const ReviewsMobile: React.FC = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-4"
         >
-          {reviews.map((review) => (
-            <motion.div 
-              key={review.id} 
-              variants={fadeInUp}
-              onClick={() => openReview(review)}
-              className="flex flex-col gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 active:shadow-md active:border-primary/30 transition-all duration-300 h-full cursor-pointer group"
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex text-yellow-400">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-base fill-current">star</span>
-                  ))}
-                </div>
-                {review.date ? (
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
-                ) : (
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{review.location.split(',')[1]?.trim() || review.location}</span>
-                )}
-              </div>
-              
-              <div className="flex-grow">
-                <p className="text-slate-700 dark:text-slate-300 text-xs leading-relaxed italic whitespace-pre-line line-clamp-6">
-                  "{review.text}"
-                </p>
-                {(review.text.length > 300 || review.text.includes('…') || review.text.includes('...')) && (
-                  <div className="text-primary text-[10px] font-bold mt-2 inline-flex items-center gap-1">
-                    {t('items.readMore', { ns: 'reviews' })}
-                    <span className="material-symbols-outlined text-[14px]">
-                      chevron_right
-                    </span>
+          {reviews.map((review) => {
+            const isTruncated = review.text.length > 300 || review.text.includes('…') || review.text.includes('...');
+            return (
+              <motion.div 
+                key={review.id} 
+                variants={fadeInUp}
+                onClick={() => openReview(review)}
+                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-5 rounded-[20px] border border-slate-100 dark:border-slate-800 relative active:shadow-xl transition-all group cursor-pointer h-full"
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex text-primary">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <span key={i} className="material-symbols-outlined text-base fill-current">star</span>
+                      ))}
+                    </div>
+                    {review.date && (
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
+                    )}
                   </div>
-                )}
-              </div>
+                  
+                  <p className="text-slate-700 dark:text-slate-300 text-xs leading-relaxed italic whitespace-pre-line line-clamp-6 mb-4">
+                    "{review.text}"
+                  </p>
+                </div>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-50 dark:border-slate-700">
-                <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0">
-                  {review.name.split(' ').map(n => n[0]).join('')}
+                <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800/50">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[10px] shrink-0">
+                        {review.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-[10px] font-black text-slate-900 dark:text-white uppercase tracking-widest leading-tight truncate">{review.name}</h4>
+                        <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{review.location}</p>
+                      </div>
+                    </div>
+                    {isTruncated && (
+                      <div className="shrink-0">
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 text-primary font-black text-[9px] uppercase tracking-widest shadow-sm border border-slate-100 dark:border-slate-700 active:bg-primary active:text-white transition-all">
+                          {t('items.readMore', { ns: 'reviews' })}
+                          <span className="material-symbols-outlined text-[12px]">arrow_forward</span>
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xs font-bold text-slate-900 dark:text-white leading-tight">{review.name}</h4>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">{review.location}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </section>
 
       {/* Review Modal */}
-      <AnimatePresence>
+      <Modal
+        isOpen={!!selectedReview}
+        onClose={closeReview}
+        title={selectedReview ? (
+          <div className="flex items-center justify-between w-full gap-3 pr-2">
+            <div className="min-w-0">
+              <h3 className="font-black text-slate-900 dark:text-white text-sm uppercase tracking-widest leading-tight truncate">
+                {selectedReview.name}
+              </h3>
+              <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5">
+                {selectedReview.location}
+              </p>
+            </div>
+            <div className="flex gap-0.5 text-yellow-400 shrink-0" aria-label={`${selectedReview.rating} star rating`}>
+              {[...Array(selectedReview.rating)].map((_, j) => (
+                <span key={j} className="material-symbols-outlined text-[16px] fill-current" aria-hidden="true">star</span>
+              ))}
+            </div>
+          </div>
+        ) : ""}
+      >
         {selectedReview && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
-              onClick={closeReview}
-            />
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden"
-            >
-              <div className="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-700">
-                <div className="flex items-center gap-4">
-                  <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-base shrink-0">
-                    {selectedReview.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">{selectedReview.name}</h3>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">{selectedReview.location}</p>
-                  </div>
-                </div>
-                <button 
-                  onClick={closeReview}
-                  className="size-8 rounded-full flex items-center justify-center text-slate-400 active:bg-slate-100 dark:active:bg-slate-700 transition-colors"
-                >
-                  <span className="material-symbols-outlined text-xl">close</span>
-                </button>
-              </div>
+          <div className="space-y-6">
+            <div className="flex items-center justify-between mb-2">
+              {selectedReview.date && (
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{selectedReview.date}</span>
+              )}
+            </div>
+            
+            <p className="text-base text-slate-700 dark:text-slate-300 italic font-medium leading-relaxed">
+              "{selectedReview.text}"
+            </p>
 
-              <div className="flex-grow overflow-y-auto p-6 custom-scrollbar">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex text-yellow-400">
-                    {[...Array(selectedReview.rating)].map((_, i) => (
-                      <span key={i} className="material-symbols-outlined text-xl fill-current">star</span>
-                    ))}
-                  </div>
-                  {selectedReview.date && (
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{selectedReview.date}</span>
-                  )}
-                </div>
-                <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed italic whitespace-pre-line">
-                  "{selectedReview.text}"
-                </p>
-              </div>
-
-              <div className="p-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                <button 
-                  onClick={closeReview}
-                  className="w-full px-6 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
+            <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+              <button 
+                onClick={closeReview}
+                className="w-full h-12 px-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-black text-xs uppercase tracking-widest transition-all"
+              >
+                {t('common.close', { defaultValue: 'Close' })}
+              </button>
+            </div>
           </div>
         )}
-      </AnimatePresence>
+      </Modal>
 
       {/* CTA Section */}
       <section className="w-full px-4 py-6 mb-8 overflow-hidden">

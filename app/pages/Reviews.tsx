@@ -1,13 +1,21 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useViewport } from '../hooks/useViewport';
 import ReviewsDesktop from './Reviews/Desktop/Reviews.desktop';
 import ReviewsMobile from './Reviews/Mobile/Reviews.mobile';
 import { reviewMetadata } from './Reviews/Shared/reviews.constants';
+import { useTranslation } from 'react-i18next';
 
-const Reviews: React.FC = () => {
+const Reviews: React.FC<{ lng?: string }> = ({ lng }) => {
   const { isMobile } = useViewport();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lng && i18n.language !== lng) {
+      i18n.changeLanguage(lng);
+    }
+  }, [lng, i18n]);
 
   // Structured Data (JSON-LD)
   const jsonLd = {

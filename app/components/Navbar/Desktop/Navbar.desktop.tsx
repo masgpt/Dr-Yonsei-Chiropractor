@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const NavbarDesktop: React.FC = () => {
   const { t } = useTranslation();
-  const { techniques, aboutLinks } = useNavbarConstants();
+  const { techniques, aboutLinks, lng } = useNavbarConstants();
   const { isActive, navLinkClass, pathname } = useNavbarLogic();
   
   const [isTechniquesOpen, setIsTechniquesOpen] = useState(false);
@@ -54,7 +54,7 @@ const NavbarDesktop: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section */}
-          <Link to="/" className="flex flex-col items-start focus:ring-offset-4 group">
+          <Link to={`/${lng}/`} className="flex flex-col items-start focus:ring-offset-4 group">
             <motion.div 
               className="flex items-center gap-3"
               whileHover={{ x: 5 }}
@@ -82,7 +82,7 @@ const NavbarDesktop: React.FC = () => {
 
           {/* Nav Links */}
           <nav className="flex items-center gap-2" aria-label="Main navigation">
-            <Link to="/" className={navLinkClass('/')}>{t('nav.home')}</Link>
+            <Link to={`/${lng}/`} className={navLinkClass(`/${lng}/`)}>{t('nav.home')}</Link>
             
             {/* About Dropdown */}
             <div className="relative" ref={aboutRef}>
@@ -95,7 +95,7 @@ const NavbarDesktop: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={isAboutOpen}
                 className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
-                  isActive('/about') || isActive('/message')
+                  isActive(`/${lng}/about`) || isActive(`/${lng}/message`)
                     ? 'text-primary bg-primary/5' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
@@ -141,7 +141,7 @@ const NavbarDesktop: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={isTechniquesOpen}
                 className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
-                  pathname.startsWith('/techniques') 
+                  pathname.includes('/techniques') 
                     ? 'text-primary bg-primary/5' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
@@ -176,7 +176,7 @@ const NavbarDesktop: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            <Link to="/reviews" className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
+            <Link to={`/${lng}/reviews`} className={navLinkClass(`/${lng}/reviews`)}>{t('nav.reviews')}</Link>
 
             {/* Contact Dropdown */}
             <div className="relative" ref={contactRef}>
@@ -187,7 +187,7 @@ const NavbarDesktop: React.FC = () => {
                   setIsTechniquesOpen(false);
                 }}
                 className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
-                  isContactOpen 
+                  isContactOpen || isActive(`/${lng}/contact`)
                     ? 'text-primary bg-primary/5' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
@@ -258,7 +258,7 @@ const NavbarDesktop: React.FC = () => {
           <div className="flex items-center gap-4">
             <LanguageToggle />
             <Link 
-              to="/contact" 
+              to={`/${lng}/contact`} 
               className="flex items-center justify-center h-11 px-6 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0 focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
             >
               <span className="mr-2 material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>

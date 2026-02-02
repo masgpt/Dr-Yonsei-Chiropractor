@@ -9,18 +9,19 @@ import ClientLayout from './client-layout';
 export const metadata: Metadata = {
   title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
   description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
+  metadataBase: new URL('https://yonseichiro.com'),
   openGraph: {
     type: "website",
     url: "https://yonseichiro.com/",
     title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
     description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
-    images: ["https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
+    images: ["/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
     description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
-    images: ["https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
+    images: ["/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
   },
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>',
@@ -33,13 +34,67 @@ const Loading = () => (
   </div>
 );
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lng: 'en' }, { lng: 'ko' }];
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ lng: string }>;
 }) {
+  const { lng } = await params;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": "https://yonseichiro.com/#organization",
+    "name": "Yonsei Chiropractic Clinic",
+    "url": "https://yonseichiro.com",
+    "logo": "https://yonseichiro.com/LOGO_E_H.jpg",
+    "image": "https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg",
+    "description": "Specialized Palmer Upper Cervical Specific Chiropractic clinic in Los Angeles.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3200 Wilshire Blvd, Suite 302",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90010",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.0617,
+      "longitude": -118.2917
+    },
+    "telephone": "+1-213-381-5500",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "medicalSpecialty": "Chiropractic",
+    "founder": {
+      "@type": "Physician",
+      "name": "Dr. Hyeon Joo Park, D.C., M.S.",
+      "medicalSpecialty": "Chiropractic",
+      "knowsAbout": ["Upper Cervical Chiropractic", "Palmer Method", "TMJ", "Whiplash"]
+    }
+  };
+
   return (
-    <html lang="en" className="scroll-pt-[104px]" suppressHydrationWarning>
+    <html lang={lng} className="scroll-pt-[104px]" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -62,6 +117,10 @@ export default function RootLayout({
             }
           })();
         ` }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
         <div className="relative flex flex-col min-h-screen overflow-x-hidden">

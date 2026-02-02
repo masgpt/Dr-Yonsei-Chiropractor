@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from '../../../components/ui/Link';
-import SEO from '../../../components/SEO';
 import Modal from '../../../components/ui/Modal';
 import { reviews } from '../Shared/home.constants';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,10 +33,6 @@ const HomeDesktop: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title={t('home.hero.title')}
-        description={t('home.hero.descriptionDesktop')}
-      />
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
         {/* Background Decorative Element */}

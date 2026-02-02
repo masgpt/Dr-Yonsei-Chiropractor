@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from '@/components/ui/Link';
 import { useTranslation } from 'react-i18next';
-import SEO from '../../../../components/SEO';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -16,11 +15,6 @@ const UpperCervicalDesktop: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title={t('techniques.upperCervical.title')}
-        description={t('techniques.upperCervical.p1')}
-        image="/o-14.jpg"
-      />
       {/* Hero Section */}
       <section className="relative w-full h-[200px] flex items-center justify-center overflow-hidden">
         <motion.div 

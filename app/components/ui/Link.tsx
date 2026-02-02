@@ -3,6 +3,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'next/navigation';
 
 interface CustomLinkProps {
   children: React.ReactNode;
@@ -23,12 +24,16 @@ const Link: React.FC<CustomLinkProps> = ({
   onClick,
   ...props
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const params = useParams();
+  const currentLng = (params?.lng as string) || i18n.language || 'en';
   const baseStyles = 'transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 focus:rounded-sm';
   
-  const targetPath = href || to || '';
+  let targetPath = href || to || '';
 
-  if (external || targetPath.startsWith('http') || targetPath.startsWith('mailto:') || targetPath.startsWith('tel:')) {
+  const isExternal = external || targetPath.startsWith('http') || targetPath.startsWith('mailto:') || targetPath.startsWith('tel:');
+
+  if (isExternal) {
     return (
       <a
         href={targetPath}
@@ -44,6 +49,17 @@ const Link: React.FC<CustomLinkProps> = ({
         )}
       </a>
     );
+  }
+
+  // Prepend language prefix for internal links if not already present
+  if (targetPath.startsWith('/')) {
+    const segments = targetPath.split('/');
+    const firstSegment = segments[1];
+    if (!['en', 'ko'].includes(firstSegment)) {
+      // Avoid double slashes
+      const cleanPath = targetPath === '/' ? '' : targetPath;
+      targetPath = `/${currentLng}${cleanPath}`;
+    }
   }
 
   return (

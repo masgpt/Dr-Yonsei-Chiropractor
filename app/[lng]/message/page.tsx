@@ -1,4 +1,4 @@
-import MessageFromDrPark from '../pages/MessageFromDrPark';
+import MessageFromDrPark from '../../pages/MessageFromDrPark';
 
 export default function Page() {
   return <MessageFromDrPark />;

@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from '@/components/ui/Link';
-import SEO from '../../../components/SEO';
+import Modal from '@/components/ui/Modal';
 import { useReviewsLogic } from '../Shared/reviews.hooks';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -26,10 +26,6 @@ const ReviewsDesktop: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title={t('nav.reviews')}
-        description={t('hero.description', { ns: 'reviews' })}
-      />
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-12 px-8 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
         <motion.div 
@@ -60,120 +56,105 @@ const ReviewsDesktop: React.FC = () => {
           viewport={{ once: true }}
           className="grid grid-cols-3 gap-6"
         >
-          {reviews.map((review) => (
-            <motion.div 
-              key={review.id} 
-              variants={fadeInUp}
-              onClick={() => openReview(review)}
-              className="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md hover:border-primary/30 transition-all duration-300 h-full cursor-pointer group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex text-yellow-400">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-[18px] fill-current">star</span>
-                  ))}
-                </div>
-                {review.date ? (
-                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
-                ) : (
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{review.location.split(',')[1]?.trim() || review.location}</span>
-                )}
-              </div>
-              
-              <div className="flex-grow">
-                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic whitespace-pre-line line-clamp-6">
-                  "{review.text}"
-                </p>
-                {(review.text.length > 300 || review.text.includes('…') || review.text.includes('...')) && (
-                  <div className="text-primary text-xs font-bold mt-2 group-hover:underline inline-flex items-center gap-1">
-                    {t('items.readMore', { ns: 'reviews' })}
-                    <span className="material-symbols-outlined text-[14px]">
-                      chevron_right
-                    </span>
+          {reviews.map((review) => {
+            const isTruncated = review.text.length > 300 || review.text.includes('…') || review.text.includes('...');
+            return (
+              <motion.div 
+                key={review.id} 
+                variants={fadeInUp}
+                onClick={() => openReview(review)}
+                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all group cursor-pointer h-full"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex text-primary">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <span key={i} className="material-symbols-outlined text-[20px] fill-current">star</span>
+                      ))}
+                    </div>
+                    {review.date && (
+                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
+                    )}
                   </div>
-                )}
-              </div>
+                  
+                  <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic whitespace-pre-line line-clamp-6 mb-6">
+                    "{review.text}"
+                  </p>
+                </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-50 dark:border-slate-700">
-                <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shrink-0">
-                  {review.name.split(' ').map(n => n[0]).join('')}
+                <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800/50">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                        {review.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-widest group-hover:text-primary transition-colors leading-tight">{review.name}</h4>
+                        <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{review.location}</p>
+                      </div>
+                    </div>
+                    {isTruncated && (
+                      <div className="shrink-0">
+                        <span className="inline-flex items-center px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-primary font-black text-[10px] uppercase tracking-[0.15em] shadow-sm border border-slate-100 dark:border-slate-700 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                          {t('items.readMore', { ns: 'reviews' })}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">{review.name}</h4>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">{review.location}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </section>
 
       {/* Review Modal */}
-      <AnimatePresence>
+      <Modal
+        isOpen={!!selectedReview}
+        onClose={closeReview}
+        title={selectedReview ? (
+          <div className="flex items-center justify-between w-full gap-4 pr-4">
+            <div className="min-w-0">
+              <h3 className="font-black text-slate-900 dark:text-white text-base uppercase tracking-widest leading-tight truncate">
+                {selectedReview.name}
+              </h3>
+              <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5">
+                {selectedReview.location}
+              </p>
+            </div>
+            <div className="flex gap-0.5 text-yellow-400 shrink-0" aria-label={`${selectedReview.rating} star rating`}>
+              {[...Array(selectedReview.rating)].map((_, i) => (
+                <span key={i} className="material-symbols-outlined text-[18px] fill-current" aria-hidden="true">star</span>
+              ))}
+            </div>
+          </div>
+        ) : ""}
+      >
         {selectedReview && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
-              onClick={closeReview}
-            />
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden"
-            >
-              <div className="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-700">
-                <div className="flex items-center gap-4">
-                  <div className="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg shrink-0">
-                    {selectedReview.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">{selectedReview.name}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{selectedReview.location}</p>
-                  </div>
-                </div>
-                <button 
-                  onClick={closeReview}
-                  className="size-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                >
-                  <span className="material-symbols-outlined text-2xl">close</span>
-                </button>
-              </div>
+          <div className="space-y-6">
+            <div className="flex items-center justify-between mb-2">
+              {selectedReview.date && (
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{selectedReview.date}</span>
+              )}
+            </div>
+            
+            <p className="text-lg text-slate-700 dark:text-slate-300 italic font-medium leading-relaxed">
+              "{selectedReview.text}"
+            </p>
 
-              <div className="flex-grow overflow-y-auto p-8 custom-scrollbar">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex text-yellow-400">
-                    {[...Array(selectedReview.rating)].map((_, i) => (
-                      <span key={i} className="material-symbols-outlined text-2xl fill-current">star</span>
-                    ))}
-                  </div>
-                  {selectedReview.date && (
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{selectedReview.date}</span>
-                  )}
-                </div>
-                <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed italic whitespace-pre-line">
-                  "{selectedReview.text}"
-                </p>
-              </div>
-
-              <div className="p-6 border-t border-slate-100 dark:border-slate-700 flex justify-end">
-                <button 
-                  onClick={closeReview}
-                  className="w-auto px-6 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
+            <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+              <button 
+                onClick={closeReview}
+                className="h-12 px-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-black text-xs uppercase tracking-widest hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
+              >
+                {t('common.close', { defaultValue: 'Close' })}
+              </button>
+            </div>
           </div>
         )}
-      </AnimatePresence>
+      </Modal>
 
       {/* CTA Section */}
       <section className="w-full px-8 py-8 mb-8">

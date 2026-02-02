@@ -13,14 +13,11 @@ const fadeInUp = {
 };
 
 const ServicesMobile: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language || 'en';
 
   return (
     <>
-      <SEO 
-        title={t('nav.techniques')}
-        description={t('servicesPage.hero.subtitle')}
-      />
       {/* Hero Section */}
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center overflow-hidden">
         <div className="w-full px-0 py-0">
@@ -38,7 +35,7 @@ const ServicesMobile: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-white text-3xl font-black leading-tight tracking-tight drop-shadow-md"
+                className="text-white text-3xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
               >
                 {t('servicesPage.hero.title')}
               </motion.h1>
@@ -56,7 +53,7 @@ const ServicesMobile: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               href="#treatments" 
-              className="z-10 flex w-full min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary transition-colors text-slate-50 text-base font-bold shadow-lg"
+              className="z-10 flex w-full min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary transition-colors text-slate-50 text-base font-bold shadow-lg uppercase tracking-widest"
             >
               <span className="truncate">{t('servicesPage.hero.cta')}</span>
             </motion.a>
@@ -74,29 +71,35 @@ const ServicesMobile: React.FC = () => {
             viewport={{ once: true }}
             className="w-full space-y-4"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-semibold">
-              <span className="material-symbols-outlined text-[16px]">verified</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-[10px] font-black uppercase tracking-widest">
+              <span className="material-symbols-outlined text-[14px]">verified</span>
               {t('servicesPage.philosophy.badge')}
             </div>
-            <h2 className="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight">
+            <h2 className="text-[#0d141b] dark:text-white text-2xl font-black leading-tight uppercase">
               {t('servicesPage.philosophy.title')}
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed font-medium">
               {t('servicesPage.philosophy.p1')}
             </p>
+            <div className="pt-2">
+              <Link to={`/${lng}/techniques/about-chiropractic`} className="inline-flex items-center gap-2 text-primary font-black uppercase tracking-widest text-[10px] hover:underline">
+                Learn the Science Behind Chiropractic
+                <span className="material-symbols-outlined text-xs">east</span>
+              </Link>
+            </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="h-56 w-full rounded-xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[220px]"
+            className="h-56 w-full rounded-2xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[220px] border-4 border-white dark:border-slate-800 shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-6">
               <div className="flex flex-col items-center">
-                <span className="material-symbols-outlined text-primary text-5xl mb-4">neurology</span>
-                <p className="text-primary font-bold text-lg uppercase tracking-widest">{t('servicesPage.philosophy.method')}</p>
-                <p className="text-slate-500 text-[10px]">{t('servicesPage.philosophy.technique')}</p>
+                <span className="material-symbols-outlined text-primary text-5xl mb-4 opacity-80">neurology</span>
+                <p className="text-primary font-black text-lg uppercase tracking-[0.2em]">{t('servicesPage.philosophy.method')}</p>
+                <p className="text-slate-500 text-[9px] font-bold uppercase tracking-widest mt-1">{t('servicesPage.philosophy.technique')}</p>
               </div>
             </div>
           </motion.div>
@@ -104,19 +107,20 @@ const ServicesMobile: React.FC = () => {
       </div>
 
       {/* Treatments/Features Section */}
-      <div id="treatments" className="w-full flex justify-center bg-white dark:bg-[#15202b] py-12">
+      <div id="treatments" className="w-full flex justify-center bg-white dark:bg-[#0a0f14] py-16">
         <div className="w-full px-4 flex flex-col">
           <motion.div 
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="mb-8 text-center"
+            className="mb-10 text-center"
           >
-            <h2 className="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight tracking-tight">{t('servicesPage.specialties.title')}</h2>
-            <p className="text-slate-500 dark:text-slate-400 mt-2 text-base">{t('servicesPage.specialties.description')}</p>
+            <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em] block mb-3">Core Competencies</span>
+            <h2 className="text-[#0d141b] dark:text-white text-3xl font-black leading-tight tracking-tight uppercase">{t('servicesPage.specialties.title')}</h2>
+            <p className="text-slate-500 dark:text-slate-400 mt-3 text-base font-medium">{t('servicesPage.specialties.description')}</p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-6">
             {specialtyKeys.map((item, idx) => (
               <motion.div 
                 key={item.key}
@@ -124,15 +128,26 @@ const ServicesMobile: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05, duration: 0.5 }}
-                className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-5 active:shadow-md transition-shadow"
+                className="flex flex-col gap-4 rounded-[28px] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-6 active:shadow-md transition-all group"
               >
-                <div className="size-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500 shrink-0">
-                  <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                <div className="size-12 rounded-xl bg-white dark:bg-slate-800 shadow-lg shadow-primary/5 flex items-center justify-center text-primary">
+                  <span className="material-symbols-outlined text-2xl font-light">{item.icon}</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-[#0d141b] dark:text-white text-base font-bold leading-tight">{t(`servicesPage.specialties.items.${item.key}.title`)}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-xs leading-normal">{t(`servicesPage.specialties.items.${item.key}.desc`)}</p>
+                  <h3 className="text-[#0d141b] dark:text-white text-lg font-black leading-tight uppercase tracking-tight">{t(`servicesPage.specialties.items.${item.key}.title`)}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-medium">{t(`servicesPage.specialties.items.${item.key}.desc`)}</p>
                 </div>
+                {item.path ? (
+                  <Link 
+                    to={`/${lng}${item.path}`} 
+                    className="inline-flex items-center gap-2 text-primary font-black uppercase tracking-widest text-[10px] active:underline mt-1"
+                  >
+                    View Deep Knowledge
+                    <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                  </Link>
+                ) : (
+                  <div className="h-[18px]"></div>
+                )}
               </motion.div>
             ))}
           </div>

@@ -23,14 +23,11 @@ const staggerContainer = {
 };
 
 const ServicesDesktop: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language || 'en';
 
   return (
     <>
-      <SEO 
-        title={t('nav.techniques')}
-        description={t('servicesPage.hero.subtitle')}
-      />
       {/* Hero Section */}
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center overflow-hidden">
         <div className="w-full max-w-[1280px] px-8 py-5">
@@ -43,12 +40,12 @@ const ServicesDesktop: React.FC = () => {
             role="img"
             aria-label="Chiropractor's hands supporting a patient's spine during healing care"
           >
-            <div className="flex flex-col gap-2 text-center max-w-[600px] z-10">
+            <div className="flex flex-col gap-2 text-center max-w-[800px] z-10">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-white text-5xl font-black leading-tight tracking-tight drop-shadow-md"
+                className="text-white text-5xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
               >
                 {t('servicesPage.hero.title')}
               </motion.h1>
@@ -56,7 +53,7 @@ const ServicesDesktop: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-slate-100 text-base font-medium leading-relaxed mt-2 drop-shadow-sm"
+                className="text-slate-100 text-lg font-medium leading-relaxed mt-2 drop-shadow-sm"
               >
                 {t('servicesPage.hero.subtitle')}
               </motion.h2>
@@ -66,7 +63,7 @@ const ServicesDesktop: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
               href="#treatments" 
-              className="z-10 flex w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-lg"
+              className="z-10 flex w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-widest uppercase shadow-lg"
             >
               <span className="truncate">{t('servicesPage.hero.cta')}</span>
             </motion.a>
@@ -76,45 +73,51 @@ const ServicesDesktop: React.FC = () => {
 
       {/* Intro Philosophy Section */}
       <div className="w-full flex justify-center py-16 overflow-hidden">
-        <div className="w-full max-w-[1280px] px-8 flex flex-row gap-10 items-center">
+        <div className="w-full max-w-[1280px] px-8 flex flex-row gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1 space-y-4"
+            className="flex-1 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-semibold">
-              <span className="material-symbols-outlined text-[18px]">verified</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-black uppercase tracking-widest">
+              <span className="material-symbols-outlined text-[16px]">verified</span>
               {t('servicesPage.philosophy.badge')}
             </div>
-            <h2 className="text-[#0d141b] dark:text-white text-3xl font-bold leading-tight">
+            <h2 className="text-[#0d141b] dark:text-white text-4xl font-black leading-tight uppercase tracking-tight">
               {t('servicesPage.philosophy.title')}
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed font-medium">
               {t('servicesPage.philosophy.p1')}
             </p>
+            <div className="pt-4">
+              <Link to={`/${lng}/techniques/about-chiropractic`} className="inline-flex items-center gap-2 text-primary font-black uppercase tracking-widest text-xs hover:underline">
+                Learn the Science Behind Chiropractic
+                <span className="material-symbols-outlined text-sm">east</span>
+              </Link>
+            </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1 h-auto w-full rounded-xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[220px]"
+            className="flex-1 h-auto w-full rounded-3xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[300px] border-4 border-white dark:border-slate-800 shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-8">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-8">
               <div className="flex flex-col items-center">
                 <motion.span 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
-                  className="material-symbols-outlined text-primary text-7xl mb-4"
+                  className="material-symbols-outlined text-primary text-8xl mb-4 opacity-80"
                 >
                   neurology
                 </motion.span>
-                <p className="text-primary font-bold text-xl uppercase tracking-widest">{t('servicesPage.philosophy.method')}</p>
-                <p className="text-slate-500 text-sm">{t('servicesPage.philosophy.technique')}</p>
+                <p className="text-primary font-black text-2xl uppercase tracking-[0.2em]">{t('servicesPage.philosophy.method')}</p>
+                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest mt-1">{t('servicesPage.philosophy.technique')}</p>
               </div>
             </div>
           </motion.div>
@@ -122,38 +125,50 @@ const ServicesDesktop: React.FC = () => {
       </div>
 
       {/* Treatments/Features Section */}
-      <div id="treatments" className="w-full flex justify-center bg-white dark:bg-[#15202b] py-16">
+      <div id="treatments" className="w-full flex justify-center bg-white dark:bg-[#0a0f14] py-24">
         <div className="w-full max-w-[1280px] px-8 flex flex-col">
           <motion.div 
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="mb-10 text-left"
+            className="mb-16 text-left"
           >
-            <h2 className="text-[#0d141b] dark:text-white text-3xl font-bold leading-tight tracking-tight">{t('servicesPage.specialties.title')}</h2>
-            <p className="text-slate-500 dark:text-slate-400 mt-2 text-lg">{t('servicesPage.specialties.description')}</p>
+            <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Core Competencies</span>
+            <h2 className="text-[#0d141b] dark:text-white text-5xl font-black leading-tight tracking-tight uppercase">{t('servicesPage.specialties.title')}</h2>
+            <p className="text-slate-500 dark:text-slate-400 mt-4 text-xl font-medium max-w-2xl">{t('servicesPage.specialties.description')}</p>
           </motion.div>
           <motion.div 
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="grid grid-cols-3 gap-6"
+            className="grid grid-cols-3 gap-8"
           >
             {specialtyKeys.map((item) => (
               <motion.div 
                 key={item.key} 
                 variants={fadeInUp}
-                className="flex flex-col gap-4 rounded-xl border border-[#e7edf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1a2632] p-6 hover:shadow-md transition-shadow"
+                className="flex flex-col gap-6 rounded-[32px] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-8 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 group"
               >
-                <div className="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500 shrink-0">
-                  <span className="material-symbols-outlined text-2xl">{item.icon}</span>
+                <div className="size-14 rounded-2xl bg-white dark:bg-slate-800 shadow-xl shadow-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                  <span className="material-symbols-outlined text-3xl font-light">{item.icon}</span>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">{t(`servicesPage.specialties.items.${item.key}.title`)}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-normal">{t(`servicesPage.specialties.items.${item.key}.desc`)}</p>
+                <div className="flex flex-col gap-3 flex-1">
+                  <h3 className="text-[#0d141b] dark:text-white text-xl font-black leading-tight uppercase tracking-tight">{t(`servicesPage.specialties.items.${item.key}.title`)}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed font-medium">{t(`servicesPage.specialties.items.${item.key}.desc`)}</p>
                 </div>
+                {item.path ? (
+                  <Link 
+                    to={`/${lng}${item.path}`} 
+                    className="inline-flex items-center gap-2 text-primary font-black uppercase tracking-widest text-[10px] hover:underline mt-2"
+                  >
+                    View Deep Knowledge
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+                ) : (
+                  <div className="h-[22px]"></div>
+                )}
               </motion.div>
             ))}
           </motion.div>
