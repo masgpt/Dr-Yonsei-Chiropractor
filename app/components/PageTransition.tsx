@@ -2,24 +2,28 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [isHydrated, setIsHydrated] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const isFirstMount = useRef(true);
 
   useEffect(() => {
-    setIsHydrated(true);
+    setIsMounted(true);
+    // After the first render completes, future mounts are not the "first"
+    isFirstMount.current = false;
   }, []);
 
-  // On the very first render (server or first client), we don't want any animation.
-  // framer-motion's initial={false} on AnimatePresence handles the very first mount,
-  // but we use this state to be extra sure during hydration.
+  if (!isMounted) {
+    return <div className="flex flex-col flex-grow w-full">{children}</div>;
+  }
+
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={!isHydrated ? false : { opacity: 0, y: 10 }}
+        initial={isFirstMount.current ? false : { opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ 
           duration: 0.4, 

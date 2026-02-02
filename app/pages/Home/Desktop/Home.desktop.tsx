@@ -34,7 +34,8 @@ const HomeDesktop: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
+      <section className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden" aria-label="Introduction">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/95 via-slate-950/40 to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />
         {/* Background Decorative Element */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
@@ -52,7 +53,7 @@ const HomeDesktop: React.FC = () => {
         ></motion.div>
 
         {/* Desktop Hero (Side-by-Side) */}
-        <div className="max-w-[1280px] mx-auto px-10 pt-16 pb-12">
+        <div className="max-w-[1280px] mx-auto px-10 pt-10 pb-12">
           <div className="grid grid-cols-2 gap-16 items-center">
             <motion.div 
               initial="initial"
@@ -68,15 +69,25 @@ const HomeDesktop: React.FC = () => {
             >
               <motion.div
                 variants={{
+                  initial: { opacity: 0, y: 16 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }
+                }}
+                className="inline-flex flex-wrap gap-3 items-center text-[11px] uppercase tracking-[0.45em] text-white/70 mb-3"
+              >
+                <span className="px-4 py-1 rounded-full border border-white/30 bg-white/10 font-black tracking-[0.4em]">
+                  Palmer Upper Cervical
+                </span>
+                <span className="h-1 w-1 rounded-full bg-white/60" aria-hidden="true" />
+                <span className="text-white/60 font-semibold tracking-[0.3em] text-[10px]">
+                  Los Angeles, CA
+                </span>
+              </motion.div>
+              <motion.div
+                variants={{
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                 }}
               >
-                <span 
-                  className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.2em] mb-4 border border-primary/20"
-                >
-                  Palmer Upper Cervical Specialist
-                </span>
                 <h1 
                   className="text-7xl font-black tracking-tighter text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
                 >

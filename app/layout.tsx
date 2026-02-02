@@ -127,7 +127,7 @@ export default async function RootLayout({
               <main 
                 id="main-content" 
                 tabIndex={-1} 
-                className="flex-grow w-full flex flex-col outline-none pt-[68px] sm:pt-[100px] lg:pt-[120px]"
+                className="flex-grow w-full flex flex-col outline-none pt-[68px] sm:pt-[96px] lg:pt-[96px]"
               >
                 <PageTransition>
                   {children}
