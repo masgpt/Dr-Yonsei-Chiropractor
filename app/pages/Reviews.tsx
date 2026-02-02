@@ -7,8 +7,8 @@ import ReviewsMobile from './Reviews/Mobile/Reviews.mobile';
 import { reviewMetadata } from './Reviews/Shared/reviews.constants';
 import { useTranslation } from 'react-i18next';
 
-const Reviews: React.FC<{ lng?: string }> = ({ lng }) => {
-  const { isMobile } = useViewport();
+const Reviews: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initialIsMobile }) => {
+  const { isMobile } = useViewport(initialIsMobile);
   const { i18n } = useTranslation();
 
   useEffect(() => {

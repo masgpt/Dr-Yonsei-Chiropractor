@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import TMJ from '../../../pages/techniques/TMJ';
+import { getInitialIsMobileFromHeaders } from '../../../lib/get-initial-is-mobile';
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
@@ -22,5 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
-  return <TMJ lng={lng} />;
+  const initialIsMobile = await getInitialIsMobileFromHeaders();
+
+  return <TMJ lng={lng} initialIsMobile={initialIsMobile} />;
 }

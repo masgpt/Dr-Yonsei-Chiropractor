@@ -5,8 +5,8 @@ import { useViewport } from '../hooks/useViewport';
 import ContactDesktop from './Contact/Desktop/Contact.desktop';
 import ContactMobile from './Contact/Mobile/Contact.mobile';
 
-const Contact: React.FC = () => {
-  const { isMobile } = useViewport();
+const Contact: React.FC<{ initialIsMobile?: boolean }> = ({ initialIsMobile }) => {
+  const { isMobile } = useViewport(initialIsMobile);
 
   return isMobile ? <ContactMobile /> : <ContactDesktop />;
 };

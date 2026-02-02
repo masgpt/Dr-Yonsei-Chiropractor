@@ -7,8 +7,8 @@ import UpperCervicalMobile from './UpperCervical/Mobile/UpperCervical.mobile';
 import MedicalDisclaimer from '../../components/MedicalDisclaimer';
 import { useTranslation } from 'react-i18next';
 
-const UpperCervical: React.FC<{ lng?: string }> = ({ lng }) => {
-  const { isMobile } = useViewport();
+const UpperCervical: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initialIsMobile }) => {
+  const { isMobile } = useViewport(initialIsMobile);
   const { i18n } = useTranslation();
 
   useEffect(() => {

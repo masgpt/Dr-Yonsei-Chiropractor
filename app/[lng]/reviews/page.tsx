@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Reviews from '../../pages/Reviews';
+import { getInitialIsMobileFromHeaders } from '../../lib/get-initial-is-mobile';
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
@@ -27,5 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
-  return <Reviews lng={lng} />;
+  const initialIsMobile = await getInitialIsMobileFromHeaders();
+
+  return <Reviews lng={lng} initialIsMobile={initialIsMobile} />;
 }

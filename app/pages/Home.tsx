@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import HomeDesktop from './Home/Desktop/Home.desktop';
 import HomeMobile from './Home/Mobile/Home.mobile';
 
-const Home: React.FC<{ lng?: string }> = ({ lng }) => {
-  const { isMobile } = useViewport();
+const Home: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initialIsMobile }) => {
+  const { isMobile } = useViewport(initialIsMobile);
   const { i18n } = useTranslation();
 
   useEffect(() => {

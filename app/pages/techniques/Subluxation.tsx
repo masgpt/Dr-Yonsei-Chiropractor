@@ -5,8 +5,8 @@ import { useViewport } from '../../hooks/useViewport';
 import SubluxationDesktop from './Subluxation/Desktop/Subluxation.desktop';
 import SubluxationMobile from './Subluxation/Mobile/Subluxation.mobile';
 
-const Subluxation: React.FC = () => {
-  const { isMobile } = useViewport();
+const Subluxation: React.FC<{ initialIsMobile?: boolean }> = ({ initialIsMobile }) => {
+  const { isMobile } = useViewport(initialIsMobile);
 
   return isMobile ? <SubluxationMobile /> : <SubluxationDesktop />;
 };
