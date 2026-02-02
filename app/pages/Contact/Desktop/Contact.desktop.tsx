@@ -223,7 +223,7 @@ const ContactDesktop: React.FC = () => {
               )}
             </div>
           </section>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

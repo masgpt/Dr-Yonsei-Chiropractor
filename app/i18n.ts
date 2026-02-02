@@ -3,7 +3,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpBackend from 'i18next-http-backend';
 
 // Import translations directly for SSR/SSG
 import enTranslation from './locales/en/translation.json';
@@ -17,7 +16,7 @@ const i18nInstance = i18n
   .use(initReactI18next);
 
 if (!isServer) {
-  i18nInstance.use(HttpBackend).use(LanguageDetector);
+  i18nInstance.use(LanguageDetector);
 }
 
 i18nInstance.init({
@@ -34,7 +33,7 @@ i18nInstance.init({
       lookupFromPathIndex: 0,
       caches: ['cookie'],
     },
-    resources: isServer ? {
+    resources: {
       en: {
         translation: enTranslation,
         reviews: enReviews
@@ -43,9 +42,6 @@ i18nInstance.init({
         translation: koTranslation,
         reviews: koReviews
       }
-    } : undefined,
-    backend: isServer ? undefined : {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     react: {
       useSuspense: false,

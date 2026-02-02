@@ -119,7 +119,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
-        <I18nProvider>
+        <I18nProvider lng={lng}>
           <div className="relative flex flex-col min-h-screen overflow-x-hidden">
             <ClientLayout>
               <SkipToContent />
