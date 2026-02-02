@@ -4,25 +4,43 @@ import Button from '../../../components/ui/Button';
 import FormField from '../../../components/ui/FormField';
 import Link from '../../../components/ui/Link';
 import { useContactForm } from '../Shared/contact.hooks';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 }
+};
 
 const ContactDesktop: React.FC = () => {
   const { t } = useTranslation();
   const { isSubmitted, isLoading, handleSubmit, resetForm } = useContactForm();
 
   return (
-    <div className="flex-grow w-full max-w-[1280px] mx-auto px-8 py-12">
+    <div className="flex-grow w-full max-w-[1280px] mx-auto px-8 py-12 overflow-hidden">
       {/* Page Heading */}
-      <div className="flex flex-col gap-3 mb-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col gap-3 mb-10"
+      >
         <h1 className="text-text-main dark:text-white text-5xl font-black leading-tight tracking-tight">{t('contactPage.hero.title')}</h1>
         <p className="text-text-secondary dark:text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
           {t('contactPage.hero.description')}
         </p>
-      </div>
+      </motion.div>
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-12 gap-12">
         {/* Left Column: Details */}
-        <div className="col-span-5 flex flex-col gap-8">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="col-span-5 flex flex-col gap-8"
+        >
           {/* Location & Contact Info */}
           <div className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
             <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
@@ -93,10 +111,15 @@ const ContactDesktop: React.FC = () => {
               </div>
             </div>
           </section>
-        </div>
+        </motion.div>
 
         {/* Right Column: Map & Form */}
-        <div className="col-span-7 flex flex-col gap-8 h-full">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="col-span-7 flex flex-col gap-8 h-full"
+        >
           {/* Map Embed */}
           <div className="w-full h-[400px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative">
             <iframe 
@@ -187,7 +210,7 @@ const ContactDesktop: React.FC = () => {
               )}
             </div>
           </section>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

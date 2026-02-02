@@ -4,24 +4,41 @@ import Button from '../../../components/ui/Button';
 import FormField from '../../../components/ui/FormField';
 import Link from '../../../components/ui/Link';
 import { useContactForm } from '../Shared/contact.hooks';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 }
+};
 
 const ContactMobile: React.FC = () => {
   const { t } = useTranslation();
   const { isSubmitted, isLoading, handleSubmit, resetForm } = useContactForm();
 
   return (
-    <div className="flex-grow w-full px-4 py-8">
+    <div className="flex-grow w-full px-4 py-8 overflow-hidden">
       {/* Page Heading */}
-      <div className="flex flex-col gap-3 mb-8 text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col gap-3 mb-8 text-center"
+      >
         <h1 className="text-text-main dark:text-white text-3xl font-black leading-tight tracking-tight">{t('contactPage.hero.title')}</h1>
         <p className="text-text-secondary dark:text-slate-400 text-base font-normal leading-relaxed">
           {t('contactPage.hero.description')}
         </p>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col gap-8">
         {/* Contact Form First on Mobile */}
-        <section 
+        <motion.section 
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
           className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden order-1"
           aria-labelledby="form-title"
         >
@@ -95,12 +112,18 @@ const ContactMobile: React.FC = () => {
               </form>
             )}
           </div>
-        </section>
+        </motion.section>
 
         {/* Location & Details Second */}
         <div className="flex flex-col gap-6 order-2">
           {/* Info Card */}
-          <div className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+          <motion.div 
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
             <div className="px-5 py-4 border-b border-slate-100 dark:border-slate-800">
               <h2 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">{t('contactPage.details.title')}</h2>
             </div>
@@ -140,10 +163,14 @@ const ContactMobile: React.FC = () => {
                 <p className="text-text-secondary dark:text-slate-400 text-xs font-normal leading-normal">{t('contactPage.details.email.label')}</p>
               </div>
             </Link>
-          </div>
+          </motion.div>
 
           {/* Hours Card */}
-          <section 
+          <motion.section 
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
             className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
             aria-labelledby="hours-title"
           >
@@ -165,10 +192,16 @@ const ContactMobile: React.FC = () => {
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Map Last */}
-          <div className="w-full h-[250px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative">
+          <motion.div 
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="w-full h-[250px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative"
+          >
             <iframe 
               title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
               className="w-full h-full border-0"
@@ -177,7 +210,7 @@ const ContactMobile: React.FC = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

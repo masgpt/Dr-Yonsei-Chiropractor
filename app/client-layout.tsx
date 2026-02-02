@@ -4,6 +4,7 @@ import "./i18n";
 import React, { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const mainRef = useRef<HTMLElement>(null);
@@ -34,7 +35,18 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       >
         {announcement}
       </div>
-      {children}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="flex flex-col min-h-screen"
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

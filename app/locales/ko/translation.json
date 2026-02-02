@@ -81,7 +81,8 @@
   },
   "common": {
     "location": "캘리포니아 로스앤젤레스",
-    "doctorTitle": "팔머 상부 경추 전문 카이로프랙터"
+    "doctorTitle": "팔머 상부 경추 전문 카이로프랙터",
+    "close": "닫기"
   },
   "about": {
     "hero": {

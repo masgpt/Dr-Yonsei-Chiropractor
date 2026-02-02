@@ -14,16 +14,16 @@ const LanguageToggle: React.FC = () => {
   const currentLanguage = i18n.language ? i18n.language.split('-')[0] : 'en';
 
   return (
-    <div className="flex items-center p-0.5 rounded-full bg-black/20 dark:bg-white/10 border border-white/10 backdrop-blur-sm w-fit">
+    <div className="flex items-center p-0.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 w-fit">
       {languages.map((lang) => (
         <button
           key={lang.code}
           onClick={() => i18n.changeLanguage(lang.code)}
           className={`
-            px-3 py-1 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 min-w-[60px]
+            px-2.5 py-1 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 min-w-[50px] sm:min-w-[60px]
             ${currentLanguage === lang.code 
-              ? 'bg-primary text-white shadow-lg shadow-primary/20' 
-              : 'text-white/60 hover:text-white hover:bg-white/5'}
+              ? 'bg-primary text-white shadow-md shadow-primary/20' 
+              : 'text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-700'}
           `}
         >
           {lang.label}

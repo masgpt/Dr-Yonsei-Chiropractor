@@ -4,6 +4,24 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from './ui/Link';
 import ThemeToggle from './ui/ThemeToggle';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.05
+    }
+  },
+  viewport: { once: true }
+};
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -11,13 +29,19 @@ const Footer: React.FC = () => {
   const mobileButtonClass = "flex items-center justify-center p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 text-slate-700 dark:text-slate-300 font-bold text-[11px] uppercase tracking-widest text-center transition-all active:scale-95 shadow-sm";
 
   return (
-    <footer className="bg-white dark:bg-[#0a0f14] border-t border-slate-100 dark:border-slate-800 pt-12 pb-10 w-full transition-colors duration-300" aria-label="Site footer">
+    <footer className="bg-white dark:bg-[#0a0f14] border-t border-slate-100 dark:border-slate-800 pt-12 pb-10 w-full transition-colors duration-300 overflow-hidden" aria-label="Site footer">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
         
         {/* Mobile Version: Better Navigation & Buttons */}
-        <div className="lg:hidden flex flex-col items-center space-y-12 mb-12 text-center">
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="lg:hidden flex flex-col items-center space-y-12 mb-12 text-center"
+        >
           {/* Brand Section */}
-          <div className="space-y-4">
+          <motion.div variants={fadeInUp} className="space-y-4">
             <div className="flex flex-col items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shadow-inner">
                 <span className="material-symbols-outlined text-primary text-[28px]" aria-hidden="true">local_hospital</span>
@@ -34,10 +58,10 @@ const Footer: React.FC = () => {
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
               {t('footer.description')}
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links Mobile */}
-          <nav className="w-full" aria-label="Quick links mobile">
+          <motion.nav variants={fadeInUp} className="w-full" aria-label="Quick links mobile">
             <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">{t('footer.quickLinks')}</h4>
             <div className="grid grid-cols-2 gap-3">
               <Link to="/" className={mobileButtonClass}>{t('nav.home')}</Link>
@@ -47,10 +71,10 @@ const Footer: React.FC = () => {
               <Link to="/reviews" className={mobileButtonClass}>{t('nav.reviews')}</Link>
               <Link to="/contact" className={mobileButtonClass}>{t('nav.contact')}</Link>
             </div>
-          </nav>
+          </motion.nav>
 
           {/* Techniques Mobile */}
-          <nav className="w-full" aria-label="Chiropractic techniques mobile">
+          <motion.nav variants={fadeInUp} className="w-full" aria-label="Chiropractic techniques mobile">
             <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">{t('footer.techniques')}</h4>
             <div className="grid grid-cols-2 gap-3">
               <Link to="/techniques/about-chiropractic" className={mobileButtonClass}>{t('nav.aboutChiropractic')}</Link>
@@ -60,10 +84,10 @@ const Footer: React.FC = () => {
               <Link to="/techniques/car-accident" className={mobileButtonClass}>{t('nav.carAccident')}</Link>
               <Link to="/techniques/tmj" className={mobileButtonClass}>{t('nav.tmj')}</Link>
             </div>
-          </nav>
+          </motion.nav>
 
           {/* Contact Mobile */}
-          <div className="w-full space-y-6">
+          <motion.div variants={fadeInUp} className="w-full space-y-6">
             <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">{t('footer.contactInfo')}</h4>
             <div className="flex flex-col gap-3">
               <Link 
@@ -96,13 +120,19 @@ const Footer: React.FC = () => {
               <span className="mr-2 material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>
               {t('nav.bookAppointment')}
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Desktop Version: Refined Grid */}
-        <div className="hidden lg:grid lg:grid-cols-12 gap-12 mb-12">
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="hidden lg:grid lg:grid-cols-12 gap-12 mb-12"
+        >
           {/* Brand Section */}
-          <div className="lg:col-span-4 space-y-6">
+          <motion.div variants={fadeInUp} className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">local_hospital</span>
@@ -122,10 +152,10 @@ const Footer: React.FC = () => {
             <div className="flex gap-4 pt-2">
               <div className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600">Established 2015</div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <nav className="lg:col-span-2" aria-label="Quick links desktop">
+          <motion.nav variants={fadeInUp} className="lg:col-span-2" aria-label="Quick links desktop">
             <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">{t('footer.quickLinks')}</h4>
             <ul className="space-y-4 text-sm font-medium">
               <li><Link to="/" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.home')}</Link></li>
@@ -135,10 +165,10 @@ const Footer: React.FC = () => {
               <li><Link to="/reviews" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.reviews')}</Link></li>
               <li><Link to="/contact" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.contact')}</Link></li>
             </ul>
-          </nav>
+          </motion.nav>
 
           {/* Techniques */}
-          <nav className="lg:col-span-3" aria-label="Chiropractic techniques desktop">
+          <motion.nav variants={fadeInUp} className="lg:col-span-3" aria-label="Chiropractic techniques desktop">
             <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">{t('footer.techniques')}</h4>
             <ul className="space-y-4 text-sm font-medium">
               <li><Link to="/techniques/about-chiropractic" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.aboutChiropractic')}</Link></li>
@@ -148,10 +178,10 @@ const Footer: React.FC = () => {
               <li><Link to="/techniques/car-accident" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.carAccident')}</Link></li>
               <li><Link to="/techniques/tmj" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.tmj')}</Link></li>
             </ul>
-          </nav>
+          </motion.nav>
 
           {/* Contact Section */}
-          <div className="lg:col-span-3">
+          <motion.div variants={fadeInUp} className="lg:col-span-3">
             <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">{t('footer.contactInfo')}</h4>
             <div className="space-y-5">
               <Link 
@@ -191,11 +221,17 @@ const Footer: React.FC = () => {
                 {t('nav.bookAppointment')}
               </Link>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium text-slate-400 dark:text-slate-500 tracking-wider uppercase">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium text-slate-400 dark:text-slate-500 tracking-wider uppercase"
+        >
           <p className="text-center md:text-left">© 2026 Yonsei Chiropractic Clinic. {t('footer.rights')}</p>
           <div className="flex flex-col sm:flex-row items-center gap-8">
             <nav className="flex items-center gap-6" aria-label="Legal">
@@ -206,7 +242,7 @@ const Footer: React.FC = () => {
             <div className="hidden sm:block w-px h-4 bg-slate-100 dark:bg-slate-800"></div>
             <ThemeToggle className="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" />
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

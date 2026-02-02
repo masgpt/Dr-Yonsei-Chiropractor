@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from '../../ui/Link';
-import ContactBanner from '../../ContactBanner';
 import { useNavbarConstants } from '../Shared/navbar.constants';
 import { useNavbarLogic } from '../Shared/navbar.hooks';
+import LanguageToggle from '../../LanguageToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const NavbarDesktop: React.FC = () => {
   const { t } = useTranslation();
@@ -12,8 +13,11 @@ const NavbarDesktop: React.FC = () => {
   
   const [isTechniquesOpen, setIsTechniquesOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  
   const techniquesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside or pressing Escape
   useEffect(() => {
@@ -24,12 +28,16 @@ const NavbarDesktop: React.FC = () => {
       if (aboutRef.current && !aboutRef.current.contains(event.target as Node)) {
         setIsAboutOpen(false);
       }
+      if (contactRef.current && !contactRef.current.contains(event.target as Node)) {
+        setIsContactOpen(false);
+      }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setIsTechniquesOpen(false);
         setIsAboutOpen(false);
+        setIsContactOpen(false);
       }
     };
 
@@ -43,12 +51,15 @@ const NavbarDesktop: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-[#0a0f14]/95 backdrop-blur-md transition-colors duration-300 hidden lg:block">
-      <ContactBanner />
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="flex flex-col items-start focus:ring-offset-4 group">
-            <div className="flex items-center gap-3">
+            <motion.div 
+              className="flex items-center gap-3"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <div className="w-10 h-10 overflow-hidden rounded-lg border border-slate-100 dark:border-slate-800 group-hover:scale-105 transition-transform">
                 <img 
                   src="/LOGO_E_H.jpg" 
@@ -58,7 +69,7 @@ const NavbarDesktop: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
-                  Yonsei <span className="text-primary">Chiropractic</span> Clinic
+                  Yonsei <span className="text-primary">Chiropractic</span>
                 </span>
                 <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2">
                   <span>연세 카이로프랙틱</span>
@@ -66,7 +77,7 @@ const NavbarDesktop: React.FC = () => {
                   <span>Dr. Park, D.C., M.S.</span>
                 </span>
               </div>
-            </div>
+            </motion.div>
           </Link>
 
           {/* Nav Links */}
@@ -79,6 +90,7 @@ const NavbarDesktop: React.FC = () => {
                 onClick={() => {
                   setIsAboutOpen(!isAboutOpen);
                   setIsTechniquesOpen(false);
+                  setIsContactOpen(false);
                 }}
                 aria-haspopup="true"
                 aria-expanded={isAboutOpen}
@@ -94,20 +106,28 @@ const NavbarDesktop: React.FC = () => {
                 </span>
               </button>
               
-              {isAboutOpen && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  {aboutLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      onClick={() => setIsAboutOpen(false)}
-                      className="block px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary dark:hover:text-white transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <AnimatePresence>
+                {isAboutOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full left-0 mt-3 w-64 bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl py-3 z-50"
+                  >
+                    {aboutLinks.map((link) => (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        onClick={() => setIsAboutOpen(false)}
+                        className="block px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary dark:hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             
             {/* Techniques Dropdown */}
@@ -116,6 +136,7 @@ const NavbarDesktop: React.FC = () => {
                 onClick={() => {
                   setIsTechniquesOpen(!isTechniquesOpen);
                   setIsAboutOpen(false);
+                  setIsContactOpen(false);
                 }}
                 aria-haspopup="true"
                 aria-expanded={isTechniquesOpen}
@@ -131,27 +152,111 @@ const NavbarDesktop: React.FC = () => {
                 </span>
               </button>
               
-              {isTechniquesOpen && (
-                <div className="absolute top-full left-0 mt-3 w-72 bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  {techniques.map((tech) => (
-                    <Link
-                      key={tech.path}
-                      to={tech.path}
-                      onClick={() => setIsTechniquesOpen(false)}
-                      className="block px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary dark:hover:text-white transition-colors"
-                    >
-                      {tech.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <AnimatePresence>
+                {isTechniquesOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full left-0 mt-3 w-72 bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl py-3 z-50"
+                  >
+                    {techniques.map((tech) => (
+                      <Link
+                        key={tech.path}
+                        to={tech.path}
+                        onClick={() => setIsTechniquesOpen(false)}
+                        className="block px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary dark:hover:text-white transition-colors"
+                      >
+                        {tech.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link to="/reviews" className={navLinkClass('/reviews')}>{t('nav.reviews')}</Link>
+
+            {/* Contact Dropdown */}
+            <div className="relative" ref={contactRef}>
+              <button 
+                onClick={() => {
+                  setIsContactOpen(!isContactOpen);
+                  setIsAboutOpen(false);
+                  setIsTechniquesOpen(false);
+                }}
+                className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
+                  isContactOpen 
+                    ? 'text-primary bg-primary/5' 
+                    : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
+                }`}
+              >
+                {t('nav.contact')}
+                <span className={`material-symbols-outlined text-[18px] transition-transform duration-300 ${isContactOpen ? 'rotate-180 text-primary' : ''}`} aria-hidden="true">
+                  expand_more
+                </span>
+              </button>
+              
+              <AnimatePresence>
+                {isContactOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full right-0 mt-3 w-80 bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-2xl p-4 z-50"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <Link 
+                        href="tel:2133815500" 
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                          <span className="material-symbols-outlined text-[20px]">call</span>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Phone</span>
+                          <span className="text-sm font-bold text-slate-900 dark:text-white">(213) 381-5500</span>
+                        </div>
+                      </Link>
+
+                      <Link 
+                        href="https://www.google.com/maps/search/?api=1&query=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
+                        external
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                          <span className="material-symbols-outlined text-[20px]">location_on</span>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Address</span>
+                          <span className="text-sm font-bold text-slate-900 dark:text-white">3200 Wilshire Blvd #302, LA</span>
+                        </div>
+                      </Link>
+
+                      <Link 
+                        href="mailto:yonseichiropractic@gmail.com"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                          <span className="material-symbols-outlined text-[20px]">mail</span>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Email</span>
+                          <span className="text-sm font-bold text-slate-900 dark:text-white">yonseichiropractic@gmail.com</span>
+                        </div>
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* CTA Button */}
           <div className="flex items-center gap-4">
+            <LanguageToggle />
             <Link 
               to="/contact" 
               className="flex items-center justify-center h-11 px-6 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0 focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"

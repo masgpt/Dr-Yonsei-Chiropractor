@@ -81,7 +81,8 @@
   },
   "common": {
     "location": "Los Angeles, CA",
-    "doctorTitle": "Palmer Upper Cervical Specific Chiropractor"
+    "doctorTitle": "Palmer Upper Cervical Specific Chiropractor",
+    "close": "Close"
   },
   "about": {
     "hero": {
