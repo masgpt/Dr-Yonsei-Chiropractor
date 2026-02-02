@@ -47,6 +47,9 @@ i18nInstance.init({
     backend: isServer ? undefined : {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
+    react: {
+      useSuspense: false,
+    },
   });
 
 export default i18n;

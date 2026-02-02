@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Button from '../../../components/ui/Button';
 import FormField from '../../../components/ui/FormField';
@@ -123,7 +124,7 @@ const ContactDesktop: React.FC = () => {
               </div>
             </div>
           </section>
-        </div>
+        </motion.div>
 
         {/* Right Column: Map & Form */}
         <motion.div 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./index.css";
-import React, { Suspense } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SkipToContent from './components/SkipToContent';
@@ -29,12 +29,6 @@ export const metadata: Metadata = {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>',
   },
 };
-
-const Loading = () => (
-  <div className="flex-grow flex items-center justify-center min-h-[50vh]">
-    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
 
 export async function generateStaticParams() {
   return [{ lng: 'en' }, { lng: 'ko' }];
@@ -136,9 +130,7 @@ export default async function RootLayout({
                 className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
               >
                 <PageTransition>
-                  <Suspense fallback={<Loading />}>
-                    {children}
-                  </Suspense>
+                  {children}
                 </PageTransition>
               </main>
               <Footer />
