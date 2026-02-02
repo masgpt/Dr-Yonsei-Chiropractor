@@ -34,7 +34,10 @@ const HomeDesktop: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden" aria-label="Introduction">
+      <section 
+        className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden -mt-[68px] pt-[68px] sm:-mt-[96px] sm:pt-[96px]" 
+        aria-label="Introduction"
+      >
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/95 via-slate-950/40 to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />
         {/* Background Decorative Element */}
         <motion.div 
@@ -53,7 +56,7 @@ const HomeDesktop: React.FC = () => {
         ></motion.div>
 
         {/* Desktop Hero (Side-by-Side) */}
-        <div className="max-w-[1280px] mx-auto px-10 pt-10 pb-12">
+        <div className="max-w-[1280px] mx-auto px-10 pb-12">
           <div className="grid grid-cols-2 gap-16 items-center">
             <motion.div 
               initial="initial"
