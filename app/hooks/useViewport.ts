@@ -11,9 +11,14 @@ export const useViewport = (initialIsMobile?: boolean) => {
       setIsMobile(isMobileUserAgent(navigator.userAgent));
     }
 
+    // Initial check - only if we don't have a server hint or if we want to be sure,
+    // but we wrap it in a condition to avoid redundant updates if it already matches.
     const checkViewport = () => {
       const mobile = window.innerWidth < 1024;
-      setIsMobile(mobile);
+      setIsMobile(prev => {
+        if (prev === mobile) return prev;
+        return mobile;
+      });
     };
 
     // Initial check

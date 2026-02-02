@@ -30,6 +30,7 @@ const HomeMobile: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-slate-950/85 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
         <div className="relative h-[450px] w-full flex items-center">
           <div 
             className="absolute inset-0 bg-cover bg-center"
@@ -40,6 +41,11 @@ const HomeMobile: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
           </div>
           <div className="relative z-10 px-8 w-full">
+            <div className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-white mb-4">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 font-black tracking-[0.4em]">Palmer Upper Cervical</span>
+              <span className="h-1 w-1 rounded-full bg-white/60" />
+              <span className="text-white/70 font-semibold text-[10px]">Los Angeles, CA</span>
+            </div>
             <h1 
               className="text-4xl font-black tracking-tight text-white leading-[1.1] mb-6"
             >
