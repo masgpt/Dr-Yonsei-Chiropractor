@@ -32,41 +32,58 @@ const ServicesDesktop: React.FC = () => {
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center overflow-hidden">
         <div className="w-full max-w-[1280px] px-8 py-5">
           <motion.div 
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2 }}
-            className="flex min-h-[400px] flex-col gap-8 rounded-xl items-center justify-center p-8 shadow-sm relative overflow-hidden bg-cover bg-center bg-no-repeat" 
-            style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
-            role="img"
-            aria-label="Chiropractor's hands supporting a patient's spine during healing care"
+            initial="initial"
+            animate="animate"
+            variants={{
+              animate: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            className="w-full"
           >
-            <div className="flex flex-col gap-2 text-center max-w-[800px] z-10">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-white text-5xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
-              >
-                {t('servicesPage.hero.title')}
-              </motion.h1>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-slate-100 text-lg font-medium leading-relaxed mt-2 drop-shadow-sm"
-              >
-                {t('servicesPage.hero.subtitle')}
-              </motion.h2>
-            </div>
-            <motion.a 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              href="#treatments" 
-              className="z-10 flex w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-widest uppercase shadow-lg"
+            <motion.div 
+              variants={{
+                initial: { opacity: 0, scale: 1.05 },
+                animate: { opacity: 1, scale: 1, transition: { duration: 1.2 } }
+              }}
+              className="flex min-h-[400px] flex-col gap-8 rounded-xl items-center justify-center p-8 shadow-sm relative overflow-hidden bg-cover bg-center bg-no-repeat" 
+              style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
+              role="img"
+              aria-label="Chiropractor's hands supporting a patient's spine during healing care"
             >
-              <span className="truncate">{t('servicesPage.hero.cta')}</span>
-            </motion.a>
+              <div className="flex flex-col gap-2 text-center max-w-[800px] z-10">
+                <motion.h1 
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                  }}
+                  className="text-white text-5xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
+                >
+                  {t('servicesPage.hero.title')}
+                </motion.h1>
+                <motion.h2 
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                  }}
+                  className="text-slate-100 text-lg font-medium leading-relaxed mt-2 drop-shadow-sm"
+                >
+                  {t('servicesPage.hero.subtitle')}
+                </motion.h2>
+              </div>
+              <motion.a 
+                variants={{
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                }}
+                href="#treatments" 
+                className="z-10 flex w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-widest uppercase shadow-lg"
+              >
+                <span className="truncate">{t('servicesPage.hero.cta')}</span>
+              </motion.a>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -74,11 +91,7 @@ const ServicesDesktop: React.FC = () => {
       {/* Intro Philosophy Section */}
       <div className="w-full flex justify-center py-16 overflow-hidden">
         <div className="w-full max-w-[1280px] px-8 flex flex-row gap-16 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div 
             className="flex-1 space-y-6"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-black uppercase tracking-widest">
@@ -97,30 +110,22 @@ const ServicesDesktop: React.FC = () => {
                 <span className="material-symbols-outlined text-sm">east</span>
               </Link>
             </div>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          </div>
+          <div 
             className="flex-1 h-auto w-full rounded-3xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[300px] border-4 border-white dark:border-slate-800 shadow-2xl"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-8">
               <div className="flex flex-col items-center">
-                <motion.span 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
+                <span 
                   className="material-symbols-outlined text-primary text-8xl mb-4 opacity-80"
                 >
                   neurology
-                </motion.span>
+                </span>
                 <p className="text-primary font-black text-2xl uppercase tracking-[0.2em]">{t('servicesPage.philosophy.method')}</p>
                 <p className="text-slate-500 text-sm font-bold uppercase tracking-widest mt-1">{t('servicesPage.philosophy.technique')}</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

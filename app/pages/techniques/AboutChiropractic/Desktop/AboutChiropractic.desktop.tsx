@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@/components/ui/Link';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
+import { motion } from 'framer-motion';
 
 const AboutChiropracticDesktop: React.FC = () => {
   const { t } = useTranslation();
@@ -15,16 +16,24 @@ const AboutChiropracticDesktop: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative w-full h-[200px] flex items-center justify-center overflow-hidden">
-        <div 
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/front-pic_31.jpg')" }}
           role="img"
           aria-label="Chiropractic Care"
-        ></div>
+        ></motion.div>
         <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
-          <h1 className="text-5xl font-black text-white leading-tight drop-shadow-lg">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-5xl font-black text-white leading-tight drop-shadow-lg"
+          >
             {t('techniques.about.title')}
-          </h1>
+          </motion.h1>
         </div>
       </section>
 

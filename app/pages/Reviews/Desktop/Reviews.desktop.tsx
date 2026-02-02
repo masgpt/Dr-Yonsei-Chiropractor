@@ -63,9 +63,7 @@ const ReviewsDesktop: React.FC = () => {
                 key={review.id} 
                 variants={fadeInUp}
                 onClick={() => openReview(review)}
-                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all group cursor-pointer h-full"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] group cursor-pointer h-full"
               >
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-4">

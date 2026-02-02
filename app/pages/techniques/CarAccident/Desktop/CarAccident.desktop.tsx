@@ -2,6 +2,14 @@ import React from 'react';
 import Link from '@/components/ui/Link';
 import { useTranslation } from 'react-i18next';
 import SEO from '../../../../components/SEO';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 }
+};
 
 const CarAccidentDesktop: React.FC = () => {
   const { t } = useTranslation();
@@ -15,20 +23,46 @@ const CarAccidentDesktop: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="relative w-full h-[200px] flex items-center justify-center overflow-hidden">
-        <div 
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/o-10.jpg')" }}
           role="img"
           aria-label="Car Accident Recovery"
-        ></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest mb-3 border border-white/30">
+        ></motion.div>
+        <motion.div 
+          initial="initial"
+          animate="animate"
+          variants={{
+            animate: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          className="relative z-10 max-w-4xl mx-auto px-8 text-center"
+        >
+          <motion.div 
+            variants={{
+              initial: { opacity: 0, y: 10 },
+              animate: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+            className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest mb-3 border border-white/30"
+          >
             {t('techniques.carAccident.badge')}
-          </div>
-          <h1 className="text-5xl font-black text-white leading-tight drop-shadow-lg">
+          </motion.div>
+          <motion.h1 
+            variants={{
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+            }}
+            className="text-5xl font-black text-white leading-tight drop-shadow-lg"
+          >
             {t('techniques.carAccident.title')}
-          </h1>
-        </div>
+          </motion.h1>
+        </motion.div>
       </section>
 
       <section className="py-24 px-10 bg-slate-50 dark:bg-slate-900">

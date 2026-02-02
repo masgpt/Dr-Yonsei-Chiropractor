@@ -33,8 +33,23 @@ const AboutDesktop: React.FC = () => {
       />
       {/* Hero Section */}
       <section className="w-full px-10 py-20 max-w-[1280px] mx-auto overflow-hidden" aria-labelledby="about-hero-title">
-        <div className="flex items-center justify-between gap-12">
-          <div 
+        <motion.div 
+          initial="initial"
+          animate="animate"
+          variants={{
+            animate: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          className="flex items-center justify-between gap-12"
+        >
+          <motion.div 
+            variants={{
+              initial: { opacity: 0, x: -50 },
+              animate: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+            }}
             className="flex flex-col gap-6 w-1/2 pr-12"
           >
             <h1 id="about-hero-title" className="text-slate-900 dark:text-white text-6xl font-black leading-tight tracking-tight">
@@ -48,9 +63,13 @@ const AboutDesktop: React.FC = () => {
                 {t('about.hero.book')}
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-          <div 
+          <motion.div 
+            variants={{
+              initial: { opacity: 0, scale: 0.9, rotate: 5 },
+              animate: { opacity: 1, scale: 1, rotate: 1, transition: { duration: 1, ease: "easeOut" } }
+            }}
             className="w-1/2 flex justify-end"
           >
             <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover:rotate-0 transition-transform duration-500">
@@ -66,8 +85,8 @@ const AboutDesktop: React.FC = () => {
                 <p className="text-sm opacity-90">D.C., M.S., C.C.E.P.</p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Meet the Doctor / Bio Section */}

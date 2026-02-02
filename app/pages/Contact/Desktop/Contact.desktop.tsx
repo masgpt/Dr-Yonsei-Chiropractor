@@ -12,19 +12,45 @@ const ContactDesktop: React.FC = () => {
   return (
     <div className="flex-grow w-full max-w-[1280px] mx-auto px-8 py-12 overflow-hidden">
       {/* Page Heading */}
-      <div 
+      <motion.div 
+        initial="initial"
+        animate="animate"
+        variants={{
+          animate: {
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
         className="flex flex-col gap-3 mb-10"
       >
-        <h1 className="text-text-main dark:text-white text-5xl font-black leading-tight tracking-tight">{t('contactPage.hero.title')}</h1>
-        <p className="text-text-secondary dark:text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
+        <motion.h1 
+          variants={{
+            initial: { opacity: 0, y: 20 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          }}
+          className="text-text-main dark:text-white text-5xl font-black leading-tight tracking-tight"
+        >
+          {t('contactPage.hero.title')}
+        </motion.h1>
+        <motion.p 
+          variants={{
+            initial: { opacity: 0, y: 20 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          }}
+          className="text-text-secondary dark:text-slate-400 text-lg font-normal leading-relaxed max-w-2xl"
+        >
           {t('contactPage.hero.description')}
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-12 gap-12">
         {/* Left Column: Details */}
-        <div 
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           className="col-span-5 flex flex-col gap-8"
         >
           {/* Location & Contact Info */}
@@ -100,7 +126,10 @@ const ContactDesktop: React.FC = () => {
         </div>
 
         {/* Right Column: Map & Form */}
-        <div 
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           className="col-span-7 flex flex-col gap-8 h-full"
         >
           {/* Map Embed */}

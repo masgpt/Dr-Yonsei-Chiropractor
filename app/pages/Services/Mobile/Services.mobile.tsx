@@ -21,43 +21,31 @@ const ServicesMobile: React.FC = () => {
       {/* Hero Section */}
       <div className="w-full bg-slate-50 dark:bg-background-dark flex justify-center overflow-hidden">
         <div className="w-full px-0 py-0">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+          <div 
             className="flex min-h-[350px] flex-col gap-6 items-center justify-center p-6 shadow-sm relative overflow-hidden bg-cover bg-center bg-no-repeat" 
             style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url('/cropped-cropped-cropped-cropped-healing-hands-wellness-center-chiropractic-1024x395.jpg')" }}
             role="img"
             aria-label="Chiropractor's hands supporting a patient's spine during healing care"
           >
             <div className="flex flex-col gap-2 text-center z-10">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+              <h1 
                 className="text-white text-3xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
               >
                 {t('servicesPage.hero.title')}
-              </motion.h1>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
+              </h1>
+              <h2 
                 className="text-slate-100 text-sm font-medium leading-relaxed mt-2 drop-shadow-sm"
               >
                 {t('servicesPage.hero.subtitle')}
-              </motion.h2>
+              </h2>
             </div>
-            <motion.a 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+            <a 
               href="#treatments" 
               className="z-10 flex w-full min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary transition-colors text-slate-50 text-base font-bold shadow-lg uppercase tracking-widest"
             >
               <span className="truncate">{t('servicesPage.hero.cta')}</span>
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -188,11 +176,7 @@ const ServicesMobile: React.FC = () => {
       {/* CTA Section */}
       <div className="w-full flex justify-center py-12 bg-white dark:bg-[#1a2632] border-t border-slate-100 dark:border-slate-800">
         <div className="w-full px-4">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div 
             className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 flex flex-col items-center justify-between gap-8 border border-primary/10"
           >
             <div className="flex flex-col gap-2 text-center">
@@ -208,7 +192,7 @@ const ServicesMobile: React.FC = () => {
                 {t('servicesPage.cta.button')}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </>
