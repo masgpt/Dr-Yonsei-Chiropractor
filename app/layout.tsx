@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SkipToContent from './components/SkipToContent';
 import ClientLayout from './client-layout';
+import PageTransition from './components/PageTransition';
+import I18nProvider from './components/I18nProvider';
 
 export const metadata: Metadata = {
   title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
@@ -123,22 +125,26 @@ export default async function RootLayout({
         />
       </head>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
-        <div className="relative flex flex-col min-h-screen overflow-x-hidden">
-          <ClientLayout>
-            <SkipToContent />
-            <Navbar />
-            <main 
-              id="main-content" 
-              tabIndex={-1} 
-              className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
-            >
-              <Suspense fallback={<Loading />}>
-                {children}
-              </Suspense>
-            </main>
-            <Footer />
-          </ClientLayout>
-        </div>
+        <I18nProvider>
+          <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+            <ClientLayout>
+              <SkipToContent />
+              <Navbar />
+              <main 
+                id="main-content" 
+                tabIndex={-1} 
+                className="flex-grow w-full flex flex-col outline-none pt-[100px] sm:pt-[120px]"
+              >
+                <PageTransition>
+                  <Suspense fallback={<Loading />}>
+                    {children}
+                  </Suspense>
+                </PageTransition>
+              </main>
+              <Footer />
+            </ClientLayout>
+          </div>
+        </I18nProvider>
       </body>
     </html>
   );

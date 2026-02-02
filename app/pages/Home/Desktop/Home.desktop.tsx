@@ -36,60 +36,39 @@ const HomeDesktop: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
         {/* Background Decorative Element */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+        <div 
           className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10" 
           aria-hidden="true"
-        ></motion.div>
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+        ></div>
+        <div 
           className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl -z-10" 
           aria-hidden="true"
-        ></motion.div>
+        ></div>
 
         {/* Desktop Hero (Side-by-Side) */}
         <div className="max-w-[1280px] mx-auto px-10 pt-16 pb-12">
           <div className="grid grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            <div 
               className="flex flex-col gap-6 relative z-10"
             >
               <div>
-                <motion.span 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
+                <span 
                   className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.2em] mb-4 border border-primary/20"
                 >
                   Palmer Upper Cervical Specialist
-                </motion.span>
-                <motion.h1 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
+                </span>
+                <h1 
                   className="text-7xl font-black tracking-tighter text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
                 >
                   Yonsei<br /><span className="text-primary">Chiropractic</span><br /><span className="text-4xl sm:text-5xl lowercase italic font-light tracking-tight opacity-50 block mt-2">Clinic</span>
-                </motion.h1>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
+                </h1>
+                <p 
                   className="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed font-medium"
                 >
                   {t('home.hero.descriptionDesktop')}
-                </motion.p>
+                </p>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
+              <div 
                 className="flex flex-wrap gap-4 mt-2"
               >
                 <Link to="/contact" className="h-14 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-wider text-sm">
@@ -98,11 +77,8 @@ const HomeDesktop: React.FC = () => {
                 <Link href="tel:2133815500" className="h-14 px-10 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:-translate-y-1 active:translate-y-0">
                   {t('home.hero.callNow')}
                 </Link>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+              </div>
+              <div 
                 className="flex items-center gap-4 mt-6 text-sm text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest"
               >
                 <div className="flex -space-x-3" aria-hidden="true">
@@ -111,12 +87,9 @@ const HomeDesktop: React.FC = () => {
                   <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-primary flex items-center justify-center text-[10px] font-black text-white shadow-lg">+50</div>
                 </div>
                 <p className="text-[11px]">{t('home.hero.trustedBy')}</p>
-              </motion.div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              </div>
+            </div>
+            <div 
               className="relative"
             >
               <div className="absolute inset-0 bg-primary/20 rounded-[40px] transform rotate-6 scale-95 blur-2xl -z-10 animate-pulse"></div>
@@ -128,7 +101,7 @@ const HomeDesktop: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

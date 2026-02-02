@@ -1,11 +1,10 @@
 "use client";
 
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useViewport } from '../hooks/useViewport';
 import { useTranslation } from 'react-i18next';
-
-const HomeDesktop = lazy(() => import('./Home/Desktop/Home.desktop'));
-const HomeMobile = lazy(() => import('./Home/Mobile/Home.mobile'));
+import HomeDesktop from './Home/Desktop/Home.desktop';
+import HomeMobile from './Home/Mobile/Home.mobile';
 
 const Home: React.FC<{ lng?: string }> = ({ lng }) => {
   const { isMobile } = useViewport();
@@ -17,11 +16,7 @@ const Home: React.FC<{ lng?: string }> = ({ lng }) => {
     }
   }, [lng, i18n]);
 
-  return (
-    <Suspense fallback={<div className="min-h-screen" />}>
-      {isMobile ? <HomeMobile /> : <HomeDesktop />}
-    </Suspense>
-  );
+  return isMobile ? <HomeMobile /> : <HomeDesktop />;
 };
 
 export default Home;

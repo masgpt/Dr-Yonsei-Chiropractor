@@ -31,38 +31,26 @@ const HomeMobile: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-white dark:bg-[#0a0f14] overflow-hidden" aria-label="Introduction">
         <div className="relative h-[450px] w-full flex items-center">
-          <motion.div 
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2 }}
+          <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
             aria-label="Yonsei Chiropractic Clinic interior"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-          </motion.div>
+          </div>
           <div className="relative z-10 px-8 w-full">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+            <h1 
               className="text-4xl font-black tracking-tight text-white leading-[1.1] mb-6"
             >
               {t('home.hero.title')}
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+            </h1>
+            <p 
               className="text-lg text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
             >
               {t('home.hero.description')}
-            </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+            </p>
+            <div 
               className="flex flex-col gap-4"
             >
               <Link to="/contact" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-transform">
@@ -71,7 +59,7 @@ const HomeMobile: React.FC = () => {
               <Link to="/techniques/upper-cervical" className="h-14 px-8 rounded-2xl bg-white/10 text-white font-bold border border-white/20 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-transform">
                 {t('home.hero.learnMore')}
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
