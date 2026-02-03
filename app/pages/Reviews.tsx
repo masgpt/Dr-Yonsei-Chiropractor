@@ -21,7 +21,7 @@ const Reviews: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, i
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Yonsei Chiropractic Clinic",
+    "name": "Yonsei Chiropractic",
     "image": "https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg",
     "address": {
       "@type": "PostalAddress",

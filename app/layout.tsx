@@ -9,19 +9,19 @@ import PageTransition from './components/PageTransition';
 import I18nProvider from './components/I18nProvider';
 
 export const metadata: Metadata = {
-  title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+  title: "Yonsei Chiropractic - Upper Cervical Health Care",
   description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
   metadataBase: new URL('https://yonseichiro.com'),
   openGraph: {
     type: "website",
     url: "https://yonseichiro.com/",
-    title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+    title: "Yonsei Chiropractic - Upper Cervical Health Care",
     description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
     images: ["/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yonsei Chiropractic Clinic - Upper Cervical Health Care",
+    title: "Yonsei Chiropractic - Upper Cervical Health Care",
     description: "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.",
     images: ["/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg"],
   },
@@ -47,11 +47,11 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "@id": "https://yonseichiro.com/#organization",
-    "name": "Yonsei Chiropractic Clinic",
+    "name": lng === 'ko' ? "연세 카이로프랙틱" : "Yonsei Chiropractic",
     "url": "https://yonseichiro.com",
     "logo": "https://yonseichiro.com/LOGO_E_H.jpg",
     "image": "https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg",
-    "description": "Specialized Palmer Upper Cervical Specific Chiropractic clinic in Los Angeles.",
+    "description": lng === 'ko' ? "로스앤젤레스 상부경추 전문 연세 카이로프랙틱 클리닉입니다." : "Specialized Palmer Upper Cervical Specific Chiropractic in Los Angeles.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3200 Wilshire Blvd, Suite 302",

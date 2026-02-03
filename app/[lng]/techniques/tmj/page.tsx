@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   const { lng } = await params;
   
   const titles: Record<string, string> = {
-    en: "TMJ / TMD Treatment | Yonsei Chiropractic Clinic",
+    en: "TMJ / TMD Treatment | Yonsei Chiropractic",
     ko: "턱관절 (TMJ/TMD) 치료 | 연세 카이로프랙틱"
   };
   

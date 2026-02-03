@@ -24,7 +24,7 @@ const staggerContainer = {
 };
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const mobileButtonClass = "flex items-center justify-center p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 text-slate-700 dark:text-slate-300 font-bold text-[11px] uppercase tracking-widest text-center transition-all active:scale-95 shadow-sm";
 
@@ -48,10 +48,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <h2 className="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-tight">
-                  Yonsei <span className="text-primary">Chiropractic</span> Clinic
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ')[1]}</span>
                 </h2>
                 <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mt-1">
-                  연세 카이로프랙틱
+                  {i18n.language === 'ko' ? t('common.companyName') : '연세 카이로프랙틱'}
                 </span>
               </div>
             </div>
@@ -69,6 +69,7 @@ const Footer: React.FC = () => {
               <Link to="/services" className={mobileButtonClass}>{t('nav.services')}</Link>
               <Link to="/message" className={mobileButtonClass}>{t('nav.philosophy')}</Link>
               <Link to="/reviews" className={mobileButtonClass}>{t('nav.reviews')}</Link>
+              <Link to="/insights" className={mobileButtonClass}>{t('nav.insights')}</Link>
               <Link to="/contact" className={mobileButtonClass}>{t('nav.contact')}</Link>
             </div>
           </motion.nav>
@@ -139,10 +140,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <h2 className="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-tight">
-                  Yonsei <span className="text-primary">Chiropractic</span> Clinic
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ')[1]}</span>
                 </h2>
                 <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-1">
-                  연세 카이로프랙틱
+                  {i18n.language === 'ko' ? t('common.companyName') : '연세 카이로프랙틱'}
                 </span>
               </div>
             </div>
@@ -163,6 +164,7 @@ const Footer: React.FC = () => {
               <li><Link to="/services" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.services')}</Link></li>
               <li><Link to="/message" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.philosophy')}</Link></li>
               <li><Link to="/reviews" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.reviews')}</Link></li>
+              <li><Link to="/insights" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.insights')}</Link></li>
               <li><Link to="/contact" className="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </motion.nav>
@@ -232,7 +234,7 @@ const Footer: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium text-slate-400 dark:text-slate-500 tracking-wider uppercase"
         >
-          <p className="text-center md:text-left">© 2026 Yonsei Chiropractic Clinic. {t('footer.rights')}</p>
+          <p className="text-center md:text-left">© 2026 {t('common.companyName')}. {t('footer.rights')}</p>
           <div className="flex flex-col sm:flex-row items-center gap-8">
             <nav className="flex items-center gap-6" aria-label="Legal">
               <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>

@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import Home from '../pages/Home';
-import { getInitialIsMobileFromHeaders } from '../lib/get-initial-is-mobile';
+import Insights from '../../pages/Insights';
 
 export async function generateMetadata({ params }: { params: Promise<{ lng: string }> }): Promise<Metadata> {
   const { lng } = await params;
   
   const titles: Record<string, string> = {
-    en: "Korean Chiropractor in Los Angeles 90010 90057 | Yonsei Chiropractic",
-    ko: "LA 한인 타운 카이로프랙틱 추천 | 90010 90057 | 연세 카이로프랙틱"
+    en: "Korean Speaking Chiropractor near Los Angeles 90010, 90057 | Yonsei Chiropractic",
+    ko: "LA 한인 카이로프랙틱 추천 | 90010, 90057 지역 | 연세 카이로프랙틱"
   };
   
   const descriptions: Record<string, string> = {
-    en: "Searching for a Korean speaking chiropractor in Los Angeles? Yonsei Chiropractic specializes in Palmer Upper Cervical care, TMJ, and car accidents in 90010 and 90057.",
-    ko: "로스앤젤레스에서 한국어 가능한 카이로프랙터를 찾으시나요? 연세 카이로프랙틱은 90010, 90057 지역에서 상부 경추, TMJ, 교통사고 전문 치료를 제공합니다."
+    en: "Looking for a Korean chiropractor near you in LA? We provide expert chiropractic care for the Korean community in 90010, 90057, specializing in Upper Cervical and TMJ.",
+    ko: "내 주변 한인 카이로프랙틱을 찾으시나요? 로스앤젤레스 90010, 90057 지역 한인 사회를 위한 전문 카이로프랙틱 케어, 상부 경추 및 TMJ 전문 병원입니다."
   };
 
   return {
@@ -30,14 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
     openGraph: {
       title: titles[lng] || titles.en,
       description: descriptions[lng] || descriptions.en,
-      url: `https://yonseichiro.com/${lng}`,
+      url: `https://yonseichiro.com/${lng}/insights`,
     },
   };
 }
 
 export default async function Page({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
-  const initialIsMobile = await getInitialIsMobileFromHeaders();
-
-  return <Home lng={lng} initialIsMobile={initialIsMobile} />;
+  return <Insights lng={lng} />;
 }

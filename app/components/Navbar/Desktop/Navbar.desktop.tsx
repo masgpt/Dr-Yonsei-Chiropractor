@@ -69,12 +69,12 @@ const NavbarDesktop: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
-                  Yonsei <span className="text-primary">Chiropractic</span>
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ')[1]}</span>
                 </span>
                 <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2">
-                  <span>연세 카이로프랙틱</span>
+                  <span>{lng === 'ko' ? 'Yonsei Chiropractic' : '연세 카이로프랙틱'}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                  <span>Dr. Park, D.C., M.S.</span>
+                  <span>{t('common.companyNameSub')}</span>
                 </span>
               </div>
             </motion.div>
@@ -216,7 +216,7 @@ const NavbarDesktop: React.FC = () => {
                           <span className="material-symbols-outlined text-[20px]">call</span>
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Phone</span>
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">{t('contact.labels.phone')}</span>
                           <span className="text-sm font-bold text-slate-900 dark:text-white">(213) 381-5500</span>
                         </div>
                       </Link>
@@ -230,7 +230,7 @@ const NavbarDesktop: React.FC = () => {
                           <span className="material-symbols-outlined text-[20px]">location_on</span>
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Address</span>
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">{t('contact.labels.address')}</span>
                           <span className="text-sm font-bold text-slate-900 dark:text-white">3200 Wilshire Blvd #302, LA</span>
                         </div>
                       </Link>
@@ -243,7 +243,7 @@ const NavbarDesktop: React.FC = () => {
                           <span className="material-symbols-outlined text-[20px]">mail</span>
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Email</span>
+                          <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">{t('contact.labels.email')}</span>
                           <span className="text-sm font-bold text-slate-900 dark:text-white">yonseichiropractic@gmail.com</span>
                         </div>
                       </Link>

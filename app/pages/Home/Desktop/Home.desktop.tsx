@@ -35,10 +35,10 @@ const HomeDesktop: React.FC = () => {
     <>
       {/* Hero Section */}
       <section 
-        className="relative bg-slate-950 dark:bg-[#010409] overflow-hidden -mt-[68px] pt-[112px] sm:-mt-[96px] sm:pt-[140px]" 
+        className="relative bg-white dark:bg-[#010409] overflow-hidden -mt-[56px] pt-[64px] sm:-mt-[80px] sm:pt-[96px]" 
         aria-label="Introduction"
       >
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/95 via-slate-950/40 to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/95 via-white/40 to-transparent dark:from-slate-950/95 dark:via-slate-950/40 dark:to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />
         {/* Background Decorative Element */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
@@ -56,8 +56,9 @@ const HomeDesktop: React.FC = () => {
         ></motion.div>
 
         {/* Desktop Hero (Side-by-Side) */}
-        <div className="max-w-[1280px] mx-auto px-10 pb-12">
-          <div className="grid grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1280px] mx-auto relative px-10 pb-12 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/40 to-transparent pointer-events-none" aria-hidden="true" />
+          <div className="grid grid-cols-2 gap-16 items-center relative z-10">
             <motion.div 
               initial="initial"
               animate="animate"
@@ -68,7 +69,7 @@ const HomeDesktop: React.FC = () => {
                   }
                 }
               }}
-              className="flex flex-col gap-6 relative z-10"
+              className="flex flex-col gap-6 relative z-10 text-white"
             >
               <motion.div
                 variants={{
@@ -77,10 +78,10 @@ const HomeDesktop: React.FC = () => {
                 }}
                 className="inline-flex flex-wrap gap-3 items-center text-[11px] uppercase tracking-[0.45em] text-white/70 mb-3"
               >
-                <span className="px-4 py-1 rounded-full border border-white/30 bg-white/10 font-black tracking-[0.4em]">
+                <span className="px-4 py-1 rounded-full border border-white/40 bg-white/10 font-black tracking-[0.4em]">
                   Palmer Upper Cervical
                 </span>
-                <span className="h-1 w-1 rounded-full bg-white/60" aria-hidden="true" />
+                <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden="true" />
                 <span className="text-white/60 font-semibold tracking-[0.3em] text-[10px]">
                   Los Angeles, CA
                 </span>
@@ -92,12 +93,12 @@ const HomeDesktop: React.FC = () => {
                 }}
               >
                 <h1 
-                  className="text-7xl font-black tracking-tighter text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
+                  className="text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6 uppercase"
                 >
-                  Yonsei<br /><span className="text-primary">Chiropractic</span><br /><span className="text-4xl sm:text-5xl lowercase italic font-light tracking-tight opacity-50 block mt-2">Clinic</span>
+                  Yonsei<br /><span className="text-primary">Chiropractic</span>
                 </h1>
                 <p 
-                  className="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed font-medium"
+                  className="text-xl text-white/90 max-w-lg leading-relaxed font-medium drop-shadow-lg"
                 >
                   {t('home.hero.descriptionDesktop')}
                 </p>
@@ -112,7 +113,7 @@ const HomeDesktop: React.FC = () => {
                 <Link to="/contact" className="h-14 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-wider text-sm">
                   {t('home.hero.bookAppointment')}
                 </Link>
-                <Link href="tel:2133815500" className="h-14 px-10 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:-translate-y-1 active:translate-y-0">
+                <Link href="tel:2133815500" className="h-14 px-10 rounded-2xl bg-white/90 hover:bg-white transition-all text-slate-900 font-bold flex items-center justify-center border border-white/60 hover:-translate-y-1 active:translate-y-0">
                   {t('home.hero.callNow')}
                 </Link>
               </motion.div>
@@ -121,7 +122,7 @@ const HomeDesktop: React.FC = () => {
                   initial: { opacity: 0 },
                   animate: { opacity: 1, transition: { duration: 0.8, delay: 0.4 } }
                 }}
-                className="flex items-center gap-4 mt-6 text-sm text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest"
+                className="flex items-center gap-4 mt-6 text-[11px] text-white/80 font-bold uppercase tracking-widest"
               >
                 <div className="flex -space-x-3" aria-hidden="true">
                   <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-200 bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2w7qoKRIiZhLjhCgAHeX3vg67xyRGXuLFl1OoNLnR0Yec1rY2AeAdvsrPOhvjSOROpCN8hMFqSjvXWQ-_hik9od6ezTmbeJ1vd8ULFEAoQEioNMfKJTS5jB3APbbMDQpSMeQp1v_mfxHtHYoVDnhKY9AE6c1dUWIcUMuP_TU21IaznqkUNEy4KW4H2i2jN5xNsvYntDA94zBjSdbAcZFK8JlUdw12I-i3oNeejOJrXzuXdxGJ7iuEWYQM-68csN1YHkbLEKb66NA7')" }}></div>
@@ -139,12 +140,17 @@ const HomeDesktop: React.FC = () => {
             >
               <div className="absolute inset-0 bg-primary/20 rounded-[40px] transform rotate-6 scale-95 blur-2xl -z-10 animate-pulse"></div>
               <div 
-                className="bg-slate-100 rounded-[40px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] aspect-[4/5] bg-cover bg-center border-8 border-white dark:border-slate-800 relative group" 
-                style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
-                role="img"
-                aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
+                className="relative rounded-[40px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] aspect-[4/5] border-8 border-white dark:border-slate-800 group"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
+                  role="img"
+                  aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/80 to-slate-900/70 opacity-90" aria-hidden="true" />
+                <div className="absolute inset-0 bg-black/40 opacity-80" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
               </div>
             </motion.div>
           </div>
@@ -242,7 +248,7 @@ const HomeDesktop: React.FC = () => {
                   <Link to="/about" className="h-12 px-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs uppercase tracking-widest hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center">
                     {t('home.meetDoctor.readBio')}
                   </Link>
-                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Yonsei Chiropractic Clinic</p>
+                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Yonsei Chiropractic</p>
                 </div>
               </div>
             </motion.div>
@@ -505,7 +511,7 @@ const HomeDesktop: React.FC = () => {
                   className="flex items-start gap-6 group"
                   aria-label={t('footer.address')}
                 >
-                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform border border-slate-100 dark:border-slate-800">
                     <span className="material-symbols-outlined text-[28px]" aria-hidden="true">location_on</span>
                   </div>
                   <div>
@@ -514,31 +520,31 @@ const HomeDesktop: React.FC = () => {
                   </div>
                 </Link>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="flex flex-col gap-4">
                   <Link 
                     href="tel:2133815500"
-                    className="flex items-center gap-6 group"
+                    className="flex items-center gap-6 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-xl transition-all group w-full"
                     aria-label="Call us at (213) 381-5500"
                   >
-                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">call</span>
+                    <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[24px]" aria-hidden="true">call</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.call')}</h4>
+                      <h4 className="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-0.5">{t('contact.labels.call')}</h4>
                       <p className="text-lg font-black text-slate-900 dark:text-white group-hover:text-primary transition-colors tracking-tight">(213) 381-5500</p>
                     </div>
                   </Link>
                   <Link 
                     href="mailto:yonseichiropractic@gmail.com"
-                    className="flex items-center gap-6 group"
+                    className="flex items-center gap-6 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 hover:border-primary/30 dark:hover:border-primary/30 hover:shadow-xl transition-all group w-full"
                     aria-label="Email us at yonseichiropractic@gmail.com"
                   >
-                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">mail</span>
+                    <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[24px]" aria-hidden="true">mail</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.email')}</h4>
-                      <p className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">yonseichiropractic@gmail.com</p>
+                      <h4 className="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-0.5">{t('contact.labels.email')}</h4>
+                      <p className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">yonseichiropractic@gmail.com</p>
                     </div>
                   </Link>
                 </div>
@@ -584,7 +590,7 @@ const HomeDesktop: React.FC = () => {
               className="col-span-7 h-auto w-full bg-slate-200 dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-2xl relative border-8 border-white dark:border-slate-800"
             >
               <iframe 
-                title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
+                title="Map showing the location of Yonsei Chiropractic in Los Angeles"
                 className="w-full h-full border-0 grayscale dark:invert dark:hue-rotate-180"
                 src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen

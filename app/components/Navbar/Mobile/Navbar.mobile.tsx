@@ -42,10 +42,10 @@ const NavbarMobile: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-black tracking-tight text-slate-900 dark:text-white leading-none uppercase">
-                  Yonsei <span className="text-primary">Chiropractic</span>
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ')[1]}</span>
                 </span>
                 <span className="text-[8px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider mt-0.5 leading-none">
-                  연세 카이로프랙틱
+                  {lng === 'ko' ? 'Yonsei Chiropractic' : '연세 카이로프랙틱'}
                 </span>
               </div>
             </div>

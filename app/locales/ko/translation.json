@@ -1,4 +1,14 @@
 {
+  "seo": {
+    "home": {
+      "title": "LA 한인 타운 카이로프랙틱 | 연세 카이로프랙틱 클리닉",
+      "description": "로스앤젤레스에서 한국어 가능한 카이로프랙터를 찾으시나요? 연세 카이로프랙틱은 90010, 90057 지역에서 상부 경추, TMJ, 교통사고 전문 치료를 제공합니다."
+    },
+    "insights": {
+      "title": "LA 한인 카이로프랙틱 추천 | 90010, 90057 지역",
+      "description": "내 주변 한인 카이로프랙틱을 찾으시나요? 로스앤젤레스 한인 사회를 위한 전문 카이로프랙틱 케어, 상부 경추 및 TMJ 전문 병원입니다."
+    }
+  },
   "nav": {
     "home": "홈",
     "about": "소개",
@@ -15,7 +25,8 @@
     "innateIntelligence": "선천적 지능 (Innate Intelligence)",
     "upperCervical": "상부 경추 교정",
     "carAccident": "교통사고 및 개인 상해",
-    "tmj": "턱관절 (TMJ)"
+    "tmj": "턱관절 (TMJ)",
+    "insights": "한인 사회 가이드"
   },
   "home": {
     "hero": {
@@ -82,7 +93,9 @@
   "common": {
     "location": "캘리포니아 로스앤젤레스",
     "doctorTitle": "팔머 상부 경추 전문 카이로프랙터",
-    "close": "닫기"
+    "close": "닫기",
+    "companyName": "연세 카이로프랙틱",
+    "companyNameSub": "박현주 원장, D.C., M.S."
   },
   "about": {
     "hero": {
@@ -170,7 +183,8 @@
       "call": "전화 문의",
       "email": "이메일 문의",
       "hours": "진료 시간",
-      "directions": "길 찾기"
+      "directions": "길 찾기",
+      "phone": "전화번호"
     },
     "hours": {
       "weekdays": "월, 화, 수, 금:",

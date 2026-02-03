@@ -5,7 +5,11 @@ import { useTranslation } from 'react-i18next';
 import Link from './ui/Link';
 import LanguageToggle from './LanguageToggle';
 
-const ContactBanner: React.FC = () => {
+interface ContactBannerProps {
+  lng?: string;
+}
+
+const ContactBanner: React.FC<ContactBannerProps> = ({ lng }) => {
   const { t } = useTranslation();
 
   return (

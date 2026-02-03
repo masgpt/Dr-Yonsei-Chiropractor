@@ -136,7 +136,7 @@ const ContactDesktop: React.FC = () => {
           {/* Map Embed */}
           <div className="w-full h-[400px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative">
             <iframe 
-              title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
+              title="Map showing the location of Yonsei Chiropractic in Los Angeles"
               className="w-full h-full border-0"
               src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
               allowFullScreen

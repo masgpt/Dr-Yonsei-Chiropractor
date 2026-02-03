@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 interface SEOProps {
   title?: string;
@@ -10,14 +13,17 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ title, description, image, article }) => {
   const pathname = usePathname();
+  const { t, i18n } = useTranslation();
   
-  const defaultTitle = 'Yonsei Chiropractic Clinic - Upper Cervical Health Care';
-  const defaultDescription = "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.";
+  const defaultTitle = t('seo.home.title') || 'Yonsei Chiropractic - Upper Cervical Health Care';
+  const defaultDescription = t('seo.home.description') || "Dedicated to restoring your health through the precise Palmer Upper Cervical method in Los Angeles. Specialist in TMJ, car accidents, and natural healing.";
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://yonseichiro.com';
   const defaultImage = `${siteUrl}/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg`;
   
+  const companyName = t('common.companyName') || 'Yonsei Chiropractic';
+  
   const seo = {
-    title: title ? `${title} | Yonsei Chiropractic Clinic` : defaultTitle,
+    title: title ? `${title} | ${companyName}` : defaultTitle,
     description: description || defaultDescription,
     image: image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : defaultImage,
     url: `${siteUrl}${pathname}`,

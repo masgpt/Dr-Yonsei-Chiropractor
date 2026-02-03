@@ -40,32 +40,33 @@ const HomeMobile: React.FC = () => {
       />
       {/* Hero Section */}
       <section 
-        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[68px] pt-[96px] sm:-mt-[96px] sm:pt-[128px]" 
+        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[68px] pt-0 sm:-mt-[96px] sm:pt-0" 
         aria-label="Introduction"
       >
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-slate-950/85 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
-        <div className="relative h-[500px] w-full flex items-center">
-          <motion.div 
+        <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/90 via-white/40 to-transparent dark:from-slate-950/85 opacity-40 pointer-events-none z-20" aria-hidden="true" />
+          <div className="relative h-[550px] w-full flex items-center">
+            <motion.div 
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
-            aria-label="Yonsei Chiropractic Clinic interior"
+            aria-label="Yonsei Chiropractic interior"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
+            <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>
-          <div className="relative z-10 px-8 w-full">
+          <div className="relative z-10 px-6 w-full pt-6 sm:pt-10">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-white mb-4"
+              className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-slate-800 mb-3"
             >
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 font-black tracking-[0.4em]">Palmer Upper Cervical</span>
-              <span className="h-1 w-1 rounded-full bg-white/60" />
-              <span className="text-white/70 font-semibold text-[10px]">Los Angeles, CA</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/70 text-white font-black tracking-[0.4em]">Palmer Upper Cervical</span>
+              <span className="h-1 w-1 rounded-full bg-white/70" />
+              <span className="text-white/90 font-semibold text-[10px]">Los Angeles, CA</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -79,7 +80,7 @@ const HomeMobile: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-lg text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
+              className="text-lg text-white/90 mb-10 max-w-md leading-relaxed font-medium drop-shadow-lg"
             >
               {t('home.hero.description')}
             </motion.p>
@@ -89,10 +90,10 @@ const HomeMobile: React.FC = () => {
               transition={{ delay: 0.9, duration: 0.8 }}
               className="flex flex-col gap-4"
             >
-              <Link to="/contact" className="h-14 px-8 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
+              <Link to="/contact" className="min-h-[3.5rem] h-auto py-4 px-6 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-all uppercase tracking-widest text-sm text-center">
                 {t('home.hero.bookAppointment')}
               </Link>
-              <Link to="/techniques/upper-cervical" className="h-14 px-8 rounded-2xl bg-white/10 text-white font-bold border border-white/20 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-all">
+              <Link to="/techniques/upper-cervical" className="min-h-[3.5rem] h-auto py-4 px-6 rounded-2xl bg-white/90 text-slate-900 font-bold border border-white/70 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-all text-center">
                 {t('home.hero.learnMore')}
               </Link>
             </motion.div>
@@ -165,7 +166,7 @@ const HomeMobile: React.FC = () => {
                   <Link to="/about" className="h-12 px-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs uppercase tracking-widest active:scale-[0.98] transition-all shadow-xl flex items-center justify-center">
                     {t('home.meetDoctor.readBio')}
                   </Link>
-                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Yonsei Chiropractic Clinic</p>
+                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Yonsei Chiropractic</p>
                 </div>
               </div>
             </div>
@@ -384,7 +385,7 @@ const HomeMobile: React.FC = () => {
                   className="flex items-start gap-6 group"
                   aria-label={t('footer.address')}
                 >
-                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary active:scale-110 transition-transform">
+                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary active:scale-110 transition-transform border border-slate-100 dark:border-slate-800">
                     <span className="material-symbols-outlined text-[28px]" aria-hidden="true">location_on</span>
                   </div>
                   <div>
@@ -393,31 +394,31 @@ const HomeMobile: React.FC = () => {
                   </div>
                 </Link>
 
-                <div className="grid grid-cols-1 gap-8">
+                <div className="flex flex-col gap-4">
                   <Link 
                     href="tel:2133815500"
-                    className="flex items-center gap-6 group"
+                    className="flex items-center gap-6 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 active:scale-[0.98] transition-all group w-full"
                     aria-label="Call us at (213) 381-5500"
                   >
-                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary active:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">call</span>
+                    <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary active:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[24px]" aria-hidden="true">call</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.call')}</h4>
+                      <h4 className="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-0.5">{t('contact.labels.call')}</h4>
                       <p className="text-lg font-black text-slate-900 dark:text-white transition-colors tracking-tight">(213) 381-5500</p>
                     </div>
                   </Link>
                   <Link 
                     href="mailto:yonseichiropractic@gmail.com"
-                    className="flex items-center gap-6 group"
+                    className="flex items-center gap-6 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 active:scale-[0.98] transition-all group w-full"
                     aria-label="Email us at yonseichiropractic@gmail.com"
                   >
-                    <div className="w-14 h-14 shrink-0 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center text-primary active:scale-110 transition-transform">
-                      <span className="material-symbols-outlined text-[28px]" aria-hidden="true">mail</span>
+                    <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary active:scale-110 transition-transform">
+                      <span className="material-symbols-outlined text-[24px]" aria-hidden="true">mail</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-1">{t('contact.labels.email')}</h4>
-                      <p className="text-xs font-bold text-slate-900 dark:text-white transition-colors truncate">yonseichiropractic@gmail.com</p>
+                      <h4 className="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-0.5">{t('contact.labels.email')}</h4>
+                      <p className="text-sm font-bold text-slate-900 dark:text-white transition-colors truncate">yonseichiropractic@gmail.com</p>
                     </div>
                   </Link>
                 </div>
@@ -463,7 +464,7 @@ const HomeMobile: React.FC = () => {
               className="h-[300px] w-full bg-slate-200 dark:bg-slate-800 rounded-[32px] overflow-hidden shadow-2xl relative border-4 border-white dark:border-slate-800"
             >
               <iframe 
-                title="Map showing the location of Yonsei Chiropractic Clinic in Los Angeles"
+                title="Map showing the location of Yonsei Chiropractic in Los Angeles"
                 className="w-full h-full border-0 grayscale dark:invert dark:hue-rotate-180"
                 src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 allowFullScreen

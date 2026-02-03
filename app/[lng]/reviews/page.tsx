@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   const { lng } = await params;
   
   const titles: Record<string, string> = {
-    en: "Patient Reviews | Yonsei Chiropractic Clinic",
+    en: "Patient Reviews | Yonsei Chiropractic",
     ko: "환자 후기 | 연세 카이로프랙틱"
   };
   
