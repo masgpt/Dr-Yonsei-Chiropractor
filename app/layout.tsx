@@ -7,6 +7,7 @@ import SkipToContent from './components/SkipToContent';
 import ClientLayout from './client-layout';
 import PageTransition from './components/PageTransition';
 import I18nProvider from './components/I18nProvider';
+import { getInitialIsMobileFromHeaders } from './lib/get-initial-is-mobile';
 
 export const metadata: Metadata = {
   title: "Yonsei Chiropractic - Upper Cervical Health Care",
@@ -42,6 +43,7 @@ export default async function RootLayout({
   params: Promise<{ lng: string }>;
 }) {
   const { lng } = await params;
+  const initialIsMobile = await getInitialIsMobileFromHeaders();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -121,7 +123,7 @@ export default async function RootLayout({
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
         <I18nProvider lng={lng}>
           <div className="relative flex flex-col min-h-screen overflow-x-hidden">
-            <ClientLayout>
+            <ClientLayout initialIsMobile={initialIsMobile}>
               <SkipToContent />
               <Navbar />
               <main 
@@ -129,7 +131,7 @@ export default async function RootLayout({
                 tabIndex={-1} 
                 className="flex-grow w-full flex flex-col outline-none pt-[68px] sm:pt-[96px] lg:pt-[96px]"
               >
-                <PageTransition>
+                <PageTransition initialIsMobile={initialIsMobile}>
                   {children}
                 </PageTransition>
               </main>

@@ -40,12 +40,11 @@ const HomeMobile: React.FC = () => {
       />
       {/* Hero Section */}
       <section 
-        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[68px] pt-0 sm:-mt-[96px] sm:pt-0" 
+        className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[64px]" 
         aria-label="Introduction"
       >
-        <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/90 via-white/40 to-transparent dark:from-slate-950/85 opacity-40 pointer-events-none z-20" aria-hidden="true" />
-          <div className="relative h-[550px] w-full flex items-center">
-            <motion.div 
+        <div className="relative h-[620px] w-full flex items-end pb-12 pt-[80px]">
+          <motion.div 
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
@@ -53,34 +52,34 @@ const HomeMobile: React.FC = () => {
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
             aria-label="Yonsei Chiropractic interior"
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
-            <div className="absolute inset-0 bg-black/30"></div>
-          </motion.div>
-          <div className="relative z-10 px-6 w-full pt-6 sm:pt-10">
+          />
+          {/* Improved dynamic overlay for better legibility in both modes */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/40 dark:from-[#0a0f14] dark:via-[#0a0f14]/80 dark:to-[#0a0f14]/30" aria-hidden="true" />
+          
+          <div className="relative z-10 px-6 w-full">
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="inline-flex items-center gap-2 uppercase tracking-[0.4em] text-[10px] text-slate-800 mb-3"
+              className="inline-flex items-center gap-2 uppercase tracking-[0.1em] text-[10px] mb-4"
             >
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/70 text-white font-black tracking-[0.4em]">Palmer Upper Cervical</span>
-              <span className="h-1 w-1 rounded-full bg-white/70" />
-              <span className="text-white/90 font-semibold text-[10px]">Los Angeles, CA</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-black border border-primary/20">Palmer Upper Cervical</span>
+              <span className="text-slate-900 dark:text-white font-bold">Los Angeles, CA</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-4xl font-black tracking-tight text-white leading-[1.1] mb-6 uppercase"
+              className="text-[40px] min-[390px]:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
             >
-              {t('home.hero.title')}
+              Yonsei<br />
+              <span className="text-primary">Chiropractic</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-lg text-white/90 mb-10 max-w-md leading-relaxed font-medium drop-shadow-lg"
+              className="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
             >
               {t('home.hero.description')}
             </motion.p>
@@ -88,12 +87,12 @@ const HomeMobile: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-3"
             >
-              <Link to="/contact" className="min-h-[3.5rem] h-auto py-4 px-6 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-2xl shadow-primary/30 active:scale-[0.98] transition-all uppercase tracking-widest text-sm text-center">
+              <Link to="/contact" className="h-16 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-xl shadow-primary/20 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
                 {t('home.hero.bookAppointment')}
               </Link>
-              <Link to="/techniques/upper-cervical" className="min-h-[3.5rem] h-auto py-4 px-6 rounded-2xl bg-white/90 text-slate-900 font-bold border border-white/70 backdrop-blur-md flex items-center justify-center active:scale-[0.98] transition-all text-center">
+              <Link to="/techniques/upper-cervical" className="h-16 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold border border-slate-200 dark:border-slate-800 flex items-center justify-center active:scale-[0.98] transition-all text-center shadow-sm">
                 {t('home.hero.learnMore')}
               </Link>
             </motion.div>

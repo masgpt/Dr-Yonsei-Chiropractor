@@ -3,12 +3,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { MotionConfig } from 'framer-motion';
+import { useViewport } from './hooks/useViewport';
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({ 
+  children,
+  initialIsMobile 
+}: { 
+  children: React.ReactNode;
+  initialIsMobile?: boolean;
+}) {
   const mainRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const { t } = useTranslation();
   const [announcement, setAnnouncement] = useState('');
+  const { isMobile } = useViewport(initialIsMobile);
 
   useEffect(() => {
     // Move focus to main content on route change for accessibility
@@ -23,7 +32,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   }, [pathname, t]);
 
   return (
-    <>
+    <MotionConfig reducedMotion={isMobile ? "always" : "user"}>
       {/* Route Announcement Region */}
       <div 
         className="sr-only" 
@@ -34,6 +43,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         {announcement}
       </div>
       {children}
-    </>
+    </MotionConfig>
   );
 }

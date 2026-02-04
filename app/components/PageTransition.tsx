@@ -3,11 +3,19 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
+import { useViewport } from '../hooks/useViewport';
 
-export default function PageTransition({ children }: { children: React.ReactNode }) {
+export default function PageTransition({ 
+  children,
+  initialIsMobile 
+}: { 
+  children: React.ReactNode;
+  initialIsMobile?: boolean;
+}) {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
   const isFirstMount = useRef(true);
+  const { isMobile } = useViewport(initialIsMobile);
 
   useEffect(() => {
     setIsMounted(true);
@@ -16,6 +24,11 @@ export default function PageTransition({ children }: { children: React.ReactNode
   }, []);
 
   if (!isMounted) {
+    return <div className="flex flex-col flex-grow w-full">{children}</div>;
+  }
+
+  // Disable motion on mobile to prevent flickering
+  if (isMobile) {
     return <div className="flex flex-col flex-grow w-full">{children}</div>;
   }
 

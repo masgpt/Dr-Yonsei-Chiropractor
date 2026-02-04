@@ -35,30 +35,30 @@ const HomeDesktop: React.FC = () => {
     <>
       {/* Hero Section */}
       <section 
-        className="relative bg-white dark:bg-[#010409] overflow-hidden -mt-[56px] pt-[64px] sm:-mt-[80px] sm:pt-[96px]" 
+        className="relative min-h-[90vh] flex items-center bg-white dark:bg-[#010409] overflow-hidden -mt-[64px] sm:-mt-[80px]" 
         aria-label="Introduction"
       >
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/95 via-white/40 to-transparent dark:from-slate-950/95 dark:via-slate-950/40 dark:to-transparent pointer-events-none hidden lg:block" aria-hidden="true" />
-        {/* Background Decorative Element */}
+        {/* Full-width Background Gradient and Decorative Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-white dark:from-slate-950/50 dark:via-[#010409] dark:to-[#010409] -z-10" aria-hidden="true" />
+        
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10" 
+          className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] -z-10" 
           aria-hidden="true"
-        ></motion.div>
+        />
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl -z-10" 
+          className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[100px] -z-10" 
           aria-hidden="true"
-        ></motion.div>
+        />
 
-        {/* Desktop Hero (Side-by-Side) */}
-        <div className="max-w-[1280px] mx-auto relative px-10 pb-12 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/40 to-transparent pointer-events-none" aria-hidden="true" />
-          <div className="grid grid-cols-2 gap-16 items-center relative z-10">
+        {/* Desktop Hero Content */}
+        <div className="max-w-[1440px] mx-auto px-10 pt-[140px] pb-24 relative z-10 w-full">
+          <div className="grid grid-cols-12 gap-16 xl:gap-24 items-center">
             <motion.div 
               initial="initial"
               animate="animate"
@@ -69,88 +69,113 @@ const HomeDesktop: React.FC = () => {
                   }
                 }
               }}
-              className="flex flex-col gap-6 relative z-10 text-white"
+              className="col-span-12 lg:col-span-7 xl:col-span-7 flex flex-col gap-8"
             >
               <motion.div
                 variants={{
-                  initial: { opacity: 0, y: 16 },
-                  animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }
-                }}
-                className="inline-flex flex-wrap gap-3 items-center text-[11px] uppercase tracking-[0.45em] text-white/70 mb-3"
+                  initial: { opacity: 0, x: -20 },
+                  animate: { opacity: 1, x: 0, transition: { duration: 0.6 } } }
+                }
+                className="flex items-center gap-3"
               >
-                <span className="px-4 py-1 rounded-full border border-white/40 bg-white/10 font-black tracking-[0.4em]">
-                  Palmer Upper Cervical
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-[0.3em] border border-primary/20">
+                  {t('home.hero.badge')}
                 </span>
-                <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden="true" />
-                <span className="text-white/60 font-semibold tracking-[0.3em] text-[10px]">
-                  Los Angeles, CA
+                <span className="h-[1px] w-12 bg-slate-200 dark:bg-slate-800" aria-hidden="true" />
+                <span className="text-slate-400 dark:text-white text-[10px] font-bold uppercase tracking-[0.2em]">
+                  {t('home.hero.location')}
                 </span>
               </motion.div>
+
               <motion.div
                 variants={{
-                  initial: { opacity: 0, y: 20 },
-                  animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                  initial: { opacity: 0, y: 30 },
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.8 } }
                 }}
               >
-                <h1 
-                  className="text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6 uppercase"
-                >
-                  Yonsei<br /><span className="text-primary">Chiropractic</span>
+                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[0.95] text-slate-900 dark:text-white uppercase mb-8">
+                  {t('home.hero.titlePart1')}<br />
+                  <span className="text-primary">{t('home.hero.titlePart2')}</span>
                 </h1>
-                <p 
-                  className="text-xl text-white/90 max-w-lg leading-relaxed font-medium drop-shadow-lg"
-                >
+                <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed font-medium">
                   {t('home.hero.descriptionDesktop')}
                 </p>
               </motion.div>
+
               <motion.div 
                 variants={{
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                 }}
-                className="flex flex-wrap gap-4 mt-2"
+                className="flex flex-wrap gap-4"
               >
-                <Link to="/contact" className="h-14 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-wider text-sm">
+                <Link to="/contact" className="h-16 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-widest text-sm">
                   {t('home.hero.bookAppointment')}
                 </Link>
-                <Link href="tel:2133815500" className="h-14 px-10 rounded-2xl bg-white/90 hover:bg-white transition-all text-slate-900 font-bold flex items-center justify-center border border-white/60 hover:-translate-y-1 active:translate-y-0">
+                <Link href="tel:2133815500" className="h-16 px-10 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 hover:border-primary/30 transition-all hover:-translate-y-1 active:translate-y-0 shadow-sm">
                   {t('home.hero.callNow')}
                 </Link>
               </motion.div>
+
               <motion.div 
                 variants={{
                   initial: { opacity: 0 },
                   animate: { opacity: 1, transition: { duration: 0.8, delay: 0.4 } }
                 }}
-                className="flex items-center gap-4 mt-6 text-[11px] text-white/80 font-bold uppercase tracking-widest"
+                className="flex items-center gap-4 pt-4"
               >
                 <div className="flex -space-x-3" aria-hidden="true">
-                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-200 bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2w7qoKRIiZhLjhCgAHeX3vg67xyRGXuLFl1OoNLnR0Yec1rY2AeAdvsrPOhvjSOROpCN8hMFqSjvXWQ-_hik9od6ezTmbeJ1vd8ULFEAoQEioNMfKJTS5jB3APbbMDQpSMeQp1v_mfxHtHYoVDnhKY9AE6c1dUWIcUMuP_TU21IaznqkUNEy4KW4H2i2jN5xNsvYntDA94zBjSdbAcZFK8JlUdw12I-i3oNeejOJrXzuXdxGJ7iuEWYQM-68csN1YHkbLEKb66NA7')" }}></div>
-                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-200 bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTiBxzYw56CdOrXypz_qix82KnvcJCL9VvI-v8wLOPhKd4f08zzfDtBtgnT6zaDamQeeOHmYN_V6fUtZmB1owh-saFa06itbczl0-ZhkQ_ctYDPsOZU8HSC0Ogn2ceGvN3iCUqZI--jhsnbDeo5g7LTpRv0ILwHmy8iK8ePqNkE-LP61J8SYZk0tTUlvxQC2o8jwgYgQ52bcsFIs-_ZgRtmkw1_y2c4K_5JSsRNFh0tLv9uONeVSTcdTmr9TLU5Pj9MWkvcFIITfeJ')" }}></div>
-                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-primary flex items-center justify-center text-[10px] font-black text-white shadow-lg">+50</div>
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-100 dark:bg-slate-800 shadow-sm overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2w7qoKRIiZhLjhCgAHeX3vg67xyRGXuLFl1OoNLnR0Yec1rY2AeAdvsrPOhvjSOROpCN8hMFqSjvXWQ-_hik9od6ezTmbeJ1vd8ULFEAoQEioNMfKJTS5jB3APbbMDQpSMeQp1v_mfxHtHYoVDnhKY9AE6c1dUWIcUMuP_TU21IaznqkUNEy4KW4H2i2jN5xNsvYntDA94zBjSdbAcZFK8JlUdw12I-i3oNeejOJrXzuXdxGJ7iuEWYQM-68csN1YHkbLEKb66NA7" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-slate-100 dark:bg-slate-800 shadow-sm overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTiBxzYw56CdOrXypz_qix82KnvcJCL9VvI-v8wLOPhKd4f08zzfDtBtgnT6zaDamQeeOHmYN_V6fUtZmB1owh-saFa06itbczl0-ZhkQ_ctYDPsOZU8HSC0Ogn2ceGvN3iCUqZI--jhsnbDeo5g7LTpRv0ILwHmy8iK8ePqNkE-LP61J8SYZk0tTUlvxQC2o8jwgYgQ52bcsFIs-_ZgRtmkw1_y2c4K_5JSsRNFh0tLv9uONeVSTcdTmr9TLU5Pj9MWkvcFIITfeJ" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0f14] bg-primary flex items-center justify-center text-[10px] font-black text-white shadow-sm">+50</div>
                 </div>
-                <p className="text-[11px]">{t('home.hero.trustedBy')}</p>
+                <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{t('home.hero.trustedBy')}</p>
               </motion.div>
             </motion.div>
+
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative"
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              className="col-span-12 lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end"
             >
-              <div className="absolute inset-0 bg-primary/20 rounded-[40px] transform rotate-6 scale-95 blur-2xl -z-10 animate-pulse"></div>
-              <div 
-                className="relative rounded-[40px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] aspect-[4/5] border-8 border-white dark:border-slate-800 group"
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
-                  role="img"
-                  aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/80 to-slate-900/70 opacity-90" aria-hidden="true" />
-                <div className="absolute inset-0 bg-black/40 opacity-80" aria-hidden="true" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+              <div className="relative w-full max-w-[420px] xl:max-w-[480px]">
+                <div className="absolute inset-0 bg-primary/20 rounded-[48px] transform rotate-6 scale-95 blur-3xl -z-10 animate-pulse" aria-hidden="true" />
+                <div 
+                  className="relative rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] aspect-[4/5] border-[12px] border-white dark:border-slate-800 group"
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
+                    role="img"
+                    aria-label="Chiropractor's hands performing an upper cervical adjustment on a patient"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-60" aria-hidden="true" />
+                </div>
+                
+                {/* Floating Testimonial Card */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                  className="absolute -bottom-8 -left-6 lg:-left-12 bg-white dark:bg-slate-900 p-6 lg:p-8 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 max-w-[240px] lg:max-w-[280px]"
+                >
+                  <div className="flex gap-1 text-primary mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="material-symbols-outlined text-sm fill-current">star</span>
+                    ))}
+                  </div>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white leading-relaxed">
+                    {t('home.hero.testimonial')}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t('home.hero.verifiedPatient')}</p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
