@@ -43,7 +43,7 @@ const HomeMobile: React.FC = () => {
         className="relative bg-white dark:bg-[#0a0f14] overflow-hidden -mt-[64px]" 
         aria-label="Introduction"
       >
-        <div className="relative h-[620px] w-full flex items-end pb-12 pt-[80px]">
+        <div className="relative min-h-[520px] w-full pb-10 pt-[74px] min-[480px]:pt-[80px]">
           <motion.div 
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -56,12 +56,12 @@ const HomeMobile: React.FC = () => {
           {/* Improved dynamic overlay for better legibility in both modes */}
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/40 dark:from-[#0a0f14] dark:via-[#0a0f14]/80 dark:to-[#0a0f14]/30" aria-hidden="true" />
           
-          <div className="relative z-10 px-6 w-full">
+          <div className="relative z-10 px-6 w-full max-w-[min(640px,100%)] mx-auto">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="inline-flex items-center gap-2 uppercase tracking-[0.1em] text-[10px] mb-4"
+              className="inline-flex items-center gap-2 uppercase tracking-[0.1em] text-[clamp(0.55rem,2vw,0.85rem)] mb-4"
             >
               <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-black border border-primary/20">Palmer Upper Cervical</span>
               <span className="text-slate-900 dark:text-white font-bold">Los Angeles, CA</span>
@@ -70,16 +70,16 @@ const HomeMobile: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-[40px] min-[390px]:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
+              className="text-[clamp(1.8rem,6vw,3.2rem)] min-[390px]:text-[clamp(2.4rem,4.5vw,3.8rem)] font-black tracking-tight text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
             >
-              Yonsei<br />
-              <span className="text-primary">Chiropractic</span>
+              {t('home.hero.titlePart1')}<br />
+              <span className="text-primary">{t('home.hero.titlePart2')}</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
+              className="text-[clamp(0.95rem,3.5vw,1.35rem)] text-slate-600 dark:text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
             >
               {t('home.hero.description')}
             </motion.p>
