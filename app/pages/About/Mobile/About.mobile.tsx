@@ -5,20 +5,20 @@ import SEO from '../../../components/SEO';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  transition: { duration: 0 }
 };
 
 const staggerContainer = {
   initial: {},
+  animate: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0
     }
-  },
-  viewport: { once: true }
+  }
 };
 
 const AboutMobile: React.FC = () => {
@@ -35,9 +35,9 @@ const AboutMobile: React.FC = () => {
       <section className="w-full px-6 py-8 max-w-[1280px] mx-auto overflow-hidden" aria-labelledby="about-hero-title">
         <div className="flex flex-col gap-6">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9, x: -20 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0 }}
             className="flex items-center gap-4"
           >
             <div 
@@ -55,9 +55,9 @@ const AboutMobile: React.FC = () => {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ duration: 0 }}
             className="flex flex-col gap-6"
           >
             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed font-medium">
@@ -85,10 +85,9 @@ const AboutMobile: React.FC = () => {
             <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em]">{t('about.bio.badge')}</span>
             <h2 id="bio-heading" className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">{t('about.bio.title')}</h2>
             <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: 40 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              initial={false}
+              animate={{ width: 40 }}
+              transition={{ duration: 0 }}
               className="h-1 bg-primary mt-2 rounded-full"
             ></motion.div>
           </motion.div>
@@ -184,10 +183,9 @@ const AboutMobile: React.FC = () => {
       {/* Bottom CTA */}
       <section className="w-full bg-primary text-white py-12 px-6 overflow-hidden" aria-labelledby="about-cta-heading">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0 }}
           className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6"
         >
           <h2 id="about-cta-heading" className="text-2xl font-bold">{t('about.cta.title')}</h2>

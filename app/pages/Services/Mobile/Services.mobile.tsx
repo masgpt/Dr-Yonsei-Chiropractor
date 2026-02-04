@@ -6,20 +6,20 @@ import { specialtyKeys } from '../Shared/services.constants';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  transition: { duration: 0 }
 };
 
 const staggerContainer = {
   initial: {},
+  animate: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0
     }
-  },
-  viewport: { once: true }
+  }
 };
 
 const ServicesMobile: React.FC = () => {
@@ -39,26 +39,26 @@ const ServicesMobile: React.FC = () => {
           >
             <div className="flex flex-col gap-2 text-center z-10">
               <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0 }}
                 className="text-white text-3xl font-black leading-tight tracking-tight drop-shadow-md uppercase"
               >
                 {t('servicesPage.hero.title')}
               </motion.h1>
               <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+                transition={{ duration: 0 }}
                 className="text-slate-100 text-sm font-medium leading-relaxed mt-2 drop-shadow-sm uppercase tracking-wide"
               >
                 {t('servicesPage.hero.subtitle')}
               </motion.h2>
             </div>
             <motion.a 
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ duration: 0 }}
               href="#treatments" 
               className="z-10 flex w-full min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary transition-colors text-slate-50 text-base font-bold shadow-lg uppercase tracking-widest"
             >
@@ -96,10 +96,9 @@ const ServicesMobile: React.FC = () => {
             </div>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={false}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0 }}
             className="h-56 w-full rounded-2xl bg-slate-200 dark:bg-slate-700 overflow-hidden relative min-h-[220px] border-4 border-white dark:border-slate-800 shadow-xl"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-center p-6">
@@ -138,7 +137,6 @@ const ServicesMobile: React.FC = () => {
               <motion.div 
                 key={item.key}
                 variants={fadeInUp}
-                whileTap={{ scale: 0.98 }}
                 className="flex flex-col gap-4 rounded-[28px] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-6 transition-all group"
               >
                 <div className="size-12 rounded-xl bg-white dark:bg-slate-800 shadow-lg shadow-primary/5 flex items-center justify-center text-primary">

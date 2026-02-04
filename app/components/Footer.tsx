@@ -5,26 +5,28 @@ import { useTranslation } from 'react-i18next';
 import Link from './ui/Link';
 import ThemeToggle from './ui/ThemeToggle';
 import { motion } from 'framer-motion';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
-};
-
-const staggerContainer = {
-  initial: {},
-  whileInView: {
-    transition: {
-      staggerChildren: 0.05
-    }
-  },
-  viewport: { once: true }
-};
+import { useViewport } from '../hooks/useViewport';
 
 const Footer: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const { isMobile } = useViewport();
+
+  const fadeInUp = {
+    initial: { opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: isMobile ? 0 : 0.5 }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: isMobile ? 0 : 0.05
+      }
+    },
+    viewport: { once: true }
+  };
 
   const mobileButtonClass = "flex items-center justify-center p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 text-slate-700 dark:text-slate-300 font-bold text-[11px] uppercase tracking-widest text-center transition-all active:scale-95 shadow-sm";
 
@@ -234,7 +236,12 @@ const Footer: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-medium text-slate-400 dark:text-slate-500 tracking-wider uppercase"
         >
-          <p className="text-center md:text-left">© 2026 {t('common.companyName')}. {t('footer.rights')}</p>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p className="text-center md:text-left">© 2026 {t('common.companyName')}. {t('footer.rights')}</p>
+            <p className="text-[10px] text-slate-400/60 dark:text-slate-500/60 lowercase tracking-widest">
+              web services by <Link href="https://studio.filmclusive.com" external className="hover:text-primary transition-colors font-bold uppercase">Filmclusive studio</Link>
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row items-center gap-8">
             <nav className="flex items-center gap-6" aria-label="Legal">
               <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>

@@ -7,20 +7,20 @@ import { reviews } from '../Shared/home.constants';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  transition: { duration: 0 }
 };
 
 const staggerContainer = {
   initial: {},
+  animate: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0
     }
-  },
-  viewport: { once: true }
+  }
 };
 
 const HomeMobile: React.FC = () => {
@@ -45,9 +45,9 @@ const HomeMobile: React.FC = () => {
       >
         <div className="relative min-h-[520px] w-full pb-10 pt-[74px] min-[480px]:pt-[80px]">
           <motion.div 
-            initial={{ scale: 1.1, opacity: 0 }}
+            initial={false}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0 }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg')" }}
             role="img"
@@ -58,35 +58,35 @@ const HomeMobile: React.FC = () => {
           
           <div className="relative z-10 px-6 w-full max-w-[min(640px,100%)] mx-auto">
             <motion.div 
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              transition={{ duration: 0 }}
               className="inline-flex items-center gap-2 uppercase tracking-[0.1em] text-[clamp(0.55rem,2vw,0.85rem)] mb-4"
             >
               <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-black border border-primary/20">Palmer Upper Cervical</span>
               <span className="text-slate-900 dark:text-white font-bold">Los Angeles, CA</span>
             </motion.div>
             <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ duration: 0 }}
               className="text-[clamp(1.8rem,6vw,3.2rem)] min-[390px]:text-[clamp(2.4rem,4.5vw,3.8rem)] font-black tracking-tight text-slate-900 dark:text-white leading-[0.95] mb-6 uppercase"
             >
               {t('home.hero.titlePart1')}<br />
               <span className="text-primary">{t('home.hero.titlePart2')}</span>
             </motion.h1>
             <motion.p 
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
+              transition={{ duration: 0 }}
               className="text-[clamp(0.95rem,3.5vw,1.35rem)] text-slate-600 dark:text-slate-300 mb-10 max-w-md leading-relaxed font-medium"
             >
               {t('home.hero.description')}
             </motion.p>
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.8 }}
+              transition={{ duration: 0 }}
               className="flex flex-col gap-3"
             >
               <Link to="/contact" className="h-16 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-xl shadow-primary/20 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
@@ -150,10 +150,9 @@ const HomeMobile: React.FC = () => {
                   {t('home.meetDoctor.name')}
                 </h2>
                 <motion.div 
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 60 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
+                  initial={false}
+                  animate={{ width: 60 }}
+                  transition={{ duration: 0 }}
                   className="h-1.5 bg-primary mt-4 rounded-full"
                 ></motion.div>
               </div>
@@ -208,7 +207,6 @@ const HomeMobile: React.FC = () => {
               <motion.div 
                 key={idx}
                 variants={fadeInUp}
-                whileTap={{ scale: 0.98 }}
               >
                 <Link to={service.to} className="group relative flex flex-col bg-slate-900 rounded-[20px] overflow-hidden border border-slate-100/10 transition-all duration-500 !text-inherit h-32">
                   <article className="flex flex-col h-full w-full">
@@ -271,7 +269,6 @@ const HomeMobile: React.FC = () => {
                 <motion.div 
                   key={rev.id}
                   variants={fadeInUp}
-                  whileTap={{ scale: 0.98 }}
                 >
                   <button 
                     onClick={() => setSelectedReview({ ...rev, text: fullText })}
@@ -369,10 +366,9 @@ const HomeMobile: React.FC = () => {
                   {t('contact.title')}
                 </h2>
                 <motion.div 
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 60 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
+                  initial={false}
+                  animate={{ width: 60 }}
+                  transition={{ duration: 0 }}
                   className="h-1.5 bg-primary mt-6 rounded-full"
                 ></motion.div>
               </div>
@@ -456,10 +452,9 @@ const HomeMobile: React.FC = () => {
               </div>
             </motion.div>
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              initial={false}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0 }}
               className="h-[300px] w-full bg-slate-200 dark:bg-slate-800 rounded-[32px] overflow-hidden shadow-2xl relative border-4 border-white dark:border-slate-800"
             >
               <iframe 

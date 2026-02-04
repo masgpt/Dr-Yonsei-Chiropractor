@@ -20,6 +20,13 @@ export default function ClientLayout({
   const { isMobile } = useViewport(initialIsMobile);
 
   useEffect(() => {
+    // Disable animations on mobile to prevent flickering
+    if (isMobile) {
+      document.documentElement.classList.add('no-animations');
+    } else {
+      document.documentElement.classList.remove('no-animations');
+    }
+
     // Move focus to main content on route change for accessibility
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
@@ -32,7 +39,10 @@ export default function ClientLayout({
   }, [pathname, t]);
 
   return (
-    <MotionConfig reducedMotion={isMobile ? "always" : "user"}>
+    <MotionConfig 
+      reducedMotion={isMobile ? "always" : "user"}
+      transition={isMobile ? { duration: 0, delay: 0 } : undefined}
+    >
       {/* Route Announcement Region */}
       <div 
         className="sr-only" 

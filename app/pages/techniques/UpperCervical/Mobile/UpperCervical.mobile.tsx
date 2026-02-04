@@ -5,10 +5,10 @@ import SEO from '../../../../components/SEO';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  transition: { duration: 0 }
 };
 
 const UpperCervicalMobile: React.FC = () => {
@@ -24,9 +24,9 @@ const UpperCervicalMobile: React.FC = () => {
       {/* Hero Section */}
       <section className="relative w-full h-[120px] flex items-center justify-center overflow-hidden">
         <motion.div 
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0 }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/o-14.jpg')" }}
           role="img"
@@ -34,17 +34,17 @@ const UpperCervicalMobile: React.FC = () => {
         ></motion.div>
         <div className="relative z-10 w-full px-4 text-center">
           <motion.h1 
-            initial={{ opacity: 0, y: 10 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ duration: 0 }}
             className="text-2xl font-black text-white leading-tight drop-shadow-lg mb-1"
           >
             {t('techniques.upperCervical.title')}
           </motion.h1>
           <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ duration: 0 }}
             className="text-sm font-bold text-orange-300 drop-shadow-md"
           >
             {t('techniques.upperCervical.subtitle')}
@@ -90,10 +90,9 @@ const UpperCervicalMobile: React.FC = () => {
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0 }}
             className="mt-12 text-center"
           >
             <Link to="/contact" className="inline-flex items-center justify-center w-full h-12 px-8 rounded-lg bg-primary text-white font-bold transition-all shadow-lg">

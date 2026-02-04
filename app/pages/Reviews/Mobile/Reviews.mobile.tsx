@@ -5,20 +5,20 @@ import { useReviewsLogic } from '../Shared/reviews.hooks';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 1, y: 0 },
+  animate: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 }
+  transition: { duration: 0 }
 };
 
 const staggerContainer = {
   initial: {},
+  animate: {},
   whileInView: {
     transition: {
-      staggerChildren: 0.05
+      staggerChildren: 0
     }
-  },
-  viewport: { once: true }
+  }
 };
 
 const ReviewsMobile: React.FC = () => {
@@ -29,9 +29,9 @@ const ReviewsMobile: React.FC = () => {
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-8 px-4 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0 }}
           className="max-w-[1280px] mx-auto text-center flex flex-col gap-3"
         >
           <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 w-fit mx-auto">
