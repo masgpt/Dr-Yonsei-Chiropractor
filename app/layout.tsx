@@ -7,6 +7,8 @@ import SkipToContent from './components/SkipToContent';
 import ClientLayout from './client-layout';
 import PageTransition from './components/PageTransition';
 import I18nProvider from './components/I18nProvider';
+import { ConsentProvider } from './components/consent/ConsentContext';
+import ConsentBanner from './components/consent/ConsentBanner';
 import { getInitialIsMobileFromHeaders } from './lib/get-initial-is-mobile';
 
 export const metadata: Metadata = {
@@ -104,41 +106,75 @@ export default async function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            const saved = localStorage.getItem('theme') || 'system';
-            const root = document.documentElement;
-            if (saved === 'dark' || (saved === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              root.classList.add('dark');
-            } else {
-              root.classList.add('light');
-            }
-          })();
-        ` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const root = document.documentElement;
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const cookieName = 'consent_preferences';
+                const getCookie = (name) => {
+                  const value = \`; \${document.cookie}\`;
+                  const parts = value.split('; ' + name + '=');
+                  if (parts.length === 2) return parts.pop().split(';').shift();
+                  return null;
+                };
+                let theme = 'system';
+                let hasPreference = false;
+                const stored = getCookie(cookieName);
+                if (stored) {
+                  try {
+                    const parsed = JSON.parse(decodeURIComponent(stored));
+                    if (parsed?.categories?.preferences) {
+                      hasPreference = true;
+                      if (typeof parsed.themePreference === 'string') {
+                        theme = parsed.themePreference;
+                      }
+                    }
+                  } catch (error) {
+                    console.error('Unable to parse consent cookie', error);
+                  }
+                }
+                const applyTheme = (target) => {
+                  root.classList.remove('light', 'dark');
+                  root.classList.add(target);
+                };
+                if (hasPreference && (theme === 'dark' || theme === 'light')) {
+                  applyTheme(theme);
+                } else {
+                  applyTheme(prefersDark ? 'dark' : 'light');
+                }
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary/20">
-        <I18nProvider lng={lng}>
-          <div className="relative flex flex-col min-h-screen overflow-x-hidden">
-            <ClientLayout initialIsMobile={initialIsMobile}>
-              <SkipToContent />
-              <Navbar />
-              <main 
-                id="main-content" 
-                tabIndex={-1} 
-                className="flex-grow w-full flex flex-col outline-none pt-[68px] sm:pt-[96px] lg:pt-[96px]"
-              >
-                <PageTransition initialIsMobile={initialIsMobile}>
-                  {children}
-                </PageTransition>
-              </main>
-              <Footer />
-            </ClientLayout>
-          </div>
-        </I18nProvider>
+        <ConsentProvider>
+          <I18nProvider lng={lng}>
+            <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+              <ClientLayout initialIsMobile={initialIsMobile}>
+                <SkipToContent />
+                <Navbar />
+                <main 
+                  id="main-content" 
+                  tabIndex={-1} 
+                  className="flex-grow w-full flex flex-col outline-none pt-[68px] sm:pt-[96px] lg:pt-[96px]"
+                >
+                  <PageTransition initialIsMobile={initialIsMobile}>
+                    {children}
+                  </PageTransition>
+                </main>
+                <Footer />
+              </ClientLayout>
+              <ConsentBanner />
+            </div>
+          </I18nProvider>
+        </ConsentProvider>
       </body>
     </html>
   );

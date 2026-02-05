@@ -146,7 +146,7 @@ const HomeMobile: React.FC = () => {
             <div className="space-y-6">
               <div>
                 <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-3">The Expert Behind Your Care</span>
-                <h2 id="meet-doctor-heading" className="text-4xl font-black text-slate-900 dark:text-white leading-tight uppercase">
+                <h2 id="meet-doctor-heading" className="text-[clamp(1.75rem,8vw,2.5rem)] font-black text-slate-900 dark:text-white leading-[1.1] uppercase">
                   {t('home.meetDoctor.name')}
                 </h2>
                 <motion.div 

@@ -243,11 +243,12 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-8">
-            <nav className="flex items-center gap-6" aria-label="Legal">
-              <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>
-              <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.privacyPolicy')}</Link>
-              <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.termsOfService')}</Link>
-            </nav>
+              <nav className="flex items-center gap-6" aria-label="Legal">
+                <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>
+                <Link to="/privacy-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.privacyPolicy')}</Link>
+                <Link to="/cookie-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.cookiePolicy')}</Link>
+                <Link to="/terms-of-service" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.termsOfService')}</Link>
+              </nav>
             <div className="hidden sm:block w-px h-4 bg-slate-100 dark:bg-slate-800"></div>
             <ThemeToggle className="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" />
           </div>

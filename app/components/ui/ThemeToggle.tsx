@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
+import { useConsent } from '../consent/ConsentContext';
 
 interface ThemeToggleProps {
   className?: string;
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = "" }) => {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme') as 'light' | 'dark' | 'system' | null;
-    if (saved) {
-      setTheme(saved);
-    }
-  }, []);
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
+  const { state, setThemePreference } = useConsent();
+  const theme = state.themePreference;
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const root = window.document.documentElement;
-    
+
     const applyTheme = (targetTheme: 'light' | 'dark') => {
       root.classList.remove('light', 'dark');
       root.classList.add(targetTheme);
@@ -26,26 +23,21 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = "" }) => {
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       applyTheme(systemTheme);
-
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = (e: MediaQueryListEvent) => {
-        applyTheme(e.matches ? 'dark' : 'light');
+      const handleChange = (event: MediaQueryListEvent) => {
+        applyTheme(event.matches ? 'dark' : 'light');
       };
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
-    } else {
-      applyTheme(theme);
     }
 
-    localStorage.setItem('theme', theme);
+    applyTheme(theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => {
-      if (prev === 'system') return 'dark';
-      if (prev === 'dark') return 'light';
-      return 'system';
-    });
+    const nextTheme: typeof theme =
+      theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system';
+    setThemePreference(nextTheme);
   };
 
   return (
