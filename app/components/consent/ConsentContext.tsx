@@ -151,6 +151,9 @@ export const ConsentProvider: React.FC<{ children: React.ReactNode }> = ({
     setIsBannerOpen(false);
   };
 
+  const openBanner = () => setIsBannerOpen(true);
+  const closeBanner = () => setIsBannerOpen(false);
+
   const setThemePreference = (nextTheme: ThemePreference) => {
     const nextState = {
       ...state,
@@ -189,8 +192,11 @@ export const ConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       rejectAll,
       savePreferences,
       setThemePreference,
+      isBannerOpen,
+      openBanner,
+      closeBanner,
     }),
-    [state, isReady]
+    [state, isReady, isBannerOpen]
   );
 
   return (
