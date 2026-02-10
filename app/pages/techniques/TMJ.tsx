@@ -2,9 +2,10 @@
 
 import React, { useEffect } from 'react';
 import { useViewport } from '../../hooks/useViewport';
+import { useTranslation } from 'react-i18next';
 import TMJDesktop from './TMJ/Desktop/TMJ.desktop';
 import TMJMobile from './TMJ/Mobile/TMJ.mobile';
-import { useTranslation } from 'react-i18next';
+import MedicalDisclaimer from '../../components/MedicalDisclaimer';
 
 const TMJ: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initialIsMobile }) => {
   const { isMobile } = useViewport(initialIsMobile);
@@ -16,7 +17,14 @@ const TMJ: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initi
     }
   }, [lng, i18n]);
 
-  return isMobile ? <TMJMobile /> : <TMJDesktop />;
+  return (
+    <div className="flex flex-col">
+      {isMobile ? <TMJMobile /> : <TMJDesktop />}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-8 pb-12 w-full">
+        <MedicalDisclaimer />
+      </div>
+    </div>
+  );
 };
 
 export default TMJ;

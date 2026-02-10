@@ -42,6 +42,13 @@ const DEFAULT_STATE: ConsentState = {
   updatedAt: Date.now(),
 };
 
+const getGPCOptOut = () => {
+  if (typeof window !== 'undefined' && (window.navigator as any).globalPrivacyControl === true) {
+    return true;
+  }
+  return false;
+};
+
 const persistConsentCookie = (nextState: ConsentState) => {
   if (typeof document === 'undefined') return;
   if (!nextState.decision) return;
@@ -69,6 +76,7 @@ interface ConsentContextValue {
   isBannerOpen: boolean;
   openBanner: () => void;
   closeBanner: () => void;
+  isGPCOptedOut: boolean;
 }
 
 const ConsentContext = createContext<ConsentContextValue | null>(null);
@@ -79,15 +87,44 @@ export const ConsentProvider: React.FC<{ children: React.ReactNode }> = ({
   const [state, setState] = useState<ConsentState>(DEFAULT_STATE);
   const [isReady, setIsReady] = useState(false);
   const [isBannerOpen, setIsBannerOpen] = useState(true);
+  const [isGPCOptedOut, setIsGPCOptedOut] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    
+    const gpcSignal = getGPCOptOut();
+    setIsGPCOptedOut(gpcSignal);
+
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored) as ConsentState;
+        
+        // If GPC is on and they haven't made an explicit decision yet, or their decision was 'accepted'
+        // we should respect the GPC signal for marketing/analytics.
+        if (gpcSignal && (parsed.decision === null || parsed.decision === 'accepted')) {
+          parsed.categories.marketing = false;
+          parsed.categories.analytics = false;
+          // We don't overwrite the decision to 'rejected' to allow them to re-opt-in if they want,
+          // but we enforce the values.
+        }
+
         setState(parsed);
         persistConsentCookie(parsed);
+      } else if (gpcSignal) {
+        // If no stored state but GPC is present, ensure defaults are strictly false
+        // (they already are in DEFAULT_STATE, but we set decision to 'rejected' to honor GPC immediately)
+        const gpcState: ConsentState = {
+          ...DEFAULT_STATE,
+          decision: 'rejected',
+          categories: {
+            analytics: false,
+            marketing: false,
+            preferences: false,
+          }
+        };
+        setState(gpcState);
+        persistConsentCookie(gpcState);
       }
     } catch (error) {
       console.error('Unable to read consent preferences', error);
@@ -195,8 +232,9 @@ export const ConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       isBannerOpen,
       openBanner,
       closeBanner,
+      isGPCOptedOut,
     }),
-    [state, isReady, isBannerOpen]
+    [state, isReady, isBannerOpen, isGPCOptedOut]
   );
 
   return (

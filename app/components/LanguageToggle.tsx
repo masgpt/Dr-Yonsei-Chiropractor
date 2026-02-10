@@ -10,7 +10,7 @@ const LanguageToggle: React.FC = () => {
   const router = useRouter();
 
   const languages = [
-    { code: 'en', label: 'ENGLISH' },
+    { code: 'en', label: 'EN' },
     { code: 'ko', label: '한국어' },
   ];
 
@@ -34,7 +34,7 @@ const LanguageToggle: React.FC = () => {
           key={lang.code}
           onClick={() => handleLanguageChange(lang.code)}
           className={`
-            px-2.5 py-1 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 min-w-[50px] sm:min-w-[60px]
+            px-2.5 py-1 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 min-w-[40px]
             ${currentLanguage === lang.code 
               ? 'bg-primary text-white shadow-md shadow-primary/20' 
               : 'text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white dark:hover:bg-slate-700'}

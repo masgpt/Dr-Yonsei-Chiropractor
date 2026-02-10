@@ -95,7 +95,7 @@ const NavbarDesktop: React.FC = () => {
                 aria-haspopup="true"
                 aria-expanded={isAboutOpen}
                 className={`flex items-center gap-1 text-sm font-bold tracking-tight transition-all duration-200 px-3 py-1.5 rounded-lg ${
-                  isActive(`/${lng}/about`) || isActive(`/${lng}/message`)
+                  isActive(`/${lng}/about`) || isActive(`/${lng}/message`) || isActive(`/${lng}/reviews`)
                     ? 'text-primary bg-primary/5' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
@@ -175,8 +175,6 @@ const NavbarDesktop: React.FC = () => {
                 )}
               </AnimatePresence>
             </div>
-
-            <Link to={`/${lng}/reviews`} className={navLinkClass(`/${lng}/reviews`)}>{t('nav.reviews')}</Link>
 
             {/* Contact Dropdown */}
             <div className="relative" ref={contactRef}>

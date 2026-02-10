@@ -8,7 +8,7 @@ import ClientLayout from './client-layout';
 import PageTransition from './components/PageTransition';
 import I18nProvider from './components/I18nProvider';
 import { ConsentProvider } from './components/consent/ConsentContext';
-import ConsentBanner from './components/consent/ConsentBanner';
+import { ConditionalCookieConsentBanner } from './components/privacy/ConditionalCookieConsentBanner';
 import { getInitialIsMobileFromHeaders } from './lib/get-initial-is-mobile';
 
 export const metadata: Metadata = {
@@ -171,7 +171,7 @@ export default async function RootLayout({
                 </main>
                 <Footer />
               </ClientLayout>
-              <ConsentBanner />
+              <ConditionalCookieConsentBanner />
             </div>
           </I18nProvider>
         </ConsentProvider>

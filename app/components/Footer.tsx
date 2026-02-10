@@ -33,9 +33,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-white dark:bg-[#0a0f14] border-t border-slate-100 dark:border-slate-800 pt-12 pb-10 w-full transition-colors duration-300 overflow-hidden" aria-label="Site footer">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
-        
+
         {/* Mobile Version: Better Navigation & Buttons */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           whileInView="whileInView"
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
           <motion.div variants={fadeInUp} className="w-full space-y-6">
             <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">{t('footer.contactInfo')}</h4>
             <div className="flex flex-col gap-3">
-              <Link 
+              <Link
                 href="https://www.google.com/maps/search/?api=1&query=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
                 external
                 className={`${mobileButtonClass} !justify-start px-5 py-5`}
@@ -101,14 +101,14 @@ const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-primary text-[20px] mr-4 shrink-0" aria-hidden="true">location_on</span>
                 <span className="text-left leading-snug">{t('footer.address')}</span>
               </Link>
-              <Link 
+              <Link
                 href="tel:2133815500"
                 className={`${mobileButtonClass} !justify-start px-5 py-5`}
               >
                 <span className="material-symbols-outlined text-primary text-[20px] mr-4 shrink-0" aria-hidden="true">call</span>
                 (213) 381-5500
               </Link>
-              <Link 
+              <Link
                 href="mailto:yonseichiropractic@gmail.com"
                 className={`${mobileButtonClass} !justify-start px-5 py-5 lowercase`}
               >
@@ -116,8 +116,8 @@ const Footer: React.FC = () => {
                 {t('footer.email')}
               </Link>
             </div>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center w-full h-14 rounded-2xl bg-primary hover:bg-orange-600 text-white text-sm font-black uppercase tracking-widest transition-all shadow-lg shadow-primary/20 active:scale-[0.98] mt-4"
             >
               <span className="mr-2 material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
         </motion.div>
 
         {/* Desktop Version: Refined Grid */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="initial"
           whileInView="whileInView"
@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
           <motion.div variants={fadeInUp} className="lg:col-span-3">
             <h4 className="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">{t('footer.contactInfo')}</h4>
             <div className="space-y-5">
-              <Link 
+              <Link
                 href="https://www.google.com/maps/search/?api=1&query=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
                 external
                 className="flex gap-3 group text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
                 </p>
               </Link>
               <div className="flex flex-col gap-3">
-                <Link 
+                <Link
                   href="tel:2133815500"
                   className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium"
                   aria-label="Call us at (213) 381-5500"
@@ -208,7 +208,7 @@ const Footer: React.FC = () => {
                   <span className="material-symbols-outlined text-primary text-[20px]" aria-hidden="true">call</span>
                   (213) 381-5500
                 </Link>
-                <Link 
+                <Link
                   href="mailto:yonseichiropractic@gmail.com"
                   className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium"
                   aria-label="Email us at yonseichiropractic@gmail.com"
@@ -217,8 +217,8 @@ const Footer: React.FC = () => {
                   {t('footer.email')}
                 </Link>
               </div>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center w-full h-11 px-5 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 mt-2 active:translate-y-0"
               >
                 <span className="mr-2 material-symbols-outlined text-[18px]" aria-hidden="true">calendar_month</span>
@@ -229,7 +229,7 @@ const Footer: React.FC = () => {
         </motion.div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -243,12 +243,14 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-8">
-              <nav className="flex items-center gap-6" aria-label="Legal">
-                <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>
-                <Link to="/privacy-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.privacyPolicy')}</Link>
-                <Link to="/cookie-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.cookiePolicy')}</Link>
-                <Link to="/terms-of-service" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.termsOfService')}</Link>
-              </nav>
+            <nav className="flex items-center gap-6" aria-label="Legal">
+              <Link to="/accessibility" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.accessibility')}</Link>
+              <Link to="/disclaimer" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.disclaimer')}</Link>
+              <Link to="/do-not-sell" className="text-primary font-bold hover:underline transition-colors">{t('footer.doNotSell')}</Link>
+              <Link to="/privacy-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.privacyPolicy')}</Link>
+              <Link to="/cookie-policy" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.cookiePolicy')}</Link>
+              <Link to="/terms-of-service" className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors">{t('footer.termsOfService')}</Link>
+            </nav>
             <div className="hidden sm:block w-px h-4 bg-slate-100 dark:bg-slate-800"></div>
             <ThemeToggle className="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" />
           </div>

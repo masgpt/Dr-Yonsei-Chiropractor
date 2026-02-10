@@ -6,6 +6,7 @@ import ReviewsDesktop from './Reviews/Desktop/Reviews.desktop';
 import ReviewsMobile from './Reviews/Mobile/Reviews.mobile';
 import { reviewMetadata } from './Reviews/Shared/reviews.constants';
 import { useTranslation } from 'react-i18next';
+import MedicalDisclaimer from '../components/MedicalDisclaimer';
 
 const Reviews: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, initialIsMobile }) => {
   const { isMobile } = useViewport(initialIsMobile);
@@ -53,13 +54,16 @@ const Reviews: React.FC<{ lng?: string; initialIsMobile?: boolean }> = ({ lng, i
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {isMobile ? <ReviewsMobile /> : <ReviewsDesktop />}
-    </>
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-8 pb-16 w-full">
+        <MedicalDisclaimer />
+      </div>
+    </div>
   );
 };
 

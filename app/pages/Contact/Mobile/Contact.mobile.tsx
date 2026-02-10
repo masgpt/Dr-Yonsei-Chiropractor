@@ -15,18 +15,18 @@ const fadeInUp = {
 
 const ContactMobile: React.FC = () => {
   const { t } = useTranslation();
-  const { isSubmitted, isLoading, handleSubmit, resetForm } = useContactForm();
+  const { isSubmitted, isLoading, agreed, setAgreed, handleSubmit, resetForm } = useContactForm();
 
   return (
-    <div className="flex-grow w-full px-4 py-8 overflow-hidden">
+    <div className="flex-grow w-full px-4 py-8 overflow-hidden transition-colors duration-300">
       {/* Page Heading */}
-      <motion.div 
+      <motion.div
         initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0 }}
         className="flex flex-col gap-3 mb-8 text-center"
       >
-        <h1 className="text-text-main dark:text-white text-3xl font-black leading-tight tracking-tight">{t('contactPage.hero.title')}</h1>
+        <h1 className="text-text-main dark:text-white text-3xl font-black leading-tight tracking-tight uppercase">{t('contactPage.hero.title')}</h1>
         <p className="text-text-secondary dark:text-slate-400 text-base font-normal leading-relaxed">
           {t('contactPage.hero.description')}
         </p>
@@ -34,7 +34,7 @@ const ContactMobile: React.FC = () => {
 
       <div className="flex flex-col gap-8">
         {/* Contact Form First on Mobile */}
-        <motion.section 
+        <motion.section
           variants={fadeInUp}
           initial="initial"
           whileInView="whileInView"
@@ -43,12 +43,12 @@ const ContactMobile: React.FC = () => {
           aria-labelledby="form-title"
         >
           <div className="px-5 py-5 border-b border-slate-100 dark:border-slate-800">
-            <h2 id="form-title" className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">{t('contactPage.form.title')}</h2>
+            <h2 id="form-title" className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight uppercase">{t('contactPage.form.title')}</h2>
             <p className="text-text-secondary dark:text-slate-400 text-xs mt-1">{t('contactPage.form.description')}</p>
           </div>
           <div className="p-5">
             {isSubmitted ? (
-              <div 
+              <div
                 className="flex flex-col items-center justify-center min-h-[250px] text-center gap-4 animate-in fade-in duration-500"
                 role="status"
               >
@@ -59,7 +59,7 @@ const ContactMobile: React.FC = () => {
                 <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xs">
                   {t('contactPage.form.success.message')}
                 </p>
-                <Button 
+                <Button
                   variant="ghost"
                   onClick={resetForm}
                   className="mt-4"
@@ -69,46 +69,84 @@ const ContactMobile: React.FC = () => {
               </div>
             ) : (
               <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-                <FormField 
-                  label={t('contactPage.form.labels.name')} 
-                  name="name" 
+                <FormField
+                  label={t('contactPage.form.labels.name')}
+                  name="name"
                   required
                 >
-                  <input 
-                    className="w-full h-11 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
-                    placeholder={t('contactPage.form.placeholders.name')} 
-                    type="text" 
+                  <input
+                    className="w-full h-11 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400"
+                    placeholder={t('contactPage.form.placeholders.name')}
+                    type="text"
                   />
                 </FormField>
-                <FormField 
-                  label={t('contactPage.form.labels.phone')} 
-                  name="phone" 
+                <FormField
+                  label={t('contactPage.form.labels.phone')}
+                  name="phone"
                   required
                 >
-                  <input 
-                    className="w-full h-11 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" 
-                    placeholder={t('contactPage.form.placeholders.phone')} 
-                    type="tel" 
+                  <input
+                    className="w-full h-11 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400"
+                    placeholder={t('contactPage.form.placeholders.phone')}
+                    type="tel"
                   />
                 </FormField>
-                <FormField 
-                  label={t('contactPage.form.labels.message')} 
-                  name="message" 
+                <FormField
+                  label={t('contactPage.form.labels.message')}
+                  name="message"
                   required
                 >
-                  <textarea 
-                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-slate-400" 
-                    placeholder={t('contactPage.form.placeholders.message')} 
+                  <textarea
+                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-sm text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-slate-400"
+                    placeholder={t('contactPage.form.placeholders.message')}
                     rows={4}
                   ></textarea>
                 </FormField>
-                <Button 
-                  type="submit" 
+
+                {/* Terms Acceptance */}
+                <div className="flex flex-col gap-4">
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="relative flex items-center mt-0.5">
+                      <input
+                        type="checkbox"
+                        checked={agreed}
+                        onChange={(e) => setAgreed(e.target.checked)}
+                        className="peer appearance-none size-5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 checked:bg-primary checked:border-primary transition-all cursor-pointer"
+                      />
+                      <span className="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-[14px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+                        check
+                      </span>
+                    </div>
+                    <span className="text-[10px] leading-relaxed text-slate-500 dark:text-slate-400 select-none">
+                      {t('contactPage.form.disclaimer.acceptance').split(/\[|\]/).map((part, i) => {
+                        if (part === t('footer.termsOfService')) {
+                          return <Link key={i} to="/terms-of-service" className="text-primary hover:underline font-bold">{part}</Link>;
+                        }
+                        if (part === t('footer.privacyPolicy')) {
+                          return <Link key={i} to="/privacy-policy" className="text-primary hover:underline font-bold">{part}</Link>;
+                        }
+                        return part;
+                      })}
+                    </span>
+                  </label>
+                </div>
+
+                <Button
+                  type="submit"
                   isLoading={isLoading}
-                  className="w-full shadow-md h-11"
+                  disabled={!agreed}
+                  className={`w-full shadow-md h-11 transition-all duration-300 ${!agreed ? 'opacity-50 grayscale' : ''}`}
                 >
                   {t('contactPage.form.submit')}
                 </Button>
+                <div className="mt-4 space-y-3">
+                  <p className="text-[10px] leading-relaxed text-slate-500 dark:text-slate-500 italic">
+                    {t('contactPage.form.disclaimer.relationship')}
+                  </p>
+                  <p className="text-[9px] leading-relaxed text-slate-400 dark:text-slate-600">
+                    {t('contactPage.form.disclaimer.privacy')}
+                  </p>
+                </div>
               </form>
             )}
           </div>
@@ -117,7 +155,7 @@ const ContactMobile: React.FC = () => {
         {/* Location & Details Second */}
         <div className="flex flex-col gap-6 order-2">
           {/* Info Card */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
@@ -125,9 +163,9 @@ const ContactMobile: React.FC = () => {
             className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
           >
             <div className="px-5 py-4 border-b border-slate-100 dark:border-slate-800">
-              <h2 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">{t('contactPage.details.title')}</h2>
+              <h2 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight uppercase">{t('contactPage.details.title')}</h2>
             </div>
-            <Link 
+            <Link
               href="https://www.google.com/maps/search/?api=1&query=3200+Wilshire+Blvd+Suite+302+Los+Angeles+CA+90010"
               external
               className="flex gap-4 px-5 py-4 border-b border-slate-100 dark:border-slate-800 transition-colors"
@@ -139,7 +177,7 @@ const ContactMobile: React.FC = () => {
                 <p className="text-text-main dark:text-white text-sm font-bold leading-normal">{t('footer.address')}</p>
               </div>
             </Link>
-            <Link 
+            <Link
               href="tel:2133815500"
               className="flex gap-4 px-5 py-4 border-b border-slate-100 dark:border-slate-800 transition-colors"
             >
@@ -151,7 +189,7 @@ const ContactMobile: React.FC = () => {
                 <p className="text-text-secondary dark:text-slate-400 text-xs font-normal leading-normal">{t('contactPage.details.phone.label')}</p>
               </div>
             </Link>
-            <Link 
+            <Link
               href="mailto:yonseichiropractic@gmail.com"
               className="flex gap-4 px-5 py-4 transition-colors"
             >
@@ -166,7 +204,7 @@ const ContactMobile: React.FC = () => {
           </motion.div>
 
           {/* Hours Card */}
-          <motion.section 
+          <motion.section
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
@@ -175,7 +213,7 @@ const ContactMobile: React.FC = () => {
             aria-labelledby="hours-title"
           >
             <div className="px-5 py-4 border-b border-slate-100 dark:border-slate-800">
-              <h2 id="hours-title" className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">{t('contactPage.hours.title')}</h2>
+              <h2 id="hours-title" className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight uppercase">{t('contactPage.hours.title')}</h2>
             </div>
             <div className="px-5 py-2">
               <div className="flex flex-col">
@@ -195,14 +233,14 @@ const ContactMobile: React.FC = () => {
           </motion.section>
 
           {/* Map Last */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
             className="w-full h-[250px] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm relative"
           >
-            <iframe 
+            <iframe
               title="Map showing the location of Yonsei Chiropractic in Los Angeles"
               className="w-full h-full border-0"
               src="https://maps.google.com/maps?q=3200%20Wilshire%20Blvd%20%23302%2C%20Los%20Angeles%2C%20CA%2090010&t=&z=15&ie=UTF8&iwloc=&output=embed"

@@ -1,13 +1,20 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import ContactBanner from '../components/ContactBanner';
 import { motion } from 'framer-motion';
+import MedicalDisclaimer from '../components/MedicalDisclaimer';
 
 const Insights: React.FC<{ lng: string }> = ({ lng }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lng && i18n.language !== lng) {
+      i18n.changeLanguage(lng);
+    }
+  }, [lng, i18n]);
 
   const keywords = [
     "Korean chiropractor Los Angeles",
@@ -20,15 +27,15 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
 
   return (
     <div className="pt-20">
-      <SEO 
+      <SEO
         title={t('seo.insights.title')}
         description={t('seo.insights.description')}
       />
-      
+
       {/* Hero Section */}
       <section className="relative py-20 bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto"
@@ -37,8 +44,8 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
               {lng === 'ko' ? '커뮤니티 가이드' : 'Community Insights'}
             </span>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-              {lng === 'ko' 
-                ? '로스앤젤레스 한인 사회를 위한 전문 카이로프랙틱 케어' 
+              {lng === 'ko'
+                ? '로스앤젤레스 한인 사회를 위한 전문 카이로프랙틱 케어'
                 : 'Expert Chiropractic Care for the Los Angeles Community'}
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
@@ -106,6 +113,9 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="mt-12">
+            <MedicalDisclaimer />
           </div>
         </div>
       </section>

@@ -128,17 +128,6 @@ const NavbarMobile: React.FC = () => {
                               </div>
                             </div>
             
-                            <Link 
-                              to={`/${lng}/reviews`} 
-                              onClick={toggleMenu} 
-                              className={`flex items-center w-full px-5 py-4 rounded-2xl border transition-all active:scale-[0.98] ${
-                                isActive(`/${lng}/reviews`) 
-                                  ? 'bg-primary/10 border-primary text-primary shadow-sm shadow-primary/10' 
-                                  : 'bg-slate-50/50 dark:bg-slate-800/30 border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white hover:border-primary/30'
-                              }`}
-                            >
-                              <span className="text-lg font-black tracking-tight">{t('nav.reviews')}</span>
-                            </Link>              
               <div className="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
                 <div className="flex flex-col gap-3">
                   <Link 

@@ -56,7 +56,7 @@
     "meetDoctor": {
       "badge": "Meet The Doctor",
       "name": "Dr. Hyeon Joo Park,\u00A0D.C.,\u00A0M.S.",
-      "quote": "We’re happy that you have chosen to be part of those who are not afraid to try a new method in regaining lost health. My mission is to use my professional expertise and knowledge to help patients receive exceptional care through the Palmer upper cervical method."  ,
+      "quote": "We’re happy that you have chosen to be part of those who are not afraid to try a new method in regaining lost health. My mission is to use my professional expertise and knowledge to help patients receive exceptional care through the Palmer upper cervical method.",
       "readBio": "Read Full Bio"
     },
     "services": {
@@ -94,8 +94,32 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
+    "doNotSell": "Do Not Sell or Share My Personal Information",
     "accessibility": "Accessibility",
+    "disclaimer": "Disclaimer",
     "emailLabel": "Email"
+  },
+  "doNotSellPage": {
+    "title": "Do Not Sell or Share My Personal Information",
+    "updated": "Last Updated: February 9, 2026",
+    "intro": "The California Privacy Rights Act (CPRA) gives California residents the right to opt-out of the 'sale' or 'sharing' of their personal information.",
+    "definition": {
+      "title": "What is 'Sale' or 'Sharing'?",
+      "body": "Under CPRA, 'sale' is broadly defined as the disclosure of personal information to a third party for monetary or other valuable consideration. 'Sharing' refers to the disclosure of personal information for cross-context behavioral advertising. While Yonsei Chiropractic does not sell your information for money, some of our use of common website technologies (like Google Maps or Fonts) may be considered 'sharing' under these broad definitions."
+    },
+    "yourRight": {
+      "title": "Your Right to Opt-Out",
+      "body": "You have the right to direct us not to sell or share your personal information. If you exercise this right, we will stop sharing your data with third parties for non-essential purposes. We also honor Global Privacy Control (GPC) signals sent by your browser automatically."
+    },
+    "control": {
+      "title": "Manage Your Preferences",
+      "status": "Current Status:",
+      "optedOut": "Opted Out (Sale/Sharing Disabled)",
+      "optedIn": "Opted In (Default or Custom Choice)",
+      "gpcActive": "GPC Signal Detected: Your preference is automatically set to Opt-Out.",
+      "buttonOptOut": "Opt-Out of Sale or Sharing",
+      "buttonOptIn": "Allow Sharing for Better Experience"
+    }
   },
   "common": {
     "location": "Los Angeles, CA",
@@ -359,7 +383,7 @@
       "items": {
         "upperCervical": {
           "title": "Upper Cervical Specific",
-          "desc": "The \"Hole-In-One\" (H.I.O) method focusing on the atlas and axis to restore full body health."
+          "desc": "The \"Hole-In-One\" (H.I-O) method focusing on the atlas and axis to restore full body health."
         },
         "tmj": {
           "title": "TMJ/TMD Disorders",
@@ -439,6 +463,11 @@
         "title": "Request Sent!",
         "message": "Thank you for contacting us. We will get back to you shortly to schedule your appointment.",
         "button": "Send another request"
+      },
+      "disclaimer": {
+        "acceptance": "I have read and agree to the [Terms of Service] and [Privacy Policy].",
+        "relationship": "Submitting this form does not create a doctor-patient relationship. Confidential or time-sensitive information should not be sent through this form.",
+        "privacy": "Your information will be used solely to respond to your inquiry in accordance with our Privacy Policy."
       }
     }
   },
@@ -491,77 +520,170 @@
       "title": "Formal Approval of this Accessibility Statement",
       "body": "This Accessibility Statement is approved by: Yonsei Chiropractic",
       "date": "Date: January 16, 2026"
-  }
+    }
   },
   "consent": {
     "banner": {
-      "title": "This site uses cookies for analytics, marketing, and preferences.",
+      "title": "This site uses cookies for analytics and preferences.",
       "body": "We only read or write non-essential storage after you tell us how you want to be tracked.",
       "accept": "Accept all",
       "reject": "Reject all",
       "manage": "Customize settings",
       "analytics": "Analytics cookies",
-      "marketing": "Marketing cookies",
       "preferences": "Preference cookies",
       "save": "Save preferences"
     }
   },
+  "termsPage": {
+    "title": "Terms of Service",
+    "updated": "Last Updated: February 9, 2026",
+    "intro": "Welcome to Yonsei Chiropractic. By accessing or using our website, you agree to be bound by these Terms of Service. If you do not agree, please do not use our site.",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "body": "These Terms of Service (the \"Terms\") constitute a legally binding agreement between you and Yonsei Chiropractic. Your use of this website signifies your acceptance of these Terms, including our Privacy Policy and Disclaimer."
+      },
+      "eligibility": {
+        "title": "2. Use and Eligibility",
+        "body": "You must be at least 18 years old to use this site or have the consent of a legal guardian. You agree to use the site only for lawful purposes related to seeking information about chiropractic services."
+      },
+      "services": {
+        "title": "3. Scope of Services and Fees",
+        "body": "The information provided on this website is for educational purposes only. Booking an appointment through the site does not guarantee service; all clinical services are subject to an in-person evaluation. Professional fees for services are due at the time of treatment unless otherwise agreed. We reserve the right to change our fees or service offerings at any time without prior notice."
+      },
+      "ip": {
+        "title": "4. Intellectual Property",
+        "body": "All content on this site—including text, graphics, logos, and descriptions of the Palmer Upper Cervical technique—is the property of Yonsei Chiropractic and is protected by copyright laws. You may not reproduce, distribute, or create derivative works from this content without our express written permission."
+      },
+      "conduct": {
+        "title": "5. Prohibited Conduct",
+        "body": "You agree not to: (a) use any automated tools to scrape or monitor the site; (b) attempt to interfere with the site's security; or (c) use the contact forms to send unsolicited marketing, spam, or sensitive medical information that is not intended for the scheduling of a consultation."
+      },
+      "thirdParty": {
+        "title": "6. Third-Party Links and Services",
+        "body": "Our site contains links to third-party services (e.g., Google Maps, Radio Korea). We are not responsible for the content, privacy policies, or practices of any third-party sites. Your use of third-party services is at your own risk and subject to their respective terms."
+      },
+      "liability": {
+        "title": "7. Limitation of Liability",
+        "body": "To the maximum extent permitted by law, Yonsei Chiropractic and Dr. Hyeon Joo Park shall not be liable for any indirect, incidental, or consequential damages arising from your use of the website or reliance on its content. The site is provided on an \"as-is\" and \"as-available\" basis."
+      },
+      "indemnity": {
+        "title": "8. Indemnification",
+        "body": "You agree to indemnify, defend, and hold harmless Yonsei Chiropractic and its staff from any claims, damages, or expenses resulting from your violation of these Terms or your misuse of the website."
+      },
+      "dispute": {
+        "title": "9. Governing Law and Disputes",
+        "body": "These Terms are governed by the laws of the State of California, USA. Any disputes arising from these Terms or the use of the website shall be resolved exclusively in the state or federal courts located in Los Angeles County, California. You waive any right to a jury trial or to participate in a class action."
+      },
+      "changes": {
+        "title": "10. Modifications",
+        "body": "We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the site after changes are posted constitutes your binding acceptance of the updated Terms."
+      },
+      "communications": {
+        "title": "11. Electronic Communications",
+        "body": "By using our contact forms, you consent to receive electronic communications from us (via email or phone) regarding your inquiry. You acknowledge that communication via the internet may not be completely secure, and you should avoid sending sensitive personal health information through website forms."
+      },
+      "contact": {
+        "title": "12. Contact Information",
+        "body": "If you have questions about these Terms, please contact us at (213) 381-5500 or email yonseichiropractic@gmail.com."
+      }
+    }
+  },
+  "disclaimerPage": {
+    "title": "Professional Services & Medical Disclaimer",
+    "intro": "The information provided by Yonsei Chiropractic on this website is for general informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.",
+    "sections": {
+      "noMedicalAdvice": {
+        "title": "No Medical Advice",
+        "body": "All content, including text, graphics, images, and information available through this website are for general informational purposes only. Do not disregard professional medical advice or delay seeking it because of something you have read on this website. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or treatment."
+      },
+      "noRelationship": {
+        "title": "No Doctor-Patient Relationship",
+        "body": "Use of this website or communication via the contact form does not establish a doctor-patient relationship with Dr. Hyeon Joo Park or Yonsei Chiropractic. A professional relationship is only established after an in-person consultation and formal engagement."
+      },
+      "outcomes": {
+        "title": "Results & Testimonials",
+        "body": "Patient stories and testimonials represent individual experiences and results. We do not guarantee, warranty, or predict that you will achieve the same or similar results. Every patient's health situation is unique."
+      },
+      "jurisdiction": {
+        "title": "Licensing & Jurisdiction",
+        "body": "Dr. Hyeon Joo Park is licensed to practice chiropractic in the State of California. This website is intended for individuals seeking chiropractic services within the State of California, USA."
+      },
+      "emergency": {
+        "title": "Emergency Notice",
+        "body": "IF YOU ARE EXPERIENCING A MEDICAL EMERGENCY, CALL 911 OR YOUR LOCAL EMERGENCY SERVICES IMMEDIATELY. DO NOT USE THIS WEBSITE FOR EMERGENCY MEDICAL NEEDS."
+      }
+    }
+  },
   "cookiePolicyPage": {
-    "title": "Cookie Policy",
-    "intro": "Yonsei Chiropractic minimizes stored identifiers. Non-essential cookies only run when you accept or customize tracking via the consent banner.",
+    "title": "Cookie and Tracking Policy",
+    "intro": "We use a 'privacy-first' approach. We only store information necessary to run the site or that you have explicitly allowed via our consent banner.",
     "sections": {
       "cookies": {
-        "heading": "Cookies and storage we use",
+        "heading": "Essential & Preference Storage",
         "language": {
-          "label": "Language preference cookie (`i18next`)",
-          "description": "Detects your preferred language and is only written if you accept analytics cookies."
+          "label": "Language Selection (`i18next`)",
+          "description": "Remembers if you prefer English or Korean. This is stored in your browser after you interact with the site."
         },
         "theme": {
-          "label": "Theme preference (localStorage)",
-          "description": "Keeps the light/dark mode you pick. We write to localStorage only after you allow preference cookies."
+          "label": "Theme Choice (Local Storage)",
+          "description": "Remembers if you prefer Light or Dark mode. This is only saved if you allow 'Preference' cookies."
         },
-        "fonts": {
-          "label": "Google Fonts (Lexend, Noto Sans, Material Symbols)",
-          "description": "Fonts load from fonts.googleapis.com / fonts.gstatic.com and receive an IP/referrer on every visit."
+        "consent": {
+          "label": "Consent Status (`consent_preferences`)",
+          "description": "A strictly necessary cookie that remembers your privacy choices for 365 days so we don't ask you every time."
         }
       },
       "thirdParty": {
-        "heading": "Third-party embeds",
-        "choices": "Google Maps (`maps.google.com`) and the hero images hosted on `lh3.googleusercontent.com` are the only embedded vendors. They load immediately for the visitor’s convenience but remain documented here."
+        "heading": "Third-Party Data Transfers",
+        "choices": "To provide a premium experience, we embed certain services from Google. Even if you reject cookies, these services receive your IP address and browser information to function:",
+        "maps": "Google Maps: Used on the Contact and Home pages to provide location and directions.",
+        "fonts": "Google Fonts: Delivers the typography used across the site.",
+        "assets": "Google User Content: Hosts certain high-quality clinical images used for educational purposes."
       },
-      "choices": "You can revoke consent or change categories any time by re-opening the banner via the cookie icon in the footer.",
-      "contact": "Questions about cookies? Contact the clinic at (213) 381-5500 or yonseichiropractic@gmail.com."
+      "choices": "You can reset your consent or clear all site data at any time by clicking the 'Privacy Protected' shield in our footer and selecting 'Delete All Cookies'."
     }
   },
   "privacyPolicyPage": {
     "title": "Privacy Policy",
-    "intro": "Yonsei Chiropractic only collects data needed to run the site, deliver services, and honor appointments.",
+    "intro": "At Yonsei Chiropractic, your trust is our most valuable asset. This policy describes how we handle data with transparency and integrity.",
     "sections": {
       "data": {
-        "heading": "Data we collect",
-        "body": "We collect language choices via `i18next`, theme preference after you consent, and the minimal metadata required for booking links and contact forms."
+        "heading": "Information We Collect",
+        "body": "We collect information you provide directly to us through our appointment request forms, including your full name, phone number, and any message you choose to include. We also automatically collect certain technical information through our website service providers, such as your IP address, browser type, operating system, and the pages you visit."
+      },
+      "sensitive": {
+        "heading": "Sensitive Health Information",
+        "body": "When you use our contact forms, you may choose to provide information about your symptoms or medical history. We treat this information with extreme care. However, please be aware that standard website forms are not intended for transmitting sensitive medical records. We use this information solely to facilitate your initial consultation and appointment scheduling."
       },
       "use": {
-        "heading": "How we use it",
-        "body": "Language and theme choices personalize the site. Contact form submissions are delivered directly to the clinic email and never shared with third parties."
+        "heading": "How Your Data is Used",
+        "body": "We use your information to: (1) Respond to your inquiries and schedule appointments; (2) Improve our website's performance and accessibility; (3) Maintain the security of our site; and (4) Comply with legal obligations. We do not use your data for automated profiling or marketing without your explicit consent."
       },
       "share": {
-        "heading": "Sharing with others",
-        "body": "Only Google services listed in our cookie policy receive data about fonts or maps. We do not sell or rent personal information."
+        "heading": "Third-Party Sharing & Vendors",
+        "body": "We do not sell your personal information. We share data only with trusted service providers who help us operate our website: (1) Google (Maps, Fonts, and CDN) to provide essential site features; (2) Vercel for web hosting and infrastructure; and (3) Legal authorities if required by a valid subpoena or court order."
+      },
+      "ai": {
+        "heading": "AI and Automated Processing",
+        "body": "Yonsei Chiropractic does not use Artificial Intelligence (AI) or automated decision-making systems to process your personal data or make clinical determinations based on your website interactions."
+      },
+      "children": {
+        "heading": "Children's Privacy",
+        "body": "While we provide chiropractic care for children under the supervision of parents or guardians, our website is not directed at children under 13. We do not knowingly collect personal information from children under 13 without parental consent."
+      },
+      "international": {
+        "heading": "International Data Transfers",
+        "body": "Our clinic and website are based in the United States. If you are visiting from outside the U.S., please be aware that your information will be transferred to and processed in the United States, where data protection laws may differ from those in your jurisdiction."
+      },
+      "retention": {
+        "heading": "Data Retention & Security",
+        "body": "Form submissions are retained as part of your potential patient record in our clinical communication systems. Website cookies and preferences are stored for 365 days. We implement industry-standard security measures, including SSL/TLS encryption, to protect your data during transmission."
       }
     },
     "contact": {
-      "title": "Questions?",
-      "body": "Call (213) 381-5500 or email yonseichiropractic@gmail.com to review or delete your information."
-    }
-  },
-  "termsPage": {
-    "title": "Terms of Service",
-    "intro": "Yonsei Chiropractic provides information about chiropractic care in Los Angeles. Use of the site constitutes acceptance of these terms.",
-    "sections": {
-      "use": "Content is provided for educational purposes. Appointments and services are subject to the clinic’s scheduling and medical discretion.",
-      "disclaimer": "We do not guarantee outcomes, and the site does not offer personalized medical advice.",
-      "contact": "Questions about these terms? Call (213) 381-5500 or email yonseichiropractic@gmail.com."
+      "title": "Control Your Data",
+      "body": "You have the right to review, update, or request the deletion of any information we hold. For privacy requests, please contact us at (213) 381-5500 or email yonseichiropractic@gmail.com."
     }
   }
 }
