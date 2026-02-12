@@ -62,7 +62,7 @@ const NavbarDesktop: React.FC = () => {
             >
               <div className="w-10 h-10 overflow-hidden rounded-lg border border-slate-100 dark:border-slate-800 group-hover:scale-105 transition-transform">
                 <img 
-                  src="/LOGO_E_H.jpg" 
+                  src="/logo.bmp" 
                   alt="Yonsei Chiropractic Logo" 
                   className="h-full w-full object-cover object-left"
                 />
