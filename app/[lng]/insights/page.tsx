@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
       "Chiropractor 90057",
       "LA 한인 카이로프랙틱",
       "한인타운 척추신경 카이로프랙틱",
-      "상부경추 전문"
+      "상부경추 전문",
       "상경추 전문"
     ],
     openGraph: {
