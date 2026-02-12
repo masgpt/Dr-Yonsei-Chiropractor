@@ -28,7 +28,7 @@ const ReviewsMobile: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="w-full bg-white dark:bg-slate-900 py-8 px-4 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
-          <motion.div 
+        <motion.div 
           initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0 }}
@@ -63,40 +63,40 @@ const ReviewsMobile: React.FC = () => {
                 key={review.id} 
                 variants={fadeInUp}
                 onClick={() => openReview(review)}
-                className="flex flex-col bg-primary text-white p-5 rounded-[20px] border border-primary/30 relative active:shadow-xl transition-all group cursor-pointer h-full"
+                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-5 rounded-[20px] border border-slate-100 dark:border-slate-800 relative active:shadow-xl transition-all group cursor-pointer h-full"
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="flex text-white">
+                    <div className="flex text-primary">
                       {[...Array(review.rating)].map((_, i) => (
                         <span key={i} className="material-symbols-outlined text-base fill-current">star</span>
                       ))}
                     </div>
                     {review.date && (
-                      <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest">{review.date}</span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
                     )}
                   </div>
                   
-                  <p className="text-white text-xs leading-relaxed italic whitespace-pre-line line-clamp-6 mb-4">
+                  <p className="text-slate-700 dark:text-slate-300 text-xs leading-relaxed italic whitespace-pre-line line-clamp-6 mb-4">
                     "{review.text}"
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-white/30">
+                <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800/50">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
-                      <div className="size-8 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
+                      <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[10px] shrink-0">
                         {review.name.split(' ').map(n => n[0]).join('')}
                       </div>
                       <div className="min-w-0">
-                        <h4 className="text-[10px] font-black text-white uppercase tracking-widest leading-tight truncate">{review.name}</h4>
-                        <p className="text-[9px] font-bold text-white/80 uppercase tracking-wider mt-1">{review.location}</p>
+                        <h4 className="text-[10px] font-black text-slate-900 dark:text-white uppercase tracking-widest leading-tight truncate">{review.name}</h4>
+                        <p className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{review.location}</p>
                       </div>
                     </div>
                     {isTruncated && (
                       <div className="shrink-0">
-                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/20 text-white font-black text-[9px] uppercase tracking-widest shadow-sm border border-white/20 hover:bg-white/40 transition-all">
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 text-primary font-black text-[9px] uppercase tracking-widest shadow-sm border border-slate-100 dark:border-slate-700 active:bg-primary active:text-white transition-all">
                           {t('items.readMore', { ns: 'reviews' })}
                           <span className="material-symbols-outlined text-[12px]">arrow_forward</span>
                         </span>
