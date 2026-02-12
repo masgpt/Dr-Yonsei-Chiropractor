@@ -2,7 +2,6 @@
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 export const LANGUAGE_COOKIE_NAME = 'i18next';
 export const LANGUAGE_LOCAL_STORAGE_KEY = 'i18nextLng';
@@ -43,15 +42,16 @@ import koTranslation from './locales/ko/translation.json';
 import koReviews from './locales/ko/reviews.json';
 
 const isServer = typeof window === 'undefined';
+const getInitialLanguage = () => {
+  if (isServer) return 'en';
+  const htmlLang = document.documentElement.lang;
+  return htmlLang === 'ko' || htmlLang === 'en' ? htmlLang : 'en';
+};
 
-const i18nInstance = i18n
-  .use(initReactI18next);
-
-if (!isServer) {
-  i18nInstance.use(LanguageDetector);
-}
+const i18nInstance = i18n.use(initReactI18next);
 
 i18nInstance.init({
+    lng: getInitialLanguage(),
     fallbackLng: 'en',
     supportedLngs: ['en', 'ko'],
     debug: false,
@@ -60,11 +60,6 @@ i18nInstance.init({
     },
     ns: ['translation', 'reviews'],
     defaultNS: 'translation',
-    detection: {
-      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'navigator'],
-      lookupFromPathIndex: 0,
-      caches: [],
-    },
     resources: {
       en: {
         translation: enTranslation,

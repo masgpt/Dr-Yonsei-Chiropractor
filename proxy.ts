@@ -29,6 +29,20 @@ export function proxy(request: NextRequest) {
       new URL(`/${defaultLocale}${pathname}`, request.url)
     );
   }
+
+  const localeFromPath = locales.find(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
+
+  if (localeFromPath) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-locale', localeFromPath);
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  }
 }
 
 export const config = {

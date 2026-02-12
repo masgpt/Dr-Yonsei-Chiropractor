@@ -11,7 +11,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   
   const descriptions: Record<string, string> = {
     en: "Looking for a Korean chiropractor near you in LA? We provide expert chiropractic care for the Korean community in 90010, 90057, specializing in Upper Cervical and TMJ.",
-    ko: "내 주변 한인 카이로프랙틱을 찾으시나요? 로스앤젤레스 90010, 90057 지역 한인 사회를 위한 전문 카이로프랙틱 케어, 상부 경추 및 TMJ 전문 병원입니다."
   };
 
   return {
@@ -23,8 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
       "Chiropractor 90010",
       "Chiropractor 90057",
       "LA 한인 카이로프랙틱",
-      "한인타운 정형외과 카이로프랙틱",
+      "한인타운 척추신경 카이로프랙틱",
       "상부경추 전문"
+      "상경추 전문"
     ],
     openGraph: {
       title: titles[lng] || titles.en,

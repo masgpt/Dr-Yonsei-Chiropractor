@@ -10,6 +10,7 @@ import I18nProvider from './components/I18nProvider';
 import { ConsentProvider } from './components/consent/ConsentContext';
 import { ConditionalCookieConsentBanner } from './components/privacy/ConditionalCookieConsentBanner';
 import { getInitialIsMobileFromHeaders } from './lib/get-initial-is-mobile';
+import { headers } from 'next/headers';
 
 export const metadata: Metadata = {
   title: "Yonsei Chiropractic - Upper Cervical Health Care",
@@ -39,12 +40,12 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lng: string }>;
 }) {
-  const { lng } = await params;
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get('x-locale');
+  const lng = headerLocale === 'ko' || headerLocale === 'en' ? headerLocale : 'en';
   const initialIsMobile = await getInitialIsMobileFromHeaders();
 
   const jsonLd = {
@@ -55,7 +56,7 @@ export default async function RootLayout({
     "url": "https://yonseichiro.com",
     "logo": "https://yonseichiro.com/logo.bmp",
     "image": "https://yonseichiro.com/Yonsei-Chiropractic-Clinic_d9fbf4bc8dac09e90ec9aa08536041e5.jpg",
-    "description": lng === 'ko' ? "로스앤젤레스 상부경추 전문 연세 카이로프랙틱 클리닉입니다." : "Specialized Palmer Upper Cervical Specific Chiropractic in Los Angeles.",
+    "description": lng === 'ko' ? "로스앤젤레스 상경추 전문 연세 카이로프랙틱 클리닉입니다." : "Specialized Palmer Upper Cervical Specific Chiropractic in Los Angeles.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3200 Wilshire Blvd, Suite 302",

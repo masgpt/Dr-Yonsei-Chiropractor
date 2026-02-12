@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   
   const descriptions: Record<string, string> = {
     en: "Read what our patients have to say about their recovery and wellness journey with Dr. Hyeon Joo Park. Specialized in Upper Cervical care in Los Angeles.",
-    ko: "박현주 원장님의 상부경추 교정을 통해 회복된 환자분들의 생생한 후기를 확인해 보세요."
+    ko: "박현주 원장님의 상경추 교정을 통해 회복된 환자분들의 생생한 후기를 확인해 보세요."
   };
 
   return {

@@ -1,8 +1,11 @@
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'next/navigation';
 
 export const useNavbarConstants = () => {
   const { t, i18n } = useTranslation();
-  const lng = i18n.language || 'en';
+  const params = useParams();
+  const paramLng = params?.lng;
+  const lng = (paramLng === 'en' || paramLng === 'ko' ? paramLng : i18n.language) || 'en';
 
   const techniques = [
     { name: t('nav.aboutChiropractic'), path: `/${lng}/techniques/about-chiropractic` },
