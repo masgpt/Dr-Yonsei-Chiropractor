@@ -32,6 +32,37 @@ const HomeMobile: React.FC = () => {
     return text.slice(0, maxLength).trim() + '...';
   };
 
+  const beforeAfterXrays = [
+    {
+      src: '/o-6.jpg',
+      alt: 'Before-treatment cervical spine X-ray showing neck alignment prior to care'
+    },
+    {
+      src: '/o-7.jpg',
+      alt: 'After-treatment cervical spine X-ray showing improved neck alignment'
+    },
+    {
+      src: '/o-8.jpg',
+      alt: 'Before-treatment side-view cervical X-ray used for upper cervical evaluation'
+    },
+    {
+      src: '/o-9.jpg',
+      alt: 'After-treatment side-view cervical X-ray showing structural change after care'
+    },
+    {
+      src: '/o-10.jpg',
+      alt: 'Before-treatment front and side spinal X-ray images documenting initial posture'
+    },
+    {
+      src: '/o-11.jpg',
+      alt: 'After-treatment front and side spinal X-ray images documenting post-care posture'
+    },
+    {
+      src: '/o-14.jpg',
+      alt: 'Follow-up cervical spine X-ray used to track continued progress after treatment'
+    }
+  ];
+
   return (
     <>
       <SEO 
@@ -230,6 +261,51 @@ const HomeMobile: React.FC = () => {
                 </Link>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Before and After X-rays Section */}
+      <section className="py-16 bg-white dark:bg-[#0a0f14]" aria-labelledby="before-after-heading">
+        <div className="max-w-[1280px] mx-auto px-10">
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <span className="text-primary font-black text-xs uppercase tracking-[0.3em] block mb-4">Clinical Results</span>
+            <h2 id="before-after-heading" className="text-4xl font-black text-slate-900 dark:text-white leading-none uppercase">
+              Before and After
+            </h2>
+            <p className="mt-4 text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+              Swipe side to side to view treatment X-rays.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="overflow-x-auto pb-4 -mx-2 px-2"
+          >
+            <div className="flex gap-4 w-max pr-2 snap-x snap-mandatory">
+              {beforeAfterXrays.map((xray) => (
+                <article
+                  key={xray.src}
+                  className="w-[280px] shrink-0 bg-slate-50 dark:bg-slate-900/50 rounded-[20px] border border-slate-100 dark:border-slate-800 overflow-hidden snap-start"
+                >
+                  <img
+                    src={xray.src}
+                    alt={xray.alt}
+                    className="w-full h-[220px] object-cover bg-slate-200 dark:bg-slate-800"
+                    loading="lazy"
+                  />
+                </article>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

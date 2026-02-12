@@ -69,10 +69,10 @@ const NavbarDesktop: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
-                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ')[1]}</span>
+                  {lng === 'ko' ? '연세' : 'Yonsei'} <span className="text-primary">{lng === 'ko' ? '척추신경병원' : 'Chiropractic'}</span>
                 </span>
                 <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2">
-                  <span>{lng === 'ko' ? 'Yonsei Chiropractic' : '연세 카이로프랙틱'}</span>
+                  <span>{lng === 'ko' ? 'Yonsei Chiropractic' : '연세 척추신경병원'}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
                   <span>{t('common.companyNameSub')}</span>
                 </span>
