@@ -63,39 +63,39 @@ const ReviewsDesktop: React.FC = () => {
                 key={review.id} 
                 variants={fadeInUp}
                 onClick={() => openReview(review)}
-                className="flex flex-col bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] group cursor-pointer h-full"
+                className="flex flex-col bg-primary text-white p-8 rounded-[32px] border border-primary/30 relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] group cursor-pointer h-full"
               >
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex text-primary">
+                    <div className="flex text-white">
                       {[...Array(review.rating)].map((_, i) => (
                         <span key={i} className="material-symbols-outlined text-[20px] fill-current">star</span>
                       ))}
                     </div>
                     {review.date && (
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">{review.date}</span>
+                      <span className="text-[11px] font-bold text-white/80 uppercase tracking-widest">{review.date}</span>
                     )}
                   </div>
                   
-                  <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic whitespace-pre-line line-clamp-6 mb-6">
+                  <p className="text-white text-sm leading-relaxed italic whitespace-pre-line line-clamp-6 mb-6">
                     "{review.text}"
                   </p>
                 </div>
 
-                <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800/50">
+                <div className="mt-auto pt-6 border-t border-white/30">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                      <div className="size-10 rounded-full bg-white/20 text-white flex items-center justify-center font-bold text-xs shrink-0">
                         {review.name.split(' ').map(n => n[0]).join('')}
                       </div>
                       <div>
-                        <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-widest group-hover:text-primary transition-colors leading-tight">{review.name}</h4>
-                        <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">{review.location}</p>
+                        <h4 className="text-xs font-black text-white uppercase tracking-widest leading-tight">{review.name}</h4>
+                        <p className="text-[10px] font-bold text-white/80 uppercase tracking-wider mt-1">{review.location}</p>
                       </div>
                     </div>
                     {isTruncated && (
                       <div className="shrink-0">
-                        <span className="inline-flex items-center px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-primary font-black text-[10px] uppercase tracking-[0.15em] shadow-sm border border-slate-100 dark:border-slate-700 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                        <span className="inline-flex items-center px-4 py-2 rounded-xl bg-white/20 text-white font-black text-[10px] uppercase tracking-[0.15em] shadow-sm border border-white/30 hover:bg-white/50 hover:text-primary transition-all duration-300">
                           {t('items.readMore', { ns: 'reviews' })}
                         </span>
                       </div>
