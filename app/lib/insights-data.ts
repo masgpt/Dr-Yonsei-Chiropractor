@@ -24,6 +24,77 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: 'upper-cervical-top-3',
+    publishedAt: '2026-02-13',
+    tags: ['Upper Cervical', 'Patient Guide', 'Nervous System'],
+    title: {
+      en: 'Top 3 Upper Cervical Essentials Patients Need to Know',
+      ko: '환자가 알아야 할 상부 경추 핵심 3가지',
+    },
+    heroBadge: {
+      en: 'Patient Checklist',
+      ko: '환자 체크리스트',
+    },
+    heroSummary: {
+      en: 'Knowing these three essentials keeps upper cervical care precise, predictable, and patient-friendly.',
+      ko: '이 세 가지 핵심을 알면 상부 경추 케어가 정밀하고 예측 가능하며 환자 중심이 됩니다.',
+    },
+    excerpt: {
+      en: 'Precision imaging, nerve clearing, and consistent follow-up stabilize the atlas and axis so your body can heal.',
+      ko: '정밀 영상, 신경 간섭 제거, 꾸준한 추적 관리로 아틀라스와 축추를 안정화해 몸이 스스로 치유하도록 돕습니다.',
+    },
+    sections: [
+      {
+        id: 'precision-diagnosis',
+        title: {
+          en: 'Precision Diagnosis',
+          ko: '정밀 진단',
+        },
+        body: {
+          en:
+            'We begin with weight-bearing imaging and precise measurements so we know exactly which millimeters of the atlas or axis need contact. That precision lets us deliver gentle adjustments that move only what needs to move.',
+          ko:
+            '중량을 이한 영상과 정확한 측정을 통해 아틀라스와 축추의 밀리미터 단위 움직임을 파악합니다. 그 정밀함이 필요한 부위만 부드럽게 조정할 수 있게 합니다.',
+        },
+      },
+      {
+        id: 'brainstem-signals',
+        title: {
+          en: 'Brainstem & Nerve Signals',
+          ko: '뇌간과 신경 신호',
+        },
+        body: {
+          en:
+            'The upper cervical spine forms the gateway for brainstem and cranial nerve signals. Even a hairline misalignment can distort that pathway, inviting headaches, dizziness, or fatigue. Clearing the interference with a precise adjustment lets the nervous system send calm, consistent signals.',
+          ko:
+            '상부 경추는 뇌간과 뇌신경 신호의 관문입니다. 아주 작은 어긋남도 경로를 왜곡해 두통, 어지럼, 피로를 유발할 수 있습니다. 정밀한 조정으로 간섭을 해소하면 신경계가 차분하고 일관된 신호를 보냅니다.',
+        },
+      },
+      {
+        id: 'ongoing-support',
+        title: {
+          en: 'Ongoing Support & Habits',
+          ko: '지속적 관리와 습관',
+        },
+        body: {
+          en:
+            'A single activation is not the finish line. Follow-up visits, home stretches, hydration, and stress management help the atlas stay where it was guided. We coach patients on posture cues and lifestyle steps so the adjustment lasts.',
+          ko:
+            '한 번의 조정이 끝이 아닙니다. 추적 방문, 집에서 하는 스트레칭, 수분 섭취, 스트레스 관리는 아틀라스를 안내받은 위치에 유지하도록 돕습니다. 자세 신호와 생활습관을 코칭해 조정 효과가 오래 지속되게 합니다.',
+        },
+      },
+    ],
+    closingParagraph: {
+      en: 'Keep these three essentials front of mind and you will feel confident every step of your upper cervical journey—schedule a consultation to review the plan before your first adjustment.',
+      ko: '이 세 가지 필수 요소를 기억하면 상부 경추 여정에서 자신감을 유지할 수 있습니다. 첫 조정 전에 계획을 검토하는 상담을 예약하세요.',
+    },
+    metaDescription: {
+      en: 'Understand the top three things patients should know before upper cervical chiropractic—precision diagnosis, nerve signal support, and ongoing habits.',
+      ko: '상부 경추 카이로프랙틱 전에 꼭 알아야 할 세 가지—정밀 진단, 신경 신호 지원, 지속 습관.',
+    },
+  },
+
+  {
     slug: 'upper-cervical',
     publishedAt: '2026-02-13',
     tags: ['Upper Cervical', 'Migraine', 'Nerve Interference'],

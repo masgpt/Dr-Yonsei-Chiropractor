@@ -23,9 +23,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: InsightPageParams;
+  params: Promise<InsightPageParams>;
 }): Promise<Metadata> {
-  const { lng, slug } = params;
+  const { lng, slug } = await params;
   const insight = insights.find((item) => item.slug === slug);
   const langKey = supportedLanguages.includes(lng) ? lng : 'en';
 
@@ -48,8 +48,8 @@ export async function generateMetadata({
   };
 }
 
-export default function InsightPage({ params }: { params: InsightPageParams }) {
-  const { lng, slug } = params;
+export default async function InsightPage({ params }: { params: Promise<InsightPageParams> }) {
+  const { lng, slug } = await params;
   const insight = insights.find((item) => item.slug === slug);
   if (!insight) {
     notFound();
