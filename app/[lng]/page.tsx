@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lng: stri
   
   const descriptions: Record<string, string> = {
     en: "Searching for a Korean speaking chiropractor in Los Angeles? Yonsei Chiropractic specializes in Palmer Upper Cervical care, TMJ, and car accidents in 90010 and 90057.",
-    ko: "로스앤젤레스에서 한국어 가능한 카이로프랙터를 찾으시나요? 연세 카이로프랙틱은 90010, 90057 지역에서 상 경추, TMJ, 교통사고 전문 치료를 제공합니다."
+    ko: "로스앤젤레스에서 한국어 가능한 카이로프랙터를 찾으시나요? 연세 카이로프랙틱은 90010, 90057 지역에서 상경추, TMJ, 교통사고 전문 치료를 제공합니다."
   };
 
   return {

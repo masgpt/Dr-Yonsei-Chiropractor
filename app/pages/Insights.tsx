@@ -50,7 +50,7 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
               {lng === 'ko'
-                ? '90010 및 90057 지역을 중심으로 로스앤젤레스 전역의 한인분들께 최상의 상 경추 교정 서비스를 제공합니다.'
+                ? '90010 및 90057 지역을 중심으로 로스앤젤레스 전역의 한인분들께 최상의 상경추 교정 서비스를 제공합니다.'
                 : 'Providing top-tier Upper Cervical chiropractic services to the Korean community across Los Angeles, specifically serving the 90010 and 90057 zip codes.'}
             </p>
           </motion.div>
@@ -79,7 +79,7 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
                 <ul className="space-y-4 pt-4">
                   {[
                     lng === 'ko' ? "한국어/영어 완벽 대응" : "Full Bilingual Support (Korean & English)",
-                    lng === 'ko' ? "상 경추 (H.I.O) 전문 기법" : "Specialized Upper Cervical (H.I.O) Technique",
+                    lng === 'ko' ? "상경추 (H.I.O) 전문 기법" : "Specialized Upper Cervical (H.I.O) Technique",
                     lng === 'ko' ? "턱관절(TMJ) 및 교통사고 후유증 전문" : "TMJ and Car Accident Recovery Specialists",
                     lng === 'ko' ? "무료 주차 확인 서비스" : "Validated Free Parking Available"
                   ].map((item, i) => (
