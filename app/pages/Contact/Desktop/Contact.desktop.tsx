@@ -1,14 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Button from '../../../components/ui/Button';
-import FormField from '../../../components/ui/FormField';
 import Link from '../../../components/ui/Link';
-import { useContactForm } from '../Shared/contact.hooks';
 
 const ContactDesktop: React.FC = () => {
   const { t } = useTranslation();
-  const { isSubmitted, isLoading, agreed, setAgreed, handleSubmit, resetForm } = useContactForm();
 
   return (
     <div className="flex-grow w-full max-w-[1280px] mx-auto px-8 py-12 overflow-hidden">
@@ -126,7 +122,7 @@ const ContactDesktop: React.FC = () => {
           </section>
         </motion.div>
 
-        {/* Right Column: Map & Form */}
+        {/* Right Column: Map */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -145,122 +141,6 @@ const ContactDesktop: React.FC = () => {
             ></iframe>
           </div>
 
-          {/* Contact Form */}
-          <section
-            className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex-1"
-            aria-labelledby="form-title"
-          >
-            <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800">
-              <h2 id="form-title" className="text-text-main dark:text-white text-[22px] font-bold leading-tight tracking-tight">{t('contactPage.form.title')}</h2>
-              <p className="text-text-secondary dark:text-slate-400 text-sm mt-1">{t('contactPage.form.description')}</p>
-            </div>
-            <div className="p-8">
-              {isSubmitted ? (
-                <div
-                  className="flex flex-col items-center justify-center h-full min-h-[300px] text-center gap-4 animate-in fade-in duration-500"
-                  role="status"
-                >
-                  <div className="size-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mb-2">
-                    <span className="material-symbols-outlined text-4xl" aria-hidden="true">check</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t('contactPage.form.success.title')}</h3>
-                  <p className="text-base text-slate-600 dark:text-slate-400 max-w-sm">
-                    {t('contactPage.form.success.message')}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    onClick={resetForm}
-                    className="mt-4"
-                  >
-                    {t('contactPage.form.success.button')}
-                  </Button>
-                </div>
-              ) : (
-                <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-2 gap-6">
-                    <FormField
-                      label={t('contactPage.form.labels.name')}
-                      name="name"
-                      required
-                    >
-                      <input
-                        className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400"
-                        placeholder={t('contactPage.form.placeholders.name')}
-                        type="text"
-                      />
-                    </FormField>
-                    <FormField
-                      label={t('contactPage.form.labels.phone')}
-                      name="phone"
-                      required
-                    >
-                      <input
-                        className="w-full h-12 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 px-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400"
-                        placeholder={t('contactPage.form.placeholders.phone')}
-                        type="tel"
-                      />
-                    </FormField>
-                  </div>
-                  <FormField
-                    label={t('contactPage.form.labels.message')}
-                    name="message"
-                    required
-                  >
-                    <textarea
-                      className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base text-text-main dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-slate-400"
-                      placeholder={t('contactPage.form.placeholders.message')}
-                      rows={4}
-                    ></textarea>
-                  </FormField>
-
-                  {/* Terms Acceptance */}
-                  <div className="flex flex-col gap-4">
-                    <label className="flex items-start gap-3 cursor-pointer group">
-                      <div className="relative flex items-center mt-1">
-                        <input
-                          type="checkbox"
-                          checked={agreed}
-                          onChange={(e) => setAgreed(e.target.checked)}
-                          className="peer appearance-none size-5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 checked:bg-primary checked:border-primary transition-all cursor-pointer"
-                        />
-                        <span className="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-white text-[16px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-                          check
-                        </span>
-                      </div>
-                      <span className="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 select-none">
-                        {t('contactPage.form.disclaimer.acceptance').split(/\[|\]/).map((part, i) => {
-                          if (part === t('footer.termsOfService')) {
-                            return <Link key={i} to="/terms-of-service" className="text-primary hover:underline font-bold">{part}</Link>;
-                          }
-                          if (part === t('footer.privacyPolicy')) {
-                            return <Link key={i} to="/privacy-policy" className="text-primary hover:underline font-bold">{part}</Link>;
-                          }
-                          return part;
-                        })}
-                      </span>
-                    </label>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    isLoading={isLoading}
-                    disabled={!agreed}
-                    className={`w-full shadow-md h-12 transition-all duration-300 ${!agreed ? 'opacity-50 grayscale' : ''}`}
-                  >
-                    {t('contactPage.form.submit')}
-                  </Button>
-                  <div className="mt-4 space-y-3">
-                    <p className="text-[11px] leading-relaxed text-slate-500 dark:text-slate-500 italic">
-                      {t('contactPage.form.disclaimer.relationship')}
-                    </p>
-                    <p className="text-[10px] leading-relaxed text-slate-400 dark:text-slate-600">
-                      {t('contactPage.form.disclaimer.privacy')}
-                    </p>
-                  </div>
-                </form>
-              )}
-            </div>
-          </section>
         </motion.div>
       </div>
     </div>
