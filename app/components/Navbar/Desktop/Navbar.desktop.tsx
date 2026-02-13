@@ -54,7 +54,7 @@ const NavbarDesktop: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section */}
-          <Link to={`/${lng}/`} className="flex flex-col items-start focus:ring-offset-4 group">
+          <Link to={`/${lng}/`} className="flex flex-col items-center focus:ring-offset-4 group">
             <motion.div 
               className="flex items-center gap-3"
               whileHover={{ x: 5 }}
@@ -67,11 +67,11 @@ const NavbarDesktop: React.FC = () => {
                   className="h-full w-full object-cover object-left"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
+              <div className="flex flex-col items-center text-center w-full">
+                <span className="block w-full text-lg font-black tracking-[0.25em] text-slate-900 dark:text-white leading-none uppercase whitespace-nowrap text-center">
                   {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ').slice(1).join(' ')}</span>
                 </span>
-                <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2">
+                <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2 justify-center w-full">
                   <span>{lng === 'ko' ? t('common.companyName', { lng: 'en' }) : t('common.companyName', { lng: 'ko' })}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
                   <span>{t('common.companyNameSub')}</span>
