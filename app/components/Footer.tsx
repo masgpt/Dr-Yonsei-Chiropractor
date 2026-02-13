@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
               {t('footer.description')}
             </p>
             <div className="flex gap-4 pt-2">
-              <div className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600">Established 2015</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600">{t('footer.established')}</div>
             </div>
           </motion.div>
 
