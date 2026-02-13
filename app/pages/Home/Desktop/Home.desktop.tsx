@@ -490,7 +490,7 @@ const HomeDesktop: React.FC = () => {
             viewport={{ once: true }}
             className="grid grid-cols-3 gap-8"
           >
-            {reviews.map((rev) => {
+            {reviews.slice(0, 3).map((rev) => {
               const fullText = t(`review${rev.id}.text`, { ns: 'reviews' });
               const isTruncated = fullText.length > 180;
               

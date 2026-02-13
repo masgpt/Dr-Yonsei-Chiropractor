@@ -20,6 +20,7 @@ export const useNavbarConstants = () => {
     { name: t('nav.aboutDrPark'), path: `/${lng}/about` },
     { name: t('nav.philosophy'), path: `/${lng}/message` },
     { name: t('nav.reviews'), path: `/${lng}/reviews` },
+    { name: t('nav.insights'), path: `/${lng}/insights` },
   ];
 
   return { techniques, aboutLinks, lng };

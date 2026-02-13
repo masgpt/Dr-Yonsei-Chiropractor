@@ -1,4 +1,8 @@
 export const reviewMetadata = [
+  { id: 26, name: "Connie Lee", location: "Los Angeles, CA", rating: 5 },
+  { id: 27, name: "J_Eun C", location: "Los Angeles, CA", rating: 5 },
+  { id: 28, name: "Leo Miguel", location: "Los Angeles, CA", rating: 5 },
+  { id: 29, name: "Nina Doering", location: "Los Angeles, CA", rating: 5 },
   { id: 1, name: "Danbi H.", location: "Los Angeles, CA", date: "February 20, 2016", rating: 5 },
   { id: 2, name: "Christina J.", location: "Los Angeles, CA", date: "February 20, 2016", rating: 5 },
   { id: 3, name: "Jiyun K.", location: "Los Angeles, CA", date: "February 20, 2016", rating: 5 },

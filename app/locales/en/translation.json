@@ -28,6 +28,16 @@
     "tmj": "TMJ",
     "insights": "Insights"
   },
+  "insightsPage": {
+    "heroBadge": "Insights",
+    "heroTitle": "Stories from our practice",
+    "heroDescription": "Browse patient-centered articles covering upper cervical care, headache relief, and recovery strategies tailored for our Korean community in Los Angeles.",
+    "heroCTA": "Read the latest insight",
+    "featuredLabel": "Featured",
+    "listTitle": "Latest insights",
+    "listDescription": "Each article dives into the nervous system connections we treat every day, with practical tips and caring context.",
+    "readArticle": "Read article"
+  },
   "home": {
     "hero": {
       "title": "Alignment & Restoration",

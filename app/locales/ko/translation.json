@@ -28,6 +28,16 @@
     "tmj": "턱관절 (TMJ)",
     "insights": "한인 사회 가이드"
   },
+  "insightsPage": {
+    "heroBadge": "인사이트",
+    "heroTitle": "현장에서 전하는 이야기",
+    "heroDescription": "상경추 케어, 두통 완화, 회복 전략을 중심으로 한 환자 중심의 기사들을 로스앤젤레스 한인 커뮤니티 맞춤으로 소개합니다.",
+    "heroCTA": "최근 인사이트 보기",
+    "featuredLabel": "추천 콘텐츠",
+    "listTitle": "최신 인사이트",
+    "listDescription": "각 글에는 저희가 매일 돌보는 신경계 연결성과 실용적인 조언, 따뜻한 이야기가 담겨 있습니다.",
+    "readArticle": "기사 보기"
+  },
   "home": {
     "hero": {
       "title": "정렬 및 회복",

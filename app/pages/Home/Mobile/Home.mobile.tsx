@@ -337,7 +337,7 @@ const HomeMobile: React.FC = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 gap-4"
           >
-            {reviews.slice(0, 2).map((rev) => {
+            {reviews.slice(0, 3).map((rev) => {
               const fullText = t(`review${rev.id}.text`, { ns: 'reviews' });
               const isTruncated = fullText.length > 120;
 

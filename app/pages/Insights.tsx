@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import ContactBanner from '../components/ContactBanner';
-import { motion } from 'framer-motion';
 import MedicalDisclaimer from '../components/MedicalDisclaimer';
+import { insights } from '../lib/insights-data';
 
 const Insights: React.FC<{ lng: string }> = ({ lng }) => {
   const { t, i18n } = useTranslation();
@@ -16,6 +18,15 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
     }
   }, [lng, i18n]);
 
+  const heroBadge = t('insightsPage.heroBadge');
+  const heroTitle = t('insightsPage.heroTitle');
+  const heroDescription = t('insightsPage.heroDescription');
+  const heroCTA = t('insightsPage.heroCTA');
+  const featuredLabel = t('insightsPage.featuredLabel');
+  const listTitle = t('insightsPage.listTitle');
+  const listDescription = t('insightsPage.listDescription');
+  const readArticleLabel = t('insightsPage.readArticle');
+
   const keywords = [
     "Korean chiropractor Los Angeles",
     "Korean speaking chiropractor 90010",
@@ -25,6 +36,21 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
     "TMJ specialist Los Angeles"
   ];
 
+  const featuredInsight = insights[0];
+  const otherInsights = insights.slice(1);
+
+  const formatPublishedDate = (value: string) => {
+    try {
+      return new Intl.DateTimeFormat(lng === 'ko' ? 'ko-KR' : 'en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }).format(new Date(value));
+    } catch {
+      return value;
+    }
+  };
+
   return (
     <div className="pt-20">
       <SEO
@@ -32,7 +58,6 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
         description={t('seo.insights.description')}
       />
 
-      {/* Hero Section */}
       <section className="relative py-20 bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
           <motion.div
@@ -41,23 +66,95 @@ const Insights: React.FC<{ lng: string }> = ({ lng }) => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.2em] uppercase text-primary bg-primary/10 rounded-full">
-              {lng === 'ko' ? '커뮤니티 가이드' : 'Community Insights'}
+              {heroBadge}
             </span>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-              {lng === 'ko'
-                ? '로스앤젤레스 한인 사회를 위한 전문 카이로프랙틱 케어'
-                : 'Expert Chiropractic Care for the Los Angeles Community'}
+              {heroTitle}
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-              {lng === 'ko'
-                ? '90010 및 90057 지역을 중심으로 로스앤젤레스 전역의 한인분들께 최상의 상경추 교정 서비스를 제공합니다.'
-                : 'Providing top-tier Upper Cervical chiropractic services to the Korean community across Los Angeles, specifically serving the 90010 and 90057 zip codes.'}
+              {heroDescription}
             </p>
+            {featuredInsight && (
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  href={`/${lng}/insights/${featuredInsight.slug}`}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-white text-sm font-semibold tracking-wide transition hover:bg-primary/80 focus-visible:ring focus-visible:ring-primary/30"
+                >
+                  {heroCTA}
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>
 
-      {/* Content Section */}
+      <section className="py-16 bg-white dark:bg-[#020509]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 space-y-10">
+          <div className="space-y-4 text-center">
+            <p className="text-xs font-black tracking-[0.3em] uppercase text-primary">{featuredLabel}</p>
+            <h2 className="text-3xl font-black text-slate-900 dark:text-white">{listTitle}</h2>
+            <p className="text-sm text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              {listDescription}
+            </p>
+          </div>
+
+          {featuredInsight && (
+            <article className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-lg">
+              <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.4em] text-slate-500">
+                <span className="text-primary font-black">{featuredInsight.heroBadge[ lng === 'ko' ? 'ko' : 'en' ]}</span>
+                <span>{formatPublishedDate(featuredInsight.publishedAt)}</span>
+                <span className="text-slate-400">· {featuredInsight.tags.join(' · ')}</span>
+              </div>
+              <Link href={`/${lng}/insights/${featuredInsight.slug}`}>
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-4 mb-4 leading-tight hover:text-primary transition">
+                  {featuredInsight.title[lng === 'ko' ? 'ko' : 'en']}
+                </h3>
+              </Link>
+              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                {featuredInsight.heroSummary[lng === 'ko' ? 'ko' : 'en']}
+              </p>
+              <Link
+                href={`/${lng}/insights/${featuredInsight.slug}`}
+                className="text-primary font-semibold flex items-center gap-2"
+              >
+                {readArticleLabel} →
+              </Link>
+            </article>
+          )}
+
+          {otherInsights.length > 0 && (
+            <div className="grid gap-6 lg:grid-cols-2">
+              {otherInsights.map((insight) => (
+                <Link
+                  key={insight.slug}
+                  href={`/${lng}/insights/${insight.slug}`}
+                  className="group block rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 hover:border-primary/70 transition"
+                >
+                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-slate-500 mb-3">
+                    <span>{formatPublishedDate(insight.publishedAt)}</span>
+                    <span className="text-primary font-black">{insight.heroBadge[lng === 'ko' ? 'ko' : 'en']}</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-primary transition">
+                    {insight.title[lng === 'ko' ? 'ko' : 'en']}
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                    {insight.excerpt[lng === 'ko' ? 'ko' : 'en']}
+                  </p>
+                  <div className="flex items-center justify-between text-xs text-slate-500">
+                    <span className="font-semibold text-primary">{readArticleLabel}</span>
+                    <div className="flex flex-wrap gap-2">
+                      {insight.tags.map((tag) => (
+                        <span key={tag} className="text-[11px] uppercase tracking-[0.3em]">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
       <section className="py-20 bg-white dark:bg-[#0a0f14]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
