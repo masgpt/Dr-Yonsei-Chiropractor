@@ -189,7 +189,7 @@ const HomeMobile: React.FC = () => {
               </div>
               <div className="space-y-5">
                 <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed italic font-medium">
-                  "{t('home.meetDoctor.quote')}"
+                  {t('home.meetDoctor.quote')}
                 </p>
                 <div className="flex flex-col gap-5 items-start">
                   <Link to="/about" className="h-12 px-8 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-xs uppercase tracking-widest active:scale-[0.98] transition-all shadow-xl flex items-center justify-center">
