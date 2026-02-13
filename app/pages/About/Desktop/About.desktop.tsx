@@ -59,7 +59,7 @@ const AboutDesktop: React.FC = () => {
               {t('about.hero.description')}
             </p>
             <div className="flex gap-3 pt-2">
-              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-11 px-6 rounded-lg transition-all shadow-md flex items-center justify-center min-w-[160px] focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
+              <Link to="mailto:yonseichiropractic@gmail.com" className="bg-primary hover:bg-orange-600 text-white text-base font-bold h-11 px-6 rounded-lg transition-all shadow-md flex items-center justify-center min-w-[160px] focus:ring-2 focus:ring-primary/20 focus:ring-offset-2">
                 {t('about.hero.book')}
               </Link>
             </div>
@@ -198,7 +198,7 @@ const AboutDesktop: React.FC = () => {
           <p className="text-orange-100 text-lg max-w-2xl">
             {t('about.cta.description')}
           </p>
-          <Link to="/contact" className="bg-white text-primary hover:bg-orange-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center w-fit focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary">
+          <Link to="mailto:yonseichiropractic@gmail.com" className="bg-white text-primary hover:bg-orange-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center w-fit focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary">
             {t('about.cta.button')}
           </Link>
         </motion.div>

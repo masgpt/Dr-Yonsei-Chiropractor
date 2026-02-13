@@ -64,7 +64,7 @@ const AboutMobile: React.FC = () => {
               {t('about.hero.description')}
             </p>
             <div className="flex flex-col gap-3 pt-2">
-              <Link to="/contact" className="bg-primary hover:bg-orange-600 text-white text-base font-black h-14 px-6 rounded-2xl transition-all shadow-xl shadow-primary/20 flex items-center justify-center w-full uppercase tracking-widest active:scale-[0.98]">
+              <Link to="mailto:yonseichiropractic@gmail.com" className="bg-primary hover:bg-orange-600 text-white text-base font-black h-14 px-6 rounded-2xl transition-all shadow-xl shadow-primary/20 flex items-center justify-center w-full uppercase tracking-widest active:scale-[0.98]">
                 {t('about.hero.book')}
               </Link>
             </div>
@@ -192,7 +192,7 @@ const AboutMobile: React.FC = () => {
           <p className="text-orange-100 text-base max-w-2xl">
             {t('about.cta.description')}
           </p>
-          <Link to="/contact" className="bg-white text-primary hover:bg-orange-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center w-full focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary">
+          <Link to="mailto:yonseichiropractic@gmail.com" className="bg-white text-primary hover:bg-orange-50 font-bold h-12 px-8 rounded-lg shadow-lg transition-colors mt-2 flex items-center justify-center w-full focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary">
             {t('about.cta.button')}
           </Link>
         </motion.div>

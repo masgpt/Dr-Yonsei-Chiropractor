@@ -231,7 +231,7 @@ const ServicesDesktop: React.FC = () => {
                 <span className="material-symbols-outlined text-primary text-2xl">call</span>
                 (213) 381-5500
               </div>
-              <Link to="/contact" className="flex w-auto min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-md">
+              <Link to="mailto:yonseichiropractic@gmail.com" className="flex w-auto min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-orange-600 transition-colors text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-md">
                 {t('servicesPage.cta.button')}
               </Link>
             </div>

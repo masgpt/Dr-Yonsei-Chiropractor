@@ -69,10 +69,10 @@ const NavbarDesktop: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
-                  {lng === 'ko' ? '연세' : 'Yonsei'} <span className="text-primary">{lng === 'ko' ? '척추신경병원' : 'Chiropractic'}</span>
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ').slice(1).join(' ')}</span>
                 </span>
                 <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.05em] mt-1 leading-none flex items-center gap-2">
-                  <span>{lng === 'ko' ? 'Yonsei Chiropractic' : '연세 척추신경병원'}</span>
+                  <span>{lng === 'ko' ? t('common.companyName', { lng: 'en' }) : t('common.companyName', { lng: 'ko' })}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
                   <span>{t('common.companyNameSub')}</span>
                 </span>
@@ -256,7 +256,7 @@ const NavbarDesktop: React.FC = () => {
           <div className="flex items-center gap-4">
             <LanguageToggle />
             <Link 
-              to={`/${lng}/contact`} 
+              to="mailto:yonseichiropractic@gmail.com" 
               className="flex items-center justify-center h-11 px-6 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0 focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
             >
               <span className="mr-2 material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>

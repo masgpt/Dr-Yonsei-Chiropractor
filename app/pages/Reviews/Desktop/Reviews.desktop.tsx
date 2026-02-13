@@ -57,7 +57,7 @@ const ReviewsDesktop: React.FC = () => {
           className="grid grid-cols-3 gap-6"
         >
           {reviews.map((review) => {
-            const isTruncated = review.text.length > 300 || review.text.includes('…') || review.text.includes('...');
+            const isTruncated = review.text.length > 300 || review.text.includes('...') || review.text.includes('…');
             return (
               <motion.div 
                 key={review.id} 
@@ -172,7 +172,7 @@ const ReviewsDesktop: React.FC = () => {
               {t('cta.description', { ns: 'reviews' })}
             </p>
             <div className="flex flex-row gap-4 mt-2 w-full max-w-md justify-center">
-              <Link to="/contact" className="flex items-center justify-center rounded-lg bg-primary hover:bg-orange-600 transition-all h-12 px-8 text-white text-base font-bold shadow-lg">
+              <Link to="mailto:yonseichiropractic@gmail.com" className="flex items-center justify-center rounded-lg bg-primary hover:bg-orange-600 transition-all h-12 px-8 text-white text-base font-bold shadow-lg">
                 {t('cta.book', { ns: 'reviews' })}
               </Link>
               <a href="tel:2133815500" className="flex items-center justify-center rounded-lg bg-white/10 border border-white/20 hover:bg-white/20 transition-colors h-12 px-8 text-white text-base font-bold backdrop-blur-sm">

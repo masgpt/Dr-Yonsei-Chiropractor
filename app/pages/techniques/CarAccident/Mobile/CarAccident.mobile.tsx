@@ -78,7 +78,7 @@ const CarAccidentMobile: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Link to="/contact" className="inline-flex items-center justify-center w-full h-12 px-8 rounded-lg bg-primary text-white font-bold transition-all shadow-lg">
+            <Link to="mailto:yonseichiropractic@gmail.com" className="inline-flex items-center justify-center w-full h-12 px-8 rounded-lg bg-primary text-white font-bold transition-all shadow-lg">
               {t('techniques.carAccident.cta')}
             </Link>
           </div>

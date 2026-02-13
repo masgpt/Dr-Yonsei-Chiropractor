@@ -41,10 +41,10 @@ const NavbarMobile: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-black tracking-tight text-slate-900 dark:text-white leading-none uppercase">
-                  {lng === 'ko' ? '연세' : 'Yonsei'} <span className="text-primary">{lng === 'ko' ? '척추신경병원' : 'Chiropractic'}</span>
+                  {t('common.companyName').split(' ')[0]} <span className="text-primary">{t('common.companyName').split(' ').slice(1).join(' ')}</span>
                 </span>
                 <span className="text-[8px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider mt-0.5 leading-none">
-                  {lng === 'ko' ? 'Yonsei Chiropractic' : '연세 척추신경병원'}
+                  {lng === 'ko' ? t('common.companyName', { lng: 'en' }) : t('common.companyName', { lng: 'ko' })}
                 </span>
               </div>
             </div>
@@ -148,7 +148,7 @@ const NavbarMobile: React.FC = () => {
                 </div>
 
                 <Link 
-                  to={`/${lng}/contact`} 
+                  to="mailto:yonseichiropractic@gmail.com" 
                   onClick={toggleMenu} 
                   className="flex items-center justify-center h-14 rounded-2xl bg-primary text-white text-base font-bold shadow-xl shadow-primary/20 active:scale-[0.98] transition-transform"
                 >

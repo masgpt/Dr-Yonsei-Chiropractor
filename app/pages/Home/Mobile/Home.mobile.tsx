@@ -120,7 +120,7 @@ const HomeMobile: React.FC = () => {
               transition={{ duration: 0 }}
               className="flex flex-col gap-3"
             >
-              <Link to="/contact" className="h-16 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-xl shadow-primary/20 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
+              <Link to="mailto:yonseichiropractic@gmail.com" className="h-16 rounded-2xl bg-primary text-white font-black flex items-center justify-center shadow-xl shadow-primary/20 active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
                 {t('home.hero.bookAppointment')}
               </Link>
               <Link to="/techniques/upper-cervical" className="h-16 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold border border-slate-200 dark:border-slate-800 flex items-center justify-center active:scale-[0.98] transition-all text-center shadow-sm">

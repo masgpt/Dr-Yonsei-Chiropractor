@@ -140,7 +140,7 @@ const HomeDesktop: React.FC = () => {
                 }}
                 className="flex flex-wrap gap-4"
               >
-                <Link to="/contact" className="h-16 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-widest text-sm">
+                <Link to="mailto:yonseichiropractic@gmail.com" className="h-16 px-10 rounded-2xl bg-primary hover:bg-orange-600 text-white font-black transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 flex items-center justify-center hover:-translate-y-1 active:translate-y-0 uppercase tracking-widest text-sm">
                   {t('home.hero.bookAppointment')}
                 </Link>
                 <Link href="tel:2133815500" className="h-16 px-10 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 hover:border-primary/30 transition-all hover:-translate-y-1 active:translate-y-0 shadow-sm">

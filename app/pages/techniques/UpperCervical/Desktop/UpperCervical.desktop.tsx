@@ -76,7 +76,7 @@ const UpperCervicalDesktop: React.FC = () => {
               <span className="material-symbols-outlined absolute top-2 left-2 text-white/10 text-8xl select-none">format_quote</span>
               <blockquote className="relative z-10">
                 <p className="text-xl font-medium italic mb-6 leading-relaxed">{t('techniques.upperCervical.quote')}</p>
-                <footer className="font-bold text-lg">— {t('home.meetDoctor.name')}</footer>
+                <footer className="font-bold text-lg">??{t('home.meetDoctor.name')}</footer>
               </blockquote>
             </motion.div>
 
@@ -90,7 +90,7 @@ const UpperCervicalDesktop: React.FC = () => {
             viewport={{ once: true }}
             className="mt-16 text-center"
           >
-            <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
+            <Link to="mailto:yonseichiropractic@gmail.com" className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold transition-all shadow-lg">
               {t('techniques.upperCervical.cta')}
             </Link>
           </motion.div>
