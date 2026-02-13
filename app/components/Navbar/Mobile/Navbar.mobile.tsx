@@ -87,6 +87,17 @@ const NavbarMobile: React.FC = () => {
                             >
                               <span className="text-lg font-black tracking-tight">{t('nav.home')}</span>
                             </Link>
+                            <Link 
+                              to={`/${lng}/contact`} 
+                              onClick={toggleMenu} 
+                              className={`flex items-center w-full px-5 py-4 rounded-2xl border transition-all active:scale-[0.98] ${
+                                isActive(`/${lng}/contact`) 
+                                  ? 'bg-primary/10 border-primary text-primary shadow-sm shadow-primary/10' 
+                                  : 'bg-slate-50/50 dark:bg-slate-800/30 border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white hover:border-primary/30'
+                              }`}
+                            >
+                              <span className="text-lg font-black tracking-tight">{t('nav.contact')}</span>
+                            </Link>
                             
                             <div className="flex flex-col space-y-3 pt-4">
                               <p className="px-5 text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-1">{t('nav.about')}</p>

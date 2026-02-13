@@ -252,9 +252,15 @@ const NavbarDesktop: React.FC = () => {
             </div>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA area */}
           <div className="flex items-center gap-4">
             <LanguageToggle />
+            <Link
+              to={`/${lng}/contact`}
+              className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+            >
+              {t('nav.contact')}
+            </Link>
             <Link 
               to="mailto:yonseichiropractic@gmail.com" 
               className="flex items-center justify-center h-11 px-6 rounded-xl bg-primary hover:bg-orange-600 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0 focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
